@@ -11,6 +11,7 @@ export default {
     extend: {
       fontFamily: {
         helveticaNeue: ["var(--font-helvetica-neue)", "serif"],
+        geistMono: ["var(--font-geist-mono)", "serif"],
       },
       colors: {
         background: "hsl(var(--background))",
