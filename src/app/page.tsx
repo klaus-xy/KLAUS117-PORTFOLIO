@@ -24,9 +24,10 @@ export default function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isLineComplete, setIsLineComplete] = useState(false);
   const [isTypingComplete, setIsTypingComplete] = useState(false);
-  const [isLoadingComplete, setIsLoadingComplete] = useState(false);
+  //const [isLoadingComplete, setIsLoadingComplete] = useState(false);
   const [progress, setProgress] = useState(0);
 
+  // Replaces placeholders with actual values.
   const replacePlaceholders = (line: string) => {
     let newLine = line;
 
@@ -45,10 +46,11 @@ export default function Home() {
 
     return newLine;
   };
+
   // Updates current text.
   useEffect(() => {
     if (currentLineIndex < lines.length) {
-      let lineToType = replacePlaceholders(lines[currentLineIndex]); // get current modified line to type
+      const lineToType = replacePlaceholders(lines[currentLineIndex]); // get current modified line to type
 
       if (currentText.length < lineToType.length) {
         const delay = setTimeout(() => {
@@ -60,7 +62,7 @@ export default function Home() {
       }
     }
     console.log("Line ", currentLineIndex, " is complete.");
-  }, [currentText, currentLineIndex]);
+  }, [currentText, currentLineIndex, currentTime]);
 
   // Updates current line.
   useEffect(() => {

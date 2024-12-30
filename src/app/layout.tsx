@@ -72,7 +72,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${helveticaNueue.variable} ${geistMono.variable} antialiased`}
+        className={`${helveticaNueue.variable} ${geistMono.variable} ${geistSans.variable} antialiased`}
       >
         {children}
       </body>
