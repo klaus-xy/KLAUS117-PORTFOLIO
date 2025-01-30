@@ -33,69 +33,10 @@ export default function Home() {
     delayBetweenLines: DELAY_BETWEEN_LINES,
     replaceFunction: stringReplacer,
   });
-  // const [currentLineIndex, setCurrentLine] = useState(0); // current line index
-  // const [currentText, setCurrentText] = useState(""); // updates current text for each line
+
+  /////  STATES  /////////////////////////////////////
   const [currentTime, setCurrentTime] = useState(new Date());
-  // const [isLineComplete, setIsLineComplete] = useState(false);
-  // const [isTypingComplete, setIsTypingComplete] = useState(false);
-  //const [isLoadingComplete, setIsLoadingComplete] = useState(false);
   const [progress, setProgress] = useState(0);
-
-  // Replaces placeholders with actual values.
-  // const replacePlaceholders = (line: string) => {
-  //   let newLine = line;
-
-  //   // Replace "[Current Time]" placeholder with current time.
-  //   if (newLine.includes("[Current Time]")) {
-  //     newLine = newLine.replace(
-  //       "[Current Time]",
-  //       currentTime.toLocaleTimeString()
-  //     );
-  //   }
-
-  //   // Replace "[Current Location]" placeholder with current location.
-  //   if (newLine.includes("[Current Location]")) {
-  //     newLine = newLine.replace("[Current Location]", "Earth");
-  //   }
-
-  //   return newLine;
-  // };
-
-  // // Updates current text.
-  // useEffect(() => {
-  //   if (currentLineIndex < lines.length) {
-  //     const lineToType = replacePlaceholders(lines[currentLineIndex]); // get current modified line to type
-
-  //     if (currentText.length < lineToType.length) {
-  //       const delay = setTimeout(() => {
-  //         setCurrentText(lineToType.slice(0, currentText.length + 1)); // update current text
-  //       }, TYPING_SPEED);
-  //       return () => clearTimeout(delay);
-  //     } else {
-  //       setIsLineComplete(true);
-  //     }
-  //   }
-  //   console.log("Line ", currentLineIndex, " is complete.");
-  // }, [currentText, currentLineIndex]);
-
-  // // Updates current line.
-  // useEffect(() => {
-  //   if (isLineComplete) {
-  //     const delay = setTimeout(() => {
-  //       if (currentLineIndex < lines.length - 1) {
-  //         setCurrentLine((prevLineIndex) => prevLineIndex + 1); // increment line index
-  //         setCurrentText(""); // reset current text
-  //         setIsLineComplete(false); // reset line completion status
-  //       } else {
-  //         setIsTypingComplete(true);
-  //         console.log("Typing is complete.");
-  //       }
-  //     }, DELAY_BETWEEN_LINES);
-
-  //     return () => clearTimeout(delay);
-  //   }
-  //   console.log("New Line ", currentLineIndex, " is being typed.");
-  // }, [isLineComplete, currentLineIndex]);
 
   //  Updates current time.
   useEffect(() => {
@@ -138,7 +79,7 @@ export default function Home() {
         <p>
           {currentText}
           {/* {!isTypingComplete && `${CURSOR}`} */}
-          <TypingCursor />
+          <TypingCursor blinkSpeed={50} />
         </p>
       </div>
 
