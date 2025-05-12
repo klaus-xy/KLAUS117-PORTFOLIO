@@ -1,15 +1,17 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 interface UseTypewriterProps {
   lines: string[];
-  typingSpeed: number;
+  typingInterval: number;
   delayBetweenLines: number;
   replaceFunction?: (input: string) => string;
 }
 
 const useTypewriter = ({
   lines,
-  typingSpeed = 50,
+  typingInterval = 50,
   delayBetweenLines = 50,
   replaceFunction,
 }: UseTypewriterProps) => {
@@ -28,7 +30,7 @@ const useTypewriter = ({
       if (currentText.length < lineToType.length) {
         const delay = setTimeout(() => {
           setCurrentText(lineToType.slice(0, currentText.length + 1)); // update current text
-        }, typingSpeed);
+        }, typingInterval);
         return () => clearTimeout(delay);
       } else {
         setIsLineComplete(true);
