@@ -7,8 +7,8 @@ interface TypingCursorProps {
 }
 const TypingCursor = ({
   cursorChar = "█",
-  blinkSpeed = 500,
-}: TypingCursorProps) => {
+}: //blinkSpeed = 500,
+TypingCursorProps) => {
   return (
     <motion.span
       animate={{

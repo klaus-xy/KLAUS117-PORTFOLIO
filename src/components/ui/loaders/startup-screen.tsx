@@ -8,7 +8,7 @@ import { createStringReplacer } from "@/lib/utils";
 import useClock from "@/hooks/use-clock";
 import useTypewriter from "@/hooks/use-typewriter";
 import { useRouter } from "next/navigation";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const lines = [
   "// I N I T I A L I Z I N G ",
@@ -28,11 +28,11 @@ const DELAY_BETWEEN_LINES = 50; // DELAY BEFORE TYPING NEXT LINE
 
 export default function StartupScreen() {
   const router = useRouter();
-  const { currentTime, formattedTime } = useClock();
+  const { formattedTime } = useClock();
 
   const stringReplacer = createStringReplacer({
     "Current Time": () => formattedTime,
-    "Current Location": () => location,
+    "Current Location": () => "Access Denied.",
   });
 
   const { currentText, isTypingComplete, currentLineIndex } = useTypewriter({
@@ -45,7 +45,7 @@ export default function StartupScreen() {
   /////  STATES  /////////////////////////////////////
   //const [currentTime, setCurrentTime] = useState(new Date());
   const [progress, setProgress] = useState(0);
-  const [location, setLocation] = useState("Access Denied.");
+  // const [location, setLocation] = useState("Access Denied.");
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
 
@@ -89,7 +89,7 @@ export default function StartupScreen() {
     }
     console.log("isloading", isLoading);
     console.log("isLoadingComplete", isLoadingComplete);
-  }, [isTypingComplete, progress]);
+  }, [isTypingComplete, progress, isLoading, isLoadingComplete]);
 
   useEffect(() => {
     if (isLoadingComplete && progress >= 100) {
@@ -98,7 +98,7 @@ export default function StartupScreen() {
       }, 1000);
       return () => clearTimeout(timer);
     }
-  }, [isLoadingComplete]);
+  }, [isLoadingComplete, progress, router]);
 
   return (
     <div className="flex flex-col flex-1 justify-start items-start gap-4 p-7 bg-black  font-mono text-base text-green-500">
