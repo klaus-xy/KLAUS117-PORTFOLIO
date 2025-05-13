@@ -1,7 +1,7 @@
 import { ArrowBigDownDash } from "lucide-react";
 // import Link from "next/link";
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 
 const page = () => {
   console.log("117 page");
