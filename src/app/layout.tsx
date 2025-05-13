@@ -7,9 +7,16 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
+  weight: "100 900",
+});
+
+const departureMono = localFont({
+  src: "./fonts/DepartureMono/DepartureMono-Regular.woff",
+  variable: "--font-departure-mono",
   weight: "100 900",
 });
 
@@ -75,7 +82,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`min-h-screen flex flex-col ${helveticaNueue.variable} ${geistMono.variable} ${geistSans.variable} antialiased`}
+        className={`min-h-screen flex flex-col ${helveticaNueue.variable} ${geistMono.variable} ${geistSans.variable} ${departureMono.variable} antialiased`}
       >
         {children}
       </body>

@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         helveticaNeue: ["var(--font-helvetica-neue)", "serif"],
         geistMono: ["var(--font-geist-mono)", "serif"],
+        departureMono: ["var(--font-departure-mono)", "serif"],
       },
       colors: {
         background: "hsl(var(--background))",

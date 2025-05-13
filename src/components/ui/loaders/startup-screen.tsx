@@ -18,6 +18,7 @@ const lines = [
   "Detecting Primary Master: [KL△US-117]",
   "Detecting Secondary Master: [△RCHANGEL-0x45]",
   "Location: [Current Location]",
+  "Date: [Current Time]",
   "Time: [Current Time]",
   "Loading △OD-117.EXE //  ",
   "█ █ █ █ █ █ █ █ █ █ █ █ ",
@@ -95,13 +96,13 @@ export default function StartupScreen() {
     if (isLoadingComplete && progress >= 100) {
       const timer = setTimeout(() => {
         router.push("/117");
-      }, 1000);
+      }, 1500);
       return () => clearTimeout(timer);
     }
   }, [isLoadingComplete, progress, router]);
 
   return (
-    <div className="flex flex-col flex-1 justify-start items-start gap-4 p-7 bg-black  font-mono text-base text-green-500">
+    <div className="flex flex-col flex-1 justify-start items-start gap-4 p-7 bg-black text-base text-orange-500 font-departureMono">
       <div className="">
         {/* MAP LINES TO TYPE HERE */}
         {lines.slice(0, currentLineIndex).map((line, index) => (
