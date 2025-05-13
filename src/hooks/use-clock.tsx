@@ -5,6 +5,13 @@ import { useEffect, useState } from "react";
 
 const useClock = () => {
   const [currentTime, setCurrentTime] = useState<Date | null>(null);
+  const [currentDate, setCurrentDate] = useState<Date | null>(null);
+
+  //  Updates current date.
+  useEffect(() => {
+    const date = new Date();
+    setCurrentDate(date);
+  }, []);
 
   //  Updates current time.
   useEffect(() => {
@@ -24,8 +31,9 @@ const useClock = () => {
         hour12: true,
       })
     : "Loading";
+  const formattedDate = currentDate ? currentDate.toDateString() : "Loading";
 
-  return { currentTime, formattedTime };
+  return { formattedDate, currentTime, formattedTime };
 };
 
 export default useClock;

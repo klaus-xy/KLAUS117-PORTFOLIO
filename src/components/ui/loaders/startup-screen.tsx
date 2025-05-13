@@ -18,7 +18,7 @@ const lines = [
   "Detecting Primary Master: [KL△US-117]",
   "Detecting Secondary Master: [△RCHANGEL-0x45]",
   "Location: [Current Location]",
-  "Date: [Current Time]",
+  "Date: [Current Date]",
   "Time: [Current Time]",
   "Loading △OD-117.EXE //  ",
   "█ █ █ █ █ █ █ █ █ █ █ █ ",
@@ -29,11 +29,12 @@ const DELAY_BETWEEN_LINES = 50; // DELAY BEFORE TYPING NEXT LINE
 
 export default function StartupScreen() {
   const router = useRouter();
-  const { formattedTime } = useClock();
+  const { formattedDate, formattedTime } = useClock();
 
   const stringReplacer = createStringReplacer({
+    "Current Date": () => formattedDate,
     "Current Time": () => formattedTime,
-    "Current Location": () => "Access Denied.",
+    "Current Location": () => "EARTH-1A, KPLR-STN.",
   });
 
   const { currentText, isTypingComplete, currentLineIndex } = useTypewriter({

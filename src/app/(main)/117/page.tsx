@@ -20,7 +20,7 @@ const page = () => {
         </a>
       </div>
 
-      <footer className="w-full flex justify-end absolute bottom-6 px-6 ">
+      <footer className="w-full flex justify-end absolute bottom-4 px-4 ">
         {/* <Image
           src="/images/CW-Corp.svg"
           alt="company logo"
@@ -30,9 +30,9 @@ const page = () => {
           //priority
         /> */}
         {/* <p className="mx-2">👾</p> */}
-        <p className="uppercase font-black text-md  italic  text-zinc-500 ">
+        {/* <p className="uppercase font-black text-xs font-geistMono italic  text-zinc-500 ">
           Clown Ware®
-        </p>
+        </p> */}
       </footer>
     </div>
   );
