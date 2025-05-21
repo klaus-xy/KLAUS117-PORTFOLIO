@@ -4,7 +4,7 @@ import { Eye } from "lucide-react";
 import { useState } from "react";
 
 const names = ["Alice", "Bob", "Charlie", "Diana", "Eve", "Frank"];
-const test = () => {
+const Test = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [filteredNames, setFilteredNames] = useState<string[]>(names);
   const [password, setPassword] = useState<string>("");
@@ -61,4 +61,4 @@ const test = () => {
   );
 };
 
-export default test;
+export default Test;
