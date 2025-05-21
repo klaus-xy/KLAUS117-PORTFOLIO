@@ -1,7 +1,7 @@
 "use client";
 
 import { Eye } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const names = ["Alice", "Bob", "Charlie", "Diana", "Eve", "Frank"];
 const test = () => {
