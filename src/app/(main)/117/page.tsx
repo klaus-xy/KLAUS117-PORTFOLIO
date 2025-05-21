@@ -1,3 +1,4 @@
+import Marquee from "@/components/marquee";
 import { ArrowBigDownDash } from "lucide-react";
 // import Link from "next/link";
 import React from "react";
@@ -19,6 +20,23 @@ const page = () => {
           Dowload Resume
         </a>
       </div>
+
+      <Marquee className=" rotate-12">
+        {/* Map Contents here. */}
+        <p className="inline-block">{"/ CONSTRUCTION ZONE  / "}</p>
+        <p className="inline-block">{"/ KEEP-OFF! /"}</p>
+        <p className="inline-block">{"/ CLOWN WARE CORPORATION /"}</p>
+        <p className="inline-block">{"/ CAUTION! /"}</p>
+        <p className="inline-block">{"/ FALLING DIVS! /"}</p>
+      </Marquee>
+      <Marquee className=" -rotate-12" direction="right">
+        {/* Map Contents here. */}
+        <p className="inline-block before:">{"/ CONSTRUCTION ZONE  / "}</p>
+        <p className="inline-block">{"/ KEEP-OFF! /"}</p>
+        <p className="inline-block">{"/ CLOWN WARE CORPORATION /"}</p>
+        <p className="inline-block">{"/ CAUTION! /"}</p>
+        <p className="inline-block">{"/ FALLING DIVS! /"}</p>
+      </Marquee>
 
       <footer className="w-full flex justify-end absolute bottom-4 px-4 ">
         {/* <Image
