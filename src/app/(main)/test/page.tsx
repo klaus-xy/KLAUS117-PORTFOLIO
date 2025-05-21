@@ -1,6 +1,8 @@
 "use client";
 
 import { Eye } from "lucide-react";
+//import { animate } from "motion";
+import { motion, useAnimate } from "motion/react";
 import { useState } from "react";
 
 const names = ["Alice", "Bob", "Charlie", "Diana", "Eve", "Frank"];
@@ -10,11 +12,22 @@ const Test = () => {
   const [password, setPassword] = useState<string>("");
   const [showPassword, setShowPassword] = useState(false);
 
+  const [scope, animate] = useAnimate();
+
   console.log("showPassword", showPassword);
   const HandleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
     setFilteredNames(
       names.filter((name) => name.toLowerCase().includes(e.target.value))
+    );
+  };
+
+  const HandleAnimate = async () => {
+    await animate(scope.current, { rotate: 360 }, { duration: 1 });
+    await animate(
+      scope.current,
+      { x: 500 },
+      { duration: 2, repeat: Infinity, repeatType: "reverse" }
     );
   };
 
@@ -57,6 +70,24 @@ const Test = () => {
           onClick={() => setShowPassword(!showPassword)}
         />
       </div>
+
+      <div className="w-full h-32 bg-slate-400">
+        <motion.div
+          className="w-20 h-20 mt-10 bg-pink-500 flex justify-center items-center"
+          // animate={{ rotate: 360 }}
+          // transition={{ duration: 10 }}
+          ref={scope}
+        >
+          Cube
+        </motion.div>
+      </div>
+
+      <button
+        className="bg-pink-300 p-2 my-4 rounded-xl"
+        onClick={HandleAnimate}
+      >
+        Animate
+      </button>
     </div>
   );
 };

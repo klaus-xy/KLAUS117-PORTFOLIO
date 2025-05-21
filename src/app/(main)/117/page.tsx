@@ -1,9 +1,13 @@
 import Marquee from "@/components/marquee";
 import { ArrowBigDownDash } from "lucide-react";
-// import Link from "next/link";
-import React from "react";
-// import Image from "next/image";
 
+const bannerTexts = [
+  "CONSTRUCTION ZONE",
+  "KEEP-OFF!",
+  "CLOWN WARE CORPORATION",
+  "CAUTION!",
+  "FALLING DIVS!",
+];
 const page = () => {
   console.log("117 page");
   return (
@@ -21,22 +25,41 @@ const page = () => {
         </a>
       </div>
 
-      <Marquee className=" rotate-12">
-        {/* Map Contents here. */}
-        <p className="inline-block">{"/ CONSTRUCTION ZONE  / "}</p>
-        <p className="inline-block">{"/ KEEP-OFF! /"}</p>
-        <p className="inline-block">{"/ CLOWN WARE CORPORATION /"}</p>
-        <p className="inline-block">{"/ CAUTION! /"}</p>
-        <p className="inline-block">{"/ FALLING DIVS! /"}</p>
-      </Marquee>
-      <Marquee className=" -rotate-12" direction="right">
-        {/* Map Contents here. */}
-        <p className="inline-block before:">{"/ CONSTRUCTION ZONE  / "}</p>
-        <p className="inline-block">{"/ KEEP-OFF! /"}</p>
-        <p className="inline-block">{"/ CLOWN WARE CORPORATION /"}</p>
-        <p className="inline-block">{"/ CAUTION! /"}</p>
-        <p className="inline-block">{"/ FALLING DIVS! /"}</p>
-      </Marquee>
+      <div className={"w-full h-12 absolute bottom-[20%]"}>
+        <Marquee
+          className="rotate-12 text-lg bg-black border-green-500 border-y-2 border-dotted"
+          direction="right"
+          speed={10}
+        >
+          {
+            /* Map Contents here. */
+            bannerTexts.map((text, index) => (
+              <p
+                key={index}
+                className="before:content-['//'] before:mx-4 after:content-['//'] after:mx-4 "
+              >
+                {text}
+              </p>
+            ))
+          }
+        </Marquee>
+        <Marquee
+          className="-rotate-12 text-lg bg-black border-green-500 border-y-2 border-dotted"
+          speed={20}
+        >
+          {
+            /* Map Contents here. */
+            bannerTexts.map((text, index) => (
+              <p
+                key={index}
+                className="before:content-['//'] before:mx-4 after:content-['//'] after:mx-4 "
+              >
+                {text}
+              </p>
+            ))
+          }
+        </Marquee>
+      </div>
 
       <footer className="w-full flex justify-end absolute bottom-4 px-4 ">
         {/* <Image
