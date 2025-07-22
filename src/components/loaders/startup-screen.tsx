@@ -9,19 +9,25 @@ import useClock from "@/hooks/use-clock";
 import useTypewriter from "@/hooks/use-typewriter";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { ClownWareIcon } from "@/components/icons/Icons";
+import { Separator } from "../ui/separator";
+import { Terminal } from "lucide-react";
+import TerminalHeader from "@/components/layout/headers/TerminalHeader";
+import TerminalFooter from "@/components/layout/footers/TerminalFooter";
 
 const lines = [
-  "// I N I T I A L I Z I N G ",
-  "C:> SYSTEM32/CLOWN_ENGINE.dll",
+  "I N I T I A L I Z I N G    >>>",
+  "C:\\> SYSTEM32/CLOWN_ENGINE.DLL",
   "RAM OK.",
   "ROM OK.",
-  "Detecting Primary Master: [KL△US-117]",
-  "Detecting Secondary Master: [△RCHANGEL-0x45]",
-  "Location: [Current Location]",
-  "Date: [Current Date]",
-  "Time: [Current Time]",
-  "Loading △OD-117.EXE //  ",
-  "█ █ █ █ █ █ █ █ █ █ █ █ ",
+  "Primary Master:   [KL△US-117]",
+  "Secondary Master: [△RCHANGEL-0x45]",
+  "Location:         [Current Location]",
+  "Date:             [Current Date]",
+  "Time:             [Current Time]",
+  " ",
+  "Loading △OD-117.exe         >>>",
+  "█ █ █ █ █ █ █ █ █ █ █ █ █ █ █ ",
 ];
 
 const TYPING_INTERVAL = 30; // TYPING INTERVAL FOR EACH LINE
@@ -34,7 +40,7 @@ export default function StartupScreen() {
   const stringReplacer = createStringReplacer({
     "Current Date": () => formattedDate,
     "Current Time": () => formattedTime,
-    "Current Location": () => "EARTH-1A, KPLR-STN.",
+    "Current Location": () => "EARTH-1A, KPLR-STN",
   });
 
   const { currentText, isTypingComplete, currentLineIndex } = useTypewriter({
@@ -96,40 +102,51 @@ export default function StartupScreen() {
   useEffect(() => {
     if (isLoadingComplete && progress >= 100) {
       const timer = setTimeout(() => {
-        router.push("/117");
+        //router.push("/117");
       }, 1500);
       return () => clearTimeout(timer);
     }
   }, [isLoadingComplete, progress, router]);
 
   return (
-    <div className="flex flex-col flex-1 justify-start items-start gap-4 p-7 bg-black text-base text-orange-500 font-departureMono">
-      <div className="">
-        {/* MAP LINES TO TYPE HERE */}
-        {lines.slice(0, currentLineIndex).map((line, index) => (
-          <p key={index}>{stringReplacer(line)}</p>
-        ))}
-        <p>
-          {currentText}
-          {/* {!isTypingComplete && `${CURSOR}`} */}
-          <TypingCursor blinkSpeed={50} />
-        </p>
-        {/* <Clock /> */}
-      </div>
+    <div className="flex flex-col text-sm flex-1 justify-between items-start gap-4 p-4 bg-black text-orange-500 font-departureMono">
+      <div>
+        {/* HEADER */}
+        {/* <TerminalHeader /> */}
 
-      {/* PROGRESS BAR  Only show this once typing is complete*/}
-      {isTypingComplete && (
-        <div className="w-3/6 min-w-96 flex flex-col justify-start items-start gap-2">
-          {/* <Progress value={progress} className="" /> */}
-          <div className="flex justify-center items-center gap-2">
-            <Spinner
-              spinnerChar={`${isLoading ? "△" : "⊙"}`}
-              cycleTime={0.65}
-            />
-            <span>{progress}%</span>
-          </div>
+        {/* CONTENTS */}
+        <div className="w-full whitespace-pre py-3 px-1">
+          {/* <span className="w-full bg-black">Contents</span> */}
+          {/* MAP LINES TO TYPE HERE */}
+          {lines.slice(0, currentLineIndex).map((line, index) => (
+            <p key={index} className="leading-loose">
+              {stringReplacer(line)}
+            </p>
+          ))}
+          <p className="leading-loose">
+            {currentText}
+            {/* {!isTypingComplete && `${CURSOR}`} */}
+            <TypingCursor blinkSpeed={50} />
+          </p>
+          {/* <Clock /> */}
+
+          {/* PROGRESS BAR  Only show this once typing is complete*/}
+          {isTypingComplete && (
+            <div className="flex flex-col justify-start items-start gap-2 my-2 ">
+              {/* <Progress value={progress} className="" /> */}
+              <div className="flex justify-center items-center gap-2">
+                <Spinner
+                  spinnerChar={`${isLoading ? "∵" : "△"}`}
+                  cycleTime={0.65}
+                />
+                <span>{progress}%</span>
+              </div>
+            </div>
+          )}
         </div>
-      )}
+      </div>
+      {/* FOOTER  ○◌∫∵⊖⋱⋮⋰⨜⩶*/}
+      <TerminalFooter />
     </div>
   );
 }

@@ -68,7 +68,7 @@ const helveticaNueue = localFont({
 
 export const metadata: Metadata = {
   title: "Klaus 117 | Portfolio",
-  description: "Ayobami Oyesiku (Klaus 117) portfolio",
+  description: "Ayobami Oyesiku (Klaus 117) Portfolio",
   icons: {
     icon: "/skull.ico",
   },

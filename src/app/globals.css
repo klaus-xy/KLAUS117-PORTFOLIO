@@ -69,4 +69,12 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+
+  a {
+    @apply hover:text-zinc-200 cursor-pointer;
+  }
+
+  h1 {
+    @apply text-4xl font-bold;
+  }
 }

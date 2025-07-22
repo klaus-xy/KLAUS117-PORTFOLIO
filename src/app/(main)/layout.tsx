@@ -8,7 +8,7 @@ const layout = ({
   return (
     <main className="container mx-auto font-geistMono">
       {children}
-      {/* <footer>Footer</footer> */}
+      <footer>Footer</footer>
     </main>
   );
 };

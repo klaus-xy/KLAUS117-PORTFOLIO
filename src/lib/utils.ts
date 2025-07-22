@@ -14,7 +14,8 @@ export function createStringReplacer(
   return (input: string): string => {
     let result = input;
     for (const [key, replacer] of Object.entries(replacements)) {
-      const regex = new RegExp(`\\[${key}\\]`, "g");
+      //const regex = new RegExp(`\\[${key}\\]`, "g");
+      const regex = new RegExp(key, "g"); // Use this if you want to inculde the brackets in the replacement
       result = result.replace(regex, replacer(key));
     }
     return result;
