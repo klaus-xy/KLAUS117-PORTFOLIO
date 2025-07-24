@@ -1,6 +1,6 @@
 import React from "react";
 import { Separator } from "../../ui/separator";
-import { ClownWareIcon } from "@/components/icons/Icons";
+//import { ClownWareIcon } from "@/components/icons/Icons";
 
 const TerminalHeader = () => {
   return (

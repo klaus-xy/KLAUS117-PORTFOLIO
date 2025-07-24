@@ -1,23 +1,39 @@
+import LinkDos from "@/components/link-dos";
 import Marquee from "@/components/marquee";
 import { ArrowBigDownDash } from "lucide-react";
 
 const bannerTexts = [
   "CONSTRUCTION ZONE",
+  ">>>",
   "KEEP-OFF!",
+  ">>>",
   "CLOWN WARE CORPORATION",
+  ">>>",
   "CAUTION!",
+  ">>>",
   "FALLING DIVS!",
+  ">>>",
 ];
 const page = () => {
   console.log("117 page");
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-center gap-6 font-departureMono ">
+    <div className="min-h-screen flex flex-col justify-center items-center text-center gap-6 font-departureMono bg-black ">
       <div>
-        <h1 className="text-xl text-lime-500">|[ UNDER RECONSTRUCTION ]|</h1>
+        <h1 className="text-xl text-green-500">|[ UNDER RECONSTRUCTION ]|</h1>
         <h3>Klaus is making rad changes</h3>
       </div>
-
-      <div className="text-zinc-500 underline flex justify-center  gap-16">
+      <div
+        className="max-w-md max-h-28
+       flex flex-col justify-start items-center flex-wrap gap-4"
+      >
+        <LinkDos href={"/117"} name={"Resume"} />
+        <LinkDos href={"/117/about"} name={"Git Hub"} />
+        <LinkDos href={"/117/projects"} name={"Dev Log"} />
+        <LinkDos href={"/117/contact"} name={"Behance"} />
+        <LinkDos href={"/117/contact"} name={"X"} />
+        <LinkDos href={"/117/contact"} name={"Linked In"} />
+      </div>
+      {/* <div className="text-zinc-500 underline flex justify-center  gap-16">
         <a href={"files/117 Resume.zip"} className="flex" download>
           <ArrowBigDownDash />
           Resume
@@ -27,69 +43,32 @@ const page = () => {
           <ArrowBigDownDash />
           Projects
         </a>
-      </div>
+      </div> */}
 
       <div className={"w-full h-12 absolute bottom-[20%]"}>
         <Marquee
-          className="rotae-12 text-lg bg-black border-lime-500 border-y-2 border-dotted"
+          className="rotae-12 text-md bg-black border-green-500 border-y-2"
           direction="right"
-          speed={10}
+          speed={0}
         >
           {
             /* Map Contents here. */
             bannerTexts.map((text, index) => (
               <div key={index} className="flex">
-                <div className="flex gap-2 mx-6">
-                  <div className="w-2 h-full border-2 border-dotted border-lime-500 -skew-x-[30deg]"></div>
-                  <div className="w-2 h-full border-2 border-dotted border-lime-500 -skew-x-[30deg]"></div>
+                <div className="flex gap-2 mx-2">
+                  {/* <div className="w-2 h-full border-2 border-dotted border-lime-500 -skew-x-[30deg]"></div> */}
                 </div>
 
-                <p
-                  //key={index}
-                  className=" "
+                <span
+                //key={index}
                 >
                   {text}
-                </p>
-                <div className="flex gap-2 mx-6">
-                  <div className="w-2 h-full border-2 border-dotted border-lime-500 -skew-x-[30deg]"></div>
-                  <div className="w-2 h-full border-2 border-dotted border-lime-500 -skew-x-[30deg]"></div>
-                </div>
+                </span>
               </div>
             ))
           }
         </Marquee>
-        <Marquee
-          className="-rotat-12 text-lg bg-black border-lime-500 border-y-2 border-dotted"
-          speed={20}
-        >
-          {
-            /* Map Contents here. */
-            bannerTexts.map((text, index) => (
-              <p
-                key={index}
-                className="before:content-['//'] before:mx-4 after:content-['//'] after:mx-4 "
-              >
-                {text}
-              </p>
-            ))
-          }
-        </Marquee>
       </div>
-
-      <footer className="w-full flex justify-end absolute bottom-4 px-4 ">
-        {/* <Image
-          src="/images/CW-Corp.svg"
-          alt="company logo"
-          width={64}
-          height={64}
-          className="object-contain w-16 h-16 text-orange-400"
-          //priority
-        /> */}
-        {/* <p className="mx-2">👾</p> */}
-        {/* <p className="uppercase font-black text-xs font-geistMono italic  text-zinc-500 ">
-          Clown Ware®
-        </p> */}
-      </footer>
     </div>
   );
 };

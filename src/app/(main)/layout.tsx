@@ -1,3 +1,4 @@
+import ConstructionFooter from "@/components/layout/footers/ConstructionFooter";
 import React from "react";
 
 const layout = ({
@@ -8,7 +9,9 @@ const layout = ({
   return (
     <main className="container mx-auto font-geistMono">
       {children}
-      <footer>Footer</footer>
+      <footer>
+        <ConstructionFooter />
+      </footer>
     </main>
   );
 };

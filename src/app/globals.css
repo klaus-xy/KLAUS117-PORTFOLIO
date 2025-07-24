@@ -32,6 +32,16 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+
+    /* Custom Colors - Light Mode */
+    --terminal-green: 142 76% 36%;
+    --terminal-green-foreground: 0 0% 0%;
+    --terminal-blue: 217 91% 60%;
+    --terminal-blue-foreground: 0 0% 100%;
+    --warning-yellow: 48 96% 53%;
+    --warning-yellow-foreground: 0 0% 0%;
+    --terminal-orange: 24 95% 53%;
+    --terminal-orange-foreground: 0 0% 100%;
   }
 }
 .dark {
@@ -60,6 +70,16 @@ body {
   --chart-4: 43 74% 66%;
   --chart-5: 27 87% 67%;
   --radius: 0.5rem;
+
+  /* Custom Colors - Dark Mode */
+  --terminal-green: 142 76% 36%;
+  --terminal-green-foreground: 0 0% 0%;
+  --terminal-blue: 217 91% 70%;
+  --terminal-blue-foreground: 0 0% 0%;
+  --warning-yellow: 48 96% 63%;
+  --warning-yellow-foreground: 0 0% 0%;
+  --terminal-orange: 24 95% 63%;
+  --terminal-orange-foreground: 0 0% 0%;
 }
 
 @layer base {
@@ -73,6 +93,10 @@ body {
   a {
     @apply hover:text-zinc-200 cursor-pointer;
   }
+
+  /* span {
+    @apply text-green-500;
+  } */
 
   h1 {
     @apply text-4xl font-bold;

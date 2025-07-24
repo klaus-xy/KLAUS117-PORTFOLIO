@@ -78,7 +78,7 @@ const Marquee = ({
     <div
       ref={MarqueeContainerRef}
       className={cn(
-        "w-full h-full flex justify-center items-center whitespace-nowrap overflow-hidden text-lg border-y-2",
+        "w-full h-full flex justify-center items-center whitespace-nowrap overflow-hidden border-y-2",
         className
       )}
     >
@@ -95,12 +95,6 @@ const Marquee = ({
           {children}
         </div>
       </motion.div>
-      {/* <button
-        className="bg-pink-300 p-2 my-4 rounded-xl"
-        onClick={HandleAnimation}
-      >
-        Animate
-      </button> */}
     </div>
   );
 };

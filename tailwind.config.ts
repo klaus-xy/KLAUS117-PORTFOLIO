@@ -45,6 +45,25 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
+
+        // Custom colors
+        "terminal-green": {
+          DEFAULT: "hsl(var(--terminal-green))",
+          foreground: "hsl(var(--terminal-green-foreground))",
+        },
+        "terminal-blue": {
+          DEFAULT: "hsl(var(--terminal-blue))",
+          foreground: "hsl(var(--terminal-blue-foreground))",
+        },
+        "warning-yellow": {
+          DEFAULT: "hsl(var(--warning-yellow))",
+          foreground: "hsl(var(--warning-yellow-foreground))",
+        },
+        "terminal-orange": {
+          DEFAULT: "hsl(var(--terminal-orange))",
+          foreground: "hsl(var(--terminal-orange-foreground))",
+        },
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
