@@ -32,7 +32,7 @@ const Test = () => {
   };
 
   return (
-    <div className="font-departureMono m-5">
+    <div className="font-departure-mono m-5">
       <div className=" flex gap-2 mb-4">
         <label htmlFor="name-search">Search</label>
         <input

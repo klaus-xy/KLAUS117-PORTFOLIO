@@ -4,7 +4,7 @@
 import Spinner from "@/components/ui/spinner";
 import TypingCursor from "@/components/ui/typing-cursor";
 
-import { createStringReplacer } from "@/lib/utils";
+import { createStringReplacer } from "@/lib/text-replacer";
 import useClock from "@/hooks/use-clock";
 import useTypewriter from "@/hooks/use-typewriter";
 import { useRouter } from "next/navigation";
@@ -109,7 +109,7 @@ export default function StartupScreen() {
   }, [isLoadingComplete, progress, router]);
 
   return (
-    <div className="flex flex-col text-sm flex-1 justify-between items-start gap-4 p-4 bg-black text-orange-500 font-departureMono">
+    <div className="flex flex-col text-sm flex-1 justify-between items-start gap-4 p-4  text-orange-500 font-departure-mono">
       <div>
         {/* HEADER */}
         {/* <TerminalHeader /> */}

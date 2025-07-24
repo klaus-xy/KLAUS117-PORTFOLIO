@@ -4,7 +4,8 @@ export default function Home() {
   console.log("Updated page");
 
   return (
-    <div className=" bg-red-500 flex flex-col flex-1  ">
+    <div className="flex flex-col flex-1 bg-background">
+      <p>fdfsscsfsbb</p>
       <StartupScreen />
     </div>
   );

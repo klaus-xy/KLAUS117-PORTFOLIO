@@ -7,7 +7,7 @@ const layout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <main className="container mx-auto font-geistMono">
+    <main className="container mx-auto font-geist-mono">
       {children}
       <footer>
         <ConstructionFooter />

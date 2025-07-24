@@ -17,7 +17,7 @@ const bannerTexts = [
 const page = () => {
   console.log("117 page");
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-center gap-6 font-departureMono bg-black ">
+    <div className="min-h-screen flex flex-col justify-center items-center text-center gap-6 font-departure-mono bg-black ">
       <div>
         <h1 className="text-xl text-green-500">|[ UNDER RECONSTRUCTION ]|</h1>
         <h3>Klaus is making rad changes</h3>
@@ -56,7 +56,7 @@ const page = () => {
             bannerTexts.map((text, index) => (
               <div key={index} className="flex">
                 <div className="flex gap-2 mx-2">
-                  {/* <div className="w-2 h-full border-2 border-dotted border-lime-500 -skew-x-[30deg]"></div> */}
+                  {/* <div className="w-2 h-full border-2 border-dotted border-lime-500 -skew-x-30"></div> */}
                 </div>
 
                 <span
