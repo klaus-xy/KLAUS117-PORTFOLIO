@@ -9,10 +9,8 @@ import useClock from "@/hooks/use-clock";
 import useTypewriter from "@/hooks/use-typewriter";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ClownWareIcon } from "@/components/icons/Icons";
-import { Separator } from "../ui/separator";
-import { Terminal } from "lucide-react";
-import TerminalHeader from "@/components/layout/headers/TerminalHeader";
+
+//import TerminalHeader from "@/components/layout/headers/TerminalHeader";
 import TerminalFooter from "@/components/layout/footers/TerminalFooter";
 
 const lines = [
@@ -38,7 +36,7 @@ export default function StartupScreen() {
   const { formattedDate, formattedTime } = useClock();
 
   const stringReplacer = createStringReplacer({
-    "Current Date": () => formattedDate,
+    "Current Date": () => formattedDate.toUpperCase(),
     "Current Time": () => formattedTime,
     "Current Location": () => "EARTH-1A, KPLR-STN",
   });
@@ -102,14 +100,14 @@ export default function StartupScreen() {
   useEffect(() => {
     if (isLoadingComplete && progress >= 100) {
       const timer = setTimeout(() => {
-        //router.push("/117");
+        router.push("/117");
       }, 1500);
       return () => clearTimeout(timer);
     }
   }, [isLoadingComplete, progress, router]);
 
   return (
-    <div className="flex flex-col text-sm flex-1 justify-between items-start gap-4 p-4  text-orange-500 font-departure-mono">
+    <div className="flex flex-col text-sm flex-1 justify-between items-start gap-4 p-4  text-terminal-orange font-departure-mono">
       <div>
         {/* HEADER */}
         {/* <TerminalHeader /> */}

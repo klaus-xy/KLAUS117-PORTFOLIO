@@ -6,6 +6,7 @@ export interface LinkDosProps {
   className?: string;
   prefix?: string;
   suffix?: string;
+  icon?: string;
 }
 
 const LinkDos = ({
@@ -13,22 +14,26 @@ const LinkDos = ({
   name = "Link",
   prefix = "[",
   suffix = "]",
+  icon = "📁",
   className,
 }: LinkDosProps) => {
   return (
-    <div
+    <a
+      href={href}
       className={cn(
-        " w-36  flex items-center gap-2 px-3 py-1 text-xs uppercase hover:bg-green-500 hover:text-black hover:cursor-pointer",
+        "w-32 flex items-start justify-between gap-2 px-3 py-1 text-xs uppercase hover:bg-terminal-green hover:text-background hover:cursor-pointer",
         className
       )}
     >
-      <span>{">_"}</span>
-      <a href={href} className="">
-        {prefix && <span className="">{prefix}</span>}
+      <span>
+        {">_ "}
+        {/* {prefix && <span className="">{prefix}</span>} */}
+        {/* {`[${icon}]`} */}
         {name}
-        {suffix && <span className="">{suffix}</span>}
-      </a>
-    </div>
+        {/* {suffix && <span className="">{suffix}</span>} */}
+      </span>
+      {/* /<span>{"[📁]"}</span> */}
+    </a>
   );
 };
 

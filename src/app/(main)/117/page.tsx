@@ -2,7 +2,7 @@ import LinkDos from "@/components/link-dos";
 import Marquee from "@/components/marquee";
 import { ArrowBigDownDash } from "lucide-react";
 
-const bannerTexts = [
+const banner1Texts = [
   "CONSTRUCTION ZONE",
   ">>>",
   "KEEP-OFF!",
@@ -14,24 +14,41 @@ const bannerTexts = [
   "FALLING DIVS!",
   ">>>",
 ];
+
+const banner2Texts = [
+  "CONSTRUCTION ZONE",
+  "<<<",
+  "KEEP-OFF!",
+  "<<<",
+  "CLOWN WARE CORPORATION",
+  "<<<",
+  "CAUTION!",
+  "<<<",
+  "FALLING DIVS!",
+  "<<<",
+];
 const page = () => {
   console.log("117 page");
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-center gap-6 font-departure-mono bg-black ">
-      <div>
-        <h1 className="text-xl text-green-500">|[ UNDER RECONSTRUCTION ]|</h1>
-        <h3>Klaus is making rad changes</h3>
-      </div>
-      <div
-        className="max-w-md max-h-28
-       flex flex-col justify-start items-center flex-wrap gap-4"
-      >
-        <LinkDos href={"/117"} name={"Resume"} />
-        <LinkDos href={"/117/about"} name={"Git Hub"} />
-        <LinkDos href={"/117/projects"} name={"Dev Log"} />
-        <LinkDos href={"/117/contact"} name={"Behance"} />
-        <LinkDos href={"/117/contact"} name={"X"} />
-        <LinkDos href={"/117/contact"} name={"Linked In"} />
+    <div className="min-h-screen flex flex-col justify-center items-center text-center gap-6 font-departure-mono relative ">
+      <div className=" relative -top-32 space-y-6">
+        {" "}
+        {/* MAIN TEXT */}
+        <div className="">
+          <h2 className="text-lg text-terminal-green uppercase tracking-widest ">
+            |[ UNDER RECONSTRUCTION ]|
+          </h2>
+          <h3>Klaus is making rad changes</h3>
+        </div>
+        {/* LINKS AND STUFFS */}
+        <div className="w-full max-w-[400px] h-24 flex flex-col justify-between items-center flex-wrap gap-2 bg-emerald-95">
+          <LinkDos href={"/117/"} name={"Resume"} />
+          <LinkDos href={"/117/"} name={"Git Hub"} />
+          <LinkDos href={"/117/"} name={"Dev Logs"} />
+          <LinkDos href={"/117/"} name={"Behance"} />
+          <LinkDos href={"/117/"} name={"X"} />
+          <LinkDos href={"/117/"} name={"Linked In"} />
+        </div>
       </div>
       {/* <div className="text-zinc-500 underline flex justify-center  gap-16">
         <a href={"files/117 Resume.zip"} className="flex" download>
@@ -47,13 +64,37 @@ const page = () => {
 
       <div className={"w-full h-12 absolute bottom-[20%]"}>
         <Marquee
-          className="rotae-12 text-md bg-black border-green-500 border-y-2"
+          className="rotate-12 text-md bg-background border-terminal-green border-y-2"
           direction="right"
-          speed={0}
+          speed={10}
         >
           {
             /* Map Contents here. */
-            bannerTexts.map((text, index) => (
+            banner1Texts.map((text, index) => (
+              <div key={index} className="flex">
+                <div className="flex gap-2 mx-2">
+                  {/* <div className="w-2 h-full border-2 border-dotted border-lime-500 -skew-x-30"></div> */}
+                </div>
+
+                <span
+                //key={index}
+                >
+                  {text}
+                </span>
+              </div>
+            ))
+          }
+        </Marquee>
+      </div>
+      <div className={"w-full h-12 absolute bottom-[20%]"}>
+        <Marquee
+          className="-rotate-12 text-md bg-background border-terminal-green border-y-2"
+          direction="left"
+          speed={10}
+        >
+          {
+            /* Map Contents here. */
+            banner2Texts.map((text, index) => (
               <div key={index} className="flex">
                 <div className="flex gap-2 mx-2">
                   {/* <div className="w-2 h-full border-2 border-dotted border-lime-500 -skew-x-30"></div> */}
