@@ -42,12 +42,23 @@ const page = () => {
         </div>
         {/* LINKS AND STUFFS */}
         <div className="w-full max-w-[400px] h-24 flex flex-col justify-between items-center flex-wrap gap-2 bg-emerald-95">
-          <LinkDos href={"/117/"} name={"Resume"} />
-          <LinkDos href={"/117/"} name={"Git Hub"} />
-          <LinkDos href={"/117/"} name={"Dev Logs"} />
-          <LinkDos href={"/117/"} name={"Behance"} />
-          <LinkDos href={"/117/"} name={"X"} />
-          <LinkDos href={"/117/"} name={"Linked In"} />
+          <LinkDos href={"files/117 Resume.zip"} name={"Resume"} />
+          <LinkDos href={"https://github.com/klaus-xy"} name={"Git Hub"} />
+          <LinkDos
+            href={""}
+            name={"Dev Logs"}
+            openInNewTab={false}
+            variant="inactive"
+          />
+          <LinkDos
+            href={"https://www.behance.net/ayobamioyesiku"}
+            name={"Behance"}
+          />
+          <LinkDos href={"https://x.com/0xKlaus117"} name={"X"} />
+          <LinkDos
+            href={"https://www.linkedin.com/in/ayobami-oyesiku"}
+            name={"Linked In"}
+          />
         </div>
       </div>
       {/* <div className="text-zinc-500 underline flex justify-center  gap-16">
@@ -62,7 +73,7 @@ const page = () => {
         </a>
       </div> */}
 
-      <div className={"w-full h-12 absolute bottom-[20%]"}>
+      <div className={"w-full h-12 absolute bottom-[30%]"}>
         <Marquee
           className="rotate-12 text-md bg-background border-terminal-green border-y-2"
           direction="right"
@@ -86,7 +97,7 @@ const page = () => {
           }
         </Marquee>
       </div>
-      <div className={"w-full h-12 absolute bottom-[20%]"}>
+      <div className={"w-full h-12 absolute bottom-[30%]"}>
         <Marquee
           className="-rotate-12 text-md bg-background border-terminal-green border-y-2"
           direction="left"

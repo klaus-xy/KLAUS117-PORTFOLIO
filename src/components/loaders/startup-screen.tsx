@@ -83,7 +83,7 @@ export default function StartupScreen() {
             return prev + 1;
           } else {
             clearInterval(timer);
-            return 100;
+            return 117; // Set to 117 when complete still buggy.
           }
         });
       }, 25);
