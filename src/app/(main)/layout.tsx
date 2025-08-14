@@ -9,9 +9,8 @@ const layout = ({
   return (
     <main className="container mx-auto font-geist-mono">
       {children}
-      <footer>
-        <ConstructionFooter />
-      </footer>
+
+      <ConstructionFooter />
     </main>
   );
 };
