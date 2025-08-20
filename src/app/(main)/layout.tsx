@@ -9,7 +9,6 @@ const layout = ({
   return (
     <main className="container mx-auto font-geist-mono">
       {children}
-
       <ConstructionFooter />
     </main>
   );

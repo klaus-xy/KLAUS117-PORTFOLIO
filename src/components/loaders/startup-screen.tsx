@@ -37,7 +37,7 @@ export default function StartupScreen() {
 
   const stringReplacer = createStringReplacer({
     "Current Date": () => formattedDate.toUpperCase(),
-    "Current Time": () => formattedTime,
+    "Current Time": () => formattedTime.toUpperCase(),
     "Current Location": () => "EARTH-1A, KPLR-STN",
   });
 
