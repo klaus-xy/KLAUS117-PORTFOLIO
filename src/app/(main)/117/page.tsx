@@ -7,7 +7,7 @@ const page = () => {
 
   return (
     <div>
-      <UnderConstruction>
+      <UnderConstruction header="Under Reconstruction">
         <LinkDos
           href={"files/117 Resume.zip"}
           name={"Resume"}
@@ -20,7 +20,12 @@ const page = () => {
           openInNewTab={false}
           variant="inactive"
         /> */}
-        <LinkDos href={"https://itch.io/profile/klaus117"} name={"Games"} />
+        <LinkDos
+          href={
+            "https://drive.google.com/drive/folders/10Et0L9rQhNKPNQf-FEIc67yKkuWvW9Hz?usp=sharing"
+          }
+          name={"Games"}
+        />
         <LinkDos
           href={"https://www.behance.net/ayobamioyesiku"}
           name={"Behance"}
