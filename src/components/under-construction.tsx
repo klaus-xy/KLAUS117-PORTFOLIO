@@ -43,7 +43,7 @@ const UnderConstruction = ({
       <div className="relative -top-32 space-y-6">
         {/* MAIN TEXT */}
         <div className="">
-          <h2 className="text-lg text-terminal-green uppercase tracking-[0.15em] ">
+          <h2 className="text-lg text-terminal-green uppercase tracking-widest ">
             |[ {header} ]|
           </h2>
           <h3>{subheader}</h3>

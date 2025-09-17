@@ -38,7 +38,7 @@ const LinkDos = ({
       )}
     >
       <span>
-        {">_ "}
+        <span className="">{">_ "}</span>
         {/* {prefix && <span className="">{prefix}</span>} */}
         {/* {`[${icon}]`} */}
         {name}

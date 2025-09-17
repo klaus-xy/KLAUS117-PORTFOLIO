@@ -28,7 +28,7 @@ const lines = [
   "█ █ █ █ █ █ █ █ █ █ █ █ █ █ █ ",
 ];
 
-const TYPING_INTERVAL = 30; // TYPING INTERVAL FOR EACH LINE
+const TYPING_INTERVAL = 20; // TYPING INTERVAL FOR EACH LINE
 const DELAY_BETWEEN_LINES = 50; // DELAY BEFORE TYPING NEXT LINE
 
 export default function StartupScreen() {
@@ -86,7 +86,7 @@ export default function StartupScreen() {
             return 117; // Set to 117 when complete still buggy.
           }
         });
-      }, 25);
+      }, 20); // Adjust speed here (lower is faster).
 
       return () => clearInterval(timer);
     } else {
