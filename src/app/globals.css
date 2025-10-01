@@ -153,7 +153,6 @@
   --terminal-orange-foreground: oklch(0 0 0);
 }
 
-// Create new theme for Terminal colors
 .retro-theme {
   --background: oklch(0 0 0);
   --foreground: oklch(0.985 0 0);
