@@ -84,7 +84,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`min-h-screen flex flex-col ${helveticaNueue.variable} ${geistMono.variable} ${geistSans.variable} ${departureMono.variable} antialiased`}
+        className={`min-h-dvh flex flex-col ${helveticaNueue.variable} ${geistMono.variable} ${geistSans.variable} ${departureMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
