@@ -11,9 +11,8 @@ export interface LinkDosProps {
   icon?: string;
 }
 const variants = {
-  default:
-    "text-foreground hover:bg-terminal-green hover:text-background hover:cursor-pointer",
-  inactive: "text-muted hover:cursor-not-allowed",
+  default: "text-foreground hover:bg-terminal-green hover:text-background",
+  inactive: "text-muted ",
 };
 
 const LinkDos = ({
