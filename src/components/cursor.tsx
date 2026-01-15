@@ -6,13 +6,29 @@ import { useEffect, useState } from "react";
 // ---------------- CUSTOM CURSOR COMPONENT ----------------------- //
 // Follows mouse movements and animates smoothly using motion library
 // Interacts with defined elements on the page [links, buttons, etc.]
-// Disappears when cursor is out of viewport
+// Disappears when cursor is out of viewport or on mobile.
 
 const Cursor = () => {
+  const [isMobile, setIsMobile] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  // On first render, add event listener to update mouse position on mouse move events
+  console.log(`isMobile: ${isMobile}`);
+
+  // Detect if client is using a mouse or touch pointer
   useEffect(() => {
+    const media = window.matchMedia("(pointer: coarse)"); // Coarse -> touch devices. Fine -> mouse.
+
+    const updateIsMobile = () => setIsMobile(media.matches); // Update isMobile based on media query match [if coarse pointer, then mobile = true]
+    updateIsMobile(); // Set initial value
+
+    media.addEventListener("change", updateIsMobile);
+    return () => media.removeEventListener("change", updateIsMobile);
+  }, []);
+
+  // On first render or pointer-type change, add event listener to update mouse position on mouse move events
+  useEffect(() => {
+    if (isMobile) return; // Disable custom cursor on mobile devices
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY }); // Update state with current mouse coordinates whenever mouse-move event is fired
       // console.log(`Mouse Position: (${e.clientX}, ${e.clientY})`);
@@ -23,11 +39,12 @@ const Cursor = () => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) return null; // Do not render custom cursor on mobile devices
 
   return (
     <>
-      {" "}
       {/* Hide default cursor */}
       <style>{`
         body {
