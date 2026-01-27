@@ -21,9 +21,7 @@ const page = () => {
           variant="inactive"
         /> */}
         <LinkDos
-          href={
-            "https://drive.google.com/drive/folders/10Et0L9rQhNKPNQf-FEIc67yKkuWvW9Hz?usp=sharing"
-          }
+          href={"https://contra.com/ayobami_oyesiku_w25bnpsu/work"}
           name={"Games"}
         />
         <LinkDos
