@@ -1,4 +1,5 @@
 import LinkDos from "@/components/links/link-dos";
+import MusicPlayer from "@/components/music-player";
 import UnderConstruction from "@/components/under-construction";
 
 // Landing Page Component
@@ -7,6 +8,8 @@ const page = () => {
 
   return (
     <div>
+      {/* <MusicPlayer className=" top-0 right-0" /> */}
+
       <UnderConstruction header="Under Reconstruction">
         <LinkDos
           href={"files/117 Resume.zip"}

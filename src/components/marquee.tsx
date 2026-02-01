@@ -8,14 +8,14 @@ import { useEffect, useRef, useState } from "react";
 type MarqueeProps = {
   children?: React.ReactNode;
   direction?: "left" | "right";
-  speed?: number;
+  cycleTime?: number;
   className?: string;
 };
 
 const Marquee = ({
   children,
   className,
-  speed = 10,
+  cycleTime = 10,
   direction,
 }: MarqueeProps) => {
   // Refs for the Marquee container and content
@@ -46,12 +46,17 @@ const Marquee = ({
     await animate(
       scope.current,
       { x: direction == "right" ? [-contentWidth, 0] : [0, -contentWidth] },
-      { duration: 1, ease: "linear" }
+      { duration: 1, ease: "linear" },
     );
     await animate(
       scope.current,
       { x: direction == "right" ? [-contentWidth, 0] : [0, -contentWidth] },
-      { duration: speed, repeat: Infinity, repeatType: "loop", ease: "linear" }
+      {
+        duration: cycleTime,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "linear",
+      },
     );
   };
 
@@ -79,7 +84,7 @@ const Marquee = ({
       ref={MarqueeContainerRef}
       className={cn(
         "w-full h-full flex justify-center items-center whitespace-nowrap overflow-hidden border-y-2",
-        className
+        className,
       )}
     >
       <motion.div ref={scope} className={"w-full flex"}>

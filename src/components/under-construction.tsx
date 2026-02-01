@@ -59,7 +59,7 @@ const UnderConstruction = ({
         <Marquee
           className="rotate-12 text-md bg-background border-terminal-green border-y-2"
           direction="right"
-          speed={10}
+          cycleTime={10}
         >
           {
             /* Map Contents here. */
@@ -84,7 +84,7 @@ const UnderConstruction = ({
         <Marquee
           className="-rotate-12 text-md bg-background border-terminal-green border-y-2"
           direction="left"
-          speed={10}
+          cycleTime={10}
         >
           {
             /* Map Contents here. */
