@@ -14,6 +14,7 @@ const Cursor = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const [isMouseDown, setIsMouseDown] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   // console.log(`isMobile: ${isMobile}`);
@@ -44,6 +45,14 @@ const Cursor = () => {
     window.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseenter", handleMouseEnter);
     document.addEventListener("mouseleave", handleMouseLeave);
+    document.addEventListener("mousedown", () => {
+      // Briefly scale cursor on mousedown for visual feedback
+      setIsMouseDown(true);
+    });
+    document.addEventListener("mouseup", () => {
+      // Reset mouse down state on mouse up for feedback after little delay
+      setTimeout(() => setIsMouseDown(false), 10);
+    });
 
     // Handle hover state for interactive elements
     const interactiveElements = document.querySelectorAll(
@@ -59,6 +68,13 @@ const Cursor = () => {
       window.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseenter", handleMouseEnter);
       document.removeEventListener("mouseleave", handleMouseLeave);
+
+      document.removeEventListener("mousedown", () => {
+        setIsMouseDown(true);
+      });
+      document.removeEventListener("mouseup", () => {
+        setIsMouseDown(false);
+      });
 
       interactiveElements.forEach((element) => {
         element.removeEventListener("mouseenter", () => setIsHovering(true));
@@ -90,8 +106,8 @@ const Cursor = () => {
           animate={{
             x: mousePosition.x - 0,
             y: mousePosition.y - 0,
-            width: isHovering ? 46 : 12,
-            height: isHovering ? 46 : 14,
+            width: isMouseDown ? 8 : isHovering ? 46 : 12,
+            height: isMouseDown ? 8 : isHovering ? 46 : 14,
           }}
           transition={{
             type: "linear",
