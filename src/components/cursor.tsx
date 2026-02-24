@@ -50,7 +50,7 @@ const Cursor = () => {
       setIsMouseDown(true);
     });
     document.addEventListener("mouseup", () => {
-      // Reset mouse down state on mouse up for feedback after little delay
+      // Reset mouse down state on mouse up for feedback after little delay.
       setTimeout(() => setIsMouseDown(false), 10);
     });
 
@@ -126,23 +126,21 @@ const Cursor = () => {
           }}
         ></motion.div>
 
-        {/* Outer circle */}
+        {/* Outer circle - The Follower*/}
         <motion.div
           className="w-12 h-12 border-2 border-foreground rounded-full top-0 left-0 transform -translate-x-1/2 -translate-y-1/2  "
           animate={{
             x: mousePosition.x - 0,
             y: mousePosition.y - 0,
           }}
-          transition={
-            {
-              // type: "spring",
-              // stiffness: 400,
-              // damping: 20,
-              // mass: 1,
-              // ease: "easeOut",
-              // duration: 5,
-            }
-          }
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
+            // mass: 0.1,
+            // ease: "easeOut",
+            // duration: 5,
+          }}
         ></motion.div>
       </motion.div>
     </>

@@ -25,7 +25,7 @@ const page = () => {
         /> */}
         <LinkDos
           href={"https://contra.com/ayobami_oyesiku_w25bnpsu/work"}
-          name={"Games"}
+          name={"Projects"}
         />
         <LinkDos
           href={"https://www.behance.net/ayobamioyesiku"}

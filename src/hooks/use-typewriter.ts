@@ -22,10 +22,11 @@ const useTypewriter = ({
 
   // Updates current text.
   useEffect(() => {
+    // Get current modified line to type
     if (currentLineIndex < lines.length) {
       const lineToType = replaceFunction
         ? replaceFunction(lines[currentLineIndex])
-        : lines[currentLineIndex]; // get current modified line to type
+        : lines[currentLineIndex];
 
       if (currentText.length < lineToType.length) {
         const delay = setTimeout(() => {
