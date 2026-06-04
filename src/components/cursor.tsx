@@ -90,12 +90,12 @@ const Cursor = () => {
       {/* Hide default cursor */}
       <style>{`
         body {
-          cursor: none;
+          // cursor: none;
         }
       `}</style>
       {/* Cursor Container */}
       <motion.div
-        animate={{ opacity: isVisible ? 1 : 1 }}
+        animate={{ opacity: isVisible ? 1 : 0 }}
         transition={{ duration: 0.3 }}
         className="fixed z-50 pointer-events-none top-0 left-0"
         style={{ mixBlendMode: "difference" }}

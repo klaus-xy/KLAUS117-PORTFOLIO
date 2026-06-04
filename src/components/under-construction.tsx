@@ -1,10 +1,12 @@
 import { ReactNode } from "react";
 import Marquee from "./marquee";
+import LinkDos from "./links/link-dos";
+import ConstructionFooter from "./layout/footers/ConstructionFooter";
 
 interface LayoutProps {
   header?: string;
   subheader?: string;
-  children: ReactNode;
+  children?: ReactNode;
 }
 // BANNER 1 CONTENT
 const banner1Texts = [
@@ -50,7 +52,32 @@ const UnderConstruction = ({
         </div>
         {/* LINKS AND STUFFS */}
         <div className="w-full max-w-[400px] h-24 flex flex-col justify-between items-center flex-wrap gap-2 bg-emerald-95">
-          {children}
+          {/* {children} */}
+          <LinkDos
+            href={"files/117 Resume.zip"}
+            name={"Resume"}
+            openInNewTab={false}
+          />
+          <LinkDos href={"https://github.com/klaus-xy"} name={"Git Hub"} />
+          {/* <LinkDos
+          href={""}
+          name={"Dev Logs"}
+          openInNewTab={false}
+          variant="inactive"
+        /> */}
+          <LinkDos
+            href={"https://contra.com/ayobami_oyesiku_w25bnpsu/work"}
+            name={"Projects"}
+          />
+          <LinkDos
+            href={"https://www.behance.net/ayobamioyesiku"}
+            name={"Behance"}
+          />
+          <LinkDos href={"https://x.com/0xKlaus117"} name={"X"} />
+          <LinkDos
+            href={"https://www.linkedin.com/in/ayobami-oyesiku"}
+            name={"Linked In"}
+          />
         </div>
       </div>
 
@@ -104,6 +131,7 @@ const UnderConstruction = ({
           }
         </Marquee>
       </div>
+      <ConstructionFooter />
     </div>
   );
 };

@@ -10,33 +10,7 @@ const page = () => {
     <div>
       {/* <MusicPlayer className=" top-0 right-0" /> */}
 
-      <UnderConstruction header="Under Reconstruction">
-        <LinkDos
-          href={"files/117 Resume.zip"}
-          name={"Resume"}
-          openInNewTab={false}
-        />
-        <LinkDos href={"https://github.com/klaus-xy"} name={"Git Hub"} />
-        {/* <LinkDos
-          href={""}
-          name={"Dev Logs"}
-          openInNewTab={false}
-          variant="inactive"
-        /> */}
-        <LinkDos
-          href={"https://contra.com/ayobami_oyesiku_w25bnpsu/work"}
-          name={"Projects"}
-        />
-        <LinkDos
-          href={"https://www.behance.net/ayobamioyesiku"}
-          name={"Behance"}
-        />
-        <LinkDos href={"https://x.com/0xKlaus117"} name={"X"} />
-        <LinkDos
-          href={"https://www.linkedin.com/in/ayobami-oyesiku"}
-          name={"Linked In"}
-        />
-      </UnderConstruction>
+      <UnderConstruction header="Under Reconstruction" />
     </div>
   );
 };
