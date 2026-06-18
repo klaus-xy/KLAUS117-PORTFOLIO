@@ -5,8 +5,8 @@ import { useEffect } from "react";
 const Presence = () => {
   useEffect(() => {
     console.log(
-      "%cCODED BY :::> KLAUS117 🧛🏽‍♂️",
-      "color:#FF8000; background:#1a1a1a; padding:16px 36px; border-radius:6px; "
+      "%cCODED BY ::// KLAUS117 🧛🏽‍♂️",
+      "color:#FF8000; background:#1a1a1a; padding:16px 36px; border-radius:6px; ",
     );
     // console.log(
     //   `%c
