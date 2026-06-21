@@ -9,7 +9,7 @@ const layout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <main className="container mx-auto font-geist-mono">
+    <main className=" font-helvetica-neue">
       <Cursor />
       <MainHeader />
       {children}
