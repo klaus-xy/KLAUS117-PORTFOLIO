@@ -15,7 +15,7 @@ const MainHeader = () => {
   return (
     <div className="sticky top-0 w-full flex justify-between items-center px-4 py-4 bg-amber-400  ">
       <h1>.117</h1>
-      <div className="w-28 h-auto flex justify-center items-center rounded border">
+      <div className="w-20 aspect-square flex justify-center items-center rounded border">
         <Core />
       </div>
 

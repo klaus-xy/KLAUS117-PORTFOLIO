@@ -6,6 +6,7 @@ import Projects from "./sections/projects";
 import Contact from "./sections/contact";
 import MainFooter from "@/components/layout/footers/MainFooter";
 import Marquee from "@/components/marquee";
+import Image from "next/image";
 
 // Landing Page Component
 const page = () => {
@@ -32,10 +33,11 @@ const page = () => {
       </div> */}
 
       {/* <UnderConstruction header="Under Reconstruction" /> */}
+
       <Hero />
       <Projects />
       <Contact />
-      <div className={"w-full h-12 "}>
+      <div className={"w-full h-12 container mx-auto"}>
         <Marquee
           className=" text-md bg-background border-terminal-green border-y-2"
           direction="left"

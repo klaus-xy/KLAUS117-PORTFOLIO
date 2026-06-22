@@ -2,12 +2,12 @@ import React from "react";
 
 const MainFooter = () => {
   return (
-    <footer className="w-full min-h-[30vh] flex flex-col justify-center items-center text-xs uppercase border-t border-terminal-green font-mono">
+    <footer className="w-full min-h-[30vh] flex flex-col justify-center items-center text-xs uppercase font-mono">
       <p>Made with ❤️</p>
       <p>and</p>
 
       {/* Container for everything from tool to playlist listened to during dev to  */}
-      <div className="w-full flex flex-wrap justify-between items-start gap-4 p-4">
+      <div className="w-full flex flex-wrap justify-around items-start gap-4 p-4">
         <div>
           <h4>[🎶]</h4>
           <ul className="text-left text-xs">
@@ -22,6 +22,7 @@ const MainFooter = () => {
           <ul className="text-left text-xs">
             <li>Prairies ::/ 347 Aidan</li>
             <li>DJ Twise ::/ Mixtape</li>
+            <li>Klaus117 ::/ Playlist</li>
           </ul>
         </div>
         <div>
@@ -45,7 +46,7 @@ const MainFooter = () => {
         </div>
       </div>
       <p>
-        by <span className="text-terminal-green">Klaus 117</span>
+        by :: <span className="text-terminal-green">Klaus 117</span>
       </p>
       <p className="text-xs text-gray-600">(C) 2026 Clown ware corporation</p>
     </footer>
