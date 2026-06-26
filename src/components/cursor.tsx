@@ -21,7 +21,7 @@ const Cursor = () => {
 
   // Detect if client is using a mouse or touch pointer
   useEffect(() => {
-    const media = window.matchMedia("(pointer: coarse)"); // Coarse -> touch devices. Fine -> mouse.
+    const media = window.matchMedia("(pointer: coarse)"); // Coarse == touch devices. Fine == mouse.
 
     const updateIsMobile = () => setIsMobile(media.matches); // Update isMobile based on media query match [if coarse pointer, then mobile = true]
     updateIsMobile(); // Set initial value
