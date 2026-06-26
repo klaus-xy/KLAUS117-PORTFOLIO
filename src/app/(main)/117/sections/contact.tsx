@@ -11,11 +11,12 @@ const Contact = () => {
       <p>
         Have questions or want to get in touch? We'd love to hear from you!
         Whether you're interested in collaborating, have feedback, or just want
-        to say hello, feel free to reach out to us. You can contact us through
-        our email at contact@area59studio.com.
+        to say hello, feel free to reach out to me. xD 👀
       </p>
 
-      <Button>Send Pigeon</Button>
+      <Button className="before:bg-lime-500 before:h-10 before:w-10 ">
+        Send Pigeon
+      </Button>
     </SectionWrapper>
   );
 };

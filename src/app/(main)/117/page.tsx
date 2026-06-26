@@ -11,6 +11,10 @@ import Image from "next/image";
 // Landing Page Component
 const page = () => {
   const bannerTexts = [
+    "LETS WORK TOGETHER",
+    ">>>",
+    "LETS CREATE COOL SH*T",
+    ">>>",
     "CHECK OUT AREA 59 STUDIO™",
     ">>>",
     "SEND ME A MESSAGE",
@@ -37,7 +41,7 @@ const page = () => {
       <Hero />
       <Projects />
       <Contact />
-      <div className={"w-full h-12 container mx-auto"}>
+      <div className={"w-full h-12 container mx-auto mb-6"}>
         <Marquee
           className=" text-md bg-background border-terminal-green border-y-2"
           direction="left"

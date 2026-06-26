@@ -1,4 +1,49 @@
 import React from "react";
+import FooterList from "./footer-list";
+
+const FooterItems = [
+  {
+    icon: "👩🏽‍💻",
+    lists: [
+      "Tailwind",
+      "Typescript",
+      "React.js",
+      "Next.js",
+      "Shadcn",
+      "Motion",
+      "React Three-Fibre",
+    ],
+  },
+  {
+    icon: "🍵",
+    lists: [
+      "245 litres of coffee",
+      "25 hrs of hair pulling",
+      "multiple crashouts",
+      "10 hours of sleep",
+    ],
+  },
+  {
+    icon: "🎶",
+    lists: [
+      "Prairies ::/ 347 Aidan",
+      "DJ Twise ::/ Mixtape",
+      "Klaus117 ::/ Playlist",
+    ],
+  },
+  {
+    icon: "🎮",
+    lists: ["Valorant", "Hollow Knight", "Silk Song", "Project ::/ Zero"],
+  },
+  {
+    icon: "🧑🏽‍🎤",
+    lists: ["Jujustu Kaisen", "Solo Leveling", "Demon Slayer", "Misoku Tensei"],
+  },
+  {
+    icon: "🎶",
+    lists: ["", "", "", ""],
+  },
+];
 
 const MainFooter = () => {
   return (
@@ -7,43 +52,10 @@ const MainFooter = () => {
       <p>and</p>
 
       {/* Container for everything from tool to playlist listened to during dev to  */}
-      <div className="w-full flex flex-wrap justify-around items-start gap-4 p-4">
-        <div>
-          <h4>[🎶]</h4>
-          <ul className="text-left text-xs">
-            <li>245 litres of coffee</li>
-            <li>25 hrs of hair pulling</li>
-            <li>multiple crashouts</li>
-            <li>10 hours of sleep</li>
-          </ul>
-        </div>
-        <div>
-          <h4>[🎶]</h4>
-          <ul className="text-left text-xs">
-            <li>Prairies ::/ 347 Aidan</li>
-            <li>DJ Twise ::/ Mixtape</li>
-            <li>Klaus117 ::/ Playlist</li>
-          </ul>
-        </div>
-        <div>
-          <h4>[🎶]</h4>
-          <ul className="text-left text-xs">
-            <li>Valorant</li>
-            <li>Hollow Knight</li>
-            <li>Silk Song</li>
-            <li>Project ::/ Zero</li>
-          </ul>
-        </div>
-
-        <div className=" ">
-          <h4>[🎮]</h4>
-          <ul className="text-left text-xs">
-            <li>Jujustu Kaisen</li>
-            <li>Solo Leveling</li>
-            <li>Demon Slayer</li>
-            <li>Misoku Tensei</li>
-          </ul>
-        </div>
+      <div className="w-full grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 lg:gap-24 justify-between p-4 mx-auto max-w-3xl">
+        {FooterItems.map((item, index) => (
+          <FooterList key={index} icon={item.icon} list={item.lists} />
+        ))}
       </div>
       <p>
         by :: <span className="text-terminal-green">Klaus 117</span>

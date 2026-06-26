@@ -11,7 +11,7 @@ const Projects = () => {
         001
       </h3>
       <div className="w-full flex gap-4 my-10">
-        <div className="w-2/3 aspect-square border-2 rounded flex-1">
+        <div className="w-2/3 aspect-square hidden md:flex border-2 rounded flex-1">
           Project Preview
         </div>
         <div className="w-full flex-1">
