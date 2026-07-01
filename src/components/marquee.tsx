@@ -95,7 +95,7 @@ const Marquee = ({
           {children}
         </div>
 
-        {/* Duplicate for seamless animation effect */}
+        {/* Duplicate for seamless animation effect [continuity]*/}
         <div className="min-w-full flex justify-evenly shrink-0">
           {children}
         </div>

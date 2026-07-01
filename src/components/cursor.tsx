@@ -21,7 +21,7 @@ const Cursor = () => {
 
   // Detect if client is using a mouse or touch pointer
   useEffect(() => {
-    const media = window.matchMedia("(pointer: coarse)"); // Coarse -> touch devices. Fine -> mouse.
+    const media = window.matchMedia("(pointer: coarse)"); // Coarse == touch devices. Fine == mouse.
 
     const updateIsMobile = () => setIsMobile(media.matches); // Update isMobile based on media query match [if coarse pointer, then mobile = true]
     updateIsMobile(); // Set initial value
@@ -56,7 +56,7 @@ const Cursor = () => {
 
     // Handle hover state for interactive elements
     const interactiveElements = document.querySelectorAll(
-      'button, a, input, textarea, select, [role="button"], [role="link"]',
+      'h1,button, a, input, textarea, select, [role="button"], [role="link"]',
     );
 
     interactiveElements.forEach((element) => {
@@ -90,12 +90,12 @@ const Cursor = () => {
       {/* Hide default cursor */}
       <style>{`
         body {
-          cursor: none;
+          // cursor: none;
         }
       `}</style>
       {/* Cursor Container */}
       <motion.div
-        animate={{ opacity: isVisible ? 1 : 1 }}
+        animate={{ opacity: isVisible ? 1 : 0 }}
         transition={{ duration: 0.3 }}
         className="fixed z-50 pointer-events-none top-0 left-0"
         style={{ mixBlendMode: "difference" }}
