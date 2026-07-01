@@ -56,7 +56,7 @@ const Cursor = () => {
 
     // Handle hover state for interactive elements
     const interactiveElements = document.querySelectorAll(
-      'button, a, input, textarea, select, [role="button"], [role="link"]',
+      'h1,button, a, input, textarea, select, [role="button"], [role="link"]',
     );
 
     interactiveElements.forEach((element) => {

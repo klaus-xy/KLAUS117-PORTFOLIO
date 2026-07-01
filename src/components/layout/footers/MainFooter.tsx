@@ -47,7 +47,7 @@ const FooterItems = [
 
 const MainFooter = () => {
   return (
-    <footer className="w-full min-h-[30vh] flex flex-col justify-center items-center text-xs uppercase font-mono">
+    <footer className="w-full min-h-[30vh] flex flex-col justify-center items-center uppercase font-mono">
       <p>Made with ❤️</p>
       <p>and</p>
 

@@ -10,18 +10,18 @@ const layout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <main className=" font-helvetica-neue">
+    <main className="font-helvetica-neue">
       <Cursor />
       <MainHeader />
       {children}
       {/* <ConstructionFooter /> */}
-      <Image
+      {/* <Image
         src="/images/load-icon-placeholder.png"
         alt="117"
         width={200}
         height={200}
         className="fixed bottom-0 right-0 z-50"
-      />
+      /> */}
     </main>
   );
 };

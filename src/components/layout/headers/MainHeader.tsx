@@ -13,13 +13,13 @@ import React from "react";
 // This is the header that appears on all main pages. It contains the logo, interactive 3D persona and the menu icon..
 const MainHeader = () => {
   return (
-    <div className="sticky top-0 w-full flex justify-between items-center px-4 py-4 bg-amber-400  ">
-      <h1>.117</h1>
-      <div className="w-20 aspect-square flex justify-center items-center rounded border">
+    <div className="fixed top-0 w-full flex justify-center items-center px-4 py-10 z-50">
+      {/* <h1>.117</h1> */}
+      <div className="absolute -top-2 w-50 flex justify-center items-center rounded overflow-visible">
         <Core />
       </div>
 
-      <div>
+      {/* <div>
         <Sheet>
           <SheetTrigger>
             <MenuIcon />
@@ -31,7 +31,7 @@ const MainHeader = () => {
             </SheetHeader>
           </SheetContent>
         </Sheet>
-      </div>
+      </div> */}
     </div>
   );
 };

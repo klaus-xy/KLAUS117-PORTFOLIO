@@ -36,27 +36,26 @@ const page = () => {
         <Core />
       </div> */}
 
-      {/* <UnderConstruction header="Under Reconstruction" /> */}
+      <UnderConstruction header="Under Reconstruction" />
 
-      <Hero />
-      <Projects />
-      <Contact />
-      <div className={"w-full h-12 container mx-auto mb-6"}>
+      {/* <Hero /> */}
+      {/* <Projects /> */}
+      {/* <Contact /> */}
+      {/* <div className={"w-full h-20 container mx-auto mb-6"}>
         <Marquee
-          className=" text-md bg-background border-terminal-green border-y-2"
+          className=" text-5xl font-helvetica-neue font-semibold bg-background border-terminal-green border-y-2 "
           direction="left"
-          cycleTime={10}
+          cycleTime={28}
         >
           {
-            /* Map Contents here. */
+            /* Map Contents here. /
             bannerTexts.map((text, index) => (
               <div key={index} className="flex">
                 <div className="flex gap-2 mx-2">
-                  {/* <div className="w-2 h-full border-2 border-dotted border-lime-500 -skew-x-30"></div> */}
-                </div>
+                                 </div>
 
                 <span
-                //key={index}
+               
                 >
                   {text}
                 </span>
@@ -64,8 +63,8 @@ const page = () => {
             ))
           }
         </Marquee>
-      </div>
-      <MainFooter />
+      </div> */}
+      {/* <MainFooter /> */}
     </div>
   );
 };

@@ -82,7 +82,7 @@ const UnderConstruction = ({
       </div>
 
       {/* MARQUEE 1 */}
-      <div className={"w-full h-12 absolute bottom-[30%]"}>
+      <div className={"w-full h-12 container mx-auto absolute bottom-[30%]"}>
         <Marquee
           className="rotate-12 text-md bg-background border-terminal-green border-y-2"
           direction="right"
@@ -107,7 +107,7 @@ const UnderConstruction = ({
         </Marquee>
       </div>
       {/* MARQUEE 2 */}
-      <div className={"w-full h-12 absolute bottom-[30%]"}>
+      <div className={"w-full h-12 container mx-auto absolute bottom-[30%]"}>
         <Marquee
           className="-rotate-12 text-md bg-background border-terminal-green border-y-2"
           direction="left"
