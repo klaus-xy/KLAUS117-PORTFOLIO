@@ -16,7 +16,7 @@ const MainHeader = () => {
     <div className="fixed top-0 w-full flex justify-center items-center px-4 py-10 z-50">
       {/* <h1>.117</h1> */}
       <div className="absolute -top-2 w-50 flex justify-center items-center rounded overflow-visible">
-        <Core />
+        {/* <Core /> */}
       </div>
 
       {/* <div>
