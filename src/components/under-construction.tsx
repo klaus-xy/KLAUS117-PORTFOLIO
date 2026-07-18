@@ -48,7 +48,7 @@ const UnderConstruction = ({
           <h2 className="text-lg text-terminal-green uppercase tracking-widest ">
             |[ {header} ]|
           </h2>
-          <h3>{subheader}</h3>
+          <h3 className="text-muted-foreground">{subheader}</h3>
         </div>
         {/* LINKS AND STUFFS */}
         <div className="w-full max-w-[400px] h-24 flex flex-col justify-between items-center flex-wrap gap-2 bg-emerald-95">
