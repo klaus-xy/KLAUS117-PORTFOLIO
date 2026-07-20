@@ -132,6 +132,8 @@ const Cursor = () => {
           animate={{
             x: mousePosition.x - 0,
             y: mousePosition.y - 0,
+            width: isMouseDown ? 50 : isHovering ? 46 : 46,
+            height: isMouseDown ? 50 : isHovering ? 46 : 46,
           }}
           transition={{
             type: "spring",
