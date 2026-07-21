@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 
 const Cursor = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isHovering, setIsHovering] = useState(false);
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
