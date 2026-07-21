@@ -56,7 +56,7 @@ const Cursor = () => {
 
     // Handle hover state for interactive elements
     const interactiveElements = document.querySelectorAll(
-      'h1,button, a, input, textarea, select, [role="button"], [role="link"]',
+      'h1, h2, button, a, input, textarea, select, [role="button"], [role="link"]',
     );
 
     interactiveElements.forEach((element) => {
@@ -97,7 +97,7 @@ const Cursor = () => {
       <motion.div
         animate={{ opacity: isVisible ? 1 : 0 }}
         transition={{ duration: 0.3 }}
-        className="fixed z-50 pointer-events-none top-0 left-0"
+        className="fixed z-[9999] pointer-events-none top-0 left-0"
         style={{ mixBlendMode: "difference" }}
       >
         {/* Inner circle -> Main Cusor Pointer */}
