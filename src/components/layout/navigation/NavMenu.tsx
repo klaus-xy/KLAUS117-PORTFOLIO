@@ -15,8 +15,8 @@ const NAVITEMS: NavItemProps[] = [
 
 const NavMenu = () => {
   return (
-    <nav>
-      <ul className="space-y-5 text-5xl font-black py-16 px-8">
+    <nav className="">
+      <ul className="space-y-5 text-5xl font-black py-24 px-8">
         {NAVITEMS.map((item, index) => (
           // hover:text-terminal-green hover:tracking-widest transition-all duration-500 ease-in-out relative
           <li
@@ -25,7 +25,9 @@ const NavMenu = () => {
           >
             {item.name}{" "}
             {!item.active && (
-              <Badge className="absolute font-bold">Coming Soon</Badge>
+              <Badge className="absolute font-medium font-helvetica-neue">
+                Coming Soon
+              </Badge>
             )}
           </li>
         ))}

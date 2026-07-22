@@ -31,9 +31,9 @@ const LinkDos = ({
       target={openInNewTab ? "_blank" : "_self"}
       rel="noopener noreferrer"
       className={cn(
-        "w-32 flex items-start justify-between gap-2 px-3 py-1 text-xs uppercase",
+        "w-32 flex items-start justify-between gap-2 px-3 py-1 text-xs uppercase font-departure-mono",
         variants[variant],
-        className
+        className,
       )}
     >
       <span>

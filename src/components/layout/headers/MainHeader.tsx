@@ -1,32 +1,28 @@
 "use client";
 
 import Core from "@/components/3d/core";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { LucideMenu, MenuIcon } from "lucide-react";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import NavMenu from "../navigation/NavMenu";
 
 // This is the header that appears on all main pages. It contains the logo, interactive 3D persona and the menu icon..
 const MainHeader = () => {
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="fixed top-0 w-full flex justify-between items-center px-4 py-0 z-[60]">
-      <h1 className="opacity-0">.117</h1>
+    <div
+      ref={headerRef}
+      className="fixed top-0 w-full flex justify-between items-center px-4 py-0 z-[60]"
+    >
+      <h1 className={cn("opacity-0", open && "pointer-events-none")}>.117</h1>
       <div className="absolute -top-2 w-50 flex justify-center items-center rounded overflow-visible">
         {/* <Core /> */}
       </div>
 
       <div>
-        <Sheet open={open} onOpenChange={setOpen}>
+        <Sheet open={open} onOpenChange={setOpen} modal={false}>
           <SheetTrigger className="p-2">
             {/* MENU ICON */}
             <div className="w-10 flex flex-col justify-center items-center gap-1.5">
@@ -50,6 +46,11 @@ const MainHeader = () => {
           <SheetContent
             showCloseButton={false}
             className="flex flex-row w-screen sm:max-w-none "
+            onPointerDownOutside={(e) => {
+              if (headerRef.current?.contains(e.target as Node)) {
+                e.preventDefault();
+              }
+            }}
           >
             {/* <SheetHeader>
               <SheetTitle>Are you absolutely sure?</SheetTitle>

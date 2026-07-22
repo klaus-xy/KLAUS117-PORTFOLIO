@@ -22,13 +22,19 @@ const Hero = () => {
       </div> */}
       {/* SOCIALS */}
       <div className="fixed bottom-10 right-0">
+        <LinkDos
+          href={"files/117 Resume.zip"}
+          name={"Resume"}
+          openInNewTab={false}
+        />
         <LinkDos href={"https://github.com/klaus-xy"} name={"Git Hub"} />
-        <LinkDos href={"https://li"} name={"LinkedIn"} />
-        <LinkDos href={"https://github.com/klaus-xy"} name={"Behance"} />
-        {/* <LinkDos href={"https://github.com/klaus-xy"} name={"Contra"} /> */}
+        <LinkDos
+          href={"https://www.linkedin.com/in/ayobami-oyesiku"}
+          name={"Linked In"}
+        />
       </div>
 
-      <div className="absolute bottom-24 left-1/2 text-xs flex flex-col items-center gap-2 ">
+      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 text-xs flex flex-col items-center gap-2 ">
         <Scroll />
         <span className="text-muted-foreground font-medium animate-pulse">
           Scroll down
