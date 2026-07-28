@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
-import { Project } from "@/data/projects";
+import { Project } from "@/data/all-projects";
 
 interface Props {
   project: Project;

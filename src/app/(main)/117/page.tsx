@@ -7,6 +7,7 @@ import Contact from "./sections/contact";
 import MainFooter from "@/components/layout/footers/MainFooter";
 import Marquee from "@/components/marquee";
 import Image from "next/image";
+import About from "./sections/about";
 
 // Landing Page Component
 const page = () => {
@@ -39,7 +40,8 @@ const page = () => {
       {/* <UnderConstruction header="Under Reconstruction" /> */}
 
       <Hero />
-      {/* <Projects /> */}
+      <About />
+      <Projects />
       {/* <Contact /> */}
       {/* <div className={"w-full h-20 container mx-auto mb-6"}>
         <Marquee

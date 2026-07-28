@@ -1,13 +1,19 @@
 import { notFound } from "next/navigation";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { projects, getProjectBySlug } from "@/data/projects";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { AllProjects, getProjectBySlug } from "@/data/all-projects";
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+  return AllProjects.map((project) => ({ slug: project.slug }));
 }
 
 const ProjectPage = async ({ params }: Props) => {

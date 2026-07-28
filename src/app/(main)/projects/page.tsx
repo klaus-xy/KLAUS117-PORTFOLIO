@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCard from "./project-card";
-import { projects } from "@/data/projects";
+import { AllProjects } from "@/data/all-projects";
 
 const ProjectsPage = () => {
   return (
@@ -9,7 +9,7 @@ const ProjectsPage = () => {
       <h2>All my works in one place</h2>
 
       <div>
-        {projects.map((project) => (
+        {AllProjects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
       </div>

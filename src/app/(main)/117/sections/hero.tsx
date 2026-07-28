@@ -4,11 +4,20 @@ import Core from "@/components/3d/core";
 import LinkDos from "@/components/links/link-dos";
 import { motion } from "motion/react";
 import Scroll from "@/components/scroll-ui";
+import AstroKlaus from "@/components/3d/astro-klaus";
 
 const Hero = () => {
   return (
     <SectionWrapper id="home">
-      {/* <h1>HI. I'M KLAUS.</h1> */}
+      <div className="h-[90vh] flex flex-col justify-center items-center relative overflow-hidden ">
+        <div className="w-72 h-full absolute -top-50 -right-0 -z-10 ">
+          <AstroKlaus />
+        </div>
+
+        {/* <h1 className="text-9xl">KLAUS .117</h1> */}
+        <h1 className="text-9xl">AYOBAMI</h1>
+        <h2>SOFTWARE ENGINEER</h2>
+      </div>
 
       {/* <p>Welcome to my world.</p>
       <h2>SOFTWARE ENGINEER</h2>
