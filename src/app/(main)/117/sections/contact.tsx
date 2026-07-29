@@ -1,4 +1,4 @@
-import SectionWrapper from "./section-wrapper";
+import SectionWrapper from "../../../../components/layout/section-wrapper";
 import { Button } from "@/components/ui/button";
 
 const Contact = () => {

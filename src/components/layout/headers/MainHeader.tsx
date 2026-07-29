@@ -29,13 +29,13 @@ const MainHeader = () => {
               <div
                 className={cn(
                   "w-full h-2 bg-primary rounded-2xl transition-transform duration-300 ease-in-out",
-                  open && "rotate-45 translate-y-[7px]",
+                  open && "rotate-45 translate-y-1.75",
                 )}
               ></div>
               <div
                 className={cn(
                   "w-full flex justify-end gap-1 transition-transform duration-300 ease-in-out",
-                  open && "-rotate-45 -translate-y-[7px]",
+                  open && "-rotate-45 -translate-y-1.75",
                 )}
               >
                 <div className="w-1/3 h-2 bg-terminal-green rounded-full"></div>
@@ -57,7 +57,7 @@ const MainHeader = () => {
               <SheetDescription>This action cannot be undone.</SheetDescription>
             </SheetHeader> */}
             {/* PREVIEW */}
-            <div className="w-1/2 gap-4 p-10 hidden sm:flex flex-col bg-pink-400">
+            <div className="w-1/2 gap-4 p-10 hidden sm:flex flex-col bg-lime-300">
               <p className=" w-1/3 absolute">
                 3D VISUAL PREVIEW <br /> Hovering over each menu item initiates
                 a different reaction/interaction

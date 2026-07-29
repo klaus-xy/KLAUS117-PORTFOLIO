@@ -7,17 +7,17 @@ export interface Project {
 export const AllProjects: Project[] = [
   {
     slug: "project-000",
-    name: "AREA 59 Studio",
+    name: "AREA 59™ Studio",
     description: "Details for this project are coming soon.",
   },
   {
     slug: "project-001",
-    name: "Side Quest .inc",
+    name: "Side Quest™ .inc",
     description: "Details for this project are coming soon.",
   },
   {
     slug: "project-002",
-    name: "Project OVR // DRV",
+    name: "Project OVR // DRV™",
     description: "Details for this project are coming soon.",
   },
   {

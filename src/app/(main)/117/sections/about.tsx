@@ -1,5 +1,5 @@
 import React from "react";
-import SectionWrapper from "./section-wrapper";
+import SectionWrapper from "../../../../components/layout/section-wrapper";
 
 const About = () => {
   return (

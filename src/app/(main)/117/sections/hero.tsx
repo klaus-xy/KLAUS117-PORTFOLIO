@@ -1,10 +1,11 @@
 import React from "react";
-import SectionWrapper from "./section-wrapper";
+import SectionWrapper from "../../../../components/layout/section-wrapper";
 import Core from "@/components/3d/core";
 import LinkDos from "@/components/links/link-dos";
 import { motion } from "motion/react";
 import Scroll from "@/components/scroll-ui";
 import AstroKlaus from "@/components/3d/astro-klaus";
+import TerminalBuddy from "@/components/terminal-buddy";
 
 const Hero = () => {
   return (
@@ -31,6 +32,7 @@ const Hero = () => {
       </div> */}
       {/* SOCIALS */}
       <div className="fixed bottom-10 right-0">
+        <TerminalBuddy className="absolute -top-9 left-1/2 -translate-x-1/2" />
         <LinkDos
           href={"files/117 Resume.zip"}
           name={"Resume"}
@@ -43,11 +45,11 @@ const Hero = () => {
         />
       </div>
 
-      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 text-xs flex flex-col items-center gap-2 ">
+      <div className="absolute bottom-36 left-1/2 -translate-x-1/2 text-xs flex flex-col items-center gap-2 ">
         <Scroll />
-        <span className="text-muted-foreground font-medium animate-pulse">
+        {/* <span className="text-muted-foreground font-medium animate-pulse">
           Scroll down
-        </span>
+        </span> */}
       </div>
     </SectionWrapper>
   );
