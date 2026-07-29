@@ -45,7 +45,7 @@ const MainHeader = () => {
           </SheetTrigger>
           <SheetContent
             showCloseButton={false}
-            className="flex flex-row w-screen sm:max-w-none "
+            className="flex flex-row bg-background data-[side=right]:w-screen data-[side=right]:sm:max-w-none"
             onPointerDownOutside={(e) => {
               if (headerRef.current?.contains(e.target as Node)) {
                 e.preventDefault();

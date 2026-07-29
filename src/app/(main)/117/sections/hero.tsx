@@ -15,8 +15,8 @@ const Hero = () => {
         </div>
 
         {/* <h1 className="text-9xl">KLAUS .117</h1> */}
-        <h1 className="text-9xl">AYOBAMI</h1>
-        <h2>SOFTWARE ENGINEER</h2>
+        {/* <h1 className="text-9xl">AYOBAMI</h1>
+        <h2>SOFTWARE ENGINEER</h2> */}
       </div>
 
       {/* <p>Welcome to my world.</p>
