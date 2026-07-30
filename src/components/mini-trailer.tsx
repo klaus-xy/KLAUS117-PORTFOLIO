@@ -20,7 +20,7 @@ const MiniTrailer = ({
       {/* Mini Projects Trailer */}
       <video
         className="w-full h-full object-cover scale-200"
-        src={src}
+        src="/videos/trailer.mov"
         autoPlay
         loop
         muted

@@ -3,7 +3,7 @@
 import Core from "@/components/3d/core";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import NavMenu from "../navigation/NavMenu";
 
 // This is the header that appears on all main pages. It contains the logo, interactive 3D persona and the menu icon..

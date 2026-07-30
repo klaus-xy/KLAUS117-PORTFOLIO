@@ -9,10 +9,10 @@ const ProjectItem = ({ projectName = "Project 000" }: Props) => {
   const [isHovered, setIsHovered] = useState(true);
   return (
     <li
-      className={`min-h-26 flex justify-between items-center text-2xl border-y py-6`}
+      className={`min-h-26 flex justify-between items-center text-2xl border-y px-4 py-6`}
     >
       <h4>{projectName}</h4>
-      {isHovered && <div className="w-20 h-20 bg-primary md:hidden "></div>}
+      {isHovered && <div className="w-20 h-20 bg-primary lg:hidden "></div>}
     </li>
   );
 };
