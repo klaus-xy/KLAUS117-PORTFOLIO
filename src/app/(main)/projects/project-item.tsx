@@ -9,6 +9,7 @@ const ProjectItem = ({ projectName = "Project 000" }: Props) => {
   const [isHovered, setIsHovered] = useState(true);
   return (
     <li
+      data-cursor-text="View Project"
       className={`min-h-26 flex justify-between items-center text-2xl border-y px-4 py-6`}
     >
       <h4>{projectName}</h4>

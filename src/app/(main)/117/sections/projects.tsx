@@ -12,9 +12,12 @@ const Projects = () => {
       <div className="container mx-auto">
         <div className="flex justify-start items-center">
           <h1 className="text-9xl">FEATURE </h1>
-          <MiniTrailer className="rounded-l-none" />
+          <MiniTrailer
+            className="rounded-l-none"
+            url="/videos/racing-realms.mp4"
+          />
         </div>
-        <div className="flex justify-center items-center ">
+        <div className="flex justify-center items-center">
           <h1 className="text-9xl">Pr</h1>
           <MiniTrailer />
           <h1 className="text-9xl">jects</h1>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 // ---------------- CUSTOM CURSOR COMPONENT ----------------------- //
@@ -14,6 +14,7 @@ const Cursor = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isHovering, setIsHovering] = useState(false);
+  const [cursorLabel, setCursorLabel] = useState<string | null>(null);
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -54,15 +55,41 @@ const Cursor = () => {
       setTimeout(() => setIsMouseDown(false), 10);
     });
 
-    // Handle hover state for interactive elements
-    const interactiveElements = document.querySelectorAll(
-      'h1, h2, button, a, input, textarea, select, [role="button"], [role="link"]',
-    );
+    // Handle hover state for interactive elements.
+    // Uses event delegation (instead of querySelectorAll + per-element listeners)
+    // so elements mounted after this effect runs (e.g. the nav Sheet's li items,
+    // which only exist in the DOM once opened) still trigger the hover state.
+    const interactiveSelector =
+      'h1, h2, button, a, input, textarea, select, li, [role="button"], [role="link"]';
+    const labelSelector = "[data-cursor-text]";
 
-    interactiveElements.forEach((element) => {
-      element.addEventListener("mouseenter", () => setIsHovering(true));
-      element.addEventListener("mouseleave", () => setIsHovering(false));
-    });
+    const handleElementMouseHover = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+
+      const labelElement = target.closest<HTMLElement>(labelSelector);
+      if (labelElement) {
+        setCursorLabel(labelElement.dataset.cursorText ?? null);
+      }
+
+      if (target.closest(interactiveSelector)) {
+        setIsHovering(true);
+      }
+    };
+
+    const handleElementMouseOut = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+
+      if (target.closest(labelSelector)) {
+        setCursorLabel(null);
+      }
+
+      if (target.closest(interactiveSelector)) {
+        setIsHovering(false);
+      }
+    };
+
+    document.addEventListener("mouseover", handleElementMouseHover);
+    document.addEventListener("mouseout", handleElementMouseOut);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
@@ -76,10 +103,8 @@ const Cursor = () => {
         setIsMouseDown(false);
       });
 
-      interactiveElements.forEach((element) => {
-        element.removeEventListener("mouseenter", () => setIsHovering(true));
-        element.removeEventListener("mouseleave", () => setIsHovering(false));
-      });
+      document.removeEventListener("mouseover", handleElementMouseHover);
+      document.removeEventListener("mouseout", handleElementMouseOut);
     };
   }, [isMobile]);
 
@@ -93,7 +118,8 @@ const Cursor = () => {
           // cursor: none;
         }
       `}</style>
-      {/* Cursor Container */}
+
+      {/* CURSOR CONTAINER */}
       <motion.div
         animate={{ opacity: isVisible ? 1 : 0 }}
         transition={{ duration: 0.3 }}
@@ -106,8 +132,8 @@ const Cursor = () => {
           animate={{
             x: mousePosition.x - 0,
             y: mousePosition.y - 0,
-            width: isMouseDown ? 8 : isHovering ? 46 : 12,
-            height: isMouseDown ? 8 : isHovering ? 46 : 14,
+            width: isMouseDown ? 8 : cursorLabel ? 90 : isHovering ? 46 : 12,
+            height: isMouseDown ? 8 : cursorLabel ? 90 : isHovering ? 46 : 14,
           }}
           transition={{
             type: "linear",
@@ -128,12 +154,12 @@ const Cursor = () => {
 
         {/* Outer circle - The Follower*/}
         <motion.div
-          className="w-12 h-12 border-2 border-foreground rounded-full top-0 left-0 transform -translate-x-1/2 -translate-y-1/2  "
+          className="flex items-center justify-center border-2 border-foreground rounded-full top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden"
           animate={{
             x: mousePosition.x - 0,
             y: mousePosition.y - 0,
-            width: isMouseDown ? 50 : isHovering ? 46 : 46,
-            height: isMouseDown ? 50 : isHovering ? 46 : 46,
+            width: isMouseDown ? 50 : cursorLabel ? 110 : isHovering ? 46 : 46,
+            height: isMouseDown ? 50 : cursorLabel ? 110 : isHovering ? 46 : 46,
           }}
           transition={{
             type: "spring",
@@ -143,7 +169,21 @@ const Cursor = () => {
             // ease: "easeOut",
             // duration: 5,
           }}
-        ></motion.div>
+        >
+          <AnimatePresence>
+            {cursorLabel && (
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
+                className="text-[11px] font-bold uppercase text-center px-2 text-foreground leading-tight"
+              >
+                {cursorLabel}
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </motion.div>
       </motion.div>
     </>
   );

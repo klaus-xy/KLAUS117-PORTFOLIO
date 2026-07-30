@@ -40,7 +40,7 @@ const page = () => {
       {/* <UnderConstruction header="Under Reconstruction" /> */}
 
       <Hero />
-      <About />
+      {/* <About /> */}
       <Projects />
       {/* <Contact /> */}
       {/* <div className={"w-full h-20 container mx-auto mb-6"}>
