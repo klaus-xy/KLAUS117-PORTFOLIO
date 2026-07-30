@@ -72,6 +72,16 @@ const helveticaNueue = localFont({
   variable: "--font-helvetica-neue",
 });
 
+const eurostile = localFont({
+  src: [
+    {
+      path: "./fonts/EurostileExtendedBlack.ttf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-eurostile",
+});
 export const metadata: Metadata = {
   title: "Klaus 117 | Portfolio",
   description: "Ayobami Oyesiku (Klaus 117) Portfolio",
@@ -89,7 +99,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("font-sans", geist.variable)}
+      className={cn("font-sans", geist.variable, eurostile.variable)}
     >
       <body
         className={`dark min-h-dvh flex flex-col ${helveticaNueue.variable} ${geistMono.variable} ${geistSans.variable} ${departureMono.variable} antialiased`}

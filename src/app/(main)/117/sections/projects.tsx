@@ -9,7 +9,7 @@ const Projects = () => {
   return (
     <SectionWrapper id="contact" wrapperClassName=" " className="max-w-none">
       {/* HEADER */}
-      <div className="container mx-auto">
+      <div className="container mx-auto mb-24">
         <div className="flex justify-start items-center">
           <h1 className="text-9xl">FEATURE </h1>
           <MiniTrailer

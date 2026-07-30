@@ -14,9 +14,20 @@ const MainHeader = () => {
   return (
     <div
       ref={headerRef}
-      className="fixed top-0 w-full flex justify-between items-center px-4 py-0 z-[60]"
+      className="fixed top-0 w-full flex justify-between items-center bg-background px-5 py-5 z-60"
     >
-      <h1 className={cn("opacity-0", open && "pointer-events-none")}>.117</h1>
+      {/* LOGO */}
+      <div
+        className={cn(
+          "flex justify-center items-end transition-opacity duration-500",
+          open && "opacity-0 pointer-events-none",
+        )}
+      >
+        {/* <h1 className="font-eurostile text-4xl">KLAUS</h1> */}
+        <div className="w-4 h-3 rounded-full bg-terminal-green  relative bottom-1"></div>
+        <h1 className="font-eurostile text-4xl">117</h1>
+      </div>
+
       <div className="absolute -top-2 w-50 flex justify-center items-center rounded overflow-visible">
         {/* <Core /> */}
       </div>
