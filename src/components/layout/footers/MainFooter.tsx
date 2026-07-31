@@ -10,7 +10,7 @@ const FooterItems = [
       "React.js",
       "Next.js",
       "Shadcn",
-      "Motion",
+      "Motion+",
       "React Three-Fibre",
     ],
   },
@@ -33,7 +33,12 @@ const FooterItems = [
   },
   {
     icon: "🎮",
-    lists: ["Valorant", "Hollow Knight", "Silk Song", "Project ::/ Zero"],
+    lists: [
+      "Valorant [23hrs]",
+      "Hollow Knight [96 hrs]",
+      "Silk Song",
+      "Project ::/ Zero",
+    ],
   },
   {
     icon: "🧑🏽‍🎤",
@@ -47,7 +52,7 @@ const FooterItems = [
 
 const MainFooter = () => {
   return (
-    <footer className="w-full min-h-[30vh] flex flex-col justify-center items-center uppercase font-mono">
+    <footer className="w-full min-h-[30vh] flex flex-col justify-center items-center uppercase font-mono ">
       <p>Made with ❤️</p>
       <p>and</p>
 

@@ -12,20 +12,20 @@ import About from "./sections/about";
 // Landing Page Component
 const page = () => {
   const bannerTexts = [
-    "LETS WORK TOGETHER",
-    ">>>",
-    "LETS CREATE COOL SH*T",
-    ">>>",
-    "CHECK OUT AREA 59 STUDIO™",
-    ">>>",
-    "SEND ME A MESSAGE",
-    ">>>",
-    "SERIOUSLY FLOOD MY EMAIL",
-    ">>>",
-    "XD",
-    ">>>",
-    "OKAY BYE",
-    ">>>",
+    "LETS WORK TOGETHER.",
+    "   ",
+    "LETS CREATE COOL SH*T.",
+    "   ",
+    "CHECK OUT AREA 59 STUDIO™.",
+    "   ",
+    "SEND ME A MESSAGE.",
+    "   ",
+    "SERIOUSLY FLOOD MY EMAIL.",
+    "   ",
+    "XD.",
+    "   ",
+    "OKAY BYE.",
+    "   ",
   ];
   console.log("[117] Landing Page");
 
@@ -43,24 +43,19 @@ const page = () => {
       {/* <About /> */}
       <Projects />
       {/* <Contact /> */}
-      {/* <div className={"w-full h-20 container mx-auto mb-6"}>
+      {/* <div className={"w-full h-32  mb-6"}>
         <Marquee
-          className=" text-5xl font-helvetica-neue font-semibold bg-background border-terminal-green border-y-2 "
+          className=" text-6xl  font-helvetica-neue font-semibold border-terminal-green border-y-4 "
           direction="left"
           cycleTime={28}
         >
           {
-            /* Map Contents here. /
+            // Map Contents here.
             bannerTexts.map((text, index) => (
               <div key={index} className="flex">
-                <div className="flex gap-2 mx-2">
-                                 </div>
+                <div className="flex gap-2 mx-2"></div>
 
-                <span
-               
-                >
-                  {text}
-                </span>
+                <span>{text}</span>
               </div>
             ))
           }

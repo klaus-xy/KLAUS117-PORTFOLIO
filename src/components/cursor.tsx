@@ -132,12 +132,12 @@ const Cursor = () => {
           animate={{
             x: mousePosition.x - 0,
             y: mousePosition.y - 0,
-            width: isMouseDown ? 8 : cursorLabel ? 90 : isHovering ? 46 : 12,
-            height: isMouseDown ? 8 : cursorLabel ? 90 : isHovering ? 46 : 14,
+            width: isMouseDown ? 8 : cursorLabel ? 90 : isHovering ? 58 : 12,
+            height: isMouseDown ? 8 : cursorLabel ? 90 : isHovering ? 58 : 14,
           }}
           transition={{
             type: "linear",
-            duration: 0.01,
+            duration: 0.1,
 
             width: {
               type: "spring",
@@ -158,8 +158,8 @@ const Cursor = () => {
           animate={{
             x: mousePosition.x - 0,
             y: mousePosition.y - 0,
-            width: isMouseDown ? 50 : cursorLabel ? 110 : isHovering ? 46 : 46,
-            height: isMouseDown ? 50 : cursorLabel ? 110 : isHovering ? 46 : 46,
+            width: isMouseDown ? 50 : cursorLabel ? 110 : isHovering ? 60 : 46,
+            height: isMouseDown ? 50 : cursorLabel ? 110 : isHovering ? 60 : 46,
           }}
           transition={{
             type: "spring",
@@ -177,7 +177,7 @@ const Cursor = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.15 }}
-                className="text-[11px] font-bold uppercase text-center px-2 text-foreground leading-tight"
+                className="text-[11px] uppercase text-center px-2 text-foreground"
               >
                 {cursorLabel}
               </motion.span>

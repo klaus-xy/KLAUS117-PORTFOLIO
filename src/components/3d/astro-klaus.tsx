@@ -71,7 +71,7 @@ function RotatingBox() {
   return (
     <mesh ref={boxRef}>
       <boxGeometry args={[1, 2, 1]} />
-      <meshStandardMaterial />
+      <meshStandardMaterial color={"cyan"} />
       {/* <Mesh
       // lookSpeed={lookSpeed}
       // maxAngle={Math.PI / 6}

@@ -6,18 +6,36 @@ import { motion } from "motion/react";
 import Scroll from "@/components/scroll-ui";
 import AstroKlaus from "@/components/3d/astro-klaus";
 import TerminalBuddy from "@/components/terminal-buddy";
+import ScrambleText from "@/components/ui/scramble-text";
 
 const Hero = () => {
   return (
-    <SectionWrapper id="home">
-      <div className="h-[90vh] flex flex-col justify-center items-center relative overflow-hidden ">
-        <div className="w-72 h-full absolute -top-50 -right-0 -z-10 ">
+    <SectionWrapper id="home" wrapperClassName="">
+      <div className="h-[90vh] flex flex-col justify-start items-center relative overflow-hidden ">
+        <div className="w-72 h-full absolute -top-0 -right-0 -z-10 ">
           <AstroKlaus />
         </div>
+        <div className="flex flex-col justify-center flex-1 ">
+          <span className="absolute top-80 text-xs font-departure-mono text-muted-foreground">
+            morphs into KLAUS117 ⬅
+          </span>
+          {/* <h1 className="text-9xl font-eurostile">KLAUS .117</h1> */}
+          <h1 className="text-9xl font-eurostile">AYOBAMI</h1>
 
-        {/* <h1 className="text-9xl">KLAUS .117</h1> */}
-        {/* <h1 className="text-9xl">AYOBAMI</h1>
-        <h2>SOFTWARE ENGINEER</h2> */}
+          <div className="flex justify-start items-center gap-2 tracking-widest text-sm font-departure-mono">
+            {/* <h2 className="text-terminal-green">SOFTWARE ENGINEER::</h2> */}
+            <ScrambleText
+              text="SOFTWARE ENGINEER:: "
+              className="text-terminal-green"
+            />
+
+            {/* <span>Gameplay Programmer</span>
+            <span>Frontend Engineer</span> */}
+            <span className="absolute right-0 text-xs text-muted">
+              ⬅ morphs into different sub-disciplines
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* <p>Welcome to my world.</p>

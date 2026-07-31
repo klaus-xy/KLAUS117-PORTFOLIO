@@ -18,7 +18,7 @@ const Test = () => {
   const HandleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
     setFilteredNames(
-      names.filter((name) => name.toLowerCase().includes(e.target.value))
+      names.filter((name) => name.toLowerCase().includes(e.target.value)),
     );
   };
 
@@ -27,7 +27,7 @@ const Test = () => {
     await animate(
       scope.current,
       { x: 500 },
-      { duration: 2, repeat: Infinity, repeatType: "reverse" }
+      { duration: 2, repeat: Infinity, repeatType: "reverse" },
     );
   };
 

@@ -19,7 +19,7 @@ const Scroll = () => {
           bounce: 0.5,
           repeat: Infinity,
           duration: 1,
-          repeatDelay: 1,
+          repeatDelay: 0.5,
           repeatType: "reverse",
         }}
         className="w-full bg-primary rounded-full m-1 border border-terminal-green/50"

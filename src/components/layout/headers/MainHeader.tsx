@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { useRef, useState } from "react";
 import NavMenu from "../navigation/NavMenu";
+import ScrambleText from "@/components/ui/scramble-text";
 
 // This is the header that appears on all main pages. It contains the logo, interactive 3D persona and the menu icon..
 const MainHeader = () => {
@@ -14,7 +15,7 @@ const MainHeader = () => {
   return (
     <div
       ref={headerRef}
-      className="fixed top-0 w-full flex justify-between items-center bg-background px-5 py-5 z-60"
+      className={`fixed top-0 w-full flex justify-between items-center transition duration-400 ${open ? "bg-none" : "bg-background"} px-5 py-5 lg:px-10 lg:py-5 z-60`}
     >
       {/* LOGO */}
       <div
@@ -25,7 +26,13 @@ const MainHeader = () => {
       >
         {/* <h1 className="font-eurostile text-4xl">KLAUS</h1> */}
         <div className="w-4 h-3 rounded-full bg-terminal-green  relative bottom-1"></div>
-        <h1 className="font-eurostile text-4xl">117</h1>
+        {/* <h1 className="font-eurostile text-4xl">117</h1> */}
+        <ScrambleText
+          text="117"
+          scrambleSpeed={100}
+          chars="klaus"
+          className="font-eurostile text-4xl"
+        />
       </div>
 
       <div className="absolute -top-2 w-50 flex justify-center items-center rounded overflow-visible">

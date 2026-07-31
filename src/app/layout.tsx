@@ -86,7 +86,7 @@ export const metadata: Metadata = {
   title: "Klaus 117 | Portfolio",
   description: "Ayobami Oyesiku (Klaus 117) Portfolio",
   icons: {
-    icon: "/skull.ico",
+    icon: "https://api.dicebear.com/9.x/adventurer/svg?seed=WindRunner&backgroundColor=1f2937",
   },
 };
 

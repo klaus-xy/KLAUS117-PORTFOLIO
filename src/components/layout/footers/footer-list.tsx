@@ -7,9 +7,12 @@ interface ListProps {
 
 const FooterList = ({ icon = "🔨", list }: ListProps) => {
   return (
-    <div className="min-w-28">
-      <h4 className="">[::\{icon}]</h4>
-      <ul className="text-left text-xs text-terminal-green ">
+    <div className="min-w-28 ">
+      <h4 className=" mb-2">[::\{icon}]</h4>
+      <ul
+        className="space-y-1.5 text-left text-xs text-terminal-green font-departure-mono
+       "
+      >
         {list?.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
