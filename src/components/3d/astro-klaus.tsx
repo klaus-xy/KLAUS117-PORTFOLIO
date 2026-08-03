@@ -77,7 +77,7 @@ function RotatingBox() {
       // maxAngle={Math.PI / 6}
       // neutralY={neutralY}
       /> */}
-      <ambientLight intensity={0.5} color="lime" />
+      <ambientLight intensity={0.15} color="lime" />
       <directionalLight intensity={5} position={[10, 10, 5]} color="white" />
       {/* <OrbitControls /> */}
     </mesh>

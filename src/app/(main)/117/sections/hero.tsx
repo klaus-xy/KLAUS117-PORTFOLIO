@@ -11,29 +11,40 @@ import ScrambleText from "@/components/ui/scramble-text";
 const Hero = () => {
   return (
     <SectionWrapper id="home" wrapperClassName="">
-      <div className="h-[90vh] flex flex-col justify-start items-center relative overflow-hidden ">
-        <div className="w-72 h-full absolute -top-0 -right-0 -z-10 ">
+      <div className="min-h-[90vh] flex flex-col justify-start items-center relative overflow-hidden ">
+        <div className="w-full h-full absolute -top-1/12 -right-1/3 -z-10">
           <AstroKlaus />
+          {/* <Core neutralY={0.5} /> */}
         </div>
         <div className="flex flex-col justify-center flex-1 ">
-          <span className="absolute top-80 text-xs font-departure-mono text-muted-foreground">
+          {/* <span className="absolute top-80 text-xs font-departure-mono text-muted-foreground">
             morphs into KLAUS117 ⬅
-          </span>
-          {/* <h1 className="text-9xl font-eurostile">KLAUS .117</h1> */}
-          <h1 className="text-9xl font-eurostile">AYOBAMI</h1>
-
-          <div className="flex justify-start items-center gap-2 tracking-widest text-sm font-departure-mono">
-            {/* <h2 className="text-terminal-green">SOFTWARE ENGINEER::</h2> */}
+          </span> */}
+          <h1 className="text-9xl font-eurostile">KLAUS</h1>
+          {/* <h1 className="text-9xl font-eurostile">
+            {" "}
             <ScrambleText
-              text="SOFTWARE ENGINEER:: "
-              className="text-terminal-green"
+              text="Klaus "
+              chars=""
+              revealSpeed={5}
+              // className="text-terminal-green"
             />
+          </h1> */}
+
+          <div className="flex justify-start items-center gap-2 tracking-widest text-sm font-eurostile">
+            {/* <h2 className="text-terminal-green">SOFTWARE ENGINEER::</h2> */}
+            {/* <ScrambleText
+              text="SOFTWARE ENGINEER:: "
+              chars="|:"
+              revealSpeed={2}
+              className="text-terminal-green ml-2"
+            /> */}
 
             {/* <span>Gameplay Programmer</span>
             <span>Frontend Engineer</span> */}
-            <span className="absolute right-0 text-xs text-muted">
+            {/* <span className="absolute right-0 text-xs text-muted">
               ⬅ morphs into different sub-disciplines
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
@@ -49,7 +60,7 @@ const Hero = () => {
         <Core />
       </div> */}
       {/* SOCIALS */}
-      <div className="fixed bottom-10 right-0">
+      {/* <div className="fixed bottom-10 right-0">
         <TerminalBuddy className="absolute -top-9 left-1/2 -translate-x-1/2" />
         <LinkDos
           href={"files/117 Resume.zip"}
@@ -61,9 +72,9 @@ const Hero = () => {
           href={"https://www.linkedin.com/in/ayobami-oyesiku"}
           name={"Linked In"}
         />
-      </div>
+      </div> */}
 
-      <div className="absolute bottom-36 left-1/2 -translate-x-1/2 text-xs flex flex-col items-center gap-2 ">
+      <div className="absolute bottom-26 left-1/2 -translate-x-1/2 text-xs flex flex-col items-center gap-2 ">
         <Scroll />
         {/* <span className="text-muted-foreground font-medium animate-pulse">
           Scroll down
