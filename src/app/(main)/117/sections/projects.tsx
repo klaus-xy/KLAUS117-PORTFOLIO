@@ -42,6 +42,17 @@ const Projects = () => {
         <div className="w-2/3 max-h-180 aspect-square hidden lg:flex border-2 rounded flex-1 relative rounded-r-2xl bg-amber-300">
           <div className="place-content-center text-center w-full text-3xl font-medium font-eurostile">
             //:: Project Preview
+            {/* <iframe
+              frameBorder="0"
+              src="https://itch.io/embed-upload/18623730?color=333333"
+              allowFullScreen=""
+              width="500"
+              height="320"
+            >
+              <a href="https://klaus117.itch.io/chrono-mancer">
+                Play CHRONOMANCERS on itch.io
+              </a>
+            </iframe> */}
           </div>
         </div>
         <div className="w-full flex-1 px-4">
