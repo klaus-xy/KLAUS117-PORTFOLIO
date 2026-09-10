@@ -10,11 +10,13 @@ export const AllProjects: Project[] = [
     slug: "project-000",
     name: "AREA 59™ Studio",
     description: "Details for this project are coming soon.",
+    trailerUrl: "/videos/project-trailers/project-zero-trailer.mov",
   },
   {
     slug: "project-001",
     name: "Side Quest™ .inc",
     description: "Details for this project are coming soon.",
+    trailerUrl: "/videos/project-trailers/sidequest-trailer.mp4",
   },
   {
     slug: "project-005",
@@ -36,6 +38,7 @@ export const AllProjects: Project[] = [
     slug: "project-004",
     name: "CHRONOMANCERS",
     description: "Details for this project are coming soon.",
+    trailerUrl: "/videos/project-trailers/chronomancers-trailer.mp4",
   },
 ];
 

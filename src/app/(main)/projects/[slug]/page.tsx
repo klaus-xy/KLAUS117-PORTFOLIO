@@ -1,11 +1,4 @@
 import { notFound } from "next/navigation";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
 import { AllProjects, getProjectBySlug } from "@/data/all-projects";
 
 interface Props {
@@ -26,15 +19,36 @@ const ProjectPage = async ({ params }: Props) => {
 
   return (
     <div>
-      <Card>
-        <CardHeader>
-          <CardTitle>{project.name}</CardTitle>
-          <CardDescription>{project.description}</CardDescription>
-        </CardHeader>
-        <CardContent className="w-full max-h-[80dvh] flex aspect-square items-center justify-center p-6">
-          <span className="text-7xl font-semibold">🚧</span>
-        </CardContent>
-      </Card>
+      {/* HERO */}
+      <div className="relative w-full h-screen overflow-hidden bg-muted">
+        {project.trailerUrl && (
+          <video
+            src={project.trailerUrl}
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        )}
+        <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
+
+        <div className="absolute bottom-0 left-0 w-full p-8 md:p-16">
+          <span className="font-departure-mono text-xs text-terminal-green tracking-widest">
+            //:: {project.slug}
+          </span>
+          <h1 className="font-eurostile text-6xl md:text-8xl leading-none">
+            {project.name}
+          </h1>
+        </div>
+      </div>
+
+      {/* DETAILS */}
+      <div className="container mx-auto max-w-3xl px-6 py-16 md:py-24">
+        <p className="font-helvetica-neue text-lg text-muted-foreground">
+          {project.description}
+        </p>
+      </div>
     </div>
   );
 };

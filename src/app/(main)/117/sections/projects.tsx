@@ -10,9 +10,11 @@ import MiniTrailer from "@/components/mini-trailer";
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
   const [videoErrored, setVideoErrored] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
     setVideoErrored(false);
+    setVideoReady(false);
   }, [hoveredProject?.slug]);
 
   const showVideo = Boolean(hoveredProject?.trailerUrl) && !videoErrored;
@@ -56,7 +58,10 @@ const Projects = () => {
               <motion.video
                 key={hoveredProject.trailerUrl}
                 initial={{ opacity: 0, scale: 1.04 }}
-                animate={{ opacity: 1, scale: 1 }}
+                animate={{
+                  opacity: videoReady ? 1 : 0,
+                  scale: videoReady ? 1 : 1.04,
+                }}
                 exit={{ opacity: 0, scale: 0.97 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
                 src={hoveredProject.trailerUrl}
@@ -65,6 +70,7 @@ const Projects = () => {
                 loop
                 muted
                 playsInline
+                onLoadedData={() => setVideoReady(true)}
                 onError={() => setVideoErrored(true)}
               />
             ) : (
