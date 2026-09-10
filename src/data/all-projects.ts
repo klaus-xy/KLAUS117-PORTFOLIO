@@ -20,6 +20,7 @@ export const AllProjects: Project[] = [
     slug: "project-005",
     name: "WALKMAN  : :  117",
     description: "Details for this project are coming soon.",
+    trailerUrl: "/videos/project-trailers/walkman-trailer.mp4",
   },
   {
     slug: "project-002",

@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import SectionWrapper from "../../../../components/layout/section-wrapper";
 import ProjectItem from "../../projects/project-item";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,13 @@ import MiniTrailer from "@/components/mini-trailer";
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
+  const [videoErrored, setVideoErrored] = useState(false);
+
+  useEffect(() => {
+    setVideoErrored(false);
+  }, [hoveredProject?.slug]);
+
+  const showVideo = Boolean(hoveredProject?.trailerUrl) && !videoErrored;
 
   return (
     <SectionWrapper id="contact" wrapperClassName=" " className="max-w-none">
@@ -43,20 +51,33 @@ const Projects = () => {
       <div className="w-full min-h-[50vh] flex gap-4 my-10">
         {/* PROJECT PREVIEW */}
         <div className="w-2/3 max-h-180 aspect-square hidden lg:flex border-2 rounded flex-1 relative rounded-r-2xl bg-muted overflow-hidden">
-          {hoveredProject?.trailerUrl ? (
-            <video
-              key={hoveredProject.trailerUrl}
-              src={hoveredProject.trailerUrl}
-              className="w-full h-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
-          ) : (
-            <div className="place-content-center text-center w-full text-3xl font-medium font-eurostile">
-              {hoveredProject ? hoveredProject.name : "//:: Project Preview"}
-              {/* <iframe
+          <AnimatePresence mode="wait">
+            {showVideo && hoveredProject?.trailerUrl ? (
+              <motion.video
+                key={hoveredProject.trailerUrl}
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.97 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                src={hoveredProject.trailerUrl}
+                className="absolute inset-0 w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                onError={() => setVideoErrored(true)}
+              />
+            ) : (
+              <motion.div
+                key={hoveredProject?.slug ?? "idle"}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="absolute inset-0 flex items-center justify-center text-center px-6 text-3xl font-medium font-eurostile"
+              >
+                {hoveredProject ? hoveredProject.name : "Project :: Preview"}
+                {/* <iframe
               frameBorder="0"
               src="https://itch.io/embed-upload/18623730?color=333333"
               allowFullScreen=""
@@ -67,8 +88,9 @@ const Projects = () => {
                 Play CHRONOMANCERS on itch.io
               </a>
             </iframe> */}
-            </div>
-          )}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
         <div className="w-full flex-1 px-4">
           <ul>
