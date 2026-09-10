@@ -81,7 +81,12 @@ const MainHeader = () => {
                 3D VISUAL PREVIEW <br /> Hovering over each menu item initiates
                 a different reaction/interaction
               </p>
-              <Core lookSpeed={0.05} neutralY={0.15} />
+              <Core
+                lookSpeed={0.05}
+                neutralY={0.5}
+                maxAngleX={Math.PI / 3}
+                maxAngleY={Math.PI / 6}
+              />
             </div>
             <NavMenu />
           </SheetContent>

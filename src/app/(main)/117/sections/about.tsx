@@ -2,15 +2,14 @@ import React from "react";
 import SectionWrapper from "../../../../components/layout/section-wrapper";
 import { Quote } from "lucide-react";
 import { ScrollText } from "@/components/scroll-text";
-import { StarWarsCrawl } from "@/components/star-wars-crawl";
 
 const About = () => {
   return (
     <SectionWrapper
       id="about"
-      wrapperClassName="flex flex-col justify-center items-center gap-4"
+      wrapperClassName="flex flex-col justify-center items-center gap-4 "
     >
-      <div className="font-eurostile text-muted-foreground text-center">
+      <div className="font-eurostile text-muted-foreground text-center relative bottom-32">
         {/* <h3 className="font-bold text-9xl">WELCOME TO MY WORLD</h3> */}
         {/* <span>- VIPER, VALORANT</span> */}
         {/* <ScrollText text="WELCOME TO MY WORLD" /> */}

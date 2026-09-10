@@ -5,10 +5,12 @@ import { useEffect, useRef } from "react";
 import { MathUtils } from "three";
 import { OrbitControls } from "@react-three/drei";
 import { useGLTF } from "@react-three/drei";
+import { max } from "three/src/nodes/math/MathNode.js";
 
 interface CoreProps {
   lookSpeed?: number;
-  maxAngle?: number;
+  maxAngleX?: number;
+  maxAngleY?: number;
   neutralY?: number; // 0 = top of screen, 0.5 = center, 1 = bottom
 }
 function CoreMesh(props: any) {
@@ -43,8 +45,8 @@ function CoreMesh(props: any) {
       props.lookSpeed;
     meshRef.current.rotation.y = MathUtils.clamp(
       meshRef.current.rotation.y,
-      -props.maxAngle,
-      props.maxAngle,
+      -props.maxAngleY,
+      props.maxAngleY,
     );
 
     // Rotate the 3D mesh on the X-axis
@@ -53,8 +55,8 @@ function CoreMesh(props: any) {
       props.lookSpeed;
     meshRef.current.rotation.x = MathUtils.clamp(
       meshRef.current.rotation.x,
-      -props.maxAngle,
-      props.maxAngle,
+      -props.maxAngleX,
+      props.maxAngleX,
     );
   });
 
@@ -69,7 +71,12 @@ function CoreMesh(props: any) {
 }
 
 // ::::::: MAIN COMPONENT ::::::: //
-function Core({ lookSpeed = 0.01, neutralY = 0.15 }: CoreProps) {
+function Core({
+  lookSpeed = 0.01,
+  neutralY = 0.15,
+  maxAngleX = Math.PI / 6,
+  maxAngleY = Math.PI / 6,
+}: CoreProps) {
   return (
     <Canvas
     // style={{
@@ -84,7 +91,8 @@ function Core({ lookSpeed = 0.01, neutralY = 0.15 }: CoreProps) {
     >
       <CoreMesh
         lookSpeed={lookSpeed}
-        maxAngle={Math.PI / 6}
+        maxAngleX={maxAngleX}
+        maxAngleY={maxAngleY}
         neutralY={neutralY}
       />
       <ambientLight intensity={0.5} color="lime" />

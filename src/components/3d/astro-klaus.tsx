@@ -65,19 +65,19 @@ function RotatingBox() {
   useFrame((_, delta) => {
     boxRef.current.rotation.x += delta * 0.025;
     boxRef.current.rotation.y += delta * 0.025;
-    boxRef.current.rotation.z += delta * 0.05;
+    boxRef.current.rotation.z += delta * 0.08;
   });
 
   return (
-    <mesh ref={boxRef}>
-      <boxGeometry args={[1, 2, 1]} />
-      <meshStandardMaterial color={"cyan"} />
+    <mesh ref={boxRef} position={[2.25, 1, 0]}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color={"white"} />
       {/* <Mesh
       // lookSpeed={lookSpeed}
       // maxAngle={Math.PI / 6}
       // neutralY={neutralY}
       /> */}
-      <ambientLight intensity={0.15} color="lime" />
+      <ambientLight intensity={0.15} color="white" />
       <directionalLight intensity={5} position={[10, 10, 5]} color="white" />
       {/* <OrbitControls /> */}
     </mesh>
@@ -86,7 +86,7 @@ function RotatingBox() {
 
 const AstroKlaus = () => {
   return (
-    <Canvas>
+    <Canvas camera={{ position: [0, 0, 5] }} className="">
       <RotatingBox />
     </Canvas>
   );

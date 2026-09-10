@@ -12,15 +12,15 @@ const Hero = () => {
   return (
     <SectionWrapper id="home" wrapperClassName="">
       <div className="min-h-[90vh] flex flex-col justify-start items-center relative overflow-hidden ">
-        <div className="w-full h-full absolute  -z-10">
-          {/* <AstroKlaus /> */}
-          <Core neutralY={0.5} />
+        <div className="w-full h-full absolute right-0 -z-10">
+          <AstroKlaus />
+          {/* <Core neutralY={0.5} /> */}
         </div>
         <div className="flex flex-col justify-center flex-1 ">
           {/* <span className="absolute top-80 text-xs font-departure-mono text-muted-foreground">
             morphs into KLAUS117 ⬅
           </span> */}
-          {/* <h1 className="text-9xl font-eurostile">KLAUS</h1> */}
+          <h1 className="text-7xl font-eurostile">KLAUS</h1>
           {/* <h1 className="text-9xl font-eurostile">
             {" "}
             <ScrambleText
@@ -34,7 +34,7 @@ const Hero = () => {
           <div className="flex justify-start items-center gap-2 tracking-widest text-sm font-eurostile">
             {/* <h2 className="text-terminal-green">SOFTWARE ENGINEER::</h2> */}
             {/* <ScrambleText
-              text="SOFTWARE ENGINEER:: "
+              text="SOFTWARE ENGINEER"
               chars="|:"
               revealSpeed={2}
               className="text-terminal-green ml-2"

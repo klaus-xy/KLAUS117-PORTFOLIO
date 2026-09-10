@@ -2,6 +2,7 @@ export interface Project {
   slug: string;
   name: string;
   description: string;
+  trailerUrl?: string;
 }
 
 export const AllProjects: Project[] = [
@@ -13,6 +14,11 @@ export const AllProjects: Project[] = [
   {
     slug: "project-001",
     name: "Side Quest™ .inc",
+    description: "Details for this project are coming soon.",
+  },
+  {
+    slug: "project-005",
+    name: "WALKMAN  : :  117",
     description: "Details for this project are coming soon.",
   },
   {

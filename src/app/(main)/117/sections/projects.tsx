@@ -1,11 +1,14 @@
-import React from "react";
+"use client";
+import { useState } from "react";
 import SectionWrapper from "../../../../components/layout/section-wrapper";
 import ProjectItem from "../../projects/project-item";
 import { Button } from "@/components/ui/button";
-import { AllProjects } from "@/data/all-projects";
+import { AllProjects, Project } from "@/data/all-projects";
 import MiniTrailer from "@/components/mini-trailer";
 
 const Projects = () => {
+  const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
+
   return (
     <SectionWrapper id="contact" wrapperClassName=" " className="max-w-none">
       {/* HEADER */}
@@ -39,10 +42,21 @@ const Projects = () => {
       {/* FEATURED PROJECTS CONTAINER */}
       <div className="w-full min-h-[50vh] flex gap-4 my-10">
         {/* PROJECT PREVIEW */}
-        <div className="w-2/3 max-h-180 aspect-square hidden lg:flex border-2 rounded flex-1 relative rounded-r-2xl bg-amber-300">
-          <div className="place-content-center text-center w-full text-3xl font-medium font-eurostile">
-            //:: Project Preview
-            {/* <iframe
+        <div className="w-2/3 max-h-180 aspect-square hidden lg:flex border-2 rounded flex-1 relative rounded-r-2xl bg-muted overflow-hidden">
+          {hoveredProject?.trailerUrl ? (
+            <video
+              key={hoveredProject.trailerUrl}
+              src={hoveredProject.trailerUrl}
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          ) : (
+            <div className="place-content-center text-center w-full text-3xl font-medium font-eurostile">
+              {hoveredProject ? hoveredProject.name : "//:: Project Preview"}
+              {/* <iframe
               frameBorder="0"
               src="https://itch.io/embed-upload/18623730?color=333333"
               allowFullScreen=""
@@ -53,12 +67,18 @@ const Projects = () => {
                 Play CHRONOMANCERS on itch.io
               </a>
             </iframe> */}
-          </div>
+            </div>
+          )}
         </div>
         <div className="w-full flex-1 px-4">
           <ul>
             {AllProjects.map((project) => (
-              <ProjectItem key={project.slug} projectName={project.name} />
+              <ProjectItem
+                key={project.slug}
+                project={project}
+                isActive={hoveredProject?.slug === project.slug}
+                onHoverChange={setHoveredProject}
+              />
             ))}
           </ul>
         </div>

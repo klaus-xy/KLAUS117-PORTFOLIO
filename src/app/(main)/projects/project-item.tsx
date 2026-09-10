@@ -1,20 +1,23 @@
 "use client";
-import React, { useState } from "react";
-import ProjectCard from "./project-card";
+import { Project } from "@/data/all-projects";
 
 interface Props {
-  projectName?: string;
+  project: Project;
+  isActive?: boolean;
+  onHoverChange?: (project: Project | null) => void;
 }
-const ProjectItem = ({ projectName = "Project 000" }: Props) => {
-  const [isHovered, setIsHovered] = useState(true);
+
+const ProjectItem = ({ project, isActive = false, onHoverChange }: Props) => {
   return (
     <li
       data-cursor-text="View Project"
+      onMouseEnter={() => onHoverChange?.(project)}
+      onMouseLeave={() => onHoverChange?.(null)}
       className={`min-h-26 flex justify-between items-center text-2xl border-y px-4 py-6 relative`}
     >
       {/* <span className="absolute -left-4 bottom-8 text-xs">00</span> */}
-      <h4>{projectName}</h4>
-      {isHovered && <div className="w-20 h-20 bg-primary lg:hidden "></div>}
+      <h4>{project.name}</h4>
+      {isActive && <div className="w-20 h-20 bg-primary lg:hidden "></div>}
     </li>
   );
 };
