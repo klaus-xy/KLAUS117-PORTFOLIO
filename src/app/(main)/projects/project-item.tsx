@@ -10,11 +10,7 @@ interface Props {
 
 const ProjectItem = ({ project, isActive = false, onHoverChange }: Props) => {
   return (
-    <li
-      onMouseEnter={() => onHoverChange?.(project)}
-      onMouseLeave={() => onHoverChange?.(null)}
-      className="relative"
-    >
+    <li onMouseEnter={() => onHoverChange?.(project)} className="relative">
       <Link
         href={`/projects/${project.slug}`}
         data-cursor-text="View Project"

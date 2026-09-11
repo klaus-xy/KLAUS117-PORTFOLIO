@@ -88,7 +88,7 @@ const MainHeader = () => {
                 maxAngleY={Math.PI / 6}
               />
             </div>
-            <NavMenu />
+            <NavMenu onNavigate={() => setOpen(false)} />
           </SheetContent>
         </Sheet>
       </div>

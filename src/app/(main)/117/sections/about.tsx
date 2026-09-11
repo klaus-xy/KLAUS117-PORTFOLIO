@@ -14,7 +14,7 @@ const About = () => {
         {/* <span>- VIPER, VALORANT</span> */}
         {/* <ScrollText text="WELCOME TO MY WORLD" /> */}
         <ScrollText
-          text=" Somewhere between code and creativity, I build experiences."
+          text=" Somewhere between code, creativity and interactive storytelling, I build experiences."
           className="text-6xl"
         />
         {/* <ScrollText

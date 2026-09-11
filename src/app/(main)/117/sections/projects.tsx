@@ -1,6 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { Volume2, VolumeX } from "lucide-react";
 import SectionWrapper from "../../../../components/layout/section-wrapper";
 import ProjectItem from "../../projects/project-item";
 import { Button } from "@/components/ui/button";
@@ -11,11 +12,41 @@ const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
   const [videoErrored, setVideoErrored] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const clearTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     setVideoErrored(false);
     setVideoReady(false);
   }, [hoveredProject?.slug]);
+
+  useEffect(() => {
+    if (videoRef.current) videoRef.current.muted = muted;
+  }, [muted, hoveredProject?.trailerUrl]);
+
+  useEffect(() => {
+    return () => {
+      if (clearTimerRef.current) clearTimeout(clearTimerRef.current);
+    };
+  }, []);
+
+  const cancelPendingClear = () => {
+    if (clearTimerRef.current) {
+      clearTimeout(clearTimerRef.current);
+      clearTimerRef.current = null;
+    }
+  };
+
+  const handleHover = (project: Project | null) => {
+    cancelPendingClear();
+    setHoveredProject(project);
+  };
+
+  const scheduleClear = () => {
+    cancelPendingClear();
+    clearTimerRef.current = setTimeout(() => setHoveredProject(null), 250);
+  };
 
   const showVideo = Boolean(hoveredProject?.trailerUrl) && !videoErrored;
 
@@ -50,13 +81,18 @@ const Projects = () => {
         </div>
       </div>
       {/* FEATURED PROJECTS CONTAINER */}
-      <div className="w-full min-h-[50vh] flex gap-4 my-10">
+      <div
+        className="w-full min-h-[50vh] flex gap-4 my-10"
+        onMouseEnter={cancelPendingClear}
+        onMouseLeave={scheduleClear}
+      >
         {/* PROJECT PREVIEW */}
         <div className="w-2/3 max-h-180 aspect-square hidden lg:flex border-2 rounded flex-1 relative rounded-r-2xl bg-muted overflow-hidden">
           <AnimatePresence mode="wait">
             {showVideo && hoveredProject?.trailerUrl ? (
               <motion.video
                 key={hoveredProject.trailerUrl}
+                ref={videoRef}
                 initial={{ opacity: 0, scale: 1.04 }}
                 animate={{
                   opacity: videoReady ? 1 : 0,
@@ -97,6 +133,21 @@ const Projects = () => {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {showVideo && (
+            <button
+              type="button"
+              onClick={() => setMuted((m) => !m)}
+              aria-label={muted ? "Unmute preview" : "Mute preview"}
+              className="absolute bottom-3 right-3 z-20 flex h-8 w-8 items-center justify-center rounded-full border border-terminal-green bg-background/60 text-terminal-green backdrop-blur-sm transition-colors hover:bg-terminal-green hover:text-background"
+            >
+              {muted ? (
+                <VolumeX className="h-3.5 w-3.5" />
+              ) : (
+                <Volume2 className="h-3.5 w-3.5" />
+              )}
+            </button>
+          )}
         </div>
         <div className="w-full flex-1 px-4">
           <ul>
@@ -105,7 +156,7 @@ const Projects = () => {
                 key={project.slug}
                 project={project}
                 isActive={hoveredProject?.slug === project.slug}
-                onHoverChange={setHoveredProject}
+                onHoverChange={handleHover}
               />
             ))}
           </ul>

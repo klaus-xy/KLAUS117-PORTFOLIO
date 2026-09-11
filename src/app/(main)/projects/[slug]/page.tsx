@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { AllProjects, getProjectBySlug } from "@/data/all-projects";
+import ProjectHeroVideo from "@/components/project-hero-video";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -21,16 +22,7 @@ const ProjectPage = async ({ params }: Props) => {
     <div>
       {/* HERO */}
       <div className="relative w-full h-screen overflow-hidden bg-muted">
-        {project.trailerUrl && (
-          <video
-            src={project.trailerUrl}
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-        )}
+        {project.trailerUrl && <ProjectHeroVideo src={project.trailerUrl} />}
         <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
 
         <div className="absolute bottom-0 left-0 w-full p-8 md:p-16">
