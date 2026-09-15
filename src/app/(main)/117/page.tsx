@@ -13,21 +13,39 @@ import { Quote } from "lucide-react";
 // Landing Page Component
 const page = () => {
   const bannerTexts = [
-    "LETS WORK TOGETHER.",
+    "GAMES INDUSTRY.",
     "   ",
-    "LETS CREATE COOL SH*T.",
+    "WEB 2.0.",
     "   ",
-    "CHECK OUT AREA 59 STUDIO™.",
+    "WEB 3.0.",
     "   ",
-    "SEND ME A MESSAGE.",
+    "ARTIFICIAL INTELLIGENCE.",
     "   ",
-    "SERIOUSLY FLOOD MY EMAIL.",
+    "FINTECH.",
     "   ",
-    "XD.",
+    "EDUTECH.",
     "   ",
-    "OKAY BYE.",
+    "ENGINEERING.",
+    "   ",
+    "SIMULATION.",
     "   ",
   ];
+  // const bannerTexts = [
+  //   "LETS WORK TOGETHER.",
+  //   "   ",
+  //   "LETS CREATE COOL SH*T.",
+  //   "   ",
+  //   "CHECK OUT AREA 59 STUDIO™.",
+  //   "   ",
+  //   "SEND ME A MESSAGE.",
+  //   "   ",
+  //   "SERIOUSLY FLOOD MY EMAIL.",
+  //   "   ",
+  //   "XD.",
+  //   "   ",
+  //   "OKAY BYE.",
+  //   "   ",
+  // ];
   console.log("[117] Landing Page");
 
   return (
@@ -42,6 +60,24 @@ const page = () => {
 
       <Hero />
       <About />
+      <div className={"w-full h-32  mb-6"}>
+        <Marquee
+          className=" text-6xl  font-helvetica-neue font-semibold border-terminal-green border-y-4 "
+          direction="left"
+          cycleTime={28}
+        >
+          {
+            // Map Contents here.
+            bannerTexts.map((text, index) => (
+              <div key={index} className="flex">
+                <div className="flex gap-2 mx-2"></div>
+
+                <span>{text}</span>
+              </div>
+            ))
+          }
+        </Marquee>
+      </div>
       <Projects />
       <div className="min-h-[50vh] flex flex-col justify-center items-center gap-4  text-2xl font-eurostile text-terminal-green">
         <Quote className="w-10 h-10" />

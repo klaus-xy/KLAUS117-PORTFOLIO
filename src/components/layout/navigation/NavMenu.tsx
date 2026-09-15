@@ -8,10 +8,10 @@ interface NavItemProps {
 }
 
 const NAVITEMS: NavItemProps[] = [
-  { name: "HOME", href: "/117#home", active: true },
-  { name: "ABOUT", active: true },
-  { name: "PROJECTS", active: true },
-  { name: "CONTACT", active: true },
+  { name: "HOME", href: "/117", active: true },
+  { name: "ABOUT", href: "#about", active: true },
+  { name: "PROJECTS", href: "/projects", active: true },
+  { name: "CONTACT", href: "#contact", active: true },
   { name: "ARCADIA", active: false },
 ]; // ["HOME", "ABOUT", "PROJECTS", "CONTACT", "ARCADIA"];
 
