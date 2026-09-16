@@ -1,11 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AllProjects, getProjectBySlug } from "@/data/all-projects";
 import ProjectHeroVideo from "@/components/project-hero-video";
-import LinkDos from "@/components/links/link-dos";
-import { Badge } from "@/components/ui/badge";
-import ProjectNavDots from "../project-nav-dots";
+
+import { Globe } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import ProjectInfo from "../project-info";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -28,50 +28,34 @@ const ProjectPage = async ({ params }: Props) => {
 
   return (
     <div>
-      {/* HERO */}
-      <div className="relative w-full h-[85vh] overflow-hidden rounded-b-4xl border-b-2 bg-muted">
+      {/* HERO/SHOWCASE*/}
+      <div className="relative w-full h-[85vh] overflow-hidden rounded-b-4xl border-4 border-b-primary bg-muted">
         {project.trailerUrl && <ProjectHeroVideo src={project.trailerUrl} />}
-        <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
 
         <div className="absolute bottom-0 left-0 flex w-full flex-col gap-2 p-8 md:p-16">
           <div>
-            <span className="font-departure-mono text-xs text-terminal-green tracking-widest">
+            {/* <span className="font-departure-mono text-xs text-terminal-green tracking-widest">
               //:: {project.slug}
-            </span>
+            </span> */}
             <h1 className="font-eurostile text-6xl md:text-8xl leading-none">
               {project.name}
             </h1>
           </div>
 
           {/* META: role / tech stack / links */}
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="font-departure-mono text-xs tracking-widest text-terminal-green uppercase">
-              {project.role ?? "Role :: TBA"}
-            </span>
-            {project.techStack?.length ? (
-              project.techStack.map((tech) => (
-                <Badge
-                  key={tech}
-                  variant="outline"
-                  className="border-terminal-green font-departure-mono text-terminal-green"
-                >
-                  {tech}
-                </Badge>
-              ))
-            ) : (
-              <Badge
-                variant="outline"
-                className="border-muted-foreground/40 font-departure-mono text-muted-foreground"
-              >
-                Tech Stack :: Coming Soon
-              </Badge>
-            )}
-          </div>
 
           <div className="-ml-3 flex flex-wrap gap-2">
             {project.links?.length ? (
-              project.links.map((link) => (
-                <LinkDos key={link.url} href={link.url} name={link.label} />
+              project.links.map((link, i) => (
+                <Link
+                  key={i}
+                  href="https://area59-studio.vercel.app/"
+                  target="_blank"
+                  className="flex jsustify-center items-center gap-2 px-3 py-1 font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase"
+                >
+                  <Globe />
+                  <span>Visit</span>
+                </Link>
               ))
             ) : (
               <span className="flex items-start gap-2 px-3 py-1 font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase">
@@ -82,56 +66,54 @@ const ProjectPage = async ({ params }: Props) => {
         </div>
       </div>
 
-      {/* DETAILS */}
-      <div className="container mx-auto max-w-5xl px-6 py-16 md:py-24">
-        <div className="rounded-3xl border border-terminal-green/20 bg-muted/40 p-8 md:p-12">
-          <div className="flex items-center gap-3 border-b border-terminal-green/20 pb-6">
-            <span className="h-2 w-2 rounded-full bg-terminal-green" />
-            <h2 className="font-eurostile text-3xl text-terminal-green uppercase md:text-4xl">
-              {project.name}
-            </h2>
+      {/* DETAILS SECTION */}
+      <section className="w-full py-16 md:py-24">
+        <div className="mx-auto w-full px-6">
+          <div className="flex items-center pb-6">
+            <h2 className="">{project.name}</h2>
           </div>
+          <Separator className="data-horizontal:h-1" />
 
-          <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-[280px_1fr]">
-            <dl className="flex flex-col gap-6 font-departure-mono text-sm">
-              <div>
-                <dt className="text-terminal-green uppercase tracking-widest">
-                  Category
-                </dt>
-                <dd className="mt-1 text-foreground uppercase">
-                  {project.category ?? "TBA"}
-                </dd>
-              </div>
-              <div>
-                <dt className="text-terminal-green uppercase tracking-widest">
-                  Role
-                </dt>
-                <dd className="mt-1 text-foreground uppercase">
-                  {project.role ?? "TBA"}
-                </dd>
-              </div>
-              <div>
-                <dt className="text-terminal-green uppercase tracking-widest">
-                  Tech Stack
-                </dt>
-                <dd className="mt-1 text-foreground uppercase">
-                  {project.techStack?.length
-                    ? project.techStack.join(", ")
-                    : "Coming Soon"}
-                </dd>
-              </div>
-            </dl>
+          <div className=" flex mx-2 gap-2">
+            {project.links?.length ? (
+              project.links.map((link, i) => (
+                <Link
+                  key={i}
+                  href="https://area59-studio.vercel.app/"
+                  target="_blank"
+                  className="flex jsustify-center items-center border-r-2 gap-2 px-3 py-3 font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase"
+                >
+                  <Globe size={18} />
+                  <span>Visit</span>
+                </Link>
+              ))
+            ) : (
+              <span className="flex items-start gap-2 px-3 py-1 font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase">
+                {">_ "}Coming Soon
+              </span>
+            )}
+          </div>
+          <Separator className="data-horizontal:h-1" />
 
+          <div className="my-8 ">
+            {/* QUICK PROJECT BREAKDOWN */}
+            <div className="flex flex-col mt-10">
+              <ProjectInfo label="Category" info={project.category as string} />
+              <ProjectInfo label="Role" info={project.role as string} />
+              <ProjectInfo label="Year" info={project.date as string} />
+            </div>
+
+            {/* PROJECT DESCRIPTION */}
             <p className="font-helvetica-neue text-lg text-muted-foreground">
               {project.description}
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* GALLERY */}
-      <div className="container mx-auto max-w-5xl px-6 pb-16 md:pb-24">
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+      <div className="min-h-96">
+        {/* <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {project.images?.length ? (
             project.images.map((src) => (
               <div
@@ -153,7 +135,7 @@ const ProjectPage = async ({ params }: Props) => {
               </span>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
 
       {/* UP NEXT */}

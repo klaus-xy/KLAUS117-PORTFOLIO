@@ -257,6 +257,11 @@
   h1 {
     @apply text-5xl sm:text-5xl md:text-6xl 2xl:text-7xl font-bold uppercase;
   }
+
+  h2 {
+    @apply font-eurostile uppercase md:text-4xl tracking-widest;
+  }
+
   h3 {
     @apply text-sm;
   }

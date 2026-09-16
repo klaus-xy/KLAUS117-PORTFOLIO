@@ -84,7 +84,7 @@ const eurostile = localFont({
 });
 export const metadata: Metadata = {
   title: "Klaus 117 | Portfolio",
-  description: "Ayobami Oyesiku (Klaus 117) Portfolio",
+  description: "Works of Ayobami Oyesiku (Klaus 117)",
   icons: {
     icon: "https://api.dicebear.com/9.x/adventurer/svg?seed=WindRunner&backgroundColor=1f2937",
   },
