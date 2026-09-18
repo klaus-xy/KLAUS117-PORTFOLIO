@@ -6,6 +6,7 @@ import ProjectHeroVideo from "@/components/project-hero-video";
 import { ArrowBigLeftIcon, ArrowBigRightIcon, Globe } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import ProjectInfo from "../project-info";
+import Image from "next/image";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -113,19 +114,20 @@ const ProjectPage = async ({ params }: Props) => {
       </section>
 
       {/* GALLERY */}
-      <div className="min-h-96">
-        {/* <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+      <div className="min-h-96 container mx-auto">
+        <h2 className="text-4xl my-6">Gallery</h2>
+        <div className="space-y-4">
           {project.images?.length ? (
             project.images.map((src) => (
               <div
                 key={src}
-                className="relative aspect-video overflow-hidden rounded-2xl bg-muted"
+                className="group relative aspect-video overflow-hidden rounded-2xl bg-muted"
               >
                 <Image
                   src={src}
                   alt={project.name}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-800 ease-out group-hover:scale-110"
                 />
               </div>
             ))
@@ -136,7 +138,7 @@ const ProjectPage = async ({ params }: Props) => {
               </span>
             </div>
           )}
-        </div> */}
+        </div>
       </div>
 
       {/* UP NEXT */}
@@ -146,37 +148,38 @@ const ProjectPage = async ({ params }: Props) => {
           className="group relative block h-[40vh] w-full overflow-hidden border-t-4 border-terminal-green"
         >
           {nextProject.trailerUrl ? (
-            <video
-              src={nextProject.trailerUrl}
-              className="absolute inset-0 h-full w-full object-cover opacity-50 transition-opacity duration-500 group-hover:opacity-80"
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
+            <div></div>
           ) : (
-            <div className="absolute inset-0 bg-muted" />
+            // <video
+            //   src={nextProject.trailerUrl}
+            //   className="absolute inset-0 h-full w-full object-cover opacity-50 transition-opacity duration-500 group-hover:opacity-80"
+            //   autoPlay
+            //   loop
+            //   muted
+            //   playsInline
+            // />
+            <div className="absolute inset-0 bg-background" />
           )}
           <div className="absolute inset-0 bg-linear-to-t from-background via-background/50 to-background/20" />
-          <div className="relative flex h-full flex-col items-center justify-center gap-2 pb-16 text-center">
+          <div className="relative flex h-full flex-col items-center justify-end gap-2 pb-16 text-center">
             {/* NAVIGATION */}
-            <div className="w-full flex justify-between items-center px-8">
-              <div className="flex items-center gap-2">
+            <div className="w-full flex justify-end items-center px-8 ">
+              {/* <div className="flex items-center gap-2">
                 <ArrowBigLeftIcon />
                 <span className="font-eurostile text-xs tracking-widest text-terminal-green uppercase">
                   Previous Project
                 </span>
-              </div>
+              </div> */}
 
               <div className="flex items-center gap-2">
-                <span className="font-eurostile text-xs tracking-widest text-terminal-green uppercase">
+                <span className="font-eurostile tracking-widest text-terminal-green uppercase">
                   Next Project
                 </span>
                 <ArrowBigRightIcon />
               </div>
             </div>
 
-            <h2 className="font-eurostile text-5xl leading-none md:text-7xl">
+            <h2 className="font-eurostile text-5xl md:text-7xl">
               {nextProject.name}
             </h2>
           </div>

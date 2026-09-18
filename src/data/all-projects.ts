@@ -47,12 +47,10 @@ export const AllProjects: Project[] = [
       },
     ],
     images: [
-      "/images/projects/area59/area59-1.jpg",
-      "/images/projects/area59/area59-2.jpg",
-      "/images/projects/area59/area59-3.jpg",
-      "/images/projects/area59/area59-4.jpg",
-      "/images/projects/area59/area59-5.jpg",
-      "/images/projects/area59/area59-6.jpg",
+      "/images/projects/area59/1.png",
+      "/images/projects/area59/2.png",
+      "/images/projects/area59/3.png",
+      "/images/projects/area59/4.png",
     ],
   },
   {
