@@ -22,7 +22,7 @@ const ProjectInfo = ({ label = "Label", info = "Info" }: Props) => {
         />
       </h2>
 
-      <Separator className="my-2 data-horizontal:h-0.5" />
+      <Separator className="my-2 data-horizontal:h-0.5 bg-primary" />
     </div>
   );
 };

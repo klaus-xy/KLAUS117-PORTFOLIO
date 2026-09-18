@@ -266,7 +266,7 @@
     @apply text-sm;
   }
   h4 {
-    @apply font-bold;
+    @apply font-bold font-eurostile tracking-wide;
   }
   /* 
   section {

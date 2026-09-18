@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { AllProjects, getProjectBySlug } from "@/data/all-projects";
 import ProjectHeroVideo from "@/components/project-hero-video";
 
-import { Globe } from "lucide-react";
+import { ArrowBigLeftIcon, ArrowBigRightIcon, Globe } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import ProjectInfo from "../project-info";
 
@@ -25,6 +25,7 @@ const ProjectPage = async ({ params }: Props) => {
 
   const currentIndex = AllProjects.findIndex((p) => p.slug === project.slug);
   const nextProject = AllProjects[(currentIndex + 1) % AllProjects.length];
+  const prevProject = AllProjects[(currentIndex - 1) % AllProjects.length];
 
   return (
     <div>
@@ -67,10 +68,10 @@ const ProjectPage = async ({ params }: Props) => {
       </div>
 
       {/* DETAILS SECTION */}
-      <section className="w-full py-16 md:py-24">
+      <section className="w-[90%] py-16 md:py-24">
         <div className="mx-auto w-full px-6">
           <div className="flex items-center pb-6">
-            <h2 className="">{project.name}</h2>
+            <h2 className="text-4xl">{project.name}</h2>
           </div>
           <Separator className="data-horizontal:h-1" />
 
@@ -95,7 +96,7 @@ const ProjectPage = async ({ params }: Props) => {
           </div>
           <Separator className="data-horizontal:h-1" />
 
-          <div className="my-8 ">
+          <div className="container mx-auto my-8 ">
             {/* QUICK PROJECT BREAKDOWN */}
             <div className="flex flex-col mt-10">
               <ProjectInfo label="Category" info={project.category as string} />
@@ -139,33 +140,48 @@ const ProjectPage = async ({ params }: Props) => {
       </div>
 
       {/* UP NEXT */}
-      <Link
-        href={`/projects/${nextProject.slug}`}
-        className="group relative block h-[50vh] w-full overflow-hidden border-t border-terminal-green/20"
-      >
-        {nextProject.trailerUrl ? (
-          <video
-            src={nextProject.trailerUrl}
-            className="absolute inset-0 h-full w-full object-cover opacity-50 transition-opacity duration-500 group-hover:opacity-80"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-        ) : (
-          <div className="absolute inset-0 bg-muted" />
-        )}
-        <div className="absolute inset-0 bg-linear-to-t from-background via-background/50 to-background/20" />
-        <div className="relative flex h-full flex-col items-center justify-center gap-2 pb-16 text-center">
-          <span className="font-departure-mono text-xs tracking-widest text-terminal-green uppercase">
-            //:: Up Next
-          </span>
-          <h2 className="font-eurostile text-5xl leading-none md:text-7xl">
-            {nextProject.name}
-          </h2>
-        </div>
-      </Link>
+      <div>
+        <Link
+          href={`/projects/${nextProject.slug}`}
+          className="group relative block h-[40vh] w-full overflow-hidden border-t-4 border-terminal-green"
+        >
+          {nextProject.trailerUrl ? (
+            <video
+              src={nextProject.trailerUrl}
+              className="absolute inset-0 h-full w-full object-cover opacity-50 transition-opacity duration-500 group-hover:opacity-80"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          ) : (
+            <div className="absolute inset-0 bg-muted" />
+          )}
+          <div className="absolute inset-0 bg-linear-to-t from-background via-background/50 to-background/20" />
+          <div className="relative flex h-full flex-col items-center justify-center gap-2 pb-16 text-center">
+            {/* NAVIGATION */}
+            <div className="w-full flex justify-between items-center px-8">
+              <div className="flex items-center gap-2">
+                <ArrowBigLeftIcon />
+                <span className="font-eurostile text-xs tracking-widest text-terminal-green uppercase">
+                  Previous Project
+                </span>
+              </div>
 
+              <div className="flex items-center gap-2">
+                <span className="font-eurostile text-xs tracking-widest text-terminal-green uppercase">
+                  Next Project
+                </span>
+                <ArrowBigRightIcon />
+              </div>
+            </div>
+
+            <h2 className="font-eurostile text-5xl leading-none md:text-7xl">
+              {nextProject.name}
+            </h2>
+          </div>
+        </Link>
+      </div>
       {/* <ProjectNavDots currentSlug={project.slug} /> */}
     </div>
   );

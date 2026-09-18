@@ -43,11 +43,11 @@ const Projects = () => {
         {/* <h3 className="font-departure-mono absolute -z-10 -top-8  -right-0  text-[128px] sm:text-[150px] md:text-[180px] text-transparent [-webkit-text-stroke:1.5px_white]">
         01
       </h3> */}
-        <div className="w-full flex justify-start items-center gap-4 text-terminal-green font-bold font-departure-mono">
+        {/* <div className="w-full flex justify-start items-center gap-4 text-terminal-green font-bold font-departure-mono">
           <h2>Game Dev</h2>
           <h2>Web Dev</h2>
           <h2>Side Quests</h2>
-        </div>
+        </div> */}
       </div>
       {/* FEATURED PROJECTS CONTAINER */}
       <div

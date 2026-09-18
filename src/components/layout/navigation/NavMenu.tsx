@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import ScrambleText from "@/components/ui/scramble-text";
 
 interface NavItemProps {
   name: string;
@@ -26,7 +27,12 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
         {NAVITEMS.map((item, index) => {
           const label = (
             <>
-              {item.name}{" "}
+              <ScrambleText
+                text={item.name}
+                scrambleSpeed={50}
+                revealSpeed={2}
+                chars="KLAUS117"
+              />{" "}
               {!item.active && (
                 <Badge className="absolute font-medium font-helvetica-neue">
                   Coming Soon
