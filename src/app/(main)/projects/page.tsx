@@ -14,7 +14,7 @@ const ProjectsPage = () => {
       : AllProjects.filter((project) => project.category === selected);
 
   return (
-    <div className="container mx-auto px-6 py-24">
+    <div className="container mx-auto px-6 py-26 lg:py-28">
       <h1 className="font-eurostile text-6xl uppercase">
         <ScrambleText
           text="Projects"

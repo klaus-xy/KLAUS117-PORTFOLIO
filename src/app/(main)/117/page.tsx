@@ -1,3 +1,5 @@
+"use client";
+
 import LinkDos from "@/components/links/link-dos";
 import MusicPlayer from "@/components/music-player";
 import UnderConstruction from "@/components/under-construction";
@@ -9,6 +11,7 @@ import Marquee from "@/components/marquee";
 import Image from "next/image";
 import About from "./sections/about";
 import { Quote } from "lucide-react";
+import { motion } from "motion/react";
 
 // Landing Page Component
 const page = () => {
@@ -80,9 +83,18 @@ const page = () => {
       </div>
       <Projects />
       <div className="min-h-[50vh] flex flex-col justify-center items-center gap-4  text-2xl font-eurostile text-terminal-green">
-        <Quote className="w-10 h-10" />
+        <Quote className="w-10 h-10 text-primary" />
         <h2>DO WHAT YOU LOVE</h2>
         <h2>LOVE WHAT YOU DO</h2>
+        <motion.span
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
+          className="text-primary"
+        >
+          - HOLLY TUCKER
+        </motion.span>
       </div>
       {/* <Contact /> */}
       {/* <div className={"w-full h-32  mb-6"}>

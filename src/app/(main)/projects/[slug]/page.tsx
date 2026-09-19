@@ -31,7 +31,7 @@ const ProjectPage = async ({ params }: Props) => {
   return (
     <div>
       {/* HERO/SHOWCASE*/}
-      <div className="relative w-full h-[85vh] overflow-hidden rounded-b-4xl border-4 border-b-primary bg-muted">
+      <div className="relative w-full h-[80vh] overflow-hidden rounded-b-4xl border-4 border-b-primary bg-muted">
         {project.trailerUrl && <ProjectHeroVideo src={project.trailerUrl} />}
 
         <div className="absolute bottom-0 left-0 flex w-full flex-col gap-2 p-8 md:p-16">
@@ -39,9 +39,9 @@ const ProjectPage = async ({ params }: Props) => {
             {/* <span className="font-departure-mono text-xs text-terminal-green tracking-widest">
               //:: {project.slug}
             </span> */}
-            <h1 className="font-eurostile text-6xl md:text-8xl leading-none">
+            {/* <h1 className="font-eurostile text-6xl md:text-8xl leading-none">
               {project.name}
-            </h1>
+            </h1> */}
           </div>
 
           {/* META: role / tech stack / links */}
@@ -69,10 +69,10 @@ const ProjectPage = async ({ params }: Props) => {
       </div>
 
       {/* DETAILS SECTION */}
-      <section className="w-[90%] py-16 md:py-24">
-        <div className="mx-auto w-full px-6">
+      <section className="w-[100%] py-10 px-8 md:py-14">
+        <div className="mx-auto w-full ">
           <div className="flex items-center pb-6">
-            <h2 className="text-4xl">{project.name}</h2>
+            <h2 className="text-6xl">{project.name}</h2>
           </div>
           <Separator className="data-horizontal:h-1" />
 
@@ -97,7 +97,7 @@ const ProjectPage = async ({ params }: Props) => {
           </div>
           <Separator className="data-horizontal:h-1" />
 
-          <div className="container mx-auto my-8 ">
+          <div className="my-8 px-8">
             {/* QUICK PROJECT BREAKDOWN */}
             <div className="flex flex-col mt-10">
               <ProjectInfo label="Category" info={project.category as string} />
@@ -114,9 +114,11 @@ const ProjectPage = async ({ params }: Props) => {
       </section>
 
       {/* GALLERY */}
-      <div className="min-h-96 container mx-auto">
-        <h2 className="text-4xl my-6">Gallery</h2>
-        <div className="space-y-4">
+      <section className="min-h-96 px-10 ">
+        <h2 className="flex justify-center text-4xl lg:text-5xl my-6 mb-8">
+          SHOWCASE
+        </h2>
+        <div className="space-y-6 container mx-auto">
           {project.images?.length ? (
             project.images.map((src) => (
               <div
@@ -139,52 +141,52 @@ const ProjectPage = async ({ params }: Props) => {
             </div>
           )}
         </div>
-      </div>
+      </section>
 
-      {/* UP NEXT */}
-      <div>
-        <Link
-          href={`/projects/${nextProject.slug}`}
-          className="group relative block h-[40vh] w-full overflow-hidden border-t-4 border-terminal-green"
-        >
-          {nextProject.trailerUrl ? (
-            <div></div>
-          ) : (
-            // <video
-            //   src={nextProject.trailerUrl}
-            //   className="absolute inset-0 h-full w-full object-cover opacity-50 transition-opacity duration-500 group-hover:opacity-80"
-            //   autoPlay
-            //   loop
-            //   muted
-            //   playsInline
-            // />
-            <div className="absolute inset-0 bg-background" />
-          )}
-          <div className="absolute inset-0 bg-linear-to-t from-background via-background/50 to-background/20" />
-          <div className="relative flex h-full flex-col items-center justify-end gap-2 pb-16 text-center">
-            {/* NAVIGATION */}
-            <div className="w-full flex justify-end items-center px-8 ">
-              {/* <div className="flex items-center gap-2">
+      {/* UP NEXT SECTION */}
+
+      <div className="group relative flex justify-center items-center h-[40vh] w-full overflow-hidden rounded-t-2xl border-t-4 border-t-primary mt-12">
+        {nextProject.trailerUrl ? (
+          <div></div>
+        ) : (
+          // <video
+          //   src={nextProject.trailerUrl}
+          //   className="absolute inset-0 h-full w-full object-cover opacity-50 transition-opacity duration-500 group-hover:opacity-80"
+          //   autoPlay
+          //   loop
+          //   muted
+          //   playsInline
+          // />
+          <div className="absolute inset-0 bg-background" />
+        )}
+        {/* <div className="absolute inset-0 bg-linear-to-t from-background via-background/50 to-background/20" /> */}
+        <div className="relative flex w-full h-full flex-col items-center justify-center gap-10 px-4 pb-16 text-center">
+          {/* NAVIGATION */}
+          <div className="w-full flex justify-end items-center px-8 ">
+            {/* <div className="flex items-center gap-2">
                 <ArrowBigLeftIcon />
                 <span className="font-eurostile text-xs tracking-widest text-terminal-green uppercase">
                   Previous Project
                 </span>
               </div> */}
 
-              <div className="flex items-center gap-2">
-                <span className="font-eurostile tracking-widest text-terminal-green uppercase">
-                  Next Project
-                </span>
-                <ArrowBigRightIcon />
-              </div>
-            </div>
-
-            <h2 className="font-eurostile text-5xl md:text-7xl">
-              {nextProject.name}
-            </h2>
+            <Link
+              href={`/projects/${nextProject.slug}`}
+              className="flex items-center gap-2"
+            >
+              <span className="font-eurostile tracking-widest text-terminal-green uppercase">
+                Next Project
+              </span>
+              <ArrowBigRightIcon className="text-terminal-green" />
+            </Link>
           </div>
-        </Link>
+
+          <h2 className="font-eurostile text-5xl md:text-7xl">
+            {nextProject.name}
+          </h2>
+        </div>
       </div>
+
       {/* <ProjectNavDots currentSlug={project.slug} /> */}
     </div>
   );
