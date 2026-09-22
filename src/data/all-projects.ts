@@ -1,4 +1,5 @@
-import React from "react";
+import type { LucideIcon } from "lucide-react";
+import { Globe, Github, Twitter } from "lucide-react";
 
 export const PROJECT_CATEGORIES = [
   "Web Dev",
@@ -11,9 +12,9 @@ export const PROJECT_CATEGORIES = [
 export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number];
 
 export interface ProjectLink {
-  label: string;
+  label?: string;
   url: string;
-  icon?: React.ReactNode;
+  icon?: LucideIcon;
 }
 
 export interface Project {
@@ -22,6 +23,7 @@ export interface Project {
   description: string;
   trailerUrl?: string;
   category?: ProjectCategory;
+  industry?: string;
   role?: string;
   date?: string;
   techStack?: string[];
@@ -43,7 +45,17 @@ export const AllProjects: Project[] = [
       {
         label: "Website",
         url: "https://area59studio.com/",
-        icon: "/icons/website.svg",
+        icon: Globe,
+      },
+      {
+        label: "Github",
+        url: "https://github.com/klaus-xy/area59-studio",
+        icon: Github,
+      },
+      {
+        label: "X",
+        url: "https://twitter.com/Area59Studio",
+        icon: Twitter,
       },
     ],
     images: [
