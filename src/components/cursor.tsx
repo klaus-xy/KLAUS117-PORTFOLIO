@@ -1,112 +1,26 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useCursor } from "@/providers/cursor-provider";
 
 // ---------------- CUSTOM CURSOR COMPONENT ----------------------- //
 // Follows mouse movements and animates smoothly using motion library
 // Interacts with defined elements on the page [links, buttons, etc.]
 // Disappears when cursor is out of viewport or on mobile.
 // Blends with background using mix-blend-mode for a cool effect amd easter egg reveals.
+// State is shared via CursorProvider so other components (e.g. cursor-reveal
+// easter eggs) can read the exact same position/size this cursor renders at.
 // ---------------- CUSTOM CURSOR COMPONENT ----------------------- //
 
 const Cursor = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [isHovering, setIsHovering] = useState(false);
-  const [cursorLabel, setCursorLabel] = useState<string | null>(null);
-  const [isMouseDown, setIsMouseDown] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  // console.log(`isMobile: ${isMobile}`);
-
-  // Detect if client is using a mouse or touch pointer
-  useEffect(() => {
-    const media = window.matchMedia("(pointer: coarse)"); // Coarse == touch devices. Fine == mouse.
-
-    const updateIsMobile = () => setIsMobile(media.matches); // Update isMobile based on media query match [if coarse pointer, then mobile = true]
-    updateIsMobile(); // Set initial value
-
-    media.addEventListener("change", updateIsMobile);
-    return () => media.removeEventListener("change", updateIsMobile);
-  }, []);
-
-  // On first render or pointer-type change, add event listener to update mouse position on mouse move events
-  useEffect(() => {
-    if (isMobile) return; // Disable custom cursor on mobile devices
-
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY }); // Update state with current mouse coordinates whenever mouse-move event is fired
-      // console.log(`Mouse Position: (${e.clientX}, ${e.clientY})`);
-    };
-
-    const handleMouseEnter = () => setIsVisible(true); // Show custom cursor when mouse enters viewport
-    const handleMouseLeave = () => setIsVisible(false); // Hide custom cursor when mouse leaves viewport
-
-    window.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseenter", handleMouseEnter);
-    document.addEventListener("mouseleave", handleMouseLeave);
-    document.addEventListener("mousedown", () => {
-      // Briefly scale cursor on mousedown for visual feedback
-      setIsMouseDown(true);
-    });
-    document.addEventListener("mouseup", () => {
-      // Reset mouse down state on mouse up for feedback after little delay.
-      setTimeout(() => setIsMouseDown(false), 10);
-    });
-
-    // Handle hover state for interactive elements.
-    // Uses event delegation (instead of querySelectorAll + per-element listeners)
-    // so elements mounted after this effect runs (e.g. the nav Sheet's li items,
-    // which only exist in the DOM once opened) still trigger the hover state.
-    const interactiveSelector =
-      'h1, h2, button, a, input, textarea, select, li, [role="button"], [role="link"]';
-    const labelSelector = "[data-cursor-text]";
-
-    const handleElementMouseHover = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-
-      const labelElement = target.closest<HTMLElement>(labelSelector);
-      if (labelElement) {
-        setCursorLabel(labelElement.dataset.cursorText ?? null);
-      }
-
-      if (target.closest(interactiveSelector)) {
-        setIsHovering(true);
-      }
-    };
-
-    const handleElementMouseOut = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-
-      if (target.closest(labelSelector)) {
-        setCursorLabel(null);
-      }
-
-      if (target.closest(interactiveSelector)) {
-        setIsHovering(false);
-      }
-    };
-
-    document.addEventListener("mouseover", handleElementMouseHover);
-    document.addEventListener("mouseout", handleElementMouseOut);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseenter", handleMouseEnter);
-      document.removeEventListener("mouseleave", handleMouseLeave);
-
-      document.removeEventListener("mousedown", () => {
-        setIsMouseDown(true);
-      });
-      document.removeEventListener("mouseup", () => {
-        setIsMouseDown(false);
-      });
-
-      document.removeEventListener("mouseover", handleElementMouseHover);
-      document.removeEventListener("mouseout", handleElementMouseOut);
-    };
-  }, [isMobile]);
+  const {
+    isMobile,
+    isVisible,
+    isHovering,
+    cursorLabel,
+    isMouseDown,
+    mousePosition,
+  } = useCursor();
 
   if (isMobile) return null; // Do not render custom cursor on mobile devices
 

@@ -69,9 +69,9 @@ const ProjectPage = async ({ params }: Props) => {
       </div>
 
       {/* DETAILS SECTION */}
-      <section className="w-[100%] py-10 px-8 md:py-14">
+      <section className="w-[100%] py-10 px-8 md:py-8">
         <div className="mx-auto w-full ">
-          <div className="flex items-center pb-6">
+          <div className="flex items-center">
             <h2 className="text-6xl">{project.name}</h2>
           </div>
           <Separator className="data-horizontal:h-1" />
