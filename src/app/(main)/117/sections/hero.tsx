@@ -14,7 +14,7 @@ const Hero = () => {
   const [replayKey, setReplayKey] = useState(0);
 
   return (
-    <SectionWrapper id="home" wrapperClassName="">
+    <SectionWrapper id="home" className="max-w-none">
       <div className="min-h-[90vh] flex flex-col justify-start items-center relative overflow-hidden ">
         <div className="w-full h-full absolute right-0 -z-10">
           <AstroKlaus />

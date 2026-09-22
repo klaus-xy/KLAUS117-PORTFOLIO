@@ -6,6 +6,7 @@ import ProjectHeroVideo from "@/components/project-hero-video";
 import {
   ArrowBigLeftIcon,
   ArrowBigRightIcon,
+  ArrowRight,
   Globe,
   Link2,
 } from "lucide-react";
@@ -51,7 +52,7 @@ const ProjectPage = async ({ params }: Props) => {
 
           {/* META: role / tech stack / links */}
 
-          <div className=" w-max flex flex-wrap gap-2 bg-background/50 backdrop-blur-md px-8 py-4 rounded-full border">
+          <div className=" w-max flex flex-wrap gap-0 bg-background/50 backdrop-blur-md px-4 py-2 rounded-full border">
             {project.links?.length ? (
               project.links.map((link) => {
                 const Icon = link.icon ?? Link2;
@@ -190,7 +191,7 @@ const ProjectPage = async ({ params }: Props) => {
               <span className="font-eurostile tracking-widest text-terminal-green uppercase">
                 Next Project
               </span>
-              <ArrowBigRightIcon className="text-terminal-green" />
+              <ArrowRight size={28} className="stroke-2 text-terminal-green" />
             </Link>
           </div>
 

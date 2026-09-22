@@ -57,7 +57,7 @@ const Projects = () => {
         onMouseLeave={() => setHoveredProject(null)}
       >
         {/* PROJECT PREVIEW */}
-        <div className="w-1/3 max-h-170 aspect-square hidden lg:flex border-2 flex-1 relative rounded-r-[2rem] bg-muted overflow-hidden">
+        <div className="w-1/3 max-h-170 aspect-square hidden lg:flex flex-1 relative rounded-r-[2rem] bg-muted overflow-hidden">
           <AnimatePresence mode="wait">
             {showVideo && hoveredProject?.trailerUrl ? (
               <motion.video
@@ -115,12 +115,13 @@ const Projects = () => {
               />
             ))}
           </ul>
-          <div className="w-full flex justify-end items-center py-16 pr-8">
+          <div className="w-full flex justify-end items-center py-18 pr-6">
             <Button
-              className="before:bg-lime-500 before:h-18  before:w-12 before:rounded font-eurostile text-2xl tracking-wide py-8 px-6"
+              className="text-primary text-lg before:bg-lime-500 font-eurostile  tracking-wide py-8 px-6 before:h-18 before:w-12 before:rounded "
               size={"lg"}
+              variant={"secondary"}
             >
-              See All Projects
+              All Projects
             </Button>
           </div>
         </div>

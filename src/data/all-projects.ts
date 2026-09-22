@@ -71,6 +71,31 @@ export const AllProjects: Project[] = [
     description: "Details for this project are coming soon.",
     trailerUrl: "/videos/project-trailers/sidequest-trailer.mp4",
     category: "Side Quests",
+    role: "Frontend Developer",
+    date: "2025",
+    links: [
+      {
+        label: "Website",
+        url: "https://area59studio.com/",
+        icon: Globe,
+      },
+      {
+        label: "Github",
+        url: "https://github.com/klaus-xy/area59-studio",
+        icon: Github,
+      },
+      {
+        label: "X",
+        url: "https://twitter.com/Area59Studio",
+        icon: Twitter,
+      },
+    ],
+    images: [
+      "/images/projects/area59/1.png",
+      "/images/projects/area59/2.png",
+      "/images/projects/area59/3.png",
+      "/images/projects/area59/4.png",
+    ],
   },
   {
     slug: "project-005",
@@ -78,18 +103,94 @@ export const AllProjects: Project[] = [
     description: "Details for this project are coming soon.",
     trailerUrl: "/videos/project-trailers/walkman-trailer.mp4",
     category: "Hardware",
+    role: "Designer & Frontend Developer",
+    date: "2025",
+    links: [
+      {
+        label: "Website",
+        url: "https://area59studio.com/",
+        icon: Globe,
+      },
+      {
+        label: "Github",
+        url: "https://github.com/klaus-xy/area59-studio",
+        icon: Github,
+      },
+      {
+        label: "X",
+        url: "https://twitter.com/Area59Studio",
+        icon: Twitter,
+      },
+    ],
+    images: [
+      "/images/projects/area59/1.png",
+      "/images/projects/area59/2.png",
+      "/images/projects/area59/3.png",
+      "/images/projects/area59/4.png",
+    ],
   },
   {
     slug: "project-002",
     name: "Project OVR // DRV™",
     description: "Details for this project are coming soon.",
+    trailerUrl: "/videos/project-trailers/racing-realms.mp4",
     category: "Hardware",
+    role: "Gameplay Programmer",
+    date: "2025",
+    links: [
+      {
+        label: "Website",
+        url: "https://area59studio.com/",
+        icon: Globe,
+      },
+      {
+        label: "Github",
+        url: "https://github.com/klaus-xy/area59-studio",
+        icon: Github,
+      },
+      {
+        label: "X",
+        url: "https://twitter.com/Area59Studio",
+        icon: Twitter,
+      },
+    ],
+    images: [
+      "/images/projects/area59/1.png",
+      "/images/projects/area59/2.png",
+      "/images/projects/area59/3.png",
+      "/images/projects/area59/4.png",
+    ],
   },
   {
     slug: "project-003",
     name: "FINSWICH DASHBOARD",
     description: "Making sense out of digital noise.",
-    category: "Web Dev",
+    category: "Frontend Engineer",
+    role: "Creative Lead",
+    date: "2025",
+    links: [
+      {
+        label: "Website",
+        url: "https://area59studio.com/",
+        icon: Globe,
+      },
+      {
+        label: "Github",
+        url: "https://github.com/klaus-xy/area59-studio",
+        icon: Github,
+      },
+      {
+        label: "X",
+        url: "https://twitter.com/Area59Studio",
+        icon: Twitter,
+      },
+    ],
+    images: [
+      "/images/projects/area59/1.png",
+      "/images/projects/area59/2.png",
+      "/images/projects/area59/3.png",
+      "/images/projects/area59/4.png",
+    ],
   },
   {
     slug: "project-004",
@@ -97,6 +198,31 @@ export const AllProjects: Project[] = [
     description: "Details for this project are coming soon.",
     trailerUrl: "/videos/project-trailers/chronomancers-trailer.mp4",
     category: "Game Dev",
+    role: "Game Developer",
+    date: "2025",
+    links: [
+      {
+        label: "Website",
+        url: "https://area59studio.com/",
+        icon: Globe,
+      },
+      {
+        label: "Github",
+        url: "https://github.com/klaus-xy/area59-studio",
+        icon: Github,
+      },
+      {
+        label: "X",
+        url: "https://twitter.com/Area59Studio",
+        icon: Twitter,
+      },
+    ],
+    images: [
+      "/images/projects/area59/1.png",
+      "/images/projects/area59/2.png",
+      "/images/projects/area59/3.png",
+      "/images/projects/area59/4.png",
+    ],
   },
 ];
 

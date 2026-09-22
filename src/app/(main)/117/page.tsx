@@ -34,6 +34,29 @@ const page = () => {
     "SIMULATION.",
     "   ",
   ];
+
+  const cheatTexts = [
+    "● ⬆️⬇️⬅️➡️ ●",
+    "UP",
+    "  ●  ",
+    "UP",
+    " ●  ",
+    "DOWN",
+    "  ● ",
+    "DOWN",
+    "  ● ",
+    "LEFT",
+    "  ● ",
+    "RIGHT",
+    "  ● ",
+    "LEFT",
+    "  ● ",
+    "RIGHT",
+    "  ● ",
+    "UH...",
+    "  ● ",
+    "I FORGOT THE REST",
+  ];
   // const bannerTexts = [
   //   "LETS WORK TOGETHER.",
   //   "   ",
@@ -84,7 +107,7 @@ const page = () => {
       </div>
       <Projects />
       {/* <CursorRevealZone /> */}
-      <div className="min-h-[50vh] flex flex-col justify-center items-center gap-4  text-2xl font-eurostile text-terminal-green">
+      <div className="min-h-[85vh] flex flex-col justify-center items-center gap-4  text-2xl font-eurostile text-terminal-green">
         <Quote className="w-10 h-10 text-primary" />
         <h2>DO WHAT YOU LOVE</h2>
         <h2>LOVE WHAT YOU DO</h2>
@@ -99,7 +122,7 @@ const page = () => {
         </motion.span>
       </div>
       {/* <Contact /> */}
-      {/* <div className={"w-full h-32  mb-6"}>
+      <div className={"w-full h-32  mb-6"}>
         <Marquee
           className=" text-6xl  font-helvetica-neue font-semibold border-terminal-green border-y-4 "
           direction="left"
@@ -107,7 +130,7 @@ const page = () => {
         >
           {
             // Map Contents here.
-            bannerTexts.map((text, index) => (
+            cheatTexts.map((text, index) => (
               <div key={index} className="flex">
                 <div className="flex gap-2 mx-2"></div>
 
@@ -116,7 +139,7 @@ const page = () => {
             ))
           }
         </Marquee>
-      </div> */}
+      </div>
       {/* <MainFooter /> */}
     </div>
   );
