@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import SectionWrapper from "../../../../components/layout/section-wrapper";
 import Core from "@/components/3d/core";
 import LinkDos from "@/components/links/link-dos";
@@ -9,6 +11,8 @@ import TerminalBuddy from "@/components/terminal-buddy";
 import ScrambleText from "@/components/ui/scramble-text";
 
 const Hero = () => {
+  const [replayKey, setReplayKey] = useState(0);
+
   return (
     <SectionWrapper id="home" wrapperClassName="">
       <div className="min-h-[90vh] flex flex-col justify-start items-center relative overflow-hidden ">
@@ -20,16 +24,18 @@ const Hero = () => {
           {/* <span className="absolute top-80 text-xs font-departure-mono text-muted-foreground">
             morphs into KLAUS117 ⬅
           </span> */}
-          <h1 className="text-7xl font-eurostile">KLAUS</h1>
-          {/* <h1 className="text-9xl font-eurostile">
-            {" "}
+          <motion.h1
+            className="text-7xl font-eurostile"
+            viewport={{ once: false, amount: 0.8 }}
+            onViewportEnter={() => setReplayKey((k) => k + 1)}
+          >
             <ScrambleText
-              text="Klaus "
-              chars=""
-              revealSpeed={5}
-              // className="text-terminal-green"
+              key={replayKey}
+              text="KLAUS"
+              scrambleSpeed={80}
+              chars="KLAUS117"
             />
-          </h1> */}
+          </motion.h1>
 
           <div className="flex justify-start items-center gap-2 tracking-widest text-sm font-eurostile">
             {/* <h2 className="text-terminal-green">SOFTWARE ENGINEER::</h2> */}

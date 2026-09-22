@@ -43,6 +43,8 @@ const MainHeader = () => {
               text="117"
               scrambleSpeed={100}
               chars="klaus"
+              delay={1500}
+              showInitialText={true}
               className="font-eurostile text-4xl"
             />
           </h1>

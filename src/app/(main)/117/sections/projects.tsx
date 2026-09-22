@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { AllProjects, Project } from "@/data/all-projects";
 import MiniTrailer from "@/components/mini-trailer";
 
+const MAX_FEATURED_PROJECTS = 5;
+
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
   const [videoErrored, setVideoErrored] = useState(false);
@@ -55,7 +57,7 @@ const Projects = () => {
         onMouseLeave={() => setHoveredProject(null)}
       >
         {/* PROJECT PREVIEW */}
-        <div className="w-2/3 max-h-180 aspect-square hidden lg:flex border-2 flex-1 relative rounded-r-[2rem] bg-muted overflow-hidden">
+        <div className="w-1/3 max-h-170 aspect-square hidden lg:flex border-2 flex-1 relative rounded-r-[2rem] bg-muted overflow-hidden">
           <AnimatePresence mode="wait">
             {showVideo && hoveredProject?.trailerUrl ? (
               <motion.video
@@ -103,24 +105,25 @@ const Projects = () => {
         </div>
         <div className="w-full flex-1 px-4">
           <ul>
-            {AllProjects.map((project) => (
+            {AllProjects.slice(0, MAX_FEATURED_PROJECTS).map((project, i) => (
               <ProjectItem
                 key={project.slug}
+                index={i + 1}
                 project={project}
                 isActive={hoveredProject?.slug === project.slug}
                 onHoverChange={setHoveredProject}
               />
             ))}
           </ul>
+          <div className="w-full flex justify-end items-center py-16 pr-8">
+            <Button
+              className="before:bg-lime-500 before:h-18  before:w-12 before:rounded font-eurostile text-2xl tracking-wide py-8 px-6"
+              size={"lg"}
+            >
+              See All Projects
+            </Button>
+          </div>
         </div>
-      </div>
-      <div className="container mx-auto flex justify-end items-center relative lg:-top-10">
-        <Button
-          className="before:bg-lime-500 before:h-14 before:w-12 "
-          size={"lg"}
-        >
-          See More Projects
-        </Button>
       </div>
     </SectionWrapper>
   );

@@ -8,6 +8,8 @@ interface ScrambleTextProps {
   chars?: string;
   scrambleSpeed?: number;
   revealSpeed?: number;
+  delay?: number;
+  showInitialText?: boolean;
 }
 
 const ScrambleText = ({ text, className, ...options }: ScrambleTextProps) => {
