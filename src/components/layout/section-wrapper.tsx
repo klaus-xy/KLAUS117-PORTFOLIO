@@ -20,7 +20,7 @@ const SectionWrapper = ({
     <section
       id={id}
       className={cn(
-        "relative z-10 min-h-screen bg-background pt-20",
+        "relative z-10 min-h-screen bg-background pt-20 overflow-hidden",
         wrapperClassName,
       )}
     >

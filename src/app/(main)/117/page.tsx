@@ -4,7 +4,7 @@ import LinkDos from "@/components/links/link-dos";
 import MusicPlayer from "@/components/music-player";
 import UnderConstruction from "@/components/under-construction";
 import Hero from "./sections/hero";
-import Projects from "./sections/projects";
+import Projects from "./sections/featured-projects";
 import Contact from "./sections/contact";
 import MainFooter from "@/components/layout/footers/MainFooter";
 import Marquee from "@/components/marquee";
@@ -13,6 +13,7 @@ import About from "./sections/about";
 import { Quote } from "lucide-react";
 import { motion } from "motion/react";
 import CursorRevealZone from "@/components/eggs/cursor-reveal-zone";
+import FeaturedProjects from "./sections/featured-projects";
 
 // Landing Page Component
 const page = () => {
@@ -105,7 +106,7 @@ const page = () => {
           }
         </Marquee>
       </div>
-      <Projects />
+      <FeaturedProjects />
       {/* <CursorRevealZone /> */}
       <div className="min-h-[85vh] flex flex-col justify-center items-center gap-4  text-2xl font-eurostile text-terminal-green">
         <Quote className="w-10 h-10 text-primary" />

@@ -162,11 +162,12 @@ export const AllProjects: Project[] = [
     ],
   },
   {
-    slug: "project-003",
-    name: "FINSWICH DASHBOARD",
-    description: "Making sense out of digital noise.",
-    category: "Frontend Engineer",
-    role: "Creative Lead",
+    slug: "project-004",
+    name: "CHRONOMANCERS",
+    description: "Details for this project are coming soon.",
+    trailerUrl: "/videos/project-trailers/chronomancers-trailer.mp4",
+    category: "Game Dev",
+    role: "Game Developer",
     date: "2025",
     links: [
       {
@@ -193,12 +194,11 @@ export const AllProjects: Project[] = [
     ],
   },
   {
-    slug: "project-004",
-    name: "CHRONOMANCERS",
-    description: "Details for this project are coming soon.",
-    trailerUrl: "/videos/project-trailers/chronomancers-trailer.mp4",
-    category: "Game Dev",
-    role: "Game Developer",
+    slug: "project-003",
+    name: "FINSWICH DASHBOARD",
+    description: "Making sense out of digital noise.",
+    category: "Web Dev",
+    role: "Frontend Engineer",
     date: "2025",
     links: [
       {

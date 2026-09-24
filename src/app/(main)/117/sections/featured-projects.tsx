@@ -6,10 +6,12 @@ import ProjectItem from "../../projects/project-item";
 import { Button } from "@/components/ui/button";
 import { AllProjects, Project } from "@/data/all-projects";
 import MiniTrailer from "@/components/mini-trailer";
+import { ArrowUpRight, LucideArrowUpRightFromSquare } from "lucide-react";
+import Link from "next/link";
 
 const MAX_FEATURED_PROJECTS = 5;
 
-const Projects = () => {
+const FeaturedProjects = () => {
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
   const [videoErrored, setVideoErrored] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
@@ -115,14 +117,18 @@ const Projects = () => {
               />
             ))}
           </ul>
-          <div className="w-full flex justify-end items-center py-18 pr-6">
-            <Button
-              className="text-primary text-lg before:bg-lime-500 font-eurostile  tracking-wide py-8 px-6 before:h-18 before:w-12 before:rounded "
-              size={"lg"}
-              variant={"secondary"}
-            >
-              All Projects
-            </Button>
+          <div className="w-full flex justify-end items-center py-20 pr-4">
+            <Link href={"/projects"}>
+              <Button
+                // className="text-primary text-lg before:bg-lime-500 border-2 border-primary font-eurostile  tracking-wide py-7 px-6 before:h-18 before:w-12 before:rounded "
+                className="text-primary text-xl border-2 hover:border-primary font-eurostile  tracking-wide py-7 px-6"
+                size={"lg"}
+                variant={"secondary"}
+              >
+                View All
+                <LucideArrowUpRightFromSquare size={24} className="ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -130,4 +136,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default FeaturedProjects;

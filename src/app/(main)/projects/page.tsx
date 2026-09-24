@@ -23,8 +23,8 @@ const ProjectsPage = () => {
           chars="117"
         />
       </h1>
-      <h2 className="font-departure-mono text-sm text-muted-foreground uppercase tracking-widest">
-        All my works in one place
+      <h2 className=" text-sm text-muted-foreground uppercase tracking-widest">
+        Yea. I've been busy.
       </h2>
 
       <div className="mt-8 mb-12">

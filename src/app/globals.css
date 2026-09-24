@@ -236,7 +236,7 @@
   }
 
   html {
-    @apply font-sans scroll-smooth scrollbar-thin;
+    @apply font-sans scroll-smooth scrollbar-none md:scrollbar-thin;
   }
 
   body {
