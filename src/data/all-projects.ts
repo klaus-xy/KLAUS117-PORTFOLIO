@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Globe, Github, Twitter } from "lucide-react";
+import { Globe, Github, Twitter, Gamepad2 } from "lucide-react";
 
 export const PROJECT_CATEGORIES = [
   "Web Dev",
@@ -23,7 +23,7 @@ export interface Project {
   description: string;
   trailerUrl?: string;
   category?: ProjectCategory;
-  industry?: string;
+  industry?: "Video Games" | "Fintech" | "Web3 ";
   role?: string;
   date?: string;
   techStack?: string[];
@@ -36,9 +36,10 @@ export const AllProjects: Project[] = [
     slug: "project-000",
     name: "AREA 59™ Studio",
     description:
-      "Area 59™ is an independent game development studio creating bold, immersive, and experimental interactive experiences. A team of game developers based in Lagos, Nigeria, passionate about storytelling, gameplay-driven design, and creative exploration across genres, styles, and ideas.",
+      "Area 59™ is an independent game development studio creating bold, immersive, and experimental interactive experiences. A team of game developers based in Lagos, Nigeria, passionate about storytelling, gameplay-driven design, and creative exploration across genres, styles, and ideas. Designed and built a website that captures the vision and mission of the AREA 59.",
     trailerUrl: "/videos/project-trailers/project-zero-trailer.mov",
     category: "Web Dev",
+    industry: "Video Games",
     role: "Creative Lead",
     date: "2025",
     links: [
@@ -56,6 +57,11 @@ export const AllProjects: Project[] = [
         label: "X",
         url: "https://twitter.com/Area59Studio",
         icon: Twitter,
+      },
+      {
+        label: "Demo",
+        url: "https://twitter.com/Area59Studio",
+        icon: Gamepad2,
       },
     ],
     images: [
@@ -184,6 +190,11 @@ export const AllProjects: Project[] = [
         label: "X",
         url: "https://twitter.com/Area59Studio",
         icon: Twitter,
+      },
+      {
+        label: "Demo",
+        url: "https://twitter.com/Area59Studio",
+        icon: Gamepad2,
       },
     ],
     images: [
