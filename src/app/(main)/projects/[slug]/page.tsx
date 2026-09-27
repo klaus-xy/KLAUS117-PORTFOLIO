@@ -160,7 +160,10 @@ const ProjectPage = async ({ params }: Props) => {
 
       {/* UP NEXT SECTION */}
 
-      <div className="group relative flex justify-center items-center h-[35vh] w-full overflow-hidden rounded-t-2xl border-5 border-t-primary border-b-0 mt-12">
+      <Link
+        href={`/projects/${nextProject.slug}`}
+        className="group relative flex justify-center items-center h-[35vh] w-full text-muted-foreground/50 hover:text-primary overflow-hidden rounded-t-2xl border-5 border-t-primary border-b-0 mt-12"
+      >
         {nextProject.trailerUrl ? (
           <video
             src={nextProject.trailerUrl}
@@ -177,31 +180,21 @@ const ProjectPage = async ({ params }: Props) => {
         <div className="relative flex w-full h-full flex-col items-center justify-center gap-10 px-4 pb-16 text-center">
           {/* NAVIGATION */}
           <div className="w-full flex justify-end items-center px-8 ">
-            {/* <div className="flex items-center gap-2">
-                <ArrowBigLeftIcon />
-                <span className="font-eurostile text-xs tracking-widest text-terminal-green uppercase">
-                  Previous Project
-                </span>
-              </div> */}
-
-            <Link
-              href={`/projects/${nextProject.slug}`}
-              className="group flex items-center gap-2 text-muted-foreground/50 hover:text-primary p-4 "
-            >
+            <div className="group flex items-center gap-2  p-4 ">
               <span className="text-lg font-eurostile tracking-widest uppercase">
                 Next Project
               </span>
-              <div className="transition duration-800 group-hover:translate-x-4">
+              <div className="transition-transform duration-800 group-hover:translate-x-4">
                 <ArrowRightFromLine size={28} className="stroke-3" />
               </div>
-            </Link>
+            </div>
           </div>
 
-          <h2 className="font-eurostile text-5xl md:text-7xl">
+          <h2 className="font-eurostile text-primary text-5xl md:text-7xl">
             {nextProject.name}
           </h2>
         </div>
-      </div>
+      </Link>
 
       {/* <ProjectNavDots currentSlug={project.slug} /> */}
     </div>
