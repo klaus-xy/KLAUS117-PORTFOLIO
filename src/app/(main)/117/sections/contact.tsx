@@ -1,10 +1,28 @@
+import { LucideExternalLink } from "lucide-react";
 import SectionWrapper from "../../../../components/layout/section-wrapper";
 import { Button } from "@/components/ui/button";
+import Marquee from "@/components/marquee";
 
 const Contact = () => {
+  const bannerTexts = [
+    "LETS WORK TOGETHER.",
+    "   ",
+    "LETS CREATE COOL SH*T.",
+    "   ",
+    "CHECK OUT AREA 59 STUDIO™.",
+    "   ",
+    "SEND ME A MESSAGE.",
+    "   ",
+    "SERIOUSLY FLOOD MY EMAIL.",
+    "   ",
+    "XD.",
+    "   ",
+    "OKAY BYE.",
+    "   ",
+  ];
   return (
-    <SectionWrapper id="contact" wrapperClassName="min-h-[65dvh] ">
-      <h1 className="text-9xl">
+    <SectionWrapper id="contact" wrapperClassName="min-h-[90dvh] ">
+      <h1 className="text-9xl ">
         Lets Create <br />
         Cool Sh*t
         <div className="inline-block w-12 h-8 bg-terminal-green rounded-full"></div>
@@ -15,14 +33,52 @@ const Contact = () => {
         to say hello, feel free to reach out to me. xD 👀
       </p> */}
 
-      <div className="my-10">
+      {/* SOCIAL LINKS */}
+      <div className="mt-28 mb-32 font-eurostile">
+        <div className="flex justify-between items-center gap-2 text-6xl font-bold border-b-3 border-terminal-green py-4 ">
+          LinkedIn
+          <LucideExternalLink />
+        </div>
+        <div className="flex justify-between items-center gap-2 text-6xl font-bold border-b-3 border-terminal-green py-4 ">
+          GitHub
+          <LucideExternalLink />
+        </div>
+        <div className="flex justify-between items-center gap-2 text-6xl font-bold border-b-3 border-terminal-green py-4 ">
+          Behance
+          <LucideExternalLink />
+        </div>
+        <div className="flex justify-between items-center gap-2 text-6xl font-bold border-b-3 border-terminal-green py-4 ">
+          X
+          <LucideExternalLink />
+        </div>
+      </div>
+
+      {/* <div className="my-10">
         <Button
           size={"lg"}
           className="before:bg-lime-500 before:h-10 before:w-10 "
         >
           Send Pigeon
         </Button>
-      </div>
+      </div> */}
+      {/* <div className={"w-full h-32 absolute bottom-0 left-0 -z-10"}>
+        <Marquee
+          className=" text-6xl rotate-12 bg-accent font-helvetica-neue font-semibold border-terminal-green border-y-4 "
+          direction="left"
+          cycleTime={28}
+        >
+          {
+            // Map Contents here.
+            bannerTexts.map((text, index) => (
+              <div key={index} className="flex">
+                <div className="flex gap-2 mx-2"></div>
+
+                <span>{text}</span>
+              </div>
+            ))
+          }
+        </Marquee>
+      </div> */}
     </SectionWrapper>
   );
 };

@@ -106,6 +106,19 @@ const FeaturedProjects = () => {
           </AnimatePresence>
         </div>
         <div className="w-full flex-1 px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{
+              once: false,
+              amount: 0,
+              margin: "0px 0px -75% 0px",
+            }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0 }}
+            className="text-6xl text-primary font-extrabold px-2 pb-4 border-b-3 border-terminal-green "
+          >
+            PROJECTS
+          </motion.h2>
           <ul>
             {AllProjects.slice(0, MAX_FEATURED_PROJECTS).map((project, i) => (
               <ProjectItem

@@ -52,19 +52,22 @@ const FooterItems = [
 
 const MainFooter = () => {
   return (
-    <footer className="w-full min-h-[30vh] flex flex-col justify-center items-center uppercase font-mono ">
-      <p>Made with ❤️</p>
-      <p>and</p>
+    <footer className="w-full  flex flex-col justify-center items-center uppercase font-mono ">
+      <p className="text-xs text-muted-foreground">
+        Made with ❤️ by ::{" "}
+        <span className="text-terminal-green">Klaus 117</span>
+      </p>
+      {/* <p>and</p> */}
 
       {/* Container for everything from tool to playlist listened to during dev to  */}
-      <div className="w-full grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 lg:gap-24 justify-between p-4 mx-auto max-w-3xl">
+      {/* <div className="w-full grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 lg:gap-24 justify-between p-4 mx-auto max-w-3xl">
         {FooterItems.map((item, index) => (
           <FooterList key={index} icon={item.icon} list={item.lists} />
         ))}
-      </div>
-      <p>
+      </div> */}
+      {/* <p>
         by :: <span className="text-terminal-green">Klaus 117</span>
-      </p>
+      </p> */}
       <p className="text-xs text-gray-600">(C) 2026 Clown ware corporation</p>
     </footer>
   );

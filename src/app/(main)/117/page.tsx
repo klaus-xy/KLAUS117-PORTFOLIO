@@ -122,7 +122,7 @@ const page = () => {
           - HOLLY TUCKER
         </motion.span>
       </div>
-      {/* <Contact /> */}
+
       <div className={"w-full h-32  mb-6"}>
         <Marquee
           className=" text-6xl  font-helvetica-neue font-semibold border-terminal-green border-y-4 "
@@ -141,7 +141,8 @@ const page = () => {
           }
         </Marquee>
       </div>
-      {/* <MainFooter /> */}
+      <Contact />
+      <MainFooter />
     </div>
   );
 };
