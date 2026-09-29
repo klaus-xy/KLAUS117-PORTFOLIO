@@ -1,19 +1,14 @@
 "use client";
 
-import LinkDos from "@/components/links/link-dos";
-import MusicPlayer from "@/components/music-player";
-import UnderConstruction from "@/components/under-construction";
 import Hero from "./sections/hero";
-import Projects from "./sections/featured-projects";
 import Contact from "./sections/contact";
 import MainFooter from "@/components/layout/footers/MainFooter";
 import Marquee from "@/components/marquee";
-import Image from "next/image";
-import About from "./sections/about";
 import { Quote } from "lucide-react";
 import { motion } from "motion/react";
 import CursorRevealZone from "@/components/eggs/cursor-reveal-zone";
 import FeaturedProjects from "./sections/featured-projects";
+import AboutSummary from "./sections/about-summary";
 
 // Landing Page Component
 const page = () => {
@@ -87,12 +82,28 @@ const page = () => {
       {/* <UnderConstruction header="Under Reconstruction" /> */}
 
       <Hero />
-      <About />
-      <div className={"w-full h-32  mb-6"}>
+      <AboutSummary />
+      <div className={"relative overflow-hidden"}>
         <Marquee
-          className=" text-6xl  font-helvetica-neue font-semibold border-terminal-green border-y-4 "
+          className="w-full h-16 sm:h-32 mb-6 text-3xl sm:text-6xl  font-helvetica-neue font-semibold border-terminal-green border-y-4 "
           direction="left"
-          cycleTime={28}
+          cycleTime={40}
+        >
+          {
+            // Map Contents here.
+            bannerTexts.map((text, index) => (
+              <div key={index} className="flex">
+                <div className="flex gap-2 mx-2"></div>
+
+                <span>{text}</span>
+              </div>
+            ))
+          }
+        </Marquee>
+        <Marquee
+          className="w-full h-16 sm:h-32 mb-6 text-3xl sm:text-6xl -rotate-45 relative top-0 -right-24 z-50 font-helvetica-neue font-semibold bg-background border-terminal-green border-y-4 "
+          direction="left"
+          cycleTime={40}
         >
           {
             // Map Contents here.

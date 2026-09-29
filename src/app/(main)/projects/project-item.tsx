@@ -26,8 +26,8 @@ const ProjectItem = ({
         className="min-h-26 flex justify-between items-center text-2xl sm:text-3xl 2xl:text-2xl border-b-2 border-primary px-4 py-6 transition"
       >
         {/* <span className="absolute -left-4 bottom-8 text-xs">00</span> */}
-        <h4>{project.name}</h4>
-        <span className="absolute right-1 top-1/2 -translate-y-1/2 text-6xl lg:text-6xl font-eurostile text-transparent transition-[-webkit-text-stroke-color] duration-300 [-webkit-text-stroke-width:1px] [-webkit-text-stroke-color:var(--muted)] group-hover:[-webkit-text-stroke-color:var(--primary)]">
+        <h4 className="text-xl">{project.name}</h4>
+        <span className="absolute -right-5 top-1/2 -translate-y-1/2 text-6xl lg:text-6xl font-eurostile text-transparent transition-[-webkit-text-stroke-color] duration-300 [-webkit-text-stroke-width:1px] [-webkit-text-stroke-color:var(--muted)] group-hover:[-webkit-text-stroke-color:var(--primary)]">
           0{index}
         </span>
         {/* {isActive && <div className="w-20 h-20 bg-primary lg:hidden "></div>} */}

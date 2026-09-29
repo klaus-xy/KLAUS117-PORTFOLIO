@@ -26,11 +26,11 @@ const FeaturedProjects = () => {
   return (
     <SectionWrapper id="contact" wrapperClassName=" " className="max-w-none">
       {/* HEADER */}
-      <div className="container mx-auto mb-24">
+      <div className="container mx-auto mb-24 px-4 ">
         <div className="flex justify-start items-center">
-          <h1 className="text-9xl">FEATURE </h1>
+          <h1 className="text-6xl lg:text-9xl">FEATURE </h1>
           <MiniTrailer
-            className="rounded-l-none"
+            className="rounded-l-none w-24 h-16 sm:w-32 sm:h-24"
             url="/videos/racing-realms.mp4"
           />
           {/* <span>⬅animate in</span> */}
@@ -38,9 +38,9 @@ const FeaturedProjects = () => {
         </div>
         <div className="flex justify-center items-center">
           {/* <span>animate in ➡️</span> */}
-          <h1 className="text-9xl">Pr</h1>
-          <MiniTrailer />
-          <h1 className="text-9xl">jects</h1>
+          <h1 className="text-6xl lg:text-9xl">Pr</h1>
+          <MiniTrailer className="w-24 h-16 sm:w-32 sm:h-24" />
+          <h1 className="text-6xl lg:text-9xl">jects</h1>
         </div>
 
         {/* <p>Lets just say I've been busy.</p> */}
@@ -115,9 +115,9 @@ const FeaturedProjects = () => {
               margin: "0px 0px -75% 0px",
             }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0 }}
-            className="text-6xl text-primary font-extrabold px-2 pb-4 border-b-3 border-terminal-green "
+            className="text-6xl sm:text-6xl text-primary text-right font-extrabold px-2 pb-4 border-b-3 border-terminal-green "
           >
-            PROJECTS
+            06
           </motion.h2>
           <ul>
             {AllProjects.slice(0, MAX_FEATURED_PROJECTS).map((project, i) => (

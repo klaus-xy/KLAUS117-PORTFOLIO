@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 const notFound = () => {
@@ -7,6 +9,11 @@ const notFound = () => {
       <p className="font-departure-mono text-terminal-green">
         That's weird... You're not meant to be here.
       </p>
+      <Button variant={"link"}>
+        <Link href="/117" className="hover:cursor-pointer">
+          🏠 Go Home
+        </Link>
+      </Button>
     </div>
   );
 };
