@@ -5,10 +5,11 @@ import SectionWrapper from "../../../../components/layout/section-wrapper";
 import Core from "@/components/3d/core";
 import LinkDos from "@/components/links/link-dos";
 import { motion } from "motion/react";
-import Scroll from "@/components/scroll-ui";
+import Scroll from "@/components/scroll-indicator";
 import AstroKlaus from "@/components/3d/astro-klaus";
 import TerminalBuddy from "@/components/terminal-buddy";
 import ScrambleText from "@/components/ui/scramble-text";
+import ScrollIndicator from "@/components/scroll-indicator";
 
 const Hero = () => {
   const [replayKey, setReplayKey] = useState(0);
@@ -81,7 +82,7 @@ const Hero = () => {
       </div> */}
 
       <div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-xs flex flex-col items-center gap-2 ">
-        <Scroll />
+        <ScrollIndicator />
         {/* <span className="text-muted-foreground font-medium animate-pulse">
           Scroll down
         </span> */}
