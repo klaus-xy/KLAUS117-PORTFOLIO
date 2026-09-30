@@ -16,13 +16,13 @@ const MenuIcon = ({ open, className }: MenuIconProps) => {
       <div
         className={cn(
           "w-full h-1.5 sm:h-2 bg-primary rounded-2xl transition-transform duration-300 ease-in-out",
-          open && "rotate-45 translate-y-1.75",
+          open && "rotate-45 translate-y-1.5 sm:translate-y-1.75",
         )}
       ></div>
       <div
         className={cn(
           "w-full flex justify-end gap-1 transition-transform duration-300 ease-in-out",
-          open && "-rotate-45 -translate-y-1.75",
+          open && "-rotate-45 -translate-y-1.5 sm:-translate-y-1.75",
         )}
       >
         <div className="w-1/3 h-1.5 sm:h-2  bg-terminal-green rounded-full"></div>

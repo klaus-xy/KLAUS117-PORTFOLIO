@@ -37,7 +37,7 @@ const MainHeader = () => {
           <motion.div
             variants={{ rest: { width: 16 }, hover: { width: 20 } }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="h-3 rounded-full bg-terminal-green relative bottom-1"
+            className="h-3 rounded-full bg-terminal-green relative bottom-1 scale-90 sm:scale-100"
           ></motion.div>
           <h1>
             <ScrambleText
