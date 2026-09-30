@@ -25,7 +25,7 @@ const Hero = () => {
             morphs into KLAUS117 ⬅
           </span> */}
           <motion.h1
-            className="text-5xl sm:text-7xl font-eurostile"
+            className="text-6xl sm:text-7xl font-eurostile"
             viewport={{ once: false, amount: 0.8 }}
             onViewportEnter={() => setReplayKey((k) => k + 1)}
           >

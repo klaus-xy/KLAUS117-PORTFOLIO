@@ -7,7 +7,7 @@ const AboutSummary = () => {
   return (
     <SectionWrapper
       id="about"
-      wrapperClassName="flex flex-col justify-center items-center gap-4 px-4 "
+      wrapperClassName="flex flex-col justify-center items-center gap-4 px-0 "
     >
       <div className="font-eurostile text-muted-foreground text-center relative bottom-32">
         {/* <h3 className="font-bold text-9xl">WELCOME TO MY WORLD</h3> */}
@@ -15,7 +15,7 @@ const AboutSummary = () => {
         {/* <ScrollText text="WELCOME TO MY WORLD" /> */}
         <ScrollText
           text=" Somewhere between code, creativity and interactive story telling, I build experiences."
-          className="text-3xl lg:text-6xl"
+          className="text-4xl lg:text-6xl"
         />
         {/* <ScrollText
           text=" I love to explore the intersection of technology and creativity. I
