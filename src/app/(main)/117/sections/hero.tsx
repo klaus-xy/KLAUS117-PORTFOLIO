@@ -21,7 +21,7 @@ const Hero = () => {
           <AstroKlaus />
           {/* <Core neutralY={0.5} /> */}
         </div>
-        <div className="flex flex-col justify-center flex-1 ">
+        <div className="flex flex-col justify-center flex-1 relative -top-10 ">
           {/* <span className="absolute top-80 text-xs font-departure-mono text-muted-foreground">
             morphs into KLAUS117 ⬅
           </span> */}

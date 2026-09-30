@@ -6,7 +6,7 @@ const ScrollIndicator = () => {
   return (
     // SCROLL INDICATOR
     //  Outer
-    <div className="w-5 sm:w-7 h-11 flex justify-center items-start border-2 sm:border-3 border-terminal-green rounded-xl">
+    <div className="w-5.5 sm:w-7 h-11 flex justify-center items-start border-2 sm:border-3 border-terminal-green rounded-xl">
       {/* Inner */}
       <motion.div
         initial={{ y: 0, height: 12 }}
@@ -24,7 +24,7 @@ const ScrollIndicator = () => {
           repeat: Infinity,
           repeatDelay: 0.95,
         }}
-        className="w-full bg-primary rounded-full m-1 border border-terminal-green/50"
+        className="w-2 bg-primary rounded-full m-1 border border-terminal-green/50"
       ></motion.div>
     </div>
   );
