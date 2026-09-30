@@ -22,10 +22,10 @@ const Contact = () => {
   ];
   return (
     <SectionWrapper id="contact" wrapperClassName="min-h-[90dvh] ">
-      <h1 className="text-9xl ">
+      <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl ">
         Lets Create <br />
         Cool Sh*t
-        <div className="inline-block w-12 h-8 bg-terminal-green rounded-full"></div>
+        <div className="inline-block w-6 h-4 sm:w-8 sm:h-5 md:w-12 md:h-8 bg-terminal-green rounded-full"></div>
       </h1>
       {/* <p>
         Have questions or want to get in touch? We'd love to hear from you!
@@ -34,20 +34,20 @@ const Contact = () => {
       </p> */}
 
       {/* SOCIAL LINKS */}
-      <div className="mt-28 mb-32 font-eurostile">
-        <div className="flex justify-between items-center gap-2 text-6xl font-bold border-b-3 border-terminal-green py-4 ">
+      <div className="mt-16 mb-16 sm:mt-20 sm:mb-20 md:mt-28 md:mb-32 font-eurostile">
+        <div className="flex justify-between items-center gap-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold border-b-3 border-terminal-green py-4 ">
           LinkedIn
           <LucideExternalLink />
         </div>
-        <div className="flex justify-between items-center gap-2 text-6xl font-bold border-b-3 border-terminal-green py-4 ">
+        <div className="flex justify-between items-center gap-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold border-b-3 border-terminal-green py-4 ">
           GitHub
           <LucideExternalLink />
         </div>
-        <div className="flex justify-between items-center gap-2 text-6xl font-bold border-b-3 border-terminal-green py-4 ">
+        <div className="flex justify-between items-center gap-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold border-b-3 border-terminal-green py-4 ">
           Behance
           <LucideExternalLink />
         </div>
-        <div className="flex justify-between items-center gap-2 text-6xl font-bold border-b-3 border-terminal-green py-4 ">
+        <div className="flex justify-between items-center gap-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold border-b-3 border-terminal-green py-4 ">
           X
           <LucideExternalLink />
         </div>

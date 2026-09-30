@@ -8,6 +8,7 @@ import NavMenu from "../navigation/NavMenu";
 import ScrambleText from "@/components/ui/scramble-text";
 import Link from "next/link";
 import { motion } from "motion/react";
+import MenuIcon from "./menu-icon";
 
 // This is the header that appears on all main pages. It contains the logo, interactive 3D persona and the menu icon..
 const MainHeader = () => {
@@ -17,7 +18,7 @@ const MainHeader = () => {
   return (
     <div
       ref={headerRef}
-      className={`fixed top-0 w-full flex justify-between items-center transition duration-400 ${open ? "bg-none" : "bg-background"} px-5 py-5 lg:px-10 lg:py-5 z-60`}
+      className={`fixed top-0 w-full flex justify-between items-center transition duration-400 ${open ? "bg-none" : "bg-background"} px-5 py-4 lg:px-10 sm:py-5 z-60`}
     >
       {/* LOGO */}
       <Link
@@ -45,7 +46,7 @@ const MainHeader = () => {
               chars="klaus"
               delay={1500}
               showInitialText={true}
-              className="font-eurostile text-4xl"
+              className="font-eurostile text-3xl sm:text-4xl"
             />
           </h1>
         </motion.div>
@@ -58,24 +59,7 @@ const MainHeader = () => {
       <div>
         <Sheet open={open} onOpenChange={setOpen} modal={false}>
           <SheetTrigger className="p-2">
-            {/* MENU ICON */}
-            <div className="w-10 flex flex-col justify-center items-center gap-1.5">
-              <div
-                className={cn(
-                  "w-full h-2 bg-primary rounded-2xl transition-transform duration-300 ease-in-out",
-                  open && "rotate-45 translate-y-1.75",
-                )}
-              ></div>
-              <div
-                className={cn(
-                  "w-full flex justify-end gap-1 transition-transform duration-300 ease-in-out",
-                  open && "-rotate-45 -translate-y-1.75",
-                )}
-              >
-                <div className="w-1/3 h-2 bg-terminal-green rounded-full"></div>
-                <div className="w-2/3 h-2 bg-primary rounded-2xl"></div>
-              </div>
-            </div>
+            <MenuIcon open={open} />
           </SheetTrigger>
           <SheetContent
             showCloseButton={false}

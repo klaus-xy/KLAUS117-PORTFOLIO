@@ -24,7 +24,9 @@ const SectionWrapper = ({
         wrapperClassName,
       )}
     >
-      <div className={cn("container mx-auto ", className)}>{children}</div>
+      <div className={cn("container mx-auto px-4 sm:px-6 lg:px-8", className)}>
+        {children}
+      </div>
       {/* {hasSeparator && (
         <Separator className="absolute bottom-0 -translate-x-1/2 left-1/2 data-horizontal:h-0.5 data-horizontal:w-11/12 bg-red-500" />
       )} */}

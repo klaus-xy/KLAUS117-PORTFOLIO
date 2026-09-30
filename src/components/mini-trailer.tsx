@@ -13,7 +13,7 @@ const MiniTrailer = ({
   return (
     <div
       className={cn(
-        `w-32 h-24 mx-2 border-white border-5 bg-muted rounded-3xl overflow-hidden`,
+        `w-32 h-24 mx-2 shrink-0 border-white border-5 bg-muted rounded-3xl overflow-hidden`,
         className,
       )}
     >

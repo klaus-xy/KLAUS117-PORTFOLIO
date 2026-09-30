@@ -34,7 +34,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
                 chars="KLAUS117"
               />{" "}
               {!item.active && (
-                <Badge className="absolute font-helvetica-neue font-medium">
+                <Badge className="absolute text-[0.65rem] font-helvetica-neue font-medium tracking-wide">
                   Coming Soon
                 </Badge>
               )}
