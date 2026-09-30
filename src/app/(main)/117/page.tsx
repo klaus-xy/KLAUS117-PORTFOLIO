@@ -83,9 +83,9 @@ const page = () => {
 
       <Hero />
       <AboutSummary />
-      <div className={"relative overflow-hidden"}>
+      <div className={"min-h-48 relative overflow-hidden bg-ambe-300"}>
         <Marquee
-          className="w-full h-16 sm:h-32 mb-6 text-3xl sm:text-6xl  font-helvetica-neue font-semibold border-terminal-green border-y-4 "
+          className="w-full h-16 sm:h-32 mb-6 text-3xl sm:text-6xl bg-background font-helvetica-neue font-semibold border-terminal-green border-y-4 "
           direction="left"
           cycleTime={40}
         >

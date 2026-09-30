@@ -21,12 +21,12 @@ const Hero = () => {
           <AstroKlaus />
           {/* <Core neutralY={0.5} /> */}
         </div>
-        <div className="flex flex-col justify-center flex-1 relative -top-10 ">
+        <div className="flex flex-col justify-center flex-1 relative -top-5 ">
           {/* <span className="absolute top-80 text-xs font-departure-mono text-muted-foreground">
             morphs into KLAUS117 ⬅
           </span> */}
           <motion.h1
-            className="text-[54px] sm:text-7xl font-eurostile"
+            className="text-[50px] sm:text-7xl font-eurostile"
             viewport={{ once: false, amount: 0.8 }}
             onViewportEnter={() => setReplayKey((k) => k + 1)}
           >

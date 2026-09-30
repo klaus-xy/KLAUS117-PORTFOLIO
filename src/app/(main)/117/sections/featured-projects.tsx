@@ -28,7 +28,7 @@ const FeaturedProjects = () => {
       {/* HEADER */}
       <div className="container mx-auto mb-24 px-4 ">
         <div className="flex justify-start items-center">
-          <h1 className="text-4xl sm:text-6xl lg:text-9xl">FEATURE </h1>
+          <h1 className="text-5xl sm:text-6xl lg:text-9xl">FEATURE </h1>
           <MiniTrailer
             className="rounded-l-none w-24 h-16 sm:w-32 sm:h-24"
             url="/videos/racing-realms.mp4"
@@ -38,9 +38,9 @@ const FeaturedProjects = () => {
         </div>
         <div className="flex justify-center items-center">
           {/* <span>animate in ➡️</span> */}
-          <h1 className="text-4xl sm:text-6xl lg:text-9xl">Pr</h1>
+          <h1 className="text-5xl sm:text-6xl lg:text-9xl">Pr</h1>
           <MiniTrailer className="w-24 h-16 sm:w-32 sm:h-24" />
-          <h1 className="text-4xl sm:text-6xl lg:text-9xl">jects</h1>
+          <h1 className="text-5xl sm:text-6xl lg:text-9xl">jects</h1>
         </div>
 
         {/* <p>Lets just say I've been busy.</p> */}
