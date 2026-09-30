@@ -22,7 +22,7 @@ const Contact = () => {
   ];
   return (
     <SectionWrapper id="contact" wrapperClassName="min-h-[90dvh] ">
-      <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl ">
+      <h1 className="text-6xl sm:text-6xl md:text-7xl lg:text-9xl ">
         Lets Create <br />
         Cool Sh*t
         <div className="inline-block w-6 h-4 sm:w-8 sm:h-5 md:w-12 md:h-8 bg-terminal-green rounded-full"></div>
