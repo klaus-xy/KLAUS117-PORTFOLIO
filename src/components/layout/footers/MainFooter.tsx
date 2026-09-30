@@ -53,7 +53,7 @@ const FooterItems = [
 const MainFooter = () => {
   return (
     <footer className="w-full  flex flex-col justify-center items-center uppercase font-mono ">
-      <p className="text-xs text-muted-foreground">
+      <p className="text-[0.65rem]  sm:text-sm text-muted-foreground">
         Made with ❤️ by ::{" "}
         <span className="text-terminal-green">Klaus 117</span>
       </p>
@@ -68,7 +68,9 @@ const MainFooter = () => {
       {/* <p>
         by :: <span className="text-terminal-green">Klaus 117</span>
       </p> */}
-      <p className="text-xs text-gray-600">(C) 2026 Clown ware corporation</p>
+      <p className="text-[0.65rem] sm:text-sm text-gray-600">
+        (C) 2026 Clown ware corporation
+      </p>
     </footer>
   );
 };

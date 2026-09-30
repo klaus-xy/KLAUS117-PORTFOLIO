@@ -26,11 +26,11 @@ const FeaturedProjects = () => {
   return (
     <SectionWrapper id="contact" wrapperClassName=" " className="max-w-none">
       {/* HEADER */}
-      <div className="container mx-auto mb-24 px-4 tracking-normal">
-        <div className="flex justify-start sm:justify-start items-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-9xl">FEATURE </h1>
+      <div className="container mx-auto mb-24 px-4 tracking-tight">
+        <div className="flex justify-center sm:justify-start items-center">
+          <h1 className="text-6xl sm:text-6xl lg:text-9xl">FEATURE </h1>
           <MiniTrailer
-            className="rounded-l-none w-20 h-14 sm:w-32 sm:h-24"
+            className="rounded-l-none w-24 h-16 sm:w-32 sm:h-24"
             url="/videos/racing-realms.mp4"
           />
           {/* <span>⬅animate in</span> */}
@@ -38,9 +38,9 @@ const FeaturedProjects = () => {
         </div>
         <div className="flex justify-center items-center">
           {/* <span>animate in ➡️</span> */}
-          <h1 className="text-5xl sm:text-6xl lg:text-9xl">Pr</h1>
-          <MiniTrailer className="w-20 h-14 sm:w-32 sm:h-24" />
-          <h1 className="text-5xl sm:text-6xl lg:text-9xl">jects</h1>
+          <h1 className="text-6xl sm:text-6xl lg:text-9xl">Pr</h1>
+          <MiniTrailer className="w-24 h-16 sm:w-32 sm:h-24" />
+          <h1 className="text-6xl sm:text-6xl lg:text-9xl">jects</h1>
         </div>
 
         {/* <p>Lets just say I've been busy.</p> */}
@@ -58,7 +58,7 @@ const FeaturedProjects = () => {
         className="w-full min-h-[50vh] flex gap-4 my-10"
         onMouseLeave={() => setHoveredProject(null)}
       >
-        {/* PROJECT PREVIEW */}
+        {/* FEATURED PROJECT PREVIEW */}
         <div className="w-1/3 max-h-170 aspect-square hidden lg:flex flex-1 relative rounded-r-[2rem] bg-muted overflow-hidden">
           <AnimatePresence mode="wait">
             {showVideo && hoveredProject?.trailerUrl ? (
@@ -105,7 +105,8 @@ const FeaturedProjects = () => {
             )}
           </AnimatePresence>
         </div>
-        <div className="w-full flex-1 px-4">
+        {/* FEATURED PROJECT LIST */}
+        <div className="w-full flex-1 sm:px-4">
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +115,7 @@ const FeaturedProjects = () => {
               amount: 0,
               margin: "0px 0px 0% 0px",
             }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0 }}
+            transition={{ duration: 0.75, ease: "easeOut", delay: 0 }}
             className="text-6xl sm:text-6xl text-primary text-right font-extrabold px-2 pb-4 border-b-3 border-terminal-green "
           >
             06
@@ -130,13 +131,13 @@ const FeaturedProjects = () => {
               />
             ))}
           </ul>
-          <div className="w-full flex justify-end items-center py-20 pr-4">
+          <div className="w-full flex justify-end items-center mt-10 sm:py-20 sm:pr-4">
             <Link href={"/projects"}>
               <Button
                 // className="text-primary text-lg before:bg-lime-500 border-2 border-primary font-eurostile  tracking-wide py-7 px-6 before:h-18 before:w-12 before:rounded "
-                className="text-primary text-xl border-2 hover:border-primary font-eurostile  tracking-wide py-7 px-6"
+                className="text-primary sm:text-xl border-2 hover:border-primary font-eurostile  tracking-wide sm:py-7 sm:px-5"
                 size={"lg"}
-                variant={"secondary"}
+                variant={"outline"}
               >
                 View All
                 <LucideArrowUpRightFromSquare size={24} className="ml-2" />

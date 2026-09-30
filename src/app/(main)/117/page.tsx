@@ -119,7 +119,7 @@ const page = () => {
       </div>
       <FeaturedProjects />
       {/* <CursorRevealZone /> */}
-      <div className="min-h-[85vh] flex flex-col justify-center items-center gap-4  text-2xl font-eurostile text-terminal-green">
+      <div className="min-h-[85vh] flex flex-col justify-center items-center gap-4 text-xl sm:text-2xl font-eurostile text-terminal-green">
         <Quote className="w-10 h-10 text-primary" />
         <h2>DO WHAT YOU LOVE</h2>
         <h2>LOVE WHAT YOU DO</h2>
@@ -128,7 +128,7 @@ const page = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.8 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
-          className="text-primary"
+          className="text-primary text-base sm:text-lg"
         >
           - HOLLY TUCKER
         </motion.span>

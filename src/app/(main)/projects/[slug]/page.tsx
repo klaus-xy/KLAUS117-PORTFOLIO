@@ -10,6 +10,7 @@ import {
   ArrowRightFromLine,
   Globe,
   Link2,
+  Quote,
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import ProjectInfo from "../project-info";
@@ -157,7 +158,15 @@ const ProjectPage = async ({ params }: Props) => {
           )}
         </div>
       </section>
-
+      {/* OPTIONAL PROJECT TESTIMONIALS */}
+      <section>
+        <Quote />
+        <p className="text-xs text-muted-foreground">
+          Klaus single handedly brought this project to live, while delivering
+          at crazy speed. What a guy!
+        </p>
+        <span className="text-terminal-green">- Avis</span>
+      </section>
       {/* UP NEXT SECTION */}
 
       <Link
