@@ -53,26 +53,26 @@ const page = () => {
     "  ● ",
     "I FORGOT THE REST",
   ];
-  // const bannerTexts = [
-  //   "LETS WORK TOGETHER.",
-  //   "   ",
-  //   "LETS CREATE COOL SH*T.",
-  //   "   ",
-  //   "CHECK OUT AREA 59 STUDIO™.",
-  //   "   ",
-  //   "SEND ME A MESSAGE.",
-  //   "   ",
-  //   "SERIOUSLY FLOOD MY EMAIL.",
-  //   "   ",
-  //   "XD.",
-  //   "   ",
-  //   "OKAY BYE.",
-  //   "   ",
-  // ];
+  const contactTexts = [
+    "LETS WORK TOGETHER",
+    "  ●  ",
+    "LETS CREATE COOL SH*T",
+    "  ●  ",
+    "CHECK OUT AREA 59 STUDIO™",
+    "  ●  ",
+    "SEND ME A MESSAGE",
+    " *  ",
+    "SERIOUSLY FLOOD MY EMAIL",
+    " *  ",
+    "XD",
+    "  * ",
+    "OKAY BYE",
+    "  * ",
+  ];
   console.log("[117] Landing Page");
 
   return (
-    <div>
+    <div className="overflow-hidden">
       {/* <MusicPlayer className=" top-0 right-0" /> */}
 
       {/* <div className=" inset-0 z-0">
@@ -134,15 +134,31 @@ const page = () => {
         </motion.span>
       </div>
 
-      <div className={"w-full h-32  mb-6"}>
+      <div className={"w-[120%] mb-6 relative -left-4 "}>
         <Marquee
-          className=" text-6xl  font-helvetica-neue font-semibold border-terminal-green border-y-4 "
+          className="w-full h-16 sm:h-32 mb-6 -rotate-12 text-3xl sm:text-6xl bg-background font-helvetica-neue font-semibold border-terminal-green border-y-4 "
           direction="left"
-          cycleTime={28}
+          cycleTime={40}
         >
           {
             // Map Contents here.
-            cheatTexts.map((text, index) => (
+            contactTexts.map((text, index) => (
+              <div key={index} className="flex">
+                <div className="flex gap-2 mx-2"></div>
+
+                <span>{text}</span>
+              </div>
+            ))
+          }
+        </Marquee>
+        <Marquee
+          className="w-full h-16 sm:h-32 mb-6 rotate-14 text-3xl sm:text-6xl bg-background font-helvetica-neue font-semibold border-terminal-green border-y-4 "
+          direction="right"
+          cycleTime={40}
+        >
+          {
+            // Map Contents here.
+            contactTexts.map((text, index) => (
               <div key={index} className="flex">
                 <div className="flex gap-2 mx-2"></div>
 

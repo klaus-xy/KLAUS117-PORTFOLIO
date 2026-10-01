@@ -49,7 +49,7 @@ const FeaturedProjects = () => {
       className="max-w-none px-0"
     >
       {/* HEADER */}
-      <div className="mb-24 sm:px-4 tracking-tight ">
+      <div className="mb-24 sm:px-4 tracking-tight">
         <div className="flex justify-center sm:justify-start items-center">
           <h1 className="text-[50px] sm:text-6xl lg:text-9xl">FEATURE </h1>
           <MiniTrailer
@@ -92,7 +92,7 @@ const FeaturedProjects = () => {
 
       {/* FEATURED PROJECTS CONTAINER */}
       <div
-        className="w-full min-h-[50vh] flex gap-4 my-10 px-4"
+        className="w-full min-h-[50vh] flex gap-4 my-10 px-3 sm:px-4"
         onMouseLeave={() => setHoveredProject(null)}
       >
         {/* FEATURED PROJECT PREVIEW */}
@@ -143,8 +143,8 @@ const FeaturedProjects = () => {
           </AnimatePresence>
         </div>
         {/* FEATURED PROJECT LIST */}
-        <div className="w-full flex-1 sm:px-4">
-          <motion.h2
+        <div className="w-full flex-1 sm:px-4 bg-background pt-3">
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{
@@ -153,10 +153,19 @@ const FeaturedProjects = () => {
               margin: "0px 0px 0% 0px",
             }}
             transition={{ duration: 0.75, ease: "easeOut", delay: 0 }}
-            className="text-6xl sm:text-6xl text-primary text-right font-extrabold px-2 pb-4 border-b-3 border-terminal-green "
+            className="text-primary text-right tracking-widest font-eurostile px-2 pb-4 border-b-3 border-terminal-green "
           >
-            06
-          </motion.h2>
+            <h2 className="text-6xl sm:text-6xl ">06</h2>
+            <div className="flex justify-between items-center px-2">
+              {/* FILTER */}
+              <div className="flex  gap-2">
+                <div className="w-6 h-2 bg-teal-300 rounded-2xl"></div>
+                <div className="w-4 h-2 bg-accent rounded-2xl"></div>
+                <div className="w-4 h-2 bg-accent rounded-2xl"></div>
+              </div>
+              <span className="text-muted-foreground">Game Dev</span>
+            </div>
+          </motion.div>
           <ul>
             {AllProjects.slice(0, MAX_FEATURED_PROJECTS).map((project, i) => (
               <ProjectItem
@@ -172,7 +181,7 @@ const FeaturedProjects = () => {
             <Link href={"/projects"}>
               <Button
                 // className="text-primary text-lg before:bg-lime-500 border-2 border-primary font-eurostile  tracking-wide py-7 px-6 before:h-18 before:w-12 before:rounded "
-                className="text-primary sm:text-xl border-2 hover:border-primary font-eurostile  tracking-wide sm:py-7 sm:px-5"
+                className="text-primary sm:text-xl border  hover:border-primary font-eurostile tracking-wider px-3 py-0 sm:py-7 sm:px-5"
                 size={"lg"}
                 variant={"outline"}
               >
