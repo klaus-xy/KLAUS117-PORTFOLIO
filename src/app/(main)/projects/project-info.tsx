@@ -17,10 +17,13 @@ const ProjectInfo = ({ label = "Label", info = "Info", className }: Props) => {
 
   return (
     <div className={cn(`w-full py-4`, className)}>
-      <h3 className="tracking-[0.8rem] text-terminal-green">{label}</h3>
+      <h3 className="text-[0.65rem] sm:text-sm tracking-[0.5rem] sm:tracking-[0.8rem] text-terminal-green">
+        {label}
+      </h3>
       <motion.h2
         viewport={{ once: false, amount: 0.8 }}
         onViewportEnter={() => setReplayKey((k) => k + 1)}
+        className="text-2xl sm:text-4xl"
       >
         <ScrambleText
           key={replayKey}

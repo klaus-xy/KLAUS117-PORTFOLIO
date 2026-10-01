@@ -8,9 +8,28 @@ import { AllProjects, Project } from "@/data/all-projects";
 import MiniTrailer from "@/components/mini-trailer";
 import { ArrowUpRight, LucideArrowUpRightFromSquare } from "lucide-react";
 import Link from "next/link";
+import Marquee from "@/components/marquee";
 
 const MAX_FEATURED_PROJECTS = 5;
 
+const bannerTexts = [
+  "GAMES INDUSTRY.",
+  "   ",
+  "WEB 2.0.",
+  "   ",
+  "WEB 3.0.",
+  "   ",
+  "ARTIFICIAL INTELLIGENCE.",
+  "   ",
+  "FINTECH.",
+  "   ",
+  "EDUTECH.",
+  "   ",
+  "ENGINEERING.",
+  "   ",
+  "SIMULATION.",
+  "   ",
+];
 const FeaturedProjects = () => {
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
   const [videoErrored, setVideoErrored] = useState(false);
@@ -28,7 +47,7 @@ const FeaturedProjects = () => {
       {/* HEADER */}
       <div className="container mx-auto mb-24 px-4 tracking-tight">
         <div className="flex justify-center sm:justify-start items-center">
-          <h1 className="text-6xl sm:text-6xl lg:text-9xl">FEATURE </h1>
+          <h1 className="text-[50px] sm:text-6xl lg:text-9xl">FEATURE </h1>
           <MiniTrailer
             className="rounded-l-none w-24 h-16 sm:w-32 sm:h-24"
             url="/videos/racing-realms.mp4"
@@ -38,20 +57,33 @@ const FeaturedProjects = () => {
         </div>
         <div className="flex justify-center items-center">
           {/* <span>animate in ➡️</span> */}
-          <h1 className="text-6xl sm:text-6xl lg:text-9xl">Pr</h1>
+          <h1 className="text-[50px] sm:text-6xl lg:text-9xl">Pr</h1>
           <MiniTrailer className="w-24 h-16 sm:w-32 sm:h-24" />
-          <h1 className="text-6xl sm:text-6xl lg:text-9xl">jects</h1>
+          <h1 className="text-[50px] sm:text-6xl lg:text-9xl">jects</h1>
         </div>
 
         {/* <p>Lets just say I've been busy.</p> */}
         {/* <h3 className="font-departure-mono absolute -z-10 -top-8  -right-0  text-[128px] sm:text-[150px] md:text-[180px] text-transparent [-webkit-text-stroke:1.5px_white]">
         01
       </h3> */}
-        {/* <div className="w-full flex justify-start items-center gap-4 text-terminal-green font-bold font-departure-mono">
-          <h2>Game Dev</h2>
-          <h2>Web Dev</h2>
-          <h2>Side Quests</h2>
-        </div> */}
+        <div className="w-screen">
+          <Marquee
+            className="w-[120%] h-16 sm:h-32 mb-6 text-3xl sm:text-6xl rotate-15 relative top-14 -left-20 -z-10 font-helvetica-neue font-semibold bg-background border-terminal-green border-y-4 "
+            direction="right"
+            cycleTime={40}
+          >
+            {
+              // Map Contents here.
+              bannerTexts.map((text, index) => (
+                <div key={index} className="flex">
+                  <div className="flex gap-2 mx-2"></div>
+
+                  <span>{text}</span>
+                </div>
+              ))
+            }
+          </Marquee>
+        </div>
       </div>
       {/* FEATURED PROJECTS CONTAINER */}
       <div

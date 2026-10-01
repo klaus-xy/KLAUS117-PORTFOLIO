@@ -248,7 +248,7 @@
   }
 
   p {
-    @apply text-sm;
+    @apply text-xs sm:text-sm;
   }
   /* span {
     @apply text-green-500;

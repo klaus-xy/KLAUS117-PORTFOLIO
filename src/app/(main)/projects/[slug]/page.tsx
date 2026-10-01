@@ -39,7 +39,7 @@ const ProjectPage = async ({ params }: Props) => {
   return (
     <div className="">
       {/* HERO/SHOWCASE*/}
-      <div className="relative w-full h-[80vh] overflow-hidden rounded-b-[2rem] border-6 border-b-primary bg-muted">
+      <div className="relative w-full h-[72vh] sm:h-[80vh] overflow-hidden rounded-b-[2rem] border-6 border-b-primary bg-muted">
         {project.trailerUrl && <ProjectHeroVideo src={project.trailerUrl} />}
 
         <div className="absolute bottom-0 left-0 flex w-full min-h-24 flex-col gap-2 p-8 md:px-12">
@@ -80,16 +80,16 @@ const ProjectPage = async ({ params }: Props) => {
       </div>
 
       {/* DETAILS SECTION */}
-      <section className="w-[100%] py-10 px-8 md:py-10">
+      <section className="w-[100%] py-10 px-6 sm:px-8 md:py-10">
         <div className="mx-auto w-full ">
           <div className="flex items-start min-h-[10vh]">
-            <h2 className="text-6xl md:text-7xl 2xl:text-8xl">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl">
               {project.name}
             </h2>
           </div>
           {/* <Separator className="data-horizontal:h-1" /> */}
 
-          <div className=" flex mx-2 gap-2">
+          <div className="w-full flex mx-2 gap-2">
             {project.links?.length ? (
               project.links.map((link, index) => {
                 const Icon = link.icon ?? Globe;
@@ -113,7 +113,7 @@ const ProjectPage = async ({ params }: Props) => {
           </div>
           {/* <Separator className="data-horizontal:h-1" /> */}
 
-          <div className="xl:max-w-11/12 my-8 px-8">
+          <div className="xl:max-w-11/12 my-8 sm:px-8">
             {/* QUICK PROJECT BREAKDOWN */}
             <div className="flex flex-col">
               <ProjectInfo label="Category" info={project.category as string} />
@@ -132,7 +132,7 @@ const ProjectPage = async ({ params }: Props) => {
             </div>
 
             {/* PROJECT DESCRIPTION */}
-            <p className="font-helvetica-neue text-lg text-muted-foreground">
+            <p className="font-helvetica-neue tracking-wide sm:text-lg text-muted-foreground">
               {project.description}
             </p>
           </div>
@@ -140,11 +140,11 @@ const ProjectPage = async ({ params }: Props) => {
       </section>
 
       {/* GALLERY */}
-      <section className="min-h-96 px-10 ">
-        <h2 className="flex justify-center text-4xl lg:text-5xl my-24 mb-8">
+      <section className="min-h-96 px-2 sm:px-10 ">
+        <h2 className="flex justify-center text-3xl sm:text-4xl lg:text-5xl my-10 sm:my-24 mb-8">
           SHOWCASE
         </h2>
-        <div className="space-y-6 container mx-auto">
+        <div className="space-y-4 sm:space-y-6 container mx-auto">
           {project.images?.length ? (
             project.images.map((src) => (
               <GalleryImage key={src} src={src} alt={project.name} />
@@ -159,7 +159,7 @@ const ProjectPage = async ({ params }: Props) => {
         </div>
       </section>
       {/* OPTIONAL PROJECT TESTIMONIALS */}
-      <section>
+      <section className="my-8 space-y-3 text-center px-2">
         <Quote />
         <p className="text-xs text-muted-foreground">
           Klaus single handedly brought this project to live, while delivering
