@@ -3,15 +3,7 @@ import { notFound } from "next/navigation";
 import { AllProjects, getProjectBySlug } from "@/data/all-projects";
 import ProjectHeroVideo from "@/components/project-hero-video";
 
-import {
-  ArrowBigLeftIcon,
-  ArrowBigRightIcon,
-  ArrowRight,
-  ArrowRightFromLine,
-  Globe,
-  Link2,
-  Quote,
-} from "lucide-react";
+import { ArrowRightFromLine, Globe, Link2, Quote } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import ProjectInfo from "../project-info";
 import GalleryImage from "../gallery-image";
@@ -37,12 +29,12 @@ const ProjectPage = async ({ params }: Props) => {
   const prevProject = AllProjects[(currentIndex - 1) % AllProjects.length];
 
   return (
-    <div className="">
+    <div className="overflow-hidden">
       {/* HERO/SHOWCASE*/}
-      <div className="relative w-full h-[72vh] sm:h-[80vh] overflow-hidden rounded-b-[2rem] border-6 border-b-primary bg-muted">
+      <div className="relative w-full h-[80vh] sm:h-[80vh] overflow-hidden rounded-b-[2rem] border-5 sm:border-6 border-b-primary bg-muted">
         {project.trailerUrl && <ProjectHeroVideo src={project.trailerUrl} />}
 
-        <div className="absolute bottom-0 left-0 flex w-full min-h-24 flex-col gap-2 p-8 md:px-12">
+        <div className="absolute bottom-0 left-0 flex w-full flex-col gap-2 p-6 sm:p-8 md:px-12">
           <div>
             {/* <span className="font-departure-mono text-xs text-terminal-green tracking-widest">
               //:: {project.slug}
@@ -54,7 +46,7 @@ const ProjectPage = async ({ params }: Props) => {
 
           {/* META: role / tech stack / links */}
 
-          <div className=" w-max flex flex-wrap gap-0 bg-background/50 backdrop-blur-md px-4 py-2 rounded-full border">
+          <div className=" w-max flex flex-wrap gap-4 bg-background/50 backdrop-blur-md px-5 py-3 rounded-full border">
             {project.links?.length ? (
               project.links.map((link, index) => {
                 const Icon = link.icon ?? Link2;
@@ -63,9 +55,9 @@ const ProjectPage = async ({ params }: Props) => {
                     key={index}
                     href={link.url}
                     target="_blank"
-                    className="flex jsustify-center items-center gap-2 px-3 py-1 font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase"
+                    className="text-muted-foreground"
                   >
-                    <Icon />
+                    <Icon className="size-5" />
                     {/* <span>{link.label}</span> */}
                   </Link>
                 );
@@ -83,13 +75,13 @@ const ProjectPage = async ({ params }: Props) => {
       <section className="w-[100%] py-10 px-6 sm:px-8 md:py-10">
         <div className="mx-auto w-full ">
           <div className="flex items-start min-h-[10vh]">
-            <h2 className="text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-8xl">
               {project.name}
             </h2>
           </div>
           {/* <Separator className="data-horizontal:h-1" /> */}
 
-          <div className="w-full flex mx-2 gap-2">
+          <div className="w-full flex mx-0.5 sm:mx-2 my-2 gap-2">
             {project.links?.length ? (
               project.links.map((link, index) => {
                 const Icon = link.icon ?? Globe;
@@ -98,7 +90,7 @@ const ProjectPage = async ({ params }: Props) => {
                     key={index}
                     href={link.url}
                     target="_blank"
-                    className="flex jsustify-center items-center border-r-2 gap-2 px-3 py-3 font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase"
+                    className="flex jsustify-center items-center border-r-2 gap-2 pr-3 py-1 font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase"
                   >
                     <Icon size={18} />
                     <span>{link.label}</span>

@@ -169,7 +169,7 @@ export const AllProjects: Project[] = [
   },
   {
     slug: "project-004",
-    name: "CHRONOMANCERS",
+    name: "CHRONO MANCERS",
     description: "Details for this project are coming soon.",
     trailerUrl: "/videos/project-trailers/chronomancers-trailer.mp4",
     category: "Game Dev",
@@ -177,10 +177,16 @@ export const AllProjects: Project[] = [
     date: "2025",
     links: [
       {
-        label: "Website",
+        label: "Visit",
         url: "https://area59studio.com/",
         icon: Globe,
       },
+      {
+        label: "Demo",
+        url: "https://twitter.com/Area59Studio",
+        icon: Gamepad2,
+      },
+
       {
         label: "Github",
         url: "https://github.com/klaus-xy/area59-studio",
@@ -190,11 +196,6 @@ export const AllProjects: Project[] = [
         label: "X",
         url: "https://twitter.com/Area59Studio",
         icon: Twitter,
-      },
-      {
-        label: "Demo",
-        url: "https://twitter.com/Area59Studio",
-        icon: Gamepad2,
       },
     ],
     images: [
