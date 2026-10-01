@@ -17,7 +17,7 @@ const ProjectInfo = ({ label = "Label", info = "Info", className }: Props) => {
 
   return (
     <div className={cn(`w-full py-4`, className)}>
-      <h3 className="text-[0.65rem] sm:text-sm tracking-[0.5rem] sm:tracking-[0.8rem] text-terminal-green">
+      <h3 className="text-[0.65rem] sm:text-sm tracking-[0.3rem] sm:tracking-[0.8rem] text-terminal-green font-medium">
         {label}
       </h3>
       <motion.h2

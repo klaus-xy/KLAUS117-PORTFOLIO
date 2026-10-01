@@ -170,7 +170,7 @@ export const AllProjects: Project[] = [
   {
     slug: "project-004",
     name: "CHRONO MANCERS",
-    description: "Details for this project are coming soon.",
+    description: "A retrofuturistic twin stick shooter.",
     trailerUrl: "/videos/project-trailers/chronomancers-trailer.mp4",
     category: "Game Dev",
     role: "Game Developer",

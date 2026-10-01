@@ -72,7 +72,7 @@ const ProjectPage = async ({ params }: Props) => {
       </div>
 
       {/* DETAILS SECTION */}
-      <section className="w-[100%] py-10 px-6 sm:px-8 md:py-10">
+      <section className="w-[100%] py-10 px-4 sm:px-8 md:py-10">
         <div className="mx-auto w-full ">
           <div className="flex items-start min-h-[10vh]">
             <h2 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-8xl">
@@ -191,7 +191,7 @@ const ProjectPage = async ({ params }: Props) => {
             </div>
           </div>
 
-          <h2 className="font-eurostile text-primary text-5xl md:text-7xl">
+          <h2 className="font-eurostile text-primary text-4xl sm:text-5xl md:text-7xl">
             {nextProject.name}
           </h2>
         </div>

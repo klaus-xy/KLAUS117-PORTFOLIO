@@ -43,9 +43,13 @@ const FeaturedProjects = () => {
   const showVideo = Boolean(hoveredProject?.trailerUrl) && !videoErrored;
 
   return (
-    <SectionWrapper id="contact" wrapperClassName=" " className="max-w-none">
+    <SectionWrapper
+      id="contact"
+      wrapperClassName=" "
+      className="max-w-none px-0"
+    >
       {/* HEADER */}
-      <div className="container mx-auto mb-24 px-4 tracking-tight">
+      <div className="mb-24 sm:px-4 tracking-tight ">
         <div className="flex justify-center sm:justify-start items-center">
           <h1 className="text-[50px] sm:text-6xl lg:text-9xl">FEATURE </h1>
           <MiniTrailer
@@ -85,9 +89,10 @@ const FeaturedProjects = () => {
           </Marquee>
         </div>
       </div>
+
       {/* FEATURED PROJECTS CONTAINER */}
       <div
-        className="w-full min-h-[50vh] flex gap-4 my-10"
+        className="w-full min-h-[50vh] flex gap-4 my-10 px-4"
         onMouseLeave={() => setHoveredProject(null)}
       >
         {/* FEATURED PROJECT PREVIEW */}
