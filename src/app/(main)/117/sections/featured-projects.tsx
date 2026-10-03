@@ -1,14 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, useInView } from "motion/react";
 import SectionWrapper from "../../../../components/layout/section-wrapper";
 import ProjectItem from "../../projects/project-item";
 import { Button } from "@/components/ui/button";
-import {
-  AllProjects,
-  PROJECT_CATEGORIES,
-  Project,
-} from "@/data/all-projects";
+import { AllProjects, PROJECT_CATEGORIES, Project } from "@/data/all-projects";
 import {
   Carousel,
   CarouselApi,
@@ -47,12 +43,19 @@ const bannerTexts = [
   "SIMULATION.",
   "   ",
 ];
+const listVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.15 } },
+};
+
 const FeaturedProjects = () => {
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
   const [videoErrored, setVideoErrored] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [tabIndex, setTabIndex] = useState(0);
+  const listRef = useRef<HTMLDivElement>(null);
+  const isListInView = useInView(listRef, { amount: 0.25 });
 
   useEffect(() => {
     setVideoErrored(false);
@@ -207,31 +210,43 @@ const FeaturedProjects = () => {
               </span>
             </div>
           </motion.div>
-          <Carousel setApi={setCarouselApi} opts={{ align: "start" }}>
-            <CarouselContent className="ml-0">
-              {FEATURED_TABS.map((tab) => {
-                const projects =
-                  tab === "All"
-                    ? AllProjects
-                    : AllProjects.filter((project) => project.category === tab);
-                return (
-                  <CarouselItem key={tab} className="pl-0">
-                    <ul>
-                      {projects.slice(0, MAX_FEATURED_PROJECTS).map((project, i) => (
-                        <ProjectItem
-                          key={project.slug}
-                          index={i + 1}
-                          project={project}
-                          isActive={hoveredProject?.slug === project.slug}
-                          onHoverChange={setHoveredProject}
-                        />
-                      ))}
-                    </ul>
-                  </CarouselItem>
-                );
-              })}
-            </CarouselContent>
-          </Carousel>
+          <div ref={listRef}>
+            <Carousel setApi={setCarouselApi} opts={{ align: "start" }}>
+              <CarouselContent className="ml-0">
+                {FEATURED_TABS.map((tab, tabI) => {
+                  const projects =
+                    tab === "All"
+                      ? AllProjects
+                      : AllProjects.filter(
+                          (project) => project.category === tab,
+                        );
+                  return (
+                    <CarouselItem key={tab} className="pl-0">
+                      <motion.ul
+                        variants={listVariants}
+                        initial="hidden"
+                        animate={
+                          isListInView && tabI === tabIndex ? "show" : "hidden"
+                        }
+                      >
+                        {projects
+                          .slice(0, MAX_FEATURED_PROJECTS)
+                          .map((project, i) => (
+                            <ProjectItem
+                              key={project.slug}
+                              index={i + 1}
+                              project={project}
+                              isActive={hoveredProject?.slug === project.slug}
+                              onHoverChange={setHoveredProject}
+                            />
+                          ))}
+                      </motion.ul>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+            </Carousel>
+          </div>
           <div className="w-full flex justify-end items-center mt-10 sm:py-20 sm:pr-4">
             <Link href={"/projects"}>
               <Button

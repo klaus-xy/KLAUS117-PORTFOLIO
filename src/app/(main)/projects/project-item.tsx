@@ -1,6 +1,12 @@
 "use client";
 import Link from "next/link";
 import { Project } from "@/data/all-projects";
+import { motion } from "motion/react";
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -16 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" } },
+};
 
 interface Props {
   index: number;
@@ -16,7 +22,8 @@ const ProjectItem = ({
   onHoverChange,
 }: Props) => {
   return (
-    <li
+    <motion.li
+      variants={itemVariants}
       onMouseEnter={() => onHoverChange?.(project)}
       className="group relative sm:text-muted-foreground hover:text-primary"
     >
@@ -32,7 +39,7 @@ const ProjectItem = ({
         </span>
         {/* {isActive && <div className="w-20 h-20 bg-primary lg:hidden "></div>} */}
       </Link>
-    </li>
+    </motion.li>
   );
 };
 
