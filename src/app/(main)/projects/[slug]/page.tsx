@@ -131,15 +131,15 @@ const ProjectPage = async ({ params }: Props) => {
         </div>
       </section>
 
-      {/* GALLERY */}
+      {/* SHOWCASE & GALLERY */}
       <section className="min-h-96 px-2 sm:px-10 ">
         <h2 className="flex justify-center text-3xl sm:text-4xl lg:text-5xl my-10 sm:my-24 mb-8">
           SHOWCASE
         </h2>
         <div className="space-y-4 sm:space-y-6 container mx-auto">
           {project.images?.length ? (
-            project.images.map((src) => (
-              <GalleryImage key={src} src={src} alt={project.name} />
+            project.images.map((image) => (
+              <GalleryImage key={image.src} image={image} alt={project.name} />
             ))
           ) : (
             <div className="col-span-full flex aspect-video items-center justify-center rounded-2xl bg-muted">
@@ -152,12 +152,12 @@ const ProjectPage = async ({ params }: Props) => {
       </section>
       {/* OPTIONAL PROJECT TESTIMONIALS */}
       <section className="my-8 space-y-3 text-center px-2">
-        <Quote />
+        {/* <Quote />
         <p className="text-xs text-muted-foreground">
           Klaus single handedly brought this project to live, while delivering
           at crazy speed. What a guy!
         </p>
-        <span className="text-terminal-green">- Avis</span>
+        <span className="text-terminal-green">- Avis</span> */}
       </section>
 
       {/* UP NEXT SECTION */}

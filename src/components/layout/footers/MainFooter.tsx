@@ -69,8 +69,8 @@ const MainFooter = () => {
 
   return (
     <footer className="w-full flex flex-col justify-center items-center uppercase font-mono p-2">
-      <p className="text-[0.65rem]  sm:text-sm text-primary/80">
-        Designed and Made with ❤️
+      <p className="text-[0.6rem]  sm:text-sm text-primary/80">
+        Designed and Made with 💚
       </p>
       {/* <p>and</p> */}
 
