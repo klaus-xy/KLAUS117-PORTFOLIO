@@ -93,12 +93,41 @@ export const AllProjects: Project[] = [
     ],
   },
   {
+    slug: "project-003",
+    name: "FINSWICH",
+    description:
+      "FinSwich is a fintech dashboard for managing a white-label financial product. Operators can switch between apps, review accounts, cards, and customers, track billing, run campaigns, and configure modules from one place. Built with Next.js and connected to the FinSwich API gateway, with session and app context handled across every dashboard section.",
+    category: "Web Dev",
+    role: "Frontend Engineer",
+    date: "2025",
+    links: [
+      {
+        label: "Website",
+        url: "https://area59studio.com/",
+        icon: Globe,
+      },
+      {
+        label: "Github",
+        url: "https://github.com/klaus-xy/area59-studio",
+        icon: Github,
+      },
+      {
+        label: "X",
+        url: "https://twitter.com/Area59Studio",
+        icon: Twitter,
+      },
+    ],
+    images: [
+      { src: "/images/projects/finswich/screenshots/finswich-login.png" },
+    ],
+  },
+  {
     slug: "project-001",
-    name: "Side Quest™ .inc",
+    name: "Side Quests™",
     description: "Details for this project are coming soon.",
     trailerUrl: "/videos/project-trailers/sidequest-trailer.mp4",
     category: "Side Quests",
-    role: "Frontend Developer",
+    role: "Frontend Engineer",
     date: "2025",
     links: [
       {
@@ -256,53 +285,6 @@ export const AllProjects: Project[] = [
         icon: Gamepad2,
       },
 
-      {
-        label: "Github",
-        url: "https://github.com/klaus-xy/area59-studio",
-        icon: Github,
-      },
-      {
-        label: "X",
-        url: "https://twitter.com/Area59Studio",
-        icon: Twitter,
-      },
-    ],
-    images: [
-      {
-        src: "/images/projects/area59/1.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-      },
-      {
-        src: "/images/projects/area59/2.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-      },
-      {
-        src: "/images/projects/area59/3.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-      },
-      {
-        src: "/images/projects/area59/4.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-      },
-    ],
-  },
-  {
-    slug: "project-003",
-    name: "FINSWICH DASHBOARD",
-    description: "Making sense out of digital noise.",
-    category: "Web Dev",
-    role: "Frontend Engineer",
-    date: "2025",
-    links: [
-      {
-        label: "Website",
-        url: "https://area59studio.com/",
-        icon: Globe,
-      },
       {
         label: "Github",
         url: "https://github.com/klaus-xy/area59-studio",
