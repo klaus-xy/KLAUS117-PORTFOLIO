@@ -98,11 +98,14 @@ const GalleryImage = ({ image, alt }: GalleryImageProps) => {
             >
               <Image src={image.src} alt={alt} fill className="object-cover" />
             </motion.div>
-            <DialogDescription className="font-helvetica-neue font-light text-[0.7rem] text-muted-foreground sm:text-sm">
+            <DialogDescription className="font-helvetica-neue font-normal tracking-wider text-[0.7rem] text-muted-foreground sm:text-sm">
               <motion.span variants={dialogWordsVariants} className="block">
                 {image.description?.split(" ").map((word, i) => (
                   <Fragment key={i}>
-                    <motion.span variants={dialogWordVariants} className="inline-block">
+                    <motion.span
+                      variants={dialogWordVariants}
+                      className="inline-block"
+                    >
                       {word}
                     </motion.span>{" "}
                   </Fragment>
