@@ -1,5 +1,11 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import FooterList from "./footer-list";
+import ScrambleText from "@/components/ui/scramble-text";
+
+const NAMES = ["Klaus 117", "Ayobami"];
+const SWAP_INTERVAL_MS = 5000;
 
 const FooterItems = [
   {
@@ -51,11 +57,20 @@ const FooterItems = [
 ];
 
 const MainFooter = () => {
+  const [nameIndex, setNameIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => setNameIndex((i) => (i + 1) % NAMES.length),
+      SWAP_INTERVAL_MS,
+    );
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <footer className="w-full flex flex-col justify-center items-center uppercase font-mono p-2">
-      <p className="text-[0.65rem]  sm:text-sm text-muted-foreground">
-        Made in Lagos with ❤️ by ::{" "}
-        <span className="text-terminal-green">Klaus 117</span>
+      <p className="text-[0.65rem]  sm:text-sm text-primary/80">
+        Designed and Made with ❤️
       </p>
       {/* <p>and</p> */}
 
@@ -68,7 +83,18 @@ const MainFooter = () => {
       {/* <p>
         by :: <span className="text-terminal-green">Klaus 117</span>
       </p> */}
-      <p className="text-[0.65rem] sm:text-sm text-gray-600"> © 2026</p>
+
+      <p className="text-[0.6rem] sm:text-sm text-muted-foreground/60">
+        by ::{" "}
+        <span className="inline-block min-w-[9ch] text-terminal-green text-center">
+          <ScrambleText
+            text={NAMES[nameIndex]}
+            scrambleSpeed={40}
+            chars="!<>-_\\/[]—=+*^?#________"
+          />
+        </span>{" "}
+        © 2026
+      </p>
     </footer>
   );
 };

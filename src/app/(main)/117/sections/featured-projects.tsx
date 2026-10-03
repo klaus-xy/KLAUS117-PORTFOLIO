@@ -12,6 +12,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import RollingCounter from "@/components/rolling-counter";
 import MiniTrailer from "@/components/mini-trailer";
 import { ArrowUpRight, LucideArrowUpRightFromSquare } from "lucide-react";
 import Link from "next/link";
@@ -24,6 +25,11 @@ const FEATURED_TABS = [
     AllProjects.some((project) => project.category === category),
   ),
 ];
+
+const getTabProjects = (tab: string) =>
+  tab === "All"
+    ? AllProjects
+    : AllProjects.filter((project) => project.category === tab);
 
 const bannerTexts = [
   "GAMES INDUSTRY.",
@@ -187,20 +193,27 @@ const FeaturedProjects = () => {
             transition={{ duration: 0.9, ease: "easeOut", delay: 0 }}
             className="text-primary text-right tracking-widest font-eurostile px-2 pb-4 border-b-3 border-terminal-green "
           >
-            <h2 className="text-6xl sm:text-6xl ">06</h2>
+            <h2 className="text-6xl sm:text-6xl ">
+              <RollingCounter
+                value={getTabProjects(FEATURED_TABS[tabIndex]).length}
+              />
+            </h2>
             <div className="flex justify-between items-center px-2">
               {/* FILTER */}
               <div className="flex gap-2">
                 {FEATURED_TABS.map((tab, i) => (
-                  <button
+                  <motion.button
                     key={tab}
                     type="button"
                     aria-label={`Show ${tab} projects`}
                     aria-pressed={i === tabIndex}
                     onClick={() => carouselApi?.scrollTo(i)}
+                    initial={false}
+                    animate={{ width: i === tabIndex ? 24 : 16 }}
+                    transition={{ type: "spring", stiffness: 220, damping: 16 }}
                     className={cn(
-                      "h-2 rounded-2xl transition-all duration-300",
-                      i === tabIndex ? "w-6 bg-teal-300" : "w-4 bg-accent",
+                      "h-2 rounded-2xl transition-colors duration-300",
+                      i === tabIndex ? "bg-teal-300" : "bg-accent",
                     )}
                   />
                 ))}
@@ -214,12 +227,10 @@ const FeaturedProjects = () => {
             <Carousel setApi={setCarouselApi} opts={{ align: "start" }}>
               <CarouselContent className="ml-0">
                 {FEATURED_TABS.map((tab, tabI) => {
-                  const projects =
-                    tab === "All"
-                      ? AllProjects
-                      : AllProjects.filter(
-                          (project) => project.category === tab,
-                        );
+                  const projects = getTabProjects(tab).slice(
+                    0,
+                    MAX_FEATURED_PROJECTS,
+                  );
                   return (
                     <CarouselItem key={tab} className="pl-0">
                       <motion.ul
@@ -229,17 +240,15 @@ const FeaturedProjects = () => {
                           isListInView && tabI === tabIndex ? "show" : "hidden"
                         }
                       >
-                        {projects
-                          .slice(0, MAX_FEATURED_PROJECTS)
-                          .map((project, i) => (
-                            <ProjectItem
-                              key={project.slug}
-                              index={i + 1}
-                              project={project}
-                              isActive={hoveredProject?.slug === project.slug}
-                              onHoverChange={setHoveredProject}
-                            />
-                          ))}
+                        {projects.map((project, i) => (
+                          <ProjectItem
+                            key={project.slug}
+                            index={i + 1}
+                            project={project}
+                            isActive={hoveredProject?.slug === project.slug}
+                            onHoverChange={setHoveredProject}
+                          />
+                        ))}
                       </motion.ul>
                     </CarouselItem>
                   );
@@ -247,11 +256,11 @@ const FeaturedProjects = () => {
               </CarouselContent>
             </Carousel>
           </div>
-          <div className="w-full flex justify-end items-center mt-10 sm:py-20 sm:pr-4">
+          <div className="w-full flex justify-end items-center mt-10 sm:py-20 sm:pr-4 ">
             <Link href={"/projects"}>
               <Button
                 // className="text-primary text-lg before:bg-lime-500 border-2 border-primary font-eurostile  tracking-wide py-7 px-6 before:h-18 before:w-12 before:rounded "
-                className="text-primary sm:text-xl border  hover:border-primary font-eurostile tracking-wider px-3 py-0 sm:py-7 sm:px-5"
+                className="text-primary sm:text-xl border  hover:border-primary font-eurostile tracking-wider px-3 py-0 sm:py-7 sm:px-5 bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent"
                 size={"lg"}
                 variant={"outline"}
               >
