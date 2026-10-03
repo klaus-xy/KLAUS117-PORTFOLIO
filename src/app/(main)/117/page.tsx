@@ -101,7 +101,7 @@ const page = () => {
           }
         </Marquee>
         <Marquee
-          className="w-full h-16 sm:h-32 mb-6 text-3xl sm:text-6xl -rotate-45 relative top-0 -right-24 z-50 font-helvetica-neue font-semibold bg-background border-terminal-green border-y-4 "
+          className="w-full h-16 sm:h-32 mb-6 text-3xl sm:text-6xl -rotate-45 relative top-0 -right-[20%] z-50 font-helvetica-neue font-semibold bg-background border-terminal-green border-y-4 "
           direction="left"
           cycleTime={40}
         >

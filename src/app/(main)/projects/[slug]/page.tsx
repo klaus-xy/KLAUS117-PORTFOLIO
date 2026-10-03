@@ -159,16 +159,17 @@ const ProjectPage = async ({ params }: Props) => {
         </p>
         <span className="text-terminal-green">- Avis</span>
       </section>
+
       {/* UP NEXT SECTION */}
 
       <Link
         href={`/projects/${nextProject.slug}`}
-        className="group relative flex justify-center items-center h-[35vh] w-full text-muted-foreground/50 hover:text-primary overflow-hidden rounded-t-2xl border-5 border-t-primary border-b-0 mt-12"
+        className="group relative flex justify-center items-center h-[28vh] sm:h-[35vh] w-full text-muted-foreground/50 hover:text-primary overflow-hidden rounded-t-2xl border-5 border-t-primary border-b-0 mt-12"
       >
         {nextProject.trailerUrl ? (
           <video
             src={nextProject.trailerUrl}
-            className="absolute inset-0 h-full w-full object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-30"
+            className="absolute inset-0 h-full w-full object-cover opacity-30 sm:opacity-80 transition-opacity duration-500 group-hover:opacity-30"
             autoPlay
             loop
             muted
@@ -178,20 +179,23 @@ const ProjectPage = async ({ params }: Props) => {
           <div className="absolute inset-0 bg-background" />
         )}
         {/* <div className="absolute inset-0 bg-linear-to-t from-background via-background/50 to-background/20" /> */}
-        <div className="relative flex w-full h-full flex-col items-center justify-center gap-10 px-4 pb-16 text-center">
+        <div className="relative flex w-full h-full flex-col items-center justify-center gap-4 sm:gap-10 px-4 pt-4 pb-16 text-center">
           {/* NAVIGATION */}
-          <div className="w-full flex justify-end items-center px-8 ">
+          <div className="w-full flex justify-center sm:justify-end items-center sm:px-8">
             <div className="group flex items-center gap-2  p-4 ">
-              <span className="text-lg font-eurostile tracking-widest uppercase">
+              <span className="text-sm sm:text-lg font-eurostile tracking-widest uppercase">
                 Next Project
               </span>
               <div className="transition-transform duration-800 group-hover:translate-x-4">
-                <ArrowRightFromLine size={28} className="stroke-3" />
+                <ArrowRightFromLine
+                  // size={28}
+                  className="stroke-3 sm:stroke-3 size-7 sm:size-10"
+                />
               </div>
             </div>
           </div>
 
-          <h2 className="font-eurostile text-primary text-4xl sm:text-5xl md:text-7xl">
+          <h2 className="font-eurostile text-primary text-3xl sm:text-5xl md:text-7xl">
             {nextProject.name}
           </h2>
         </div>

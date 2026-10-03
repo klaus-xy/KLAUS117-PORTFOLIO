@@ -4,13 +4,30 @@ import { AnimatePresence, motion } from "motion/react";
 import SectionWrapper from "../../../../components/layout/section-wrapper";
 import ProjectItem from "../../projects/project-item";
 import { Button } from "@/components/ui/button";
-import { AllProjects, Project } from "@/data/all-projects";
+import {
+  AllProjects,
+  PROJECT_CATEGORIES,
+  Project,
+} from "@/data/all-projects";
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 import MiniTrailer from "@/components/mini-trailer";
 import { ArrowUpRight, LucideArrowUpRightFromSquare } from "lucide-react";
 import Link from "next/link";
 import Marquee from "@/components/marquee";
 
 const MAX_FEATURED_PROJECTS = 5;
+const FEATURED_TABS = [
+  "All",
+  ...PROJECT_CATEGORIES.filter((category) =>
+    AllProjects.some((project) => project.category === category),
+  ),
+];
 
 const bannerTexts = [
   "GAMES INDUSTRY.",
@@ -34,11 +51,23 @@ const FeaturedProjects = () => {
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
   const [videoErrored, setVideoErrored] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [tabIndex, setTabIndex] = useState(0);
 
   useEffect(() => {
     setVideoErrored(false);
     setVideoReady(false);
   }, [hoveredProject?.slug]);
+
+  useEffect(() => {
+    if (!carouselApi) return;
+    const onSelect = () => setTabIndex(carouselApi.selectedScrollSnap());
+    onSelect();
+    carouselApi.on("select", onSelect);
+    return () => {
+      carouselApi.off("select", onSelect);
+    };
+  }, [carouselApi]);
 
   const showVideo = Boolean(hoveredProject?.trailerUrl) && !videoErrored;
 
@@ -145,38 +174,64 @@ const FeaturedProjects = () => {
         {/* FEATURED PROJECT LIST */}
         <div className="w-full flex-1 sm:px-4 bg-background pt-3">
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{
               once: false,
               amount: 0,
               margin: "0px 0px 0% 0px",
             }}
-            transition={{ duration: 0.75, ease: "easeOut", delay: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0 }}
             className="text-primary text-right tracking-widest font-eurostile px-2 pb-4 border-b-3 border-terminal-green "
           >
             <h2 className="text-6xl sm:text-6xl ">06</h2>
             <div className="flex justify-between items-center px-2">
               {/* FILTER */}
-              <div className="flex  gap-2">
-                <div className="w-6 h-2 bg-teal-300 rounded-2xl"></div>
-                <div className="w-4 h-2 bg-accent rounded-2xl"></div>
-                <div className="w-4 h-2 bg-accent rounded-2xl"></div>
+              <div className="flex gap-2">
+                {FEATURED_TABS.map((tab, i) => (
+                  <button
+                    key={tab}
+                    type="button"
+                    aria-label={`Show ${tab} projects`}
+                    aria-pressed={i === tabIndex}
+                    onClick={() => carouselApi?.scrollTo(i)}
+                    className={cn(
+                      "h-2 rounded-2xl transition-all duration-300",
+                      i === tabIndex ? "w-6 bg-teal-300" : "w-4 bg-accent",
+                    )}
+                  />
+                ))}
               </div>
-              <span className="text-muted-foreground">Game Dev</span>
+              <span className="text-muted-foreground">
+                {FEATURED_TABS[tabIndex]}
+              </span>
             </div>
           </motion.div>
-          <ul>
-            {AllProjects.slice(0, MAX_FEATURED_PROJECTS).map((project, i) => (
-              <ProjectItem
-                key={project.slug}
-                index={i + 1}
-                project={project}
-                isActive={hoveredProject?.slug === project.slug}
-                onHoverChange={setHoveredProject}
-              />
-            ))}
-          </ul>
+          <Carousel setApi={setCarouselApi} opts={{ align: "start" }}>
+            <CarouselContent className="ml-0">
+              {FEATURED_TABS.map((tab) => {
+                const projects =
+                  tab === "All"
+                    ? AllProjects
+                    : AllProjects.filter((project) => project.category === tab);
+                return (
+                  <CarouselItem key={tab} className="pl-0">
+                    <ul>
+                      {projects.slice(0, MAX_FEATURED_PROJECTS).map((project, i) => (
+                        <ProjectItem
+                          key={project.slug}
+                          index={i + 1}
+                          project={project}
+                          isActive={hoveredProject?.slug === project.slug}
+                          onHoverChange={setHoveredProject}
+                        />
+                      ))}
+                    </ul>
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+          </Carousel>
           <div className="w-full flex justify-end items-center mt-10 sm:py-20 sm:pr-4">
             <Link href={"/projects"}>
               <Button

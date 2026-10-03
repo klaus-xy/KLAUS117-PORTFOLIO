@@ -15,7 +15,7 @@ function CompanionCube() {
   });
 
   return (
-    <group ref={groupRef} position={[2.25, 1, 0]}>
+    <group ref={groupRef} position={[2, 1, 0]}>
       <primitive object={scene} scale={0.05} />
     </group>
   );
@@ -26,7 +26,7 @@ const AstroKlaus = () => {
   return (
     <Canvas camera={{ position: [0, 0, 5] }} className="">
       <ambientLight intensity={0.15} color="white" />
-      <directionalLight intensity={5} position={[10, 10, 5]} color="white" />
+      <directionalLight intensity={5} position={[5, 10, 5]} color="white" />
       <CompanionCube />
     </Canvas>
   );
