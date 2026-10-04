@@ -84,16 +84,16 @@ const MainFooter = () => {
         by :: <span className="text-terminal-green">Klaus 117</span>
       </p> */}
 
-      <p className="text-[0.6rem] sm:text-sm text-muted-foreground/60">
+      <p className="text-[0.55rem] sm:text-sm text-muted-foreground/60">
         by ::{" "}
-        <span className="inline-block min-w-[9ch] text-terminal-green text-center">
+        <span className="inline-block min-w-[9.5ch] text-terminal-green text-center font-semi-bold tracking-wider">
           <ScrambleText
             text={NAMES[nameIndex]}
             scrambleSpeed={40}
             chars="!<>-_\\/[]—=+*^?#________"
           />
         </span>{" "}
-        © 2026
+        :: © 2026
       </p>
     </footer>
   );

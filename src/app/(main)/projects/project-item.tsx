@@ -34,7 +34,7 @@ const ProjectItem = ({
       >
         {/* <span className="absolute -left-4 bottom-8 text-xs">00</span> */}
         <h4 className="text-xl sm:text-2xl z-10">{project.name}</h4>
-        <span className="sm:block absolute -right-5 sm:top-1/2 sm:-translate-y-1/2 text-6xl lg:text-6xl font-eurostile text-transparent transition-[-webkit-text-stroke-color] duration-300 [-webkit-text-stroke-width:1px] [-webkit-text-stroke-color:var(--muted)] group-hover:[-webkit-text-stroke-color:var(--primary)]">
+        <span className="absolute -right-5 sm:top-1/2 sm:-translate-y-1/2 text-6xl lg:text-6xl font-eurostile text-transparent transition-[-webkit-text-stroke-color] duration-300 [-webkit-text-stroke-width:1px] [-webkit-text-stroke-color:var(--muted)] group-hover:[-webkit-text-stroke-color:var(--primary)]">
           0{index}
         </span>
         {/* {isActive && <div className="w-20 h-20 bg-primary lg:hidden "></div>} */}

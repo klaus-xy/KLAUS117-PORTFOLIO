@@ -84,7 +84,7 @@ const FeaturedProjects = () => {
     <SectionWrapper
       id="contact"
       wrapperClassName=" "
-      className="max-w-none px-0"
+      className="max-w-none px-0 sm:px-0 lg:px-0 2xl:px-0"
     >
       {/* HEADER */}
       <div className="mb-24 sm:px-4 tracking-tight">
@@ -130,7 +130,7 @@ const FeaturedProjects = () => {
 
       {/* FEATURED PROJECTS CONTAINER */}
       <div
-        className="w-full min-h-[50vh] flex gap-4 my-10 px-3 sm:px-4"
+        className="w-full min-h-[50vh] flex gap-4 my-10"
         onMouseLeave={() => setHoveredProject(null)}
       >
         {/* FEATURED PROJECT PREVIEW */}
@@ -181,7 +181,7 @@ const FeaturedProjects = () => {
           </AnimatePresence>
         </div>
         {/* FEATURED PROJECT LIST */}
-        <div className="w-full flex-1 sm:px-4 bg-background pt-3">
+        <div className="w-full flex-1 px-2 sm:px-6 bg-background pt-3">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -210,7 +210,7 @@ const FeaturedProjects = () => {
                     onClick={() => carouselApi?.scrollTo(i)}
                     initial={false}
                     animate={{ width: i === tabIndex ? 24 : 16 }}
-                    transition={{ type: "spring", stiffness: 220, damping: 16 }}
+                    transition={{ type: "spring", stiffness: 220, damping: 22 }}
                     className={cn(
                       "h-2 rounded-2xl transition-colors duration-300",
                       i === tabIndex ? "bg-teal-300" : "bg-accent",
@@ -225,7 +225,10 @@ const FeaturedProjects = () => {
           </motion.div>
           <div ref={listRef}>
             <Carousel setApi={setCarouselApi} opts={{ align: "start" }}>
-              <CarouselContent className="ml-0">
+              <CarouselContent
+                className="ml-0"
+                viewportClassName="!overflow-visible"
+              >
                 {FEATURED_TABS.map((tab, tabI) => {
                   const projects = getTabProjects(tab).slice(
                     0,

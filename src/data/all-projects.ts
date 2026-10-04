@@ -97,28 +97,35 @@ export const AllProjects: Project[] = [
     name: "FINSWICH",
     description:
       "FinSwich is a fintech dashboard for managing a white-label financial product. Operators can switch between apps, review accounts, cards, and customers, track billing, run campaigns, and configure modules from one place. Built with Next.js and connected to the FinSwich API gateway, with session and app context handled across every dashboard section.",
+    trailerUrl: "/videos/project-trailers/finswich-trailer.mp4",
     category: "Web Dev",
     role: "Frontend Engineer",
     date: "2025",
     links: [
       {
         label: "Website",
-        url: "https://area59studio.com/",
+        url: "https://ops.finswich.com/",
         icon: Globe,
       },
-      {
-        label: "Github",
-        url: "https://github.com/klaus-xy/area59-studio",
-        icon: Github,
-      },
-      {
-        label: "X",
-        url: "https://twitter.com/Area59Studio",
-        icon: Twitter,
-      },
+      // {
+      //   label: "Github",
+      //   url: "https://github.com/klaus-xy/area59-studio",
+      //   icon: Github,
+      // },
+      // {
+      //   label: "X",
+      //   url: "https://twitter.com/Area59Studio",
+      //   icon: Twitter,
+      // },
     ],
     images: [
-      { src: "/images/projects/finswich/screenshots/finswich-login.png" },
+      { src: "/images/projects/finswich/finswich-login.png" },
+      { src: "/images/projects/finswich/login.png" },
+      { src: "/images/projects/finswich/finswich-dashboard.png" },
+      { src: "/images/projects/finswich/services.png" },
+      { src: "/images/projects/finswich/status.png" },
+      { src: "/images/projects/finswich/transactions.png" },
+      { src: "/images/projects/finswich/wallet.png" },
     ],
   },
   {
