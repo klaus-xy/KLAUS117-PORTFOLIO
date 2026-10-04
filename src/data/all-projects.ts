@@ -38,11 +38,11 @@ export interface Project {
 
 export const AllProjects: Project[] = [
   {
-    slug: "project-000",
+    slug: "area-59-studio",
     name: "AREA 59™ Studio",
     description:
       "Area 59™ is an independent game development studio creating bold, immersive, and experimental interactive experiences right in the heart of Lagos, Nigeria.",
-    trailerUrl: "/videos/project-trailers/project-zero-trailer.mov",
+    trailerUrl: "/videos/project-trailers/area-59-trailer.mp4",
     category: "Web Dev",
     industry: "Video Games",
     role: "Creative Lead",
@@ -53,47 +53,52 @@ export const AllProjects: Project[] = [
         url: "https://area59-studio.vercel.app",
         icon: Globe,
       },
-      {
-        label: "Github",
-        url: "https://github.com/klaus-xy/area59-studio",
-        icon: Github,
-      },
+      // {
+      //   label: "Github",
+      //   url: "https://github.com/klaus-xy/area59-studio",
+      //   icon: Github,
+      // },
       {
         label: "X",
         url: "https://twitter.com/Area59Studio",
         icon: Twitter,
       },
-      {
-        label: "Demo",
-        url: "https://twitter.com/Area59Studio",
-        icon: Gamepad2,
-      },
+      // {
+      //   label: "Demo",
+      //   url: "https://twitter.com/Area59Studio",
+      //   icon: Gamepad2,
+      // },
     ],
     images: [
       {
-        src: "/images/projects/area59/1.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Replace this text with the real description for each slide once the copy is ready.",
+        src: "/images/projects/area59/hero.png",
+        // description:
+        //   "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/2.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Replace this text with the real description for each slide once the copy is ready.",
+        src: "/images/projects/area59/about.png",
+        // description:
+        //   "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/3.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Replace this text with the real description for each slide once the copy is ready.",
+        src: "/images/projects/area59/projects.png",
+        // description:
+        //   "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/4.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Replace this text with the real description for each slide once the copy is ready.",
+        src: "/images/projects/area59/join.png",
+        // description:
+        //   "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Replace this text with the real description for each slide once the copy is ready.",
       },
+      // {
+      //   src: "/images/projects/area59/4.png",
+      //   // description:
+      //   //   "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Replace this text with the real description for each slide once the copy is ready.",
+      // },
     ],
   },
   {
-    slug: "project-003",
+    slug: "finswich",
     name: "FINSWICH",
     description:
       "FinSwich is a fintech dashboard for managing a white-label financial product. Operators can switch between apps, review accounts, cards, and customers, track billing, run campaigns, and configure modules from one place. Built with Next.js and connected to the FinSwich API gateway, with session and app context handled across every dashboard section.",
@@ -129,7 +134,7 @@ export const AllProjects: Project[] = [
     ],
   },
   {
-    slug: "project-001",
+    slug: "side-quests",
     name: "Side Quests™",
     description: "Details for this project are coming soon.",
     trailerUrl: "/videos/project-trailers/sidequest-trailer.mp4",
@@ -177,11 +182,11 @@ export const AllProjects: Project[] = [
     ],
   },
   {
-    slug: "project-005",
+    slug: "walkman-117",
     name: "WALKMAN  : :  117",
     description: "Details for this project are coming soon.",
     trailerUrl: "/videos/project-trailers/walkman-trailer.mp4",
-    category: "Hardware",
+    category: "Side Quests",
     role: "Designer & Frontend Developer",
     date: "2025",
     links: [
@@ -225,11 +230,11 @@ export const AllProjects: Project[] = [
     ],
   },
   {
-    slug: "project-002",
+    slug: "project-ovr-drv",
     name: "Project OVR // DRV™",
     description: "Details for this project are coming soon.",
     trailerUrl: "/videos/project-trailers/racing-realms.mp4",
-    category: "Hardware",
+    category: "Game Dev",
     role: "Gameplay Programmer",
     date: "2025",
     links: [
@@ -273,7 +278,7 @@ export const AllProjects: Project[] = [
     ],
   },
   {
-    slug: "project-004",
+    slug: "chrono-mancers",
     name: "CHRONO MANCERS",
     description: "A retrofuturistic twin stick shooter.",
     trailerUrl: "/videos/project-trailers/chronomancers-trailer.mp4",
