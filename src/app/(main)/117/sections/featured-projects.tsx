@@ -92,7 +92,7 @@ const FeaturedProjects = () => {
           <h1 className="text-[50px] sm:text-6xl lg:text-9xl">FEATURE </h1>
           <MiniTrailer
             className="rounded-l-none w-24 h-16 sm:w-32 sm:h-24"
-            url="/videos/racing-realms.mp4"
+            url="/videos/project-showcases/racing-realms/racing-realms.mp4"
           />
           {/* <span>⬅animate in</span> */}
           {/* Could have a character pushing the words into place */}
@@ -134,7 +134,7 @@ const FeaturedProjects = () => {
         onMouseLeave={() => setHoveredProject(null)}
       >
         {/* FEATURED PROJECT PREVIEW */}
-        <div className="w-1/3 max-h-170 aspect-square hidden lg:flex flex-1 relative rounded-r-[2rem] bg-muted overflow-hidden">
+        <div className="w-1/3 max-h-170 aspect-square z-10 hidden lg:flex flex-1 relative rounded-r-[2rem] bg-muted overflow-hidden">
           <AnimatePresence mode="wait">
             {showVideo && hoveredProject?.trailerUrl ? (
               <motion.video

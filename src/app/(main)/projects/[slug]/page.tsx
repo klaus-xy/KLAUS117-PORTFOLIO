@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ShowcaseVideo from "@/components/showcase-video";
 import { notFound } from "next/navigation";
 import { AllProjects, getProjectBySlug } from "@/data/all-projects";
 import ProjectHeroVideo from "@/components/project-hero-video";
@@ -141,15 +142,7 @@ const ProjectPage = async ({ params }: Props) => {
             project.showcase.map((item, index) =>
               item.video ? (
                 <div key={`${item.video}-${index}`} className="space-y-3">
-                  <div className="aspect-video overflow-hidden rounded-2xl bg-muted">
-                    <video
-                      src={item.video}
-                      className="h-full w-full object-cover"
-                      controls
-                      playsInline
-                      preload="metadata"
-                    />
-                  </div>
+                  <ShowcaseVideo src={item.video} />
                   {item.description && (
                     <p className="font-helvetica-neue text-sm text-muted-foreground">
                       {item.description}
@@ -192,6 +185,7 @@ const ProjectPage = async ({ params }: Props) => {
         {nextProject.trailerUrl ? (
           <video
             src={nextProject.trailerUrl}
+            preload="metadata"
             className="absolute inset-0 h-full w-full object-cover opacity-30 sm:opacity-80 transition-opacity duration-500 group-hover:opacity-30"
             autoPlay
             loop

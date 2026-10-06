@@ -41,6 +41,7 @@ const ProjectNavDots = ({ currentSlug }: Props) => {
                           <video
                             src={project.trailerUrl}
                             className="h-full w-full object-cover"
+                            preload="none"
                             autoPlay
                             loop
                             muted
