@@ -3,7 +3,7 @@
 import { Fragment, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import Image from "next/image";
-import type { ProjectImage } from "@/data/all-projects";
+import type { ProjectShowcaseItem } from "@/data/all-projects";
 import {
   Dialog,
   DialogContent,
@@ -36,7 +36,7 @@ const dialogWordVariants = {
 };
 
 interface GalleryImageProps {
-  image: ProjectImage;
+  image: ProjectShowcaseItem & { image: string };
   alt: string;
 }
 
@@ -74,7 +74,7 @@ const GalleryImage = ({ image, alt }: GalleryImageProps) => {
             transition={{ duration: 0.4, ease: "easeOut" }}
             className="relative h-full w-full"
           >
-            <Image src={image.src} alt={alt} fill className="object-cover" />
+            <Image src={image.image} alt={alt} fill className="object-cover" />
           </motion.div>
         </motion.div>
       </div>
@@ -96,7 +96,7 @@ const GalleryImage = ({ image, alt }: GalleryImageProps) => {
               variants={dialogImageVariants}
               className="relative mx-auto aspect-video w-full max-w-3xl overflow-hidden rounded-xl"
             >
-              <Image src={image.src} alt={alt} fill className="object-cover" />
+              <Image src={image.image} alt={alt} fill className="object-cover" />
             </motion.div>
             <DialogDescription className="font-helvetica-neue font-normal tracking-wider text-[0.7rem] text-muted-foreground sm:text-sm">
               <motion.span variants={dialogWordsVariants} className="block">

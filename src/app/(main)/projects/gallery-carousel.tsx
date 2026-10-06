@@ -7,7 +7,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import type { ProjectImage } from "@/data/all-projects";
+import type { ProjectShowcaseItem } from "@/data/all-projects";
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 1.08 },
@@ -28,7 +28,7 @@ const textVariants = {
 };
 
 interface GalleryCarouselProps {
-  images: ProjectImage[];
+  images: (ProjectShowcaseItem & { image: string })[];
   alt: string;
 }
 
@@ -37,7 +37,7 @@ const GalleryCarousel = ({ images, alt }: GalleryCarouselProps) => {
     <Carousel orientation="horizontal" opts={{ align: "start" }}>
       <CarouselContent className="h-[70vh]">
         {images.map((image) => (
-          <CarouselItem key={image.src}>
+          <CarouselItem key={image.image}>
             <motion.div
               initial="hidden"
               whileInView="show"
@@ -49,7 +49,7 @@ const GalleryCarousel = ({ images, alt }: GalleryCarouselProps) => {
                 className="relative min-h-0 flex-1 overflow-hidden rounded-2xl bg-muted"
               >
                 <Image
-                  src={image.src}
+                  src={image.image}
                   alt={alt}
                   fill
                   className="object-cover aspect-video h-[20vh]"

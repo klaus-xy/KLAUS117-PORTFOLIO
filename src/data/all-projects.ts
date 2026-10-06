@@ -17,11 +17,6 @@ export interface ProjectLink {
   icon?: LucideIcon;
 }
 
-export interface ProjectImage {
-  src: string;
-  description?: string;
-}
-
 export interface ProjectShowcaseItem {
   image?: string;
   video?: string;
@@ -131,13 +126,13 @@ export const AllProjects: Project[] = [
       // },
     ],
     showcase: [
-      { src: "/images/projects/finswich/finswich-login.png" },
-      { src: "/images/projects/finswich/login.png" },
-      { src: "/images/projects/finswich/dashboard.png" },
-      { src: "/images/projects/finswich/services.png" },
-      { src: "/images/projects/finswich/service-status.png" },
-      { src: "/images/projects/finswich/transactions.png" },
-      { src: "/images/projects/finswich/wallet.png" },
+      { image: "/images/projects/finswich/finswich-login.png" },
+      { image: "/images/projects/finswich/login.png" },
+      { image: "/images/projects/finswich/dashboard.png" },
+      { image: "/images/projects/finswich/services.png" },
+      { image: "/images/projects/finswich/service-status.png" },
+      { image: "/images/projects/finswich/transactions.png" },
+      { image: "/images/projects/finswich/wallet.png" },
     ],
   },
 

@@ -159,7 +159,7 @@ const ProjectPage = async ({ params }: Props) => {
               ) : item.image ? (
                 <GalleryImage
                   key={`${item.image}-${index}`}
-                  image={{ src: item.image, description: item.description }}
+                  image={{ image: item.image, description: item.description }}
                   alt={project.name}
                 />
               ) : null,

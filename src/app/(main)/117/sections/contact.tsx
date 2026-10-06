@@ -1,4 +1,5 @@
 import { LucideExternalLink } from "lucide-react";
+import { SOCIAL_LINKS } from "@/data/socials";
 import SectionWrapper from "../../../../components/layout/section-wrapper";
 import { Button } from "@/components/ui/button";
 import Marquee from "@/components/marquee";
@@ -35,22 +36,18 @@ const Contact = () => {
 
       {/* SOCIAL LINKS */}
       <div className="mt-16 mb-16 sm:mt-20 sm:mb-20 md:mt-28 md:mb-32 font-eurostile">
-        <div className="flex justify-between items-center gap-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold border-b-3 border-terminal-green py-4 ">
-          LinkedIn
-          <LucideExternalLink />
-        </div>
-        <div className="flex justify-between items-center gap-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold border-b-3 border-terminal-green py-4 ">
-          GitHub
-          <LucideExternalLink />
-        </div>
-        <div className="flex justify-between items-center gap-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold border-b-3 border-terminal-green py-4 ">
-          Behance
-          <LucideExternalLink />
-        </div>
-        <div className="flex justify-between items-center gap-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold border-b-3 border-terminal-green py-4 ">
-          X
-          <LucideExternalLink />
-        </div>
+        {SOCIAL_LINKS.map((social) => (
+          <a
+            key={social.name}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-between items-center gap-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold  hover:tracking-tighter transition-all duration-400 ease-in-out border-b-3 border-terminal-green py-4 hover:text-primary"
+          >
+            {social.name}
+            <LucideExternalLink />
+          </a>
+        ))}
       </div>
 
       {/* <div className="my-10">
