@@ -82,16 +82,16 @@ const FeaturedProjects = () => {
 
   return (
     <SectionWrapper
-      id="contact"
+      id="projects"
       wrapperClassName=" "
       className="max-w-none px-0 sm:px-0 lg:px-0 2xl:px-0"
     >
       {/* HEADER */}
-      <div className="mb-24 sm:px-4 tracking-tight">
-        <div className="flex justify-center sm:justify-start items-center">
+      <div className="mb-24 sm:px-4 tracking-tight bg-transparent">
+        <div className="flex justify-center sm:justify-center items-center">
           <h1 className="text-[50px] sm:text-6xl lg:text-9xl">FEATURE </h1>
           <MiniTrailer
-            className="rounded-l-none w-24 h-16 sm:w-32 sm:h-24"
+            className="rounded-l-none sm:rounded-l-none w-24 h-16 sm:w-32 sm:h-24"
             url="/videos/project-showcases/racing-realms/racing-realms.mp4"
           />
           {/* <span>⬅animate in</span> */}
@@ -108,7 +108,7 @@ const FeaturedProjects = () => {
         {/* <h3 className="font-departure-mono absolute -z-10 -top-8  -right-0  text-[128px] sm:text-[150px] md:text-[180px] text-transparent [-webkit-text-stroke:1.5px_white]">
         01
       </h3> */}
-        <div className="w-screen">
+        <div className="w-screen -z-10">
           <Marquee
             className="w-[120%] h-16 sm:h-32 mb-6 text-3xl sm:text-6xl rotate-15 relative top-14 -left-20 -z-10 font-helvetica-neue font-semibold bg-background border-terminal-green border-y-4 "
             direction="right"

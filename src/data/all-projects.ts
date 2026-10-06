@@ -136,6 +136,40 @@ export const AllProjects: Project[] = [
       { image: "/images/projects/finswich/wallet.png" },
     ],
   },
+  // :::: FOODPALLY :::: //
+  {
+    slug: "foodpally",
+    name: "FOODPALLY",
+    description:
+      "FoodPally is a food delivery platform that connects customers with local restaurants. Users can browse menus, place orders, and track their deliveries in real-time. Built with Next.js and integrated with a custom API for order management and restaurant coordination.",
+    trailerUrl: "/videos/project-showcases/foodpally/foodpally.mp4",
+    category: "Web Dev",
+    role: "Frontend Engineer",
+    date: "2025",
+    links: [
+      {
+        label: "Website",
+        url: "https://ops.finswich.com/",
+        icon: Globe,
+      },
+      // {
+      //   label: "Github",
+      //   url: "https://github.com/klaus-xy/area59-studio",
+      //   icon: Github,
+      // },
+      // {
+      //   label: "X",
+      //   url: "https://twitter.com/Area59Studio",
+      //   icon: Twitter,
+      // },
+    ],
+    showcase: [
+      { video: "/videos/project-showcases/foodpally/foodpally-kitchen.mp4" },
+      { image: "/images/projects/food-pally/overview.png" },
+      { image: "/images/projects/food-pally/auth.png" },
+    ],
+  
+  },
 
   // :::: WALKMAN 117 :::: //
   {
@@ -186,6 +220,7 @@ export const AllProjects: Project[] = [
       },
     ],
   },
+
   // :::: RACING REALMS :::: //
   {
     slug: "racing-realms",
@@ -231,56 +266,7 @@ export const AllProjects: Project[] = [
       },
     ],
   },
-  // :::: PROJECT OVR // DRV :::: //
-  // {
-  //   slug: "project-ovr-drv",
-  //   name: "Project OVR // DRV™",
-  //   description: "Details for this project are coming soon.",
-  //   trailerUrl: "/videos/project-trailers/racing-realms.mp4",
-  //   category: "Game Dev",
-  //   role: "Gameplay Programmer",
-  //   date: "2025",
-  //   links: [
-  //     {
-  //       label: "Website",
-  //       url: "https://area59studio.com/",
-  //       icon: Globe,
-  //     },
-  //     {
-  //       label: "Github",
-  //       url: "https://github.com/klaus-xy/area59-studio",
-  //       icon: Github,
-  //     },
-  //     {
-  //       label: "X",
-  //       url: "https://twitter.com/Area59Studio",
-  //       icon: Twitter,
-  //     },
-  //   ],
-  //   showcase: [
-  //     { video: "/videos/project-trailers/racing-realms.mp4" },
-  //     {
-  //       image: "/images/projects/area59/1.png",
-  //       description:
-  //         "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-  //     },
-  //     {
-  //       image: "/images/projects/area59/2.png",
-  //       description:
-  //         "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-  //     },
-  //     {
-  //       image: "/images/projects/area59/3.png",
-  //       description:
-  //         "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-  //     },
-  //     {
-  //       image: "/images/projects/area59/4.png",
-  //       description:
-  //         "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-  //     },
-  //   ],
-  // },
+
   // :::: CHRONO MANCERS :::: //
   {
     slug: "chrono-mancers",
@@ -337,6 +323,7 @@ export const AllProjects: Project[] = [
       },
     ],
   },
+
   // :::: XOX :::: //
   {
     slug: "project-xox",
@@ -385,6 +372,57 @@ export const AllProjects: Project[] = [
       },
     ],
   },
+  // :::: PROJECT OVR // DRV :::: //
+  // {
+  //   slug: "project-ovr-drv",
+  //   name: "Project OVR // DRV™",
+  //   description: "Details for this project are coming soon.",
+  //   trailerUrl: "/videos/project-trailers/racing-realms.mp4",
+  //   category: "Game Dev",
+  //   role: "Gameplay Programmer",
+  //   date: "2025",
+  //   links: [
+  //     {
+  //       label: "Website",
+  //       url: "https://area59studio.com/",
+  //       icon: Globe,
+  //     },
+  //     {
+  //       label: "Github",
+  //       url: "https://github.com/klaus-xy/area59-studio",
+  //       icon: Github,
+  //     },
+  //     {
+  //       label: "X",
+  //       url: "https://twitter.com/Area59Studio",
+  //       icon: Twitter,
+  //     },
+  //   ],
+  //   showcase: [
+  //     { video: "/videos/project-trailers/racing-realms.mp4" },
+  //     {
+  //       image: "/images/projects/area59/1.png",
+  //       description:
+  //         "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+  //     },
+  //     {
+  //       image: "/images/projects/area59/2.png",
+  //       description:
+  //         "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+  //     },
+  //     {
+  //       image: "/images/projects/area59/3.png",
+  //       description:
+  //         "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+  //     },
+  //     {
+  //       image: "/images/projects/area59/4.png",
+  //       description:
+  //         "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+  //     },
+  //   ],
+  // },
+
   // :::: SIDEQUESTS .INC ::::
   // {
   //   slug: "side-quests",

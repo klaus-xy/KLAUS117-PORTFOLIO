@@ -31,7 +31,7 @@ const AstroKlaus = () => {
 
   return (
     <div
-      className={`h-full w-full transition-all duration-2000 ease-out ${
+      className={`h-full w-full transition-all duration-5000 ease-out ${
         loaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
       }`}
     >

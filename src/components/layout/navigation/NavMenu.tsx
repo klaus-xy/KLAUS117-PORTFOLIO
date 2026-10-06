@@ -14,10 +14,10 @@ interface NavItemProps {
 }
 
 const NAVITEMS: NavItemProps[] = [
-  { name: "HOME", href: "/117", active: true },
-  { name: "ABOUT", href: "#about", active: true },
-  { name: "PROJECTS", href: "/projects", active: true },
-  { name: "CONTACT", href: "#contact", active: true },
+  { name: "HOME", href: "/117#home", active: true },
+  { name: "ABOUT", href: "/117#about", active: true },
+  { name: "PROJECTS", href: "/117#projects", active: true },
+  { name: "CONTACT", href: "/117#contact", active: true },
   { name: "ARCADIA", active: false },
 ]; // ["HOME", "ABOUT", "PROJECTS", "CONTACT", "ARCADIA"];
 
@@ -65,7 +65,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
       </ul>
 
       {/*      {/* NAV FOOTER */}
-      <div className="w-full flex flex-col items-center justify-start gap-6 py-24  border-muted">
+      <div className="w-full flex flex-col items-center justify-start gap-10 py-24  border-muted">
         {/* SOCIAL LINKS */}
         <motion.ul
           initial="hidden"
@@ -109,7 +109,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
         </motion.ul>
 
         {/* RESUME */}
-        <div className="flex justify-center items-center pb-24 text-muted-foreground hover:text-primary transition-colors">
+        <div className="flex justify-center items-center text-muted-foreground hover:text-primary transition-colors">
           <Link
             href="/resume"
             onClick={onNavigate}
@@ -125,7 +125,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
               }}
               className="flex"
             >
-              <LucideFileText className="size-6 sm:size-8" />
+              <LucideFileText className="size-4 sm:size-8" />
             </motion.span>
             <motion.span
               initial={{ opacity: 0, x: -10 }}
@@ -135,7 +135,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
                 ease: [0.22, 1, 0.36, 1],
                 delay: 1.55,
               }}
-              className="ml-2 text-sm sm:text-base"
+              className="ml-2 text-xs sm:text-base underline"
             >
               Resume
             </motion.span>
