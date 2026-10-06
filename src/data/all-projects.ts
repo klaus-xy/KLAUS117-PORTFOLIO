@@ -22,6 +22,12 @@ export interface ProjectImage {
   description?: string;
 }
 
+export interface ProjectShowcaseItem {
+  image?: string;
+  video?: string;
+  description?: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -33,7 +39,7 @@ export interface Project {
   date?: string;
   techStack?: string[];
   links?: ProjectLink[];
-  images?: ProjectImage[];
+  showcase?: ProjectShowcaseItem[];
 }
 
 export const AllProjects: Project[] = [
@@ -69,24 +75,24 @@ export const AllProjects: Project[] = [
       //   icon: Gamepad2,
       // },
     ],
-    images: [
+    showcase: [
       {
-        src: "/images/projects/area59/hero.png",
+        image: "/images/projects/area59/hero.png",
         // description:
         //   "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/about.png",
+        image: "/images/projects/area59/about.png",
         // description:
         //   "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/projects.png",
+        image: "/images/projects/area59/projects.png",
         // description:
         //   "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/join.png",
+        image: "/images/projects/area59/join.png",
         // description:
         //   "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Replace this text with the real description for each slide once the copy is ready.",
       },
@@ -97,6 +103,7 @@ export const AllProjects: Project[] = [
       // },
     ],
   },
+  // FINSWICH
   {
     slug: "finswich",
     name: "FINSWICH",
@@ -123,64 +130,66 @@ export const AllProjects: Project[] = [
       //   icon: Twitter,
       // },
     ],
-    images: [
+    showcase: [
       { src: "/images/projects/finswich/finswich-login.png" },
       { src: "/images/projects/finswich/login.png" },
-      { src: "/images/projects/finswich/finswich-dashboard.png" },
+      { src: "/images/projects/finswich/dashboard.png" },
       { src: "/images/projects/finswich/services.png" },
-      { src: "/images/projects/finswich/status.png" },
+      { src: "/images/projects/finswich/service-status.png" },
       { src: "/images/projects/finswich/transactions.png" },
       { src: "/images/projects/finswich/wallet.png" },
     ],
   },
-  {
-    slug: "side-quests",
-    name: "Side Quests™",
-    description: "Details for this project are coming soon.",
-    trailerUrl: "/videos/project-trailers/sidequest-trailer.mp4",
-    category: "Side Quests",
-    role: "Frontend Engineer",
-    date: "2025",
-    links: [
-      {
-        label: "Website",
-        url: "https://area59studio.com/",
-        icon: Globe,
-      },
-      {
-        label: "Github",
-        url: "https://github.com/klaus-xy/area59-studio",
-        icon: Github,
-      },
-      {
-        label: "X",
-        url: "https://twitter.com/Area59Studio",
-        icon: Twitter,
-      },
-    ],
-    images: [
-      {
-        src: "/images/projects/area59/1.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-      },
-      {
-        src: "/images/projects/area59/2.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-      },
-      {
-        src: "/images/projects/area59/3.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-      },
-      {
-        src: "/images/projects/area59/4.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-      },
-    ],
-  },
+
+  // SIDEQUESTS .INC
+  // {
+  //   slug: "side-quests",
+  //   name: "Side Quests™",
+  //   description: "Details for this project are coming soon.",
+  //   trailerUrl: "/videos/project-trailers/sidequest-trailer.mp4",
+  //   category: "Side Quests",
+  //   role: "Frontend Engineer",
+  //   date: "2025",
+  //   links: [
+  //     {
+  //       label: "Website",
+  //       url: "https://area59studio.com/",
+  //       icon: Globe,
+  //     },
+  //     {
+  //       label: "Github",
+  //       url: "https://github.com/klaus-xy/area59-studio",
+  //       icon: Github,
+  //     },
+  //     {
+  //       label: "X",
+  //       url: "https://twitter.com/Area59Studio",
+  //       icon: Twitter,
+  //     },
+  //   ],
+  //   images: [
+  //     {
+  //       src: "/images/projects/area59/1.png",
+  //       description:
+  //         "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+  //     },
+  //     {
+  //       src: "/images/projects/area59/2.png",
+  //       description:
+  //         "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+  //     },
+  //     {
+  //       src: "/images/projects/area59/3.png",
+  //       description:
+  //         "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+  //     },
+  //     {
+  //       src: "/images/projects/area59/4.png",
+  //       description:
+  //         "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+  //     },
+  //   ],
+  // },
   {
     slug: "walkman-117",
     name: "WALKMAN  : :  117",
@@ -206,24 +215,24 @@ export const AllProjects: Project[] = [
         icon: Twitter,
       },
     ],
-    images: [
+    showcase: [
       {
-        src: "/images/projects/area59/1.png",
+        image: "/images/projects/area59/1.png",
         description:
           "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/2.png",
+        image: "/images/projects/area59/2.png",
         description:
           "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/3.png",
+        image: "/images/projects/area59/3.png",
         description:
           "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/4.png",
+        image: "/images/projects/area59/4.png",
         description:
           "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
       },
@@ -254,24 +263,25 @@ export const AllProjects: Project[] = [
         icon: Twitter,
       },
     ],
-    images: [
+    showcase: [
+      { video: "/videos/project-trailers/racing-realms.mp4" },
       {
-        src: "/images/projects/area59/1.png",
+        image: "/images/projects/area59/1.png",
         description:
           "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/2.png",
+        image: "/images/projects/area59/2.png",
         description:
           "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/3.png",
+        image: "/images/projects/area59/3.png",
         description:
           "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/4.png",
+        image: "/images/projects/area59/4.png",
         description:
           "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
       },
@@ -308,24 +318,24 @@ export const AllProjects: Project[] = [
         icon: Twitter,
       },
     ],
-    images: [
+    showcase: [
       {
-        src: "/images/projects/area59/1.png",
+        image: "/images/projects/area59/1.png",
         description:
           "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/2.png",
+        image: "/images/projects/area59/2.png",
         description:
           "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/3.png",
+        image: "/images/projects/area59/3.png",
         description:
           "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
       },
       {
-        src: "/images/projects/area59/4.png",
+        image: "/images/projects/area59/4.png",
         description:
           "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
       },

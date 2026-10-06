@@ -137,10 +137,33 @@ const ProjectPage = async ({ params }: Props) => {
           SHOWCASE
         </h2>
         <div className="space-y-4 sm:space-y-6 container mx-auto">
-          {project.images?.length ? (
-            project.images.map((image) => (
-              <GalleryImage key={image.src} image={image} alt={project.name} />
-            ))
+          {project.showcase?.length ? (
+            project.showcase.map((item, index) =>
+              item.video ? (
+                <div key={`${item.video}-${index}`} className="space-y-3">
+                  <div className="aspect-video overflow-hidden rounded-2xl bg-muted">
+                    <video
+                      src={item.video}
+                      className="h-full w-full object-cover"
+                      controls
+                      playsInline
+                      preload="metadata"
+                    />
+                  </div>
+                  {item.description && (
+                    <p className="font-helvetica-neue text-sm text-muted-foreground">
+                      {item.description}
+                    </p>
+                  )}
+                </div>
+              ) : item.image ? (
+                <GalleryImage
+                  key={`${item.image}-${index}`}
+                  image={{ src: item.image, description: item.description }}
+                  alt={project.name}
+                />
+              ) : null,
+            )
           ) : (
             <div className="col-span-full flex aspect-video items-center justify-center rounded-2xl bg-muted">
               <span className="font-departure-mono text-sm text-muted-foreground">
