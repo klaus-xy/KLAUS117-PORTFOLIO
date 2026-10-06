@@ -75,7 +75,7 @@ const MainHeader = () => {
               <SheetDescription>This action cannot be undone.</SheetDescription>
             </SheetHeader> */}
             {/* PREVIEW */}
-            <div className="w-1/2 gap-4 p-10 hidden sm:flex flex-col bg-lime-300">
+            <div className="w-1/2 gap-4 p-10 hidden lg:flex flex-col bg-lime-300">
               {/* <p className=" w-1/3 absolute">
                 3D VISUAL PREVIEW <br /> Hovering over each menu item initiates
                 a different reaction/interaction
@@ -87,7 +87,9 @@ const MainHeader = () => {
                 maxAngleY={Math.PI / 6}
               />
             </div>
-            <NavMenu onNavigate={() => setOpen(false)} />
+            <div className="w-full lg:w-1/2">
+              <NavMenu onNavigate={() => setOpen(false)} />
+            </div>
           </SheetContent>
         </Sheet>
       </div>

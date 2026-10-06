@@ -15,7 +15,7 @@ const ProjectsPage = () => {
 
   return (
     <div className="container mx-auto px-6 py-26 lg:py-28">
-      <h1 className="font-eurostile text-6xl uppercase">
+      <h1 className="font-eurostile uppercase">
         <ScrambleText
           text="Projects"
           scrambleSpeed={100}

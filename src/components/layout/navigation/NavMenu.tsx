@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import ScrambleText from "@/components/ui/scramble-text";
 import { SOCIAL_LINKS } from "@/data/socials";
-import { RESUME_URLS } from "@/data/resume";
 import { LucideFileText } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -28,8 +26,6 @@ interface NavMenuProps {
 }
 
 const NavMenu = ({ onNavigate }: NavMenuProps) => {
-  const [resumeOpen, setResumeOpen] = useState(false);
-
   return (
     <nav className="w-full font-eurostile">
       <ul className="space-y-5 lg:space-y-5 text-4xl sm:text-5xl 2xl:text-7xl font-black py-24 px-8 lg:px-18 lg:py-32">
@@ -112,13 +108,11 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
           ))}
         </motion.ul>
 
-        {/* RESUMES */}
-        <div className="w-full flex items-center justify-center text-muted-foreground">
-          <button
-            type="button"
-            aria-label="Resumes"
-            aria-expanded={resumeOpen}
-            onClick={() => setResumeOpen((open) => !open)}
+        {/* RESUME */}
+        <div className="flex justify-center items-center pb-24 text-muted-foreground hover:text-primary transition-colors">
+          <Link
+            href="/resume"
+            onClick={onNavigate}
             className="flex items-center"
           >
             <motion.span
@@ -143,29 +137,9 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
               }}
               className="ml-2 text-sm sm:text-base"
             >
-              Resumes
+              Resume
             </motion.span>
-          </button>
-          {resumeOpen && (
-            <div className="absolute bottom-full left-1/2 mb-4 flex -translate-x-1/2 flex-col gap-2 border-2 border-terminal-green bg-background p-3 whitespace-nowrap text-sm">
-              {[
-                { label: "Web Dev Resume", href: RESUME_URLS.webDev },
-                { label: "Game Dev Resume", href: RESUME_URLS.gameDev },
-              ].map((resume) => (
-                <button
-                  key={resume.label}
-                  type="button"
-                  onClick={() => {
-                    setResumeOpen(false);
-                    window.open(resume.href, "_blank");
-                  }}
-                  className="text-left hover:text-primary transition-colors"
-                >
-                  {resume.label}
-                </button>
-              ))}
-            </div>
-          )}
+          </Link>
         </div>
       </div>
     </nav>
