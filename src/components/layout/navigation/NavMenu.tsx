@@ -8,11 +8,6 @@ import { SOCIAL_LINKS } from "@/data/socials";
 import { RESUME_URLS } from "@/data/resume";
 import { LucideFileText } from "lucide-react";
 import { motion } from "motion/react";
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-} from "@/components/ui/dialog";
 
 interface NavItemProps {
   name: string;
@@ -28,14 +23,12 @@ const NAVITEMS: NavItemProps[] = [
   { name: "ARCADIA", active: false },
 ]; // ["HOME", "ABOUT", "PROJECTS", "CONTACT", "ARCADIA"];
 
-
 interface NavMenuProps {
   onNavigate?: () => void;
 }
 
 const NavMenu = ({ onNavigate }: NavMenuProps) => {
   const [resumeOpen, setResumeOpen] = useState(false);
-  const [viewing, setViewing] = useState<{ label: string; href: string } | null>(null);
 
   return (
     <nav className="w-full font-eurostile">
@@ -74,15 +67,53 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
           );
         })}
       </ul>
-      <motion.ul
-        initial="hidden"
-        animate="show"
-        variants={{
-          show: { transition: { staggerChildren: 0.1, delayChildren: 1 } },
-        }}
-        className="w-full flex justify-center items-center gap-6   py-54 font-helvetica-neue text-sm tracking-wide text-muted-foreground uppercase"
-      >
-        <li className="relative hover:text-primary transition-colors">
+
+      {/*      {/* NAV FOOTER */}
+      <div className="w-full flex flex-col items-center justify-start gap-6 py-10 bg-muted-foreground/5 border-t border-muted">
+        {/* SOCIAL LINKS */}
+        <motion.ul
+          initial="hidden"
+          animate="show"
+          variants={{
+            show: { transition: { staggerChildren: 0.1, delayChildren: 1 } },
+          }}
+          className="w-full flex justify-center items-center gap-6 font-helvetica-neue text-sm tracking-wide text-muted-foreground uppercase"
+        >
+          {SOCIAL_LINKS.map(({ name, href, icon: Icon }) => (
+            <motion.li
+              key={name}
+              variants={{
+                hidden: { opacity: 0, y: 12, scale: 0.8 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                },
+              }}
+              className="hover:text-primary transition-colors"
+            >
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={name}
+                className="flex items-center"
+              >
+                {Icon ? (
+                  <Icon className="size-6 sm:size-8" />
+                ) : (
+                  <span className="flex size-6 items-center justify-center rounded-full border-2 border-current text-[0.6rem] font-bold sm:size-8 sm:text-xs">
+                    Bē
+                  </span>
+                )}
+              </a>
+            </motion.li>
+          ))}
+        </motion.ul>
+
+        {/* RESUMES */}
+        <div className="w-full flex items-center justify-center text-muted-foreground">
           <button
             type="button"
             aria-label="Resumes"
@@ -90,7 +121,30 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
             onClick={() => setResumeOpen((open) => !open)}
             className="flex items-center"
           >
-            <LucideFileText className="size-6 sm:size-8" />
+            <motion.span
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 1.4,
+              }}
+              className="flex"
+            >
+              <LucideFileText className="size-6 sm:size-8" />
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 1.55,
+              }}
+              className="ml-2 text-sm sm:text-base"
+            >
+              Resumes
+            </motion.span>
           </button>
           {resumeOpen && (
             <div className="absolute bottom-full left-1/2 mb-4 flex -translate-x-1/2 flex-col gap-2 border-2 border-terminal-green bg-background p-3 whitespace-nowrap text-sm">
@@ -103,7 +157,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
                   type="button"
                   onClick={() => {
                     setResumeOpen(false);
-                    setViewing(resume);
+                    window.open(resume.href, "_blank");
                   }}
                   className="text-left hover:text-primary transition-colors"
                 >
@@ -112,51 +166,8 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
               ))}
             </div>
           )}
-        </li>
-        {SOCIAL_LINKS.map(({ name, href, icon: Icon }) => (
-          <motion.li
-            key={name}
-            variants={{
-              hidden: { opacity: 0, y: 12, scale: 0.8 },
-              show: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-              },
-            }}
-            className="hover:text-primary transition-colors"
-          >
-            <a
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={name}
-              className="flex items-center"
-            >
-              {Icon ? (
-                <Icon className="size-6 sm:size-8" />
-              ) : (
-                <span className="flex size-6 items-center justify-center rounded-full border-2 border-current text-[0.6rem] font-bold sm:size-8 sm:text-xs">
-                  Bē
-                </span>
-              )}
-            </a>
-          </motion.li>
-        ))}
-      </motion.ul>
-      <Dialog open={viewing !== null} onOpenChange={(open) => !open && setViewing(null)}>
-        <DialogContent className="h-[85vh] w-[95vw] max-w-5xl p-2 sm:p-4">
-          <DialogTitle className="sr-only">{viewing?.label}</DialogTitle>
-          {viewing && (
-            <iframe
-              src={viewing.href}
-              title={viewing.label}
-              className="h-full w-full rounded-xl bg-background"
-            />
-          )}
-        </DialogContent>
-      </Dialog>
+        </div>
+      </div>
     </nav>
   );
 };
