@@ -69,7 +69,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
       </ul>
 
       {/*      {/* NAV FOOTER */}
-      <div className="w-full flex flex-col items-center justify-start gap-6 py-10 bg-muted-foreground/5 border-t border-muted">
+      <div className="w-full flex flex-col items-center justify-start gap-6 py-24  border-muted">
         {/* SOCIAL LINKS */}
         <motion.ul
           initial="hidden"
