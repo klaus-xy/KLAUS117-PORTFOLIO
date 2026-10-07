@@ -162,14 +162,12 @@ const ProjectPage = async ({ params }: Props) => {
           {project.showcase?.length ? (
             project.showcase.map((item, index) =>
               item.video ? (
-                <div key={`${item.video}-${index}`} className="space-y-3">
-                  <ShowcaseVideo src={item.video} />
-                  {item.description && (
-                    <p className="font-helvetica-neue text-sm text-muted-foreground">
-                      {item.description}
-                    </p>
-                  )}
-                </div>
+                <ShowcaseVideo
+                  key={`${item.video}-${index}`}
+                  src={item.video}
+                  description={item.description}
+                  alt={project.name}
+                />
               ) : item.image ? (
                 <GalleryImage
                   key={`${item.image}-${index}`}

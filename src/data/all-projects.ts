@@ -239,9 +239,10 @@ export const AllProjects: Project[] = [
   {
     slug: "racing-realms",
     name: "RACING REALMS™",
-    description: "Details for this project are coming soon.",
+    description:
+      "PROJECT RR is a racing game being developed in Unreal Engine 5, designed to capture the thrill of high-speed sim-arcade racing. It uses a Chaos Physics-based vehicle component, a vehicle controller built on the Enhanced Input System, wheel rigging with steering and suspension animation, a dedicated camera system, and nitro and drift mechanics modeled after real-world physics. The vehicle setup is data-driven through editable Excel-style data tables, with a designer-friendly registration system that auto-manages vehicle blueprints and stats. Tracks use a spline-based system with checkpoints, and the HUD/UI is built with UMG.",
     trailerUrl: "/videos/project-showcases/racing-realms/racing-realms.mp4",
-    techStack: ["Unreal Engine"],
+    techStack: ["Unreal Engine", "C++", "Blueprints"],
     category: "Game Dev",
     role: "Gameplay Programmer",
     date: "2024",
@@ -263,21 +264,48 @@ export const AllProjects: Project[] = [
       // },
     ],
     showcase: [
-      { video: "/videos/project-showcases/racing-realms/sunset.mp4" },
+      {
+        video: "/videos/project-showcases/racing-realms/sunset.mp4",
+        description:
+          "Chaos Physics-based vehicle component.",
+      },
       {
         video:
           "/videos/project-showcases/racing-realms/suspension-wheel-system-demo.mp4",
+        description:
+          "Rigging and animation for wheels, steering, and suspension.",
       },
-
       {
         image: "/images/projects/area59/2.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+        description: "Camera system.",
       },
       {
         image: "/images/projects/area59/3.png",
         description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+          "Nitro and drift mechanics, modeled after real-world physics.",
+      },
+      {
+        image: "/images/projects/area59/1.png",
+        description:
+          "Vehicle controller built on the Enhanced Input System.",
+      },
+      {
+        image: "/images/projects/area59/4.png",
+        description:
+          "Data-driven vehicle system with editable Excel-style data tables.",
+      },
+      {
+        image: "/images/projects/area59/1.png",
+        description:
+          "Designer-friendly registration system that auto-manages vehicle blueprints and stats.",
+      },
+      {
+        image: "/images/projects/area59/4.png",
+        description: "Spline-based track system with checkpoints.",
+      },
+      {
+        image: "/images/projects/area59/2.png",
+        description: "HUD/UI system built with UMG.",
       },
     ],
   },
@@ -343,7 +371,9 @@ export const AllProjects: Project[] = [
   {
     slug: "project-xox",
     name: "XOX",
-    description: "A Top-Down twin stick shooter.",
+    description:
+      "PROJECT XOX is a 3D top-down action shooter with fast-paced combat, procedural animations, and dynamic enemy encounters, blending DOOM, Hotline Miami, and Devil May Cry influences. Built with a custom character controller, an interaction system, a modular combat and weapon system, bullet time mechanics, a procedural weapon animation system, a dynamic camera system, and a HUD/UI built with Unity UI Toolkit. Currently in development.",
+    techStack: ["Unity", "C#"],
     trailerUrl: "/videos/project-showcases/project-xox/long-weekend.mp4",
     category: "Game Dev",
     role: "Game Developer",
@@ -372,21 +402,105 @@ export const AllProjects: Project[] = [
       },
     ],
     showcase: [
-      { video: "/videos/project-showcases/project-xox/before-after.mp4" },
-      { video: "/videos/project-showcases/project-xox/final-result.mp4" },
-      { video: "/videos/project-showcases/project-xox/long-weekend.mp4" },
+      {
+        video: "/videos/project-showcases/project-xox/before-after.mp4",
+        description:
+          "Custom Character Controller: Built using Unity's Input System, focused on responsive movement and precise player control in a top-down perspective.",
+      },
+      {
+        video: "/videos/project-showcases/project-xox/final-result.mp4",
+        description:
+          "Interaction System: Handles weapon pickups, item usage, and contextual player-world interactions in real time.",
+      },
+      {
+        video: "/videos/project-showcases/project-xox/long-weekend.mp4",
+        description:
+          "Modular Combat & Weapon System: Supports multiple weapon types (primary, secondary, melee) with flexible weapon management and responsive combat behavior.",
+      },
       {
         video:
           "/videos/project-showcases/project-xox/smooth-ik-transition-1.mp4",
+        description:
+          "Procedural Weapon Animation System: Dynamically adjusts weapon handling and hand placement, reducing the need for manual animation setup and improving scalability across different weapons.",
       },
-
       {
         image: "/images/projects/area59/2.png",
         description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+          "Dynamic Camera System: Designed to improve gameplay readability, framing, and player awareness during combat scenarios.",
+      },
+      {
+        video: "/videos/project-showcases/project-xox/prototype-gameplay.mp4",
+        description:
+          "Bullet Time System: Implemented a time-scaling system to enhance combat pacing, player control, and moment-to-moment decision making.",
+      },
+      {
+        image: "/images/projects/project-xox/procedural-weapon-ik.png",
+        description:
+          "HUD/UI System (Unity UI Toolkit): Provides clear feedback on player actions, weapon states, and gameplay flow.",
+      },
+      { image: "/images/projects/project-xox/screenshot-127.png" },
+      { image: "/images/projects/project-xox/screenshot-63.png" },
+    ],
+  },
+  // :::: PROJECT ASTRO :::: //
+  {
+    slug: "project-astro",
+    name: "PROJECT ASTRO",
+    description:
+      "PROJECT ASTRO is a wave-based procedural space shooter emphasizing replayability through dynamic enemy behaviors and adaptive wave generation, inspired by Chicken Invaders and Geometry Wars. It features a custom character controller built on Unity's Input System, an interaction system for weapon pickups and real-time world interaction, a modular weapon system supporting primary, secondary, and super weapons, a finite state machine (FSM) AI architecture where each enemy transitions independently between states, a procedural wave generation system driven by a custom weighted probability algorithm that scales difficulty over time, and a HUD/UI system built with Unity UI Toolkit. Currently in development.",
+    category: "Game Dev",
+    role: "Game Developer",
+    date: "2025",
+    techStack: ["Unity", "C#"],
+    links: [],
+    showcase: [
+      {
+        video:
+          "/videos/project-showcases/project-astro/procedural-wave-generation.mp4",
+        description:
+          "Procedural wave generation system using a custom weighted probability algorithm that dynamically spawns enemies and scales difficulty over time.",
+      },
+      {
+        image: "/images/projects/project-astro/1.png",
+        description:
+          "Custom character controller built using Unity's Input System, focused on responsive movement and tight player control.",
+      },
+      {
+        image: "/images/projects/project-astro/2.png",
+        description:
+          "Interaction system handling weapon pickups, item usage, and real-time player interaction with the game world.",
+      },
+      {
+        image: "/images/projects/project-astro/3.png",
+        description:
+          "Modular weapon system supporting primary, secondary, and super weapons with flexible weapon management and switching.",
+      },
+      {
+        image: "/images/projects/project-astro/4.png",
+        description:
+          "Finite state machine (FSM) AI architecture, where each enemy operates independently and transitions between states to create varied and dynamic combat encounters.",
+      },
+      {
+        image: "/images/projects/project-astro/5.png",
+        description:
+          "HUD/UI system, developed using Unity UI Toolkit, communicating gameplay states and combat information.",
       },
     ],
   },
+
+  // :::: PROJECT ::/ PHASE-SHIFT :::: //
+  // Hidden for now — add real details before uncommenting and listing.
+  // {
+  //   slug: "phase-shift",
+  //   name: "PROJECT ::/ PHASE-SHIFT",
+  //   description: "Details for this project are coming soon.",
+  //   category: "Game Dev",
+  //   role: "Game Developer",
+  //   date: "2025",
+  //   links: [],
+  //   showcase: [],
+  // },
+
   // :::: PROJECT OVR // DRV :::: //
   // {
   //   slug: "project-ovr-drv",
