@@ -73,7 +73,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
           variants={{
             show: { transition: { staggerChildren: 0.1, delayChildren: 1 } },
           }}
-          className="w-full flex justify-center items-center gap-6 font-helvetica-neue text-sm tracking-wide text-muted-foreground uppercase"
+          className="w-full flex justify-center items-center gap-6 sm:gap-10 font-helvetica-neue text-sm tracking-wide text-muted-foreground uppercase"
         >
           {SOCIAL_LINKS.map(({ name, href, icon: Icon }) => (
             <motion.li
@@ -89,15 +89,15 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
               }}
               className="hover:text-primary transition-colors"
             >
-              <a
+              <Link
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={name}
                 className="flex items-center"
               >
-                {Icon && <Icon className="size-6 sm:size-8" />}
-              </a>
+                {Icon && <Icon className="size-8 sm:size-14" />}
+              </Link>
             </motion.li>
           ))}
         </motion.ul>
@@ -119,7 +119,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
               }}
               className="flex"
             >
-              <LucideFileText className="size-4 sm:size-8" />
+              <LucideFileText className="size-4 sm:size-6" />
             </motion.span>
             <motion.span
               initial={{ opacity: 0, x: -10 }}
@@ -129,7 +129,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
                 ease: [0.22, 1, 0.36, 1],
                 delay: 1.55,
               }}
-              className="ml-2 text-xs sm:text-base underline"
+              className="ml-2 text-sm sm:text-sm lg:text-base underline"
             >
               Resume
             </motion.span>

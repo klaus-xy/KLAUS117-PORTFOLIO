@@ -134,7 +134,7 @@ const FeaturedProjects = () => {
         onMouseLeave={() => setHoveredProject(null)}
       >
         {/* FEATURED PROJECT PREVIEW */}
-        <div className="w-1/3 max-h-170 aspect-square z-10 hidden lg:flex flex-1 relative rounded-r-[2rem] bg-muted overflow-hidden">
+        <div className="w-1/3 max-h-170 mt-20 aspect-square z-10 hidden lg:flex flex-1 relative rounded-r-[2rem] bg-muted overflow-hidden">
           <AnimatePresence mode="wait">
             {showVideo && hoveredProject?.trailerUrl ? (
               <motion.video
