@@ -6,6 +6,8 @@ import ProjectHeroVideo from "@/components/project-hero-video";
 
 import { ArrowRightFromLine, Globe, Link2, Quote } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
+import { BRAND_ICONS } from "@/components/icons/brand-icons";
 import ProjectInfo from "../project-info";
 import GalleryImage from "../gallery-image";
 
@@ -128,6 +130,25 @@ const ProjectPage = async ({ params }: Props) => {
             <p className="font-helvetica-neue tracking-wide sm:text-lg text-muted-foreground">
               {project.description}
             </p>
+
+            {/* TOOLS & TECHNOLOGIES */}
+            {project.techStack && project.techStack.length > 0 && (
+              <div className="mt-6 flex flex-wrap gap-2">
+                {project.techStack.map((tech) => {
+                  const Icon = BRAND_ICONS[tech];
+                  return (
+                    <Badge
+                      key={tech}
+                      variant="default"
+                      className="text-xs gap-1.5 px-2 py-2"
+                    >
+                      {Icon && <Icon className="size-4" />}
+                      {tech}
+                    </Badge>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </section>

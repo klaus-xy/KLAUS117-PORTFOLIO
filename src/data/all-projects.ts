@@ -106,6 +106,13 @@ export const AllProjects: Project[] = [
     description:
       "FinSwich is a fintech dashboard for managing a white-label financial product. Operators can switch between apps, review accounts, cards, and customers, track billing, run campaigns, and configure modules from one place. Built with Next.js and connected to the FinSwich API gateway, with session and app context handled across every dashboard section.",
     trailerUrl: "/videos/project-showcases/finswich/finswich-trailer.mp4",
+    techStack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "shadcn/ui",
+    ],
     category: "Web Dev",
     role: "Frontend Engineer",
     date: "2025",
@@ -143,6 +150,13 @@ export const AllProjects: Project[] = [
     description:
       "FoodPally is a food delivery platform that connects customers with local restaurants. Users can browse menus, place orders, and track their deliveries in real-time. Built with Next.js and integrated with a custom API for order management and restaurant coordination.",
     trailerUrl: "/videos/project-showcases/foodpally/foodpally.mp4",
+    techStack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "shadcn/ui",
+    ],
     category: "Web Dev",
     role: "Frontend Engineer",
     date: "2025",
@@ -227,6 +241,7 @@ export const AllProjects: Project[] = [
     name: "RACING REALMS™",
     description: "Details for this project are coming soon.",
     trailerUrl: "/videos/project-showcases/racing-realms/racing-realms.mp4",
+    techStack: ["Unreal Engine"],
     category: "Game Dev",
     role: "Gameplay Programmer",
     date: "2024",

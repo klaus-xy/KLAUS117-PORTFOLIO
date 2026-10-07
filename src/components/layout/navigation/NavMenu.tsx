@@ -96,13 +96,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
                 aria-label={name}
                 className="flex items-center"
               >
-                {Icon ? (
-                  <Icon className="size-6 sm:size-8" />
-                ) : (
-                  <span className="flex size-6 items-center justify-center rounded-full border-2 border-current text-[0.6rem] font-bold sm:size-8 sm:text-xs">
-                    Bē
-                  </span>
-                )}
+                {Icon && <Icon className="size-6 sm:size-8" />}
               </a>
             </motion.li>
           ))}
