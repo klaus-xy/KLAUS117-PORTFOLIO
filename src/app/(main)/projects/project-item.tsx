@@ -17,8 +17,8 @@ import {
 const CATEGORY_ICONS: Record<ProjectCategory, LucideIcon> = {
   "Web Dev": Globe,
   "Game Dev": Gamepad2,
-  Hardware: Cpu,
-  "3D Modeling": Box,
+  // Hardware: Cpu,
+  // "3D Modeling": Box,
   "Side Quests": Wand,
 };
 

@@ -13,7 +13,7 @@ const CategoryFilter = ({ selected, onSelect }: Props) => {
   const options: CategoryOption[] = ["All", ...PROJECT_CATEGORIES];
 
   return (
-    <div className="flex flex-wrap gap-2 text-xs font-eurostile font-bold tracking-widest uppercase">
+    <div className="flex flex-wrap gap-2 text-[0.55rem] font-eurostile font-bold tracking-widest uppercase">
       {options.map((option) => (
         <button
           key={option}

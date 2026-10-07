@@ -4,8 +4,8 @@ import { Globe, Github, Twitter, Gamepad2 } from "lucide-react";
 export const PROJECT_CATEGORIES = [
   "Web Dev",
   "Game Dev",
-  "Hardware",
-  "3D Modeling",
+  // "Hardware",
+  // "3D Modeling",
   "Side Quests",
 ] as const;
 
@@ -26,7 +26,8 @@ export interface ProjectShowcaseItem {
 export interface Project {
   slug: string;
   name: string;
-  description: string;
+  /** One or more paragraphs; each string renders as its own paragraph. */
+  description: string[];
   trailerUrl?: string;
   category?: ProjectCategory;
   industry?: "Video Games" | "Fintech" | "Web3 ";
@@ -42,8 +43,10 @@ export const AllProjects: Project[] = [
   {
     slug: "foodpally",
     name: "FOODPALLY",
-    description:
-      "FoodPally is a food delivery platform that connects customers with local restaurants. Users can browse menus, place orders, and track their deliveries in real-time. Built with Next.js and integrated with a custom API for order management and restaurant coordination.",
+    description: [
+      "FoodPally is a food delivery platform that connects customers with local restaurants. Users can browse menus, place orders, and track their deliveries in real-time.",
+      "Built with Next.js and integrated with a custom API for order management and restaurant coordination.",
+    ],
     trailerUrl: "/videos/project-showcases/foodpally/foodpally.mp4",
     techStack: [
       "Next.js",
@@ -77,15 +80,16 @@ export const AllProjects: Project[] = [
       { image: "/images/projects/food-pally/overview.png" },
       { image: "/images/projects/food-pally/auth.png" },
     ],
-  
   },
 
   // :::: FINSWICH :::: //
   {
     slug: "finswich",
     name: "FINSWICH",
-    description:
-      "FinSwich is a fintech dashboard for managing a white-label financial product. Operators can switch between apps, review accounts, cards, and customers, track billing, run campaigns, and configure modules from one place. Built with Next.js and connected to the FinSwich API gateway, with session and app context handled across every dashboard section.",
+    description: [
+      "FinSwich is a fintech dashboard for managing a white-label financial product. Operators can switch between apps, review accounts, cards, and customers, track billing, run campaigns, and configure modules from one place.",
+      "Built with Next.js and connected to the FinSwich API gateway, with session and app context handled across every dashboard section.",
+    ],
     trailerUrl: "/videos/project-showcases/finswich/finswich-trailer.mp4",
     techStack: [
       "Next.js",
@@ -128,8 +132,9 @@ export const AllProjects: Project[] = [
   {
     slug: "area-59-studio",
     name: "AREA 59™ Studio",
-    description:
+    description: [
       "Area 59™ is an independent game development studio creating bold, immersive, and experimental interactive experiences right in the heart of Lagos, Nigeria.",
+    ],
     trailerUrl: "/videos/project-showcases/area-59-studio/area-59-trailer.mp4",
     category: "Web Dev",
     industry: "Video Games",
@@ -189,8 +194,11 @@ export const AllProjects: Project[] = [
   {
     slug: "racing-realms",
     name: "RACING REALMS™",
-    description:
-      "PROJECT RR is a racing game being developed in Unreal Engine 5, designed to capture the thrill of high-speed sim-arcade racing. It uses a Chaos Physics-based vehicle component, a vehicle controller built on the Enhanced Input System, wheel rigging with steering and suspension animation, a dedicated camera system, and nitro and drift mechanics modeled after real-world physics. The vehicle setup is data-driven through editable Excel-style data tables, with a designer-friendly registration system that auto-manages vehicle blueprints and stats. Tracks use a spline-based system with checkpoints, and the HUD/UI is built with UMG.",
+    description: [
+      "PROJECT RR is a racing game being developed in Unreal Engine 5, designed to capture the thrill of high-speed sim-arcade racing.",
+      "It uses a Chaos Physics-based vehicle component, a vehicle controller built on the Enhanced Input System, wheel rigging with steering and suspension animation, a dedicated camera system, and nitro and drift mechanics modeled after real-world physics.",
+      "The vehicle setup is data-driven through editable Excel-style data tables, with a designer-friendly registration system that auto-manages vehicle blueprints and stats. Tracks use a spline-based system with checkpoints, and the HUD/UI is built with UMG.",
+    ],
     trailerUrl: "/videos/project-showcases/racing-realms/racing-realms.mp4",
     techStack: ["Unreal Engine", "C++", "Blueprints"],
     category: "Game Dev",
@@ -216,8 +224,7 @@ export const AllProjects: Project[] = [
     showcase: [
       {
         video: "/videos/project-showcases/racing-realms/sunset.mp4",
-        description:
-          "Chaos Physics-based vehicle component.",
+        description: "Chaos Physics-based vehicle component.",
       },
       {
         video:
@@ -236,8 +243,7 @@ export const AllProjects: Project[] = [
       },
       {
         image: "/images/projects/area59/1.png",
-        description:
-          "Vehicle controller built on the Enhanced Input System.",
+        description: "Vehicle controller built on the Enhanced Input System.",
       },
       {
         image: "/images/projects/area59/4.png",
@@ -264,7 +270,7 @@ export const AllProjects: Project[] = [
   {
     slug: "chrono-mancers",
     name: "CHRONO MANCERS™",
-    description: "A retrofuturistic twin stick shooter.",
+    description: ["A retrofuturistic twin stick shooter."],
     trailerUrl:
       "/videos/project-showcases/chrono-mancers/chronomancers-gameplay.mp4",
     category: "Game Dev",
@@ -321,8 +327,11 @@ export const AllProjects: Project[] = [
   {
     slug: "project-xox",
     name: "XOX",
-    description:
-      "PROJECT XOX is a 3D top-down action shooter with fast-paced combat, procedural animations, and dynamic enemy encounters, blending DOOM, Hotline Miami, and Devil May Cry influences. Built with a custom character controller, an interaction system, a modular combat and weapon system, bullet time mechanics, a procedural weapon animation system, a dynamic camera system, and a HUD/UI built with Unity UI Toolkit. Currently in development.",
+    description: [
+      "PROJECT XOX is a 3D top-down action shooter with fast-paced combat, procedural animations, and dynamic enemy encounters, blending DOOM, Hotline Miami, and Devil May Cry influences.",
+      "Built with a custom character controller, an interaction system, a modular combat and weapon system, bullet time mechanics, a procedural weapon animation system, a dynamic camera system, and a HUD/UI built with Unity UI Toolkit.",
+      "Currently in development.",
+    ],
     techStack: ["Unity", "C#"],
     trailerUrl: "/videos/project-showcases/project-xox/long-weekend.mp4",
     category: "Game Dev",
@@ -396,8 +405,11 @@ export const AllProjects: Project[] = [
   {
     slug: "project-astro",
     name: "PROJECT ASTRO",
-    description:
-      "PROJECT ASTRO is a wave-based procedural space shooter emphasizing replayability through dynamic enemy behaviors and adaptive wave generation, inspired by Chicken Invaders and Geometry Wars. It features a custom character controller built on Unity's Input System, an interaction system for weapon pickups and real-time world interaction, a modular weapon system supporting primary, secondary, and super weapons, a finite state machine (FSM) AI architecture where each enemy transitions independently between states, a procedural wave generation system driven by a custom weighted probability algorithm that scales difficulty over time, and a HUD/UI system built with Unity UI Toolkit. Currently in development.",
+    description: [
+      "PROJECT ASTRO is a wave-based procedural space shooter emphasizing replayability through dynamic enemy behaviors and adaptive wave generation, inspired by Chicken Invaders and Geometry Wars.",
+      "It features a custom character controller built on Unity's Input System, an interaction system for weapon pickups and real-time world interaction, a modular weapon system supporting primary, secondary, and super weapons, a finite state machine (FSM) AI architecture where each enemy transitions independently between states, a procedural wave generation system driven by a custom weighted probability algorithm that scales difficulty over time, and a HUD/UI system built with Unity UI Toolkit.",
+      "Currently in development.",
+    ],
     category: "Game Dev",
     role: "Game Developer",
     date: "2025",
@@ -442,7 +454,7 @@ export const AllProjects: Project[] = [
   {
     slug: "walkman-117",
     name: "WALKMAN  : :  117",
-    description: "Details for this project are coming soon.",
+    description: ["Details for this project are coming soon."],
     trailerUrl: "/videos/project-showcases/walkman-117/walkman-trailer.mp4",
     category: "Side Quests",
     role: "Designer & Frontend Developer",

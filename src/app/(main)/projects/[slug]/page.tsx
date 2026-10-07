@@ -67,7 +67,7 @@ const ProjectPage = async ({ params }: Props) => {
               })
             ) : (
               <span className="flex items-start gap-2 px-3 py-1 font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase">
-                {">_ "}Coming Soon
+                {"::/"}Coming Soon
               </span>
             )}
           </div>
@@ -77,7 +77,7 @@ const ProjectPage = async ({ params }: Props) => {
       {/* DETAILS SECTION */}
       <section className="w-[100%] py-10 px-4 sm:px-8 md:py-10">
         <div className="mx-auto w-full ">
-          <div className="flex items-start min-h-[10vh]">
+          <div className="flex items-start">
             <h2 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-8xl">
               {project.name}
             </h2>
@@ -102,7 +102,7 @@ const ProjectPage = async ({ params }: Props) => {
               })
             ) : (
               <span className="flex items-start gap-2 px-3 py-1 font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase">
-                {">_ "}Coming Soon
+                {"::/"}Coming Soon
               </span>
             )}
           </div>
@@ -127,9 +127,16 @@ const ProjectPage = async ({ params }: Props) => {
             </div>
 
             {/* PROJECT DESCRIPTION */}
-            <p className="font-helvetica-neue tracking-wide sm:text-lg text-muted-foreground">
-              {project.description}
-            </p>
+            <div className="space-y-2">
+              {project.description.map((paragraph, i) => (
+                <p
+                  key={i}
+                  className="font-helvetica-neue tracking-wide leading-snug sm:text-lg text-muted-foreground"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
 
             {/* TOOLS & TECHNOLOGIES */}
             {project.techStack && project.techStack.length > 0 && (
