@@ -122,6 +122,8 @@ export const AllProjects: Project[] = [
       { image: "/images/projects/finswich/finswich-login.png" },
       { image: "/images/projects/finswich/login.png" },
       { image: "/images/projects/finswich/dashboard.png" },
+      { image: "/images/projects/finswich/virtual-cards.png" },
+      { image: "/images/projects/finswich/accounting.png" },
       { image: "/images/projects/finswich/services.png" },
       { image: "/images/projects/finswich/service-status.png" },
       { image: "/images/projects/finswich/transactions.png" },
@@ -415,6 +417,7 @@ export const AllProjects: Project[] = [
       "It features a custom character controller built on Unity's Input System, an interaction system for weapon pickups and real-time world interaction, a modular weapon system supporting primary, secondary, and super weapons, a finite state machine (FSM) AI architecture where each enemy transitions independently between states, a procedural wave generation system driven by a custom weighted probability algorithm that scales difficulty over time, and a HUD/UI system built with Unity UI Toolkit.",
       "Currently in development.",
     ],
+    trailerUrl: "/videos/project-showcases/project-astro/trailer.mp4",
     category: "Game Dev",
     role: "Game Developer",
     date: "2025",
@@ -483,24 +486,16 @@ export const AllProjects: Project[] = [
     ],
     showcase: [
       {
-        image: "/images/projects/area59/1.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+        image: "/images/projects/walkman-117/loading-screen.png",
+        description: "Loading screen.",
       },
       {
-        image: "/images/projects/area59/2.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+        image: "/images/projects/walkman-117/player-ui.png",
+        description: "Player UI, styled after a classic cassette deck.",
       },
       {
-        image: "/images/projects/area59/3.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-      },
-      {
-        image: "/images/projects/area59/4.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+        image: "/images/projects/walkman-117/playlist-view.png",
+        description: "Playlist view, listing every track with its runtime.",
       },
     ],
   },
