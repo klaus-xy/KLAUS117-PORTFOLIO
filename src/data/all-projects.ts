@@ -1,5 +1,8 @@
-import type { LucideIcon } from "lucide-react";
+import type { ComponentType, SVGProps } from "react";
 import { Globe, Github, Twitter, Gamepad2 } from "lucide-react";
+import { DiscordIcon } from "@/components/icons/brand-icons";
+
+type LinkIcon = ComponentType<SVGProps<SVGSVGElement>>;
 
 export const PROJECT_CATEGORIES = [
   "Web Dev",
@@ -14,7 +17,7 @@ export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number];
 export interface ProjectLink {
   label?: string;
   url: string;
-  icon?: LucideIcon;
+  icon?: LinkIcon;
 }
 
 export interface ProjectShowcaseItem {
@@ -61,7 +64,7 @@ export const AllProjects: Project[] = [
     links: [
       {
         label: "Website",
-        url: "https://ops.finswich.com/",
+        url: "https://www.foodpally.com/",
         icon: Globe,
       },
       // {
@@ -138,6 +141,13 @@ export const AllProjects: Project[] = [
       "Area 59™ is an independent game development studio creating bold, immersive, and experimental interactive experiences right in the heart of Lagos, Nigeria.",
     ],
     trailerUrl: "/videos/project-showcases/area-59-studio/area-59-trailer.mp4",
+    techStack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "shadcn/ui",
+    ],
     category: "Web Dev",
     industry: "Video Games",
     role: "Creative Lead",
@@ -293,31 +303,36 @@ export const AllProjects: Project[] = [
     description: ["A retrofuturistic twin stick shooter."],
     trailerUrl:
       "/videos/project-showcases/chrono-mancers/chronomancers-gameplay.mp4",
+    techStack: ["Unity", "C#"],
     category: "Game Dev",
     role: "Game Developer",
     date: "2025",
     links: [
       {
-        label: "Visit",
-        url: "https://area59studio.com/",
-        icon: Globe,
-      },
-      {
         label: "Demo",
-        url: "https://twitter.com/Area59Studio",
+        url: "https://klaus117.itch.io/chronomancers",
         icon: Gamepad2,
       },
-
       {
-        label: "Github",
-        url: "https://github.com/klaus-xy/area59-studio",
-        icon: Github,
+        label: "Discord",
+        url: "https://discord.com/invite/3jk5mV2Sy6",
+        icon: DiscordIcon,
       },
-      {
-        label: "X",
-        url: "https://twitter.com/Area59Studio",
-        icon: Twitter,
-      },
+      // {
+      //   label: "Visit",
+      //   url: "https://area59studio.com/",
+      //   icon: Globe,
+      // },
+      // {
+      //   label: "Github",
+      //   url: "https://github.com/klaus-xy/area59-studio",
+      //   icon: Github,
+      // },
+      // {
+      //   label: "X",
+      //   url: "https://twitter.com/Area59Studio",
+      //   icon: Twitter,
+      // },
     ],
     showcase: [
       {
@@ -350,27 +365,27 @@ export const AllProjects: Project[] = [
     role: "Game Developer",
     date: "2025",
     links: [
-      {
-        label: "Visit",
-        url: "https://area59studio.com/",
-        icon: Globe,
-      },
-      {
-        label: "Demo",
-        url: "https://twitter.com/Area59Studio",
-        icon: Gamepad2,
-      },
+//       {
+//         label: "Visit",
+//         url: "https://area59studio.com/",
+//         icon: Globe,
+//       },
+//       {
+//         label: "Demo",
+//         url: "https://twitter.com/Area59Studio",
+//         icon: Gamepad2,
+//       },
 
-      {
-        label: "Github",
-        url: "https://github.com/klaus-xy/area59-studio",
-        icon: Github,
-      },
-      {
-        label: "X",
-        url: "https://twitter.com/Area59Studio",
-        icon: Twitter,
-      },
+//       {
+//         label: "Github",
+//         url: "https://github.com/klaus-xy/area59-studio",
+//         icon: Github,
+//       },
+//       {
+//         label: "X",
+//         url: "https://twitter.com/Area59Studio",
+//         icon: Twitter,
+//       },
     ],
     showcase: [
       {
@@ -464,25 +479,32 @@ export const AllProjects: Project[] = [
     name: "WALKMAN  : :  117",
     description: ["Details for this project are coming soon."],
     trailerUrl: "/videos/project-showcases/walkman-117/walkman-trailer.mp4",
+    techStack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "shadcn/ui",
+    ],
     category: "Side Quests",
     role: "Designer & Frontend Developer",
     date: "2025",
     links: [
       {
         label: "Website",
-        url: "https://area59studio.com/",
+        url: "https://walkman-117.vercel.app/",
         icon: Globe,
       },
       {
         label: "Github",
-        url: "https://github.com/klaus-xy/area59-studio",
+        url: "https://github.com/klaus-xy/walkman.117",
         icon: Github,
       },
-      {
-        label: "X",
-        url: "https://twitter.com/Area59Studio",
-        icon: Twitter,
-      },
+      // {
+      //   label: "X",
+      //   url: "https://twitter.com/Area59Studio",
+      //   icon: Twitter,
+      // },
     ],
     showcase: [
       {

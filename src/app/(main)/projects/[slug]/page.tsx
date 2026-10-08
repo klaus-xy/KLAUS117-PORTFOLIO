@@ -95,7 +95,7 @@ const ProjectPage = async ({ params }: Props) => {
                     target="_blank"
                     className="flex jsustify-center items-center border-r-2 gap-2 pr-3 py-1 font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase"
                   >
-                    <Icon size={18} />
+                    <Icon className="size-[18px]" />
                     <span>{link.label}</span>
                   </Link>
                 );
