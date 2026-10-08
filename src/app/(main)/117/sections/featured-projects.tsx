@@ -18,7 +18,6 @@ import { ArrowUpRight, LucideArrowUpRightFromSquare } from "lucide-react";
 import TransitionLink from "@/components/transition-link";
 import Marquee from "@/components/marquee";
 
-const MAX_FEATURED_PROJECTS = 5;
 const CATEGORY_PRIORITY = ["Game Dev", "Web Dev"] as const;
 const FEATURED_TABS = [
   "All",
@@ -236,29 +235,30 @@ const FeaturedProjects = () => {
                 viewportClassName="!overflow-visible"
               >
                 {FEATURED_TABS.map((tab, tabI) => {
-                  const projects = getTabProjects(tab).slice(
-                    0,
-                    MAX_FEATURED_PROJECTS,
-                  );
+                  const projects = getTabProjects(tab);
                   return (
                     <CarouselItem key={tab} className="pl-0">
-                      <motion.ul
-                        variants={listVariants}
-                        initial="hidden"
-                        animate={
-                          isListInView && tabI === tabIndex ? "show" : "hidden"
-                        }
-                      >
-                        {projects.map((project, i) => (
-                          <ProjectItem
-                            key={project.slug}
-                            index={i + 1}
-                            project={project}
-                            isActive={hoveredProject?.slug === project.slug}
-                            onHoverChange={setHoveredProject}
-                          />
-                        ))}
-                      </motion.ul>
+                      <div className="max-h-[430px] sm:max-h-[490px] overflow-x-hidden overflow-y-auto scrollbar-hidden pr-4">
+                        <motion.ul
+                          variants={listVariants}
+                          initial="hidden"
+                          animate={
+                            isListInView && tabI === tabIndex
+                              ? "show"
+                              : "hidden"
+                          }
+                        >
+                          {projects.map((project, i) => (
+                            <ProjectItem
+                              key={project.slug}
+                              index={i + 1}
+                              project={project}
+                              isActive={hoveredProject?.slug === project.slug}
+                              onHoverChange={setHoveredProject}
+                            />
+                          ))}
+                        </motion.ul>
+                      </div>
                     </CarouselItem>
                   );
                 })}
