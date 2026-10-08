@@ -4,13 +4,21 @@ import { cn } from "@/lib/utils";
 
 export type CategoryOption = ProjectCategory | "All";
 
+const CATEGORY_PRIORITY = ["Game Dev", "Web Dev"] as const;
+
 interface Props {
   selected: CategoryOption;
   onSelect: (category: CategoryOption) => void;
 }
 
 const CategoryFilter = ({ selected, onSelect }: Props) => {
-  const options: CategoryOption[] = ["All", ...PROJECT_CATEGORIES];
+  const options: CategoryOption[] = [
+    "All",
+    ...CATEGORY_PRIORITY,
+    ...PROJECT_CATEGORIES.filter(
+      (category) => !(CATEGORY_PRIORITY as readonly string[]).includes(category),
+    ),
+  ];
 
   return (
     <div className="flex flex-wrap gap-2 text-[0.55rem] font-eurostile font-bold tracking-widest uppercase">

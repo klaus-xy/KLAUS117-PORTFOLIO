@@ -223,45 +223,63 @@ export const AllProjects: Project[] = [
     ],
     showcase: [
       {
-        video: "/videos/project-showcases/racing-realms/sunset.mp4",
-        description: "Chaos Physics-based vehicle component.",
-      },
-      {
         video:
           "/videos/project-showcases/racing-realms/suspension-wheel-system-demo.mp4",
         description:
           "Rigging and animation for wheels, steering, and suspension.",
       },
       {
-        image: "/images/projects/area59/2.png",
-        description: "Camera system.",
+        video: "/videos/project-showcases/racing-realms/handling-test.mp4",
+        description:
+          "Handling test for wheel friction and slip.",
       },
       {
-        image: "/images/projects/area59/3.png",
+        video: "/videos/project-showcases/racing-realms/drift-mechanic-test.mp4",
+        description:
+          "Drift mechanic test, showing the lateral slip graph implementation.",
+      },
+      {
+        image: "/images/projects/racing-realms/1.png",
+        description: "Vehicle controller built on the Enhanced Input System.",
+      },
+      {
+        image: "/images/projects/racing-realms/2.png",
+        description: "Spline-based track system with checkpoints.",
+      },
+      {
+        image: "/images/projects/racing-realms/3.png",
+        description:
+          "Camera system designed to improve gameplay readability and framing.",
+      },
+      {
+        image: "/images/projects/racing-realms/4.png",
+        description: "Spline-based track system with checkpoints.",
+      },
+      {
+        image: "/images/projects/racing-realms/5.png",
         description:
           "Nitro and drift mechanics, modeled after real-world physics.",
       },
       {
-        image: "/images/projects/area59/1.png",
-        description: "Vehicle controller built on the Enhanced Input System.",
-      },
-      {
-        image: "/images/projects/area59/4.png",
-        description:
-          "Data-driven vehicle system with editable Excel-style data tables.",
-      },
-      {
-        image: "/images/projects/area59/1.png",
-        description:
-          "Designer-friendly registration system that auto-manages vehicle blueprints and stats.",
-      },
-      {
-        image: "/images/projects/area59/4.png",
+        image: "/images/projects/racing-realms/6.png",
         description: "Spline-based track system with checkpoints.",
       },
       {
-        image: "/images/projects/area59/2.png",
+        image: "/images/projects/racing-realms/7.png",
         description: "HUD/UI system built with UMG.",
+      },
+      {
+        image: "/images/projects/racing-realms/8.png",
+        description: "HUD/UI system built with UMG.",
+      },
+      {
+        image: "/images/projects/racing-realms/9.png",
+        description:
+          "Data-driven vehicle system with a designer-friendly registration system that auto-manages vehicle blueprints and stats.",
+      },
+      {
+        video: "/videos/project-showcases/racing-realms/sunset.mp4",
+        description: "Chaos Physics-based vehicle component.",
       },
     ],
   },

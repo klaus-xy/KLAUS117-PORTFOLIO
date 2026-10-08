@@ -19,12 +19,18 @@ import Link from "next/link";
 import Marquee from "@/components/marquee";
 
 const MAX_FEATURED_PROJECTS = 5;
+const CATEGORY_PRIORITY = ["Game Dev", "Web Dev"] as const;
 const FEATURED_TABS = [
   "All",
-  ...PROJECT_CATEGORIES.filter((category) =>
-    AllProjects.some((project) => project.category === category),
+  ...CATEGORY_PRIORITY,
+  ...PROJECT_CATEGORIES.filter(
+    (category) => !(CATEGORY_PRIORITY as readonly string[]).includes(category),
   ),
-];
+].filter(
+  (tab) =>
+    tab === "All" ||
+    AllProjects.some((project) => project.category === tab),
+);
 
 const getTabProjects = (tab: string) =>
   tab === "All"
