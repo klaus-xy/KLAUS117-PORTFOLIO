@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import TransitionLink from "@/components/transition-link";
 import { AnimatePresence, motion } from "motion/react";
 import { AllProjects } from "@/data/all-projects";
 import { cn } from "@/lib/utils";
@@ -35,7 +35,7 @@ const ProjectNavDots = ({ currentSlug }: Props) => {
                     transition={{ duration: 0.15, ease: "easeOut" }}
                     className="absolute bottom-full mb-3 w-40 overflow-hidden rounded-xl border border-terminal-green/30 bg-background shadow-lg"
                   >
-                    <Link href={`/projects/${project.slug}`} className="block">
+                    <TransitionLink href={`/projects/${project.slug}`} className="block">
                       <div className="relative aspect-video bg-muted">
                         {project.trailerUrl ? (
                           <video
@@ -56,12 +56,12 @@ const ProjectNavDots = ({ currentSlug }: Props) => {
                       <div className="truncate px-2 py-1.5 font-departure-mono text-[10px] tracking-wide text-terminal-green uppercase">
                         {project.name}
                       </div>
-                    </Link>
+                    </TransitionLink>
                   </motion.div>
                 )}
               </AnimatePresence>
 
-              <Link
+              <TransitionLink
                 href={`/projects/${project.slug}`}
                 aria-label={project.name}
                 aria-current={isActive ? "page" : undefined}

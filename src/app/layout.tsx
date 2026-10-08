@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
+import { TransitionProvider } from "@/providers/transition-provider";
 import Presence from "@/components/eggs/presence";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -110,7 +111,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <TransitionProvider>{children}</TransitionProvider>
         </ThemeProvider>
         <Presence />
       </body>

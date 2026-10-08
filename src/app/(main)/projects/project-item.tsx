@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import TransitionLink from "@/components/transition-link";
 import { Project, ProjectCategory } from "@/data/all-projects";
 import { motion } from "motion/react";
 import {
@@ -46,7 +46,7 @@ const ProjectItem = ({
       onMouseEnter={() => onHoverChange?.(project)}
       className="group relative sm:text-muted-foreground hover:text-primary"
     >
-      <Link
+      <TransitionLink
         href={`/projects/${project.slug}`}
         data-cursor-text="View Project"
         className="flex justify-between items-center text-2xl sm:text-3xl 2xl:text-2xl border-b-2 border-primary px-2 sm:px-4 py-7 sm:py-8 transition"
@@ -69,7 +69,7 @@ const ProjectItem = ({
           0{index}
         </span>
         {/* {isActive && <div className="w-20 h-20 bg-primary lg:hidden "></div>} */}
-      </Link>
+      </TransitionLink>
     </motion.li>
   );
 };

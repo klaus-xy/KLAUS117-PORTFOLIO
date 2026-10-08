@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { useRef, useState } from "react";
 import NavMenu from "../navigation/NavMenu";
 import ScrambleText from "@/components/ui/scramble-text";
-import Link from "next/link";
+import TransitionLink from "@/components/transition-link";
 import { motion } from "motion/react";
 import MenuIcon from "./menu-icon";
 
@@ -21,7 +21,7 @@ const MainHeader = () => {
       className={`fixed top-0 w-full flex justify-between items-center transition duration-400 ${open ? "bg-none" : "bg-background"} px-5 py-4 lg:px-10 sm:py-5 z-60`}
     >
       {/* LOGO */}
-      <Link
+      <TransitionLink
         href="/117"
         className={cn(
           "flex justify-center items-end transition-opacity duration-500",
@@ -50,7 +50,7 @@ const MainHeader = () => {
             />
           </h1>
         </motion.div>
-      </Link>
+      </TransitionLink>
 
       <div className="absolute -top-2 w-50 flex justify-center items-center rounded overflow-visible">
         {/* <Core /> */}

@@ -2,7 +2,7 @@
 import { Fragment, useState } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import { Volume2, VolumeX } from "lucide-react";
+import { Volume2, VolumeX, Info } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -80,6 +80,12 @@ const ShowcaseVideo = ({ src, description, alt }: ShowcaseVideoProps) => {
         >
           {muted ? <VolumeX /> : <Volume2 />}
         </Button>
+        {hasDetails && (
+          <span className="pointer-events-none absolute bottom-3 left-3 flex items-center gap-1 border rounded-full bg-background/30 px-2.5 py-1 text-[0.55rem] text-muted-foreground backdrop-blur-sm sm:hidden">
+            <Info className="size-3" />
+            View details
+          </span>
+        )}
       </div>
 
       {hasDetails && (

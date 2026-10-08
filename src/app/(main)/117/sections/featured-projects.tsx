@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 import RollingCounter from "@/components/rolling-counter";
 import MiniTrailer from "@/components/mini-trailer";
 import { ArrowUpRight, LucideArrowUpRightFromSquare } from "lucide-react";
-import Link from "next/link";
+import TransitionLink from "@/components/transition-link";
 import Marquee from "@/components/marquee";
 
 const MAX_FEATURED_PROJECTS = 5;
@@ -266,7 +266,7 @@ const FeaturedProjects = () => {
             </Carousel>
           </div>
           <div className="w-full flex justify-end items-center mt-10 sm:py-20 sm:pr-4 ">
-            <Link href={"/projects"}>
+            <TransitionLink href={"/projects"}>
               <Button
                 // className="text-primary text-lg before:bg-lime-500 border-2 border-primary font-eurostile  tracking-wide py-7 px-6 before:h-18 before:w-12 before:rounded "
                 className="text-primary sm:text-xl border  hover:border-primary font-eurostile tracking-wider px-3 py-0 sm:py-7 sm:px-5 bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent"
@@ -276,7 +276,7 @@ const FeaturedProjects = () => {
                 View All
                 <LucideArrowUpRightFromSquare size={24} className="ml-2" />
               </Button>
-            </Link>
+            </TransitionLink>
           </div>
         </div>
       </div>

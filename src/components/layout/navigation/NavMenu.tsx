@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import TransitionLink from "@/components/transition-link";
 import { Badge } from "@/components/ui/badge";
 import ScrambleText from "@/components/ui/scramble-text";
 import { SOCIAL_LINKS } from "@/data/socials";
@@ -53,9 +54,9 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
               className={`nav-item  hover:cursor-pointer ${item.active ? "text-primary" : "text-muted"}`}
             >
               {item.href ? (
-                <Link href={item.href} onClick={onNavigate}>
+                <TransitionLink href={item.href} onClick={onNavigate}>
                   {label}
-                </Link>
+                </TransitionLink>
               ) : (
                 label
               )}
@@ -104,7 +105,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
 
         {/* RESUME */}
         <div className="flex justify-center items-center text-muted-foreground hover:text-primary transition-colors">
-          <Link
+          <TransitionLink
             href="/resume"
             onClick={onNavigate}
             className="flex items-center"
@@ -133,7 +134,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
             >
               Resume
             </motion.span>
-          </Link>
+          </TransitionLink>
         </div>
       </div>
     </nav>

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import TransitionLink from "@/components/transition-link";
 import React from "react";
 
 const notFound = () => {
@@ -10,9 +10,9 @@ const notFound = () => {
         That's weird... You're not meant to be here.
       </p>
       <Button variant={"link"}>
-        <Link href="/117" className="hover:cursor-pointer">
+        <TransitionLink href="/117" className="hover:cursor-pointer">
           🏠 Go Home
-        </Link>
+        </TransitionLink>
       </Button>
     </div>
   );

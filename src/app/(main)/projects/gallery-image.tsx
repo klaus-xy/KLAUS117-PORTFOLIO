@@ -3,6 +3,7 @@
 import { Fragment, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import Image from "next/image";
+import { Info } from "lucide-react";
 import type { ProjectShowcaseItem } from "@/data/all-projects";
 import {
   Dialog,
@@ -77,6 +78,12 @@ const GalleryImage = ({ image, alt }: GalleryImageProps) => {
             <Image src={image.image} alt={alt} fill className="object-cover" />
           </motion.div>
         </motion.div>
+        {hasDetails && (
+          <span className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1 border rounded-full bg-background/30 px-2.5 py-1 text-[0.55rem] text-muted-foreground backdrop-blur-sm sm:hidden">
+            <Info className="size-3" />
+            View details
+          </span>
+        )}
       </div>
 
       {hasDetails && (
@@ -96,7 +103,12 @@ const GalleryImage = ({ image, alt }: GalleryImageProps) => {
               variants={dialogImageVariants}
               className="relative mx-auto aspect-video w-full max-w-3xl overflow-hidden rounded-xl"
             >
-              <Image src={image.image} alt={alt} fill className="object-cover" />
+              <Image
+                src={image.image}
+                alt={alt}
+                fill
+                className="object-cover"
+              />
             </motion.div>
             <DialogDescription className="font-helvetica-neue font-normal tracking-wider text-[0.7rem] text-muted-foreground sm:text-sm">
               <motion.span variants={dialogWordsVariants} className="block">

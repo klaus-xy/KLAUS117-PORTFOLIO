@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TransitionLink from "@/components/transition-link";
 import ShowcaseVideo from "@/components/showcase-video";
 import { notFound } from "next/navigation";
 import { AllProjects, getProjectBySlug } from "@/data/all-projects";
@@ -204,7 +205,7 @@ const ProjectPage = async ({ params }: Props) => {
 
       {/* UP NEXT SECTION */}
 
-      <Link
+      <TransitionLink
         href={`/projects/${nextProject.slug}`}
         className="group relative flex justify-center items-center h-[28vh] sm:h-[35vh] w-full text-muted-foreground/50 hover:text-primary overflow-hidden rounded-t-2xl border-5 border-t-primary border-b-0 mt-12"
       >
@@ -242,7 +243,7 @@ const ProjectPage = async ({ params }: Props) => {
             {nextProject.name}
           </h2>
         </div>
-      </Link>
+      </TransitionLink>
 
       {/* <ProjectNavDots currentSlug={project.slug} /> */}
     </div>

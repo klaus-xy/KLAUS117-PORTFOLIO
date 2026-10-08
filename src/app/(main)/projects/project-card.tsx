@@ -1,4 +1,4 @@
-import Link from "next/link";
+import TransitionLink from "@/components/transition-link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Project } from "@/data/all-projects";
 
@@ -8,7 +8,7 @@ interface Props {
 
 const ProjectCard = ({ project }: Props) => {
   return (
-    <Link href={`/projects/${project.slug}`} className="group block">
+    <TransitionLink href={`/projects/${project.slug}`} className="group block">
       <Card>
         <CardContent className="w-full max-h-[80dvh] flex aspect-square items-center justify-center p-6">
           <span className="text-7xl font-semibold">🔬</span>
@@ -24,7 +24,7 @@ const ProjectCard = ({ project }: Props) => {
           </span>
         )}
       </div>
-    </Link>
+    </TransitionLink>
   );
 };
 
