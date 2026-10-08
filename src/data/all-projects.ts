@@ -230,11 +230,11 @@ export const AllProjects: Project[] = [
       },
       {
         video: "/videos/project-showcases/racing-realms/handling-test.mp4",
-        description:
-          "Handling test for wheel friction and slip.",
+        description: "Handling test for wheel friction and slip.",
       },
       {
-        video: "/videos/project-showcases/racing-realms/drift-mechanic-test.mp4",
+        video:
+          "/videos/project-showcases/racing-realms/drift-mechanic-test.mp4",
         description:
           "Drift mechanic test, showing the lateral slip graph implementation.",
       },
@@ -319,24 +319,16 @@ export const AllProjects: Project[] = [
     ],
     showcase: [
       {
-        image: "/images/projects/area59/1.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+        image: "/images/projects/chronomancers/gameplay-01.png",
+        description: "Gameplay — slashing through an approaching wave.",
       },
       {
-        image: "/images/projects/area59/2.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+        image: "/images/projects/chronomancers/gameplay-02.png",
+        description: "Gameplay — building a combo streak.",
       },
       {
-        image: "/images/projects/area59/3.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
-      },
-      {
-        image: "/images/projects/area59/4.png",
-        description:
-          "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+        image: "/images/projects/chronomancers/run-end.png",
+        description: "End-of-run explosion and score screen.",
       },
     ],
   },
@@ -399,11 +391,6 @@ export const AllProjects: Project[] = [
           "/videos/project-showcases/project-xox/smooth-ik-transition-1.mp4",
         description:
           "Procedural Weapon Animation System: Dynamically adjusts weapon handling and hand placement, reducing the need for manual animation setup and improving scalability across different weapons.",
-      },
-      {
-        image: "/images/projects/area59/2.png",
-        description:
-          "Dynamic Camera System: Designed to improve gameplay readability, framing, and player awareness during combat scenarios.",
       },
       {
         video: "/videos/project-showcases/project-xox/prototype-gameplay.mp4",
@@ -514,6 +501,54 @@ export const AllProjects: Project[] = [
         image: "/images/projects/area59/4.png",
         description:
           "This is placeholder copy for testing long-form text in the showcase dialog. It is meant to be long enough to wrap across several lines on both mobile and desktop, so the spacing, line height, and scroll behaviour can be checked. Good layouts keep the text comfortably readable, with a sensible measure and enough breathing room between the image and the paragraph. If the content runs past the available height, the dialog should scroll instead of pushing the close button off screen. Replace this text with the real description for each slide once the copy is ready.",
+      },
+    ],
+  },
+
+  // :::: PONG 117 :::: //
+  {
+    slug: "pong-117",
+    name: "PONG 117",
+    description: [
+      "PONG 117 is a retro-inspired Pong clone, rebuilt from scratch with a custom game engine.",
+      "It includes a double-buffered renderer for smooth graphics, an input handling system for responsive controls, collision detection for paddle-ball interactions, a custom audio engine for sound effects, and a game loop built for consistent performance. The window is re-sizeable, and it supports both 1v1 local multiplayer and an AI opponent mode.",
+    ],
+    techStack: ["C++", "WinAPI"],
+    trailerUrl: "/videos/project-showcases/pong-117/gameplay.mp4",
+    category: "Game Dev",
+    role: "Game Engine Programmer",
+    date: "2025",
+    links: [
+      {
+        label: "Play",
+        url: "https://klaus117.itch.io/pong117",
+        icon: Gamepad2,
+      },
+    ],
+    showcase: [
+      {
+        video: "/videos/project-showcases/pong-117/gameplay.mp4",
+        description:
+          "Double-buffered renderer and input handling in action, keeping paddle controls responsive.",
+      },
+      {
+        image: "/images/projects/pong-117/screenshot-1.png",
+        description:
+          "Game Modes: 1v1 local multiplayer and AI opponent mode, selectable before each match.",
+      },
+      {
+        image: "/images/projects/pong-117/screenshot-2.png",
+        description: "Collision detection system for paddle-ball interactions.",
+      },
+      {
+        image: "/images/projects/pong-117/screenshot-3.png",
+        description:
+          "Game UI, showing score, controls, and a restart prompt at the end of each match.",
+      },
+      {
+        image: "/images/projects/pong-117/screenshot-4.png",
+        description:
+          "Game loop logic ensuring consistent performance, shown here via the in-game FPS and frame-time debug overlay.",
       },
     ],
   },
