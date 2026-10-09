@@ -17,7 +17,7 @@ import MiniTrailer from "@/components/mini-trailer";
 import { ArrowUpRight, LucideArrowUpRightFromSquare } from "lucide-react";
 import TransitionLink from "@/components/transition-link";
 import Marquee from "@/components/marquee";
-import LoadingDots from "@/components/ui/loading-dots";
+import Spinner from "@/components/ui/spinner";
 
 const CATEGORY_PRIORITY = ["Game Dev", "Web Dev"] as const;
 const FEATURED_TABS = [
@@ -151,12 +151,6 @@ const FeaturedProjects = () => {
                 className="absolute inset-0"
               >
                 <motion.video
-                  ref={(el) => {
-                    // On fast connections the video can finish loading
-                    // before the event listener attaches below, so check
-                    // the current state directly too.
-                    if (el && el.readyState >= 3) setVideoReady(true);
-                  }}
                   initial={{ opacity: 0, scale: 1.04 }}
                   animate={{
                     opacity: videoReady ? 1 : 0,
@@ -170,7 +164,6 @@ const FeaturedProjects = () => {
                   muted
                   playsInline
                   onLoadedData={() => setVideoReady(true)}
-                  onCanPlay={() => setVideoReady(true)}
                   onError={() => setVideoErrored(true)}
                 />
                 {!videoReady && !videoErrored && (
@@ -181,7 +174,7 @@ const FeaturedProjects = () => {
                     transition={{ duration: 0.2, delay: 0.15 }}
                     className="absolute inset-0 flex items-center justify-center text-terminal-green"
                   >
-                    <LoadingDots />
+                    <Spinner />
                   </motion.div>
                 )}
               </motion.div>
@@ -252,7 +245,7 @@ const FeaturedProjects = () => {
                   const projects = getTabProjects(tab);
                   return (
                     <CarouselItem key={tab} className="pl-0">
-                      <div className="max-h-[430px] sm:max-h-[490px] overflow-x-hidden overflow-y-auto scrollbar-hidden pr-4">
+                      <div className="max-h-107.5 sm:max-h-122.5 overflow-x-hidden overflow-y-auto scrollbar-hidden">
                         <motion.ul
                           variants={listVariants}
                           initial="hidden"
