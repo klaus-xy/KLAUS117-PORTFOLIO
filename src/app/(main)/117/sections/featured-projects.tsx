@@ -166,7 +166,7 @@ const FeaturedProjects = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="flex items-center justify-center text-center text-muted-foreground px-6 text-3xl font-medium font-eurostile"
+                className="w-full flex items-center justify-center text-center text-muted-foreground px-6 text-3xl font-medium font-eurostile"
               >
                 {hoveredProject ? hoveredProject.name : "Project :: Preview"}
               </motion.div>

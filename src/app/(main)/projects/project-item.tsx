@@ -59,8 +59,8 @@ const ProjectItem = ({
               const CategoryIcon = CATEGORY_ICONS[project.category];
               return (
                 <span className="mt-1 flex items-center justify-center gap-1.5 text-xs sm:text-sm text-muted-foreground uppercase tracking-wide font-helvetica-neue z-10">
-                  <CategoryIcon className="size-4.5 sm:size-5 stroke-2" />
-                  <span className="hidden sm:inline">{project.category}</span>
+                  <CategoryIcon className="size-4.5 sm:size-5.5 stroke-2" />
+                  <span className="hidden ">{project.category}</span>
                 </span>
               );
             })()}
