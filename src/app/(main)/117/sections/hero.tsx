@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import SectionWrapper from "../../../../components/layout/section-wrapper";
 import Core from "@/components/3d/core";
 import LinkDos from "@/components/links/link-dos";
-import { motion } from "motion/react";
+import { motion, useScroll, useSpring } from "motion/react";
 import Scroll from "@/components/scroll-indicator";
 import AstroKlaus from "@/components/3d/astro-klaus";
 import TerminalBuddy from "@/components/terminal-buddy";
@@ -13,12 +13,25 @@ import ScrollIndicator from "@/components/scroll-indicator";
 
 const Hero = () => {
   const [replayKey, setReplayKey] = useState(0);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const smoothScrollProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 20,
+    mass: 1,
+  });
 
   return (
     <SectionWrapper id="home" className="max-w-none">
-      <div className="min-h-[90vh] flex flex-col justify-start items-center overflow-hidden">
+      <div
+        ref={sectionRef}
+        className="min-h-[90vh] flex flex-col justify-start items-center overflow-hidden"
+      >
         <div className="inset-x-0 -mx-4 sm:-mx-6 lg:-mx-8 h-full absolute right-0 -z-10">
-          <AstroKlaus />
+          <AstroKlaus scrollProgress={smoothScrollProgress} />
           {/* <Core neutralY={0.5} /> */}
         </div>
         <div className="flex flex-col justify-center flex-1 relative -top-5 ">

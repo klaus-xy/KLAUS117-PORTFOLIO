@@ -9,6 +9,8 @@ import {
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog";
+import LoadingDots from "@/components/ui/loading-dots";
+import useVideoReady from "@/hooks/use-video-ready";
 
 const dialogVideoVariants = {
   hidden: { opacity: 0, scale: 1.08 },
@@ -44,6 +46,8 @@ const ShowcaseVideo = ({ src, description, alt }: ShowcaseVideoProps) => {
   const [muted, setMuted] = useState(true);
   const [dialogMuted, setDialogMuted] = useState(true);
   const [open, setOpen] = useState(false);
+  const card = useVideoReady();
+  const dialogVideo = useVideoReady();
   const hasDetails = Boolean(description);
 
   return (
@@ -59,6 +63,7 @@ const ShowcaseVideo = ({ src, description, alt }: ShowcaseVideoProps) => {
         className="relative aspect-video overflow-hidden rounded-2xl bg-muted"
       >
         <video
+          ref={card.ref}
           src={src}
           className="h-full w-full object-cover"
           autoPlay
@@ -66,7 +71,14 @@ const ShowcaseVideo = ({ src, description, alt }: ShowcaseVideoProps) => {
           muted={muted}
           playsInline
           preload="metadata"
+          onLoadedData={card.onCanPlay}
+          onCanPlay={card.onCanPlay}
         />
+        {!card.ready && (
+          <div className="absolute inset-0 flex items-center justify-center text-terminal-green">
+            <LoadingDots />
+          </div>
+        )}
         <Button
           type="button"
           variant="outline"
@@ -106,6 +118,7 @@ const ShowcaseVideo = ({ src, description, alt }: ShowcaseVideoProps) => {
               className="relative mx-auto aspect-video w-full max-w-3xl overflow-hidden rounded-xl"
             >
               <video
+                ref={dialogVideo.ref}
                 src={src}
                 className="h-full w-full object-cover"
                 autoPlay
@@ -113,7 +126,14 @@ const ShowcaseVideo = ({ src, description, alt }: ShowcaseVideoProps) => {
                 muted={dialogMuted}
                 playsInline
                 preload="metadata"
+                onLoadedData={dialogVideo.onCanPlay}
+                onCanPlay={dialogVideo.onCanPlay}
               />
+              {!dialogVideo.ready && (
+                <div className="absolute inset-0 flex items-center justify-center text-terminal-green">
+                  <LoadingDots />
+                </div>
+              )}
               <Button
                 type="button"
                 variant="outline"

@@ -17,7 +17,7 @@ import MiniTrailer from "@/components/mini-trailer";
 import { ArrowUpRight, LucideArrowUpRightFromSquare } from "lucide-react";
 import TransitionLink from "@/components/transition-link";
 import Marquee from "@/components/marquee";
-import Spinner from "@/components/ui/spinner";
+import LoadingDots from "@/components/ui/loading-dots";
 
 const CATEGORY_PRIORITY = ["Game Dev", "Web Dev"] as const;
 const FEATURED_TABS = [
@@ -151,6 +151,12 @@ const FeaturedProjects = () => {
                 className="absolute inset-0"
               >
                 <motion.video
+                  ref={(el) => {
+                    // On fast connections the video can finish loading
+                    // before the event listener attaches below, so check
+                    // the current state directly too.
+                    if (el && el.readyState >= 3) setVideoReady(true);
+                  }}
                   initial={{ opacity: 0, scale: 1.04 }}
                   animate={{
                     opacity: videoReady ? 1 : 0,
@@ -164,6 +170,7 @@ const FeaturedProjects = () => {
                   muted
                   playsInline
                   onLoadedData={() => setVideoReady(true)}
+                  onCanPlay={() => setVideoReady(true)}
                   onError={() => setVideoErrored(true)}
                 />
                 {!videoReady && !videoErrored && (
@@ -174,7 +181,7 @@ const FeaturedProjects = () => {
                     transition={{ duration: 0.2, delay: 0.15 }}
                     className="absolute inset-0 flex items-center justify-center text-terminal-green"
                   >
-                    <Spinner />
+                    <LoadingDots />
                   </motion.div>
                 )}
               </motion.div>

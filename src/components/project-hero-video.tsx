@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import { motion } from "motion/react";
-import Spinner from "@/components/ui/spinner";
+import LoadingDots from "@/components/ui/loading-dots";
 
 interface ProjectHeroVideoProps {
   src: string;
@@ -12,6 +12,13 @@ const ProjectHeroVideo = ({ src }: ProjectHeroVideoProps) => {
   const [muted, setMuted] = useState(true);
   const [ready, setReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const setRefs = (el: HTMLVideoElement | null) => {
+    videoRef.current = el;
+    // On fast connections the video can finish loading before this
+    // effect/listener attaches, so check the current state directly too.
+    if (el && el.readyState >= 3) setReady(true);
+  };
 
   useEffect(() => {
     if (videoRef.current) videoRef.current.muted = muted;
@@ -24,7 +31,7 @@ const ProjectHeroVideo = ({ src }: ProjectHeroVideoProps) => {
   return (
     <>
       <video
-        ref={videoRef}
+        ref={setRefs}
         src={src}
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
@@ -33,6 +40,7 @@ const ProjectHeroVideo = ({ src }: ProjectHeroVideoProps) => {
         playsInline
         preload="auto"
         onLoadedData={() => setReady(true)}
+        onCanPlay={() => setReady(true)}
       />
       {!ready && (
         <motion.div
@@ -42,7 +50,7 @@ const ProjectHeroVideo = ({ src }: ProjectHeroVideoProps) => {
           transition={{ duration: 0.2, delay: 0.15 }}
           className="absolute inset-0 flex items-center justify-center text-terminal-green"
         >
-          <Spinner />
+          <LoadingDots />
         </motion.div>
       )}
       <button
