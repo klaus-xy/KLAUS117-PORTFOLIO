@@ -25,6 +25,7 @@ const MiniTrailer = ({
         loop
         muted
         playsInline
+        preload="auto"
       />
     </div>
   );

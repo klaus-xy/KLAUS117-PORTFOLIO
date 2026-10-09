@@ -11,8 +11,8 @@ import {
 import Link from "next/link";
 
 const RESUMES = [
-  { key: "webDev", label: "Web Dev", href: RESUME_URLS.webDev },
   { key: "gameDev", label: "Game Dev", href: RESUME_URLS.gameDev },
+  { key: "webDev", label: "Web Dev", href: RESUME_URLS.webDev },
 ] as const;
 
 const ResumePage = () => {

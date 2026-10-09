@@ -17,6 +17,7 @@ import MiniTrailer from "@/components/mini-trailer";
 import { ArrowUpRight, LucideArrowUpRightFromSquare } from "lucide-react";
 import TransitionLink from "@/components/transition-link";
 import Marquee from "@/components/marquee";
+import Spinner from "@/components/ui/spinner";
 
 const CATEGORY_PRIORITY = ["Game Dev", "Web Dev"] as const;
 const FEATURED_TABS = [
@@ -141,24 +142,42 @@ const FeaturedProjects = () => {
         <div className="lg:w-2/3 max-h-200 mt-10 z-10 hidden lg:flex relative rounded-r-[2rem] bg-background border border-muted/30  overflow-hidden">
           <AnimatePresence mode="wait">
             {showVideo && hoveredProject?.trailerUrl ? (
-              <motion.video
+              <motion.div
                 key={hoveredProject.trailerUrl}
-                initial={{ opacity: 0, scale: 1.04 }}
-                animate={{
-                  opacity: videoReady ? 1 : 0,
-                  scale: videoReady ? 1 : 1.04,
-                }}
-                exit={{ opacity: 0, scale: 0.97 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                src={hoveredProject.trailerUrl}
-                className="absolute inset-0 w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-                onLoadedData={() => setVideoReady(true)}
-                onError={() => setVideoErrored(true)}
-              />
+                className="absolute inset-0"
+              >
+                <motion.video
+                  initial={{ opacity: 0, scale: 1.04 }}
+                  animate={{
+                    opacity: videoReady ? 1 : 0,
+                    scale: videoReady ? 1 : 1.04,
+                  }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  src={hoveredProject.trailerUrl}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  onLoadedData={() => setVideoReady(true)}
+                  onError={() => setVideoErrored(true)}
+                />
+                {!videoReady && !videoErrored && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2, delay: 0.15 }}
+                    className="absolute inset-0 flex items-center justify-center text-terminal-green"
+                  >
+                    <Spinner />
+                  </motion.div>
+                )}
+              </motion.div>
             ) : (
               <motion.div
                 key={hoveredProject?.slug ?? "idle"}

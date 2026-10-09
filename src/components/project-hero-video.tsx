@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
+import { motion } from "motion/react";
+import Spinner from "@/components/ui/spinner";
 
 interface ProjectHeroVideoProps {
   src: string;
@@ -8,11 +10,16 @@ interface ProjectHeroVideoProps {
 
 const ProjectHeroVideo = ({ src }: ProjectHeroVideoProps) => {
   const [muted, setMuted] = useState(true);
+  const [ready, setReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (videoRef.current) videoRef.current.muted = muted;
   }, [muted]);
+
+  useEffect(() => {
+    setReady(false);
+  }, [src]);
 
   return (
     <>
@@ -24,7 +31,20 @@ const ProjectHeroVideo = ({ src }: ProjectHeroVideoProps) => {
         loop
         muted
         playsInline
+        preload="auto"
+        onLoadedData={() => setReady(true)}
       />
+      {!ready && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2, delay: 0.15 }}
+          className="absolute inset-0 flex items-center justify-center text-terminal-green"
+        >
+          <Spinner />
+        </motion.div>
+      )}
       <button
         type="button"
         onClick={() => setMuted((m) => !m)}
