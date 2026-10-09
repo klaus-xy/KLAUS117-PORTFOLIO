@@ -27,8 +27,7 @@ const FEATURED_TABS = [
   ),
 ].filter(
   (tab) =>
-    tab === "All" ||
-    AllProjects.some((project) => project.category === tab),
+    tab === "All" || AllProjects.some((project) => project.category === tab),
 );
 
 const getTabProjects = (tab: string) =>
@@ -139,7 +138,7 @@ const FeaturedProjects = () => {
         onMouseLeave={() => setHoveredProject(null)}
       >
         {/* FEATURED PROJECT PREVIEW */}
-        <div className="w-1/3 max-h-170 mt-20 aspect-square z-10 hidden lg:flex flex-1 relative rounded-r-[2rem] bg-muted overflow-hidden">
+        <div className="lg:w-2/3 max-h-200 mt-10 z-10 hidden lg:flex relative rounded-r-[2rem] bg-background border border-muted/30  overflow-hidden">
           <AnimatePresence mode="wait">
             {showVideo && hoveredProject?.trailerUrl ? (
               <motion.video
@@ -167,26 +166,15 @@ const FeaturedProjects = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="absolute inset-0 flex items-center justify-center text-center px-6 text-3xl font-medium font-eurostile"
+                className="flex items-center justify-center text-center text-muted-foreground px-6 text-3xl font-medium font-eurostile"
               >
                 {hoveredProject ? hoveredProject.name : "Project :: Preview"}
-                {/* <iframe
-              frameBorder="0"
-              src="https://itch.io/embed-upload/18623730?color=333333"
-              allowFullScreen=""
-              width="500"
-              height="320"
-            >
-              <a href="https://klaus117.itch.io/chrono-mancer">
-                Play CHRONOMANCERS on itch.io
-              </a>
-            </iframe> */}
               </motion.div>
             )}
           </AnimatePresence>
         </div>
         {/* FEATURED PROJECT LIST */}
-        <div className="w-full flex-1 px-2 sm:px-6 bg-background pt-3">
+        <div className="w-full lg:w-2/3 2xl:w-1/2 px-2 sm:px-6 bg-background pt-3">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -268,7 +256,6 @@ const FeaturedProjects = () => {
           <div className="w-full flex justify-end items-center mt-10 sm:py-20 sm:pr-4 ">
             <TransitionLink href={"/projects"}>
               <Button
-                // className="text-primary text-lg before:bg-lime-500 border-2 border-primary font-eurostile  tracking-wide py-7 px-6 before:h-18 before:w-12 before:rounded "
                 className="text-primary sm:text-xl border  hover:border-primary font-eurostile tracking-wider px-3 py-0 sm:py-7 sm:px-5 bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent"
                 size={"lg"}
                 variant={"outline"}
@@ -279,6 +266,8 @@ const FeaturedProjects = () => {
             </TransitionLink>
           </div>
         </div>
+        {/* <div className="w-2/3 h-[50vh] bg-amber-300"></div> */}
+        {/* <div className="w-full h-[50vh] bg-red-300"></div> */}
       </div>
     </SectionWrapper>
   );
