@@ -37,6 +37,7 @@ export const TransitionProvider = ({
   const router = useRouter();
   const pathname = usePathname();
   const [covering, setCovering] = useState(false);
+  const [loaderVisible, setLoaderVisible] = useState(false);
   const pendingHref = useRef<string | null>(null);
 
   const navigate = useCallback(
@@ -55,6 +56,7 @@ export const TransitionProvider = ({
   // Once the cover animation has had time to finish, perform the actual navigation.
   const handleCoverComplete = () => {
     if (pendingHref.current) {
+      setLoaderVisible(true);
       router.push(pendingHref.current);
     }
   };
@@ -67,8 +69,7 @@ export const TransitionProvider = ({
     if (targetPath !== pathname) return;
 
     const timeout = setTimeout(() => {
-      setCovering(false);
-      pendingHref.current = null;
+      setLoaderVisible(false);
     }, REVEAL_DELAY);
     return () => clearTimeout(timeout);
   }, [pathname, covering]);
@@ -122,6 +123,70 @@ export const TransitionProvider = ({
               onAnimationComplete={handleCoverComplete}
               className="absolute inset-0 bg-background"
             />
+            <AnimatePresence
+              onExitComplete={() => {
+                setCovering(false);
+                pendingHref.current = null;
+              }}
+            >
+              {loaderVisible && (
+                <motion.div
+                  initial="hidden"
+                  animate="show"
+                  exit="hidden"
+                  className="absolute inset-0 flex items-center justify-center font-eurostile text-4xl text-terminal-green"
+                >
+                  <motion.span
+                    variants={{
+                      hidden: { x: -28, opacity: 0 },
+                      show: {
+                        x: 0,
+                        opacity: 1,
+                        transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+                      },
+                    }}
+                  >
+                    [
+                  </motion.span>
+                  <motion.span
+                    variants={{
+                      hidden: { opacity: 0 },
+                      show: {
+                        opacity: 1,
+                        transition: { duration: 0.2, delay: 0.2 },
+                      },
+                    }}
+                  >
+                    <motion.span
+                      className="inline-block"
+                      animate={{
+                        opacity: [1, 0.55, 1],
+                        transition: {
+                          duration: 0.9,
+                          ease: "easeInOut",
+                          repeat: Infinity,
+                          delay: 0.4,
+                        },
+                      }}
+                    >
+                      117
+                    </motion.span>
+                  </motion.span>
+                  <motion.span
+                    variants={{
+                      hidden: { x: 28, opacity: 0 },
+                      show: {
+                        x: 0,
+                        opacity: 1,
+                        transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+                      },
+                    }}
+                  >
+                    ]
+                  </motion.span>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         )}
       </AnimatePresence>
