@@ -122,7 +122,7 @@ const page = () => {
       <motion.div
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.8 }}
+        viewport={{ once: false, amount: 0.65 }}
         variants={{
           hidden: {},
           show: { transition: { staggerChildren: 0.4, delayChildren: 0.2 } },
