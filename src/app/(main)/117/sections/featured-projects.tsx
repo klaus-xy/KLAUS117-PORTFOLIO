@@ -18,6 +18,7 @@ import { ArrowUpRight, LucideArrowUpRightFromSquare } from "lucide-react";
 import TransitionLink from "@/components/transition-link";
 import Marquee from "@/components/marquee";
 import Spinner from "@/components/ui/spinner";
+import { BRAND_ICONS } from "@/components/icons/brand-icons";
 
 const CATEGORY_PRIORITY = ["Game Dev", "Web Dev"] as const;
 const FEATURED_TABS = [
@@ -36,23 +37,16 @@ const getTabProjects = (tab: string) =>
     ? AllProjects
     : AllProjects.filter((project) => project.category === tab);
 
-const bannerTexts = [
-  "GAMES INDUSTRY.",
-  "   ",
-  "WEB 2.0.",
-  "   ",
-  "WEB 3.0.",
-  "   ",
-  "ARTIFICIAL INTELLIGENCE.",
-  "   ",
-  "FINTECH.",
-  "   ",
-  "EDUTECH.",
-  "   ",
-  "ENGINEERING.",
-  "   ",
-  "SIMULATION.",
-  "   ",
+const bannerTech = [
+  "Unreal Engine",
+  "Unity",
+  "C++",
+  "C#",
+  "Next.js",
+  "React",
+  "Tailwind CSS",
+  "Framer Motion",
+  "shadcn/ui",
 ];
 const listVariants = {
   hidden: {},
@@ -119,16 +113,15 @@ const FeaturedProjects = () => {
             direction="right"
             cycleTime={40}
           >
-            {
-              // Map Contents here.
-              bannerTexts.map((text, index) => (
-                <div key={index} className="flex">
-                  <div className="flex gap-2 mx-2"></div>
-
-                  <span>{text}</span>
+            {bannerTech.map((tech, index) => {
+              const Icon = BRAND_ICONS[tech];
+              return (
+                <div key={index} className="flex items-center gap-4 mx-6">
+                  {Icon && <Icon className="size-8 sm:size-12 shrink-0" />}
+                  <span>{tech.toUpperCase()}</span>
                 </div>
-              ))
-            }
+              );
+            })}
           </Marquee>
         </div>
       </div>
