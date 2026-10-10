@@ -72,7 +72,7 @@ const page = () => {
   console.log("[117] Landing Page");
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-clip">
       {/* <MusicPlayer className=" top-0 right-0" /> */}
 
       {/* <div className=" inset-0 z-0">
@@ -136,7 +136,7 @@ const page = () => {
               opacity: 1,
               scale: 1,
               rotate: 0,
-              transition: { duration: 1.1, ease: "easeOut" },
+              transition: { duration: 0.5, ease: "easeOut" },
             },
           }}
         >
@@ -144,35 +144,35 @@ const page = () => {
         </motion.div>
         <motion.h2
           variants={{
-            hidden: { opacity: 0, y: 24 },
+            hidden: { opacity: 0, y: 16 },
             show: {
               opacity: 1,
               y: 0,
-              transition: { duration: 1.1, ease: "easeOut" },
+              transition: { duration: 0.5, ease: "easeOut" },
             },
           }}
         >
-          DO WHAT YOU LOVE
+          DO WHAT YOU LOVE.
         </motion.h2>
         <motion.h2
           variants={{
-            hidden: { opacity: 0, y: 24 },
+            hidden: { opacity: 0, y: 16 },
             show: {
               opacity: 1,
               y: 0,
-              transition: { duration: 1.1, ease: "easeOut" },
+              transition: { duration: 0.5, ease: "easeOut" },
             },
           }}
         >
-          LOVE WHAT YOU DO
+          LOVE WHAT YOU DO.
         </motion.h2>
         <motion.span
           variants={{
-            hidden: { opacity: 0, y: 18 },
+            hidden: { opacity: 0, x: -18 },
             show: {
               opacity: 1,
-              y: 0,
-              transition: { duration: 1.2, ease: "easeOut" },
+              x: 0,
+              transition: { duration: 1, ease: "easeOut", delay: 1.5 },
             },
           }}
           className="text-primary text-base sm:text-lg"
