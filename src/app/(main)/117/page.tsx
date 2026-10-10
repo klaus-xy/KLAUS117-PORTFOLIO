@@ -119,20 +119,67 @@ const page = () => {
       </div>
       <FeaturedProjects />
       {/* <CursorRevealZone /> */}
-      <div className="min-h-[85vh] flex flex-col justify-center items-center gap-4 text-xl sm:text-2xl font-eurostile text-terminal-green">
-        <Quote className="w-10 h-10 text-primary" />
-        <h2>DO WHAT YOU LOVE</h2>
-        <h2>LOVE WHAT YOU DO</h2>
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.8 }}
+        variants={{
+          hidden: {},
+          show: { transition: { staggerChildren: 0.4, delayChildren: 0.2 } },
+        }}
+        className="min-h-[85vh] flex flex-col justify-center items-center gap-4 text-xl sm:text-2xl font-eurostile text-terminal-green"
+      >
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, scale: 0.6, rotate: -8 },
+            show: {
+              opacity: 1,
+              scale: 1,
+              rotate: 0,
+              transition: { duration: 1.1, ease: "easeOut" },
+            },
+          }}
+        >
+          <Quote className="w-10 h-10 text-primary" />
+        </motion.div>
+        <motion.h2
+          variants={{
+            hidden: { opacity: 0, y: 24 },
+            show: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1.1, ease: "easeOut" },
+            },
+          }}
+        >
+          DO WHAT YOU LOVE
+        </motion.h2>
+        <motion.h2
+          variants={{
+            hidden: { opacity: 0, y: 24 },
+            show: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1.1, ease: "easeOut" },
+            },
+          }}
+        >
+          LOVE WHAT YOU DO
+        </motion.h2>
         <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.8 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
+          variants={{
+            hidden: { opacity: 0, y: 18 },
+            show: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1.2, ease: "easeOut" },
+            },
+          }}
           className="text-primary text-base sm:text-lg"
         >
           - HOLLY TUCKER
         </motion.span>
-      </div>
+      </motion.div>
 
       <div className={"w-[120%] mb-6 relative -left-4 "}>
         <Marquee
