@@ -35,7 +35,7 @@ const ProjectPage = async ({ params }: Props) => {
   return (
     <div className="overflow-hidden">
       {/* HERO/SHOWCASE*/}
-      <div className="relative w-full h-[80vh] sm:h-[80vh] overflow-hidden rounded-b-[2rem] border-5 sm:border-6 border-b-primary bg-muted">
+      <div className="relative w-full h-[80vh] sm:h-[80vh] overflow-hidden rounded-b-[2rem] border-5 sm:border-6 border-b-primary bg-background">
         {project.trailerUrl && <ProjectHeroVideo src={project.trailerUrl} />}
 
         <div className="absolute bottom-0 left-0 flex w-full flex-col gap-2 p-6 sm:p-8 md:px-12">
