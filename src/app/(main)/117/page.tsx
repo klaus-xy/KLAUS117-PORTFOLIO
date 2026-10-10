@@ -13,22 +13,22 @@ import AboutSummary from "./sections/about-summary";
 // Landing Page Component
 const page = () => {
   const bannerTexts = [
-    "GAMES INDUSTRY.",
-    "   ",
-    "WEB 2.0.",
-    "   ",
-    "WEB 3.0.",
-    "   ",
-    "ARTIFICIAL INTELLIGENCE.",
-    "   ",
-    "FINTECH.",
-    "   ",
-    "EDUTECH.",
-    "   ",
-    "ENGINEERING.",
-    "   ",
-    "SIMULATION.",
-    "   ",
+    "GAMES INDUSTRY",
+    "  ●  ",
+    "WEB 2.0",
+    "  ●  ",
+    "WEB 3.0",
+    "  ●  ",
+    "ARTIFICIAL INTELLIGENCE",
+    "  ●  ",
+    "FINTECH",
+    "  ●  ",
+    "EDUTECH",
+    "  ●  ",
+    "ENGINEERING",
+    "  ●  ",
+    "SIMULATION",
+    "  ●  ",
   ];
 
   const cheatTexts = [
@@ -61,13 +61,13 @@ const page = () => {
     "CHECK OUT AREA 59 STUDIO™",
     "  ●  ",
     "SEND ME A MESSAGE",
-    " *  ",
+    "  ●  ",
     "SERIOUSLY FLOOD MY EMAIL",
-    " *  ",
+    "  ●  ",
     "XD",
-    "  * ",
+    "  ● ",
     "OKAY BYE",
-    "  * ",
+    "  ● ",
   ];
   console.log("[117] Landing Page");
 
