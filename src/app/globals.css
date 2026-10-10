@@ -237,6 +237,7 @@
 
   html {
     @apply font-sans scroll-smooth scrollbar-thin md:scrollbar-thin;
+    scroll-snap-type: y proximity;
   }
 
   body {

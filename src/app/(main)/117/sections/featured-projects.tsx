@@ -82,7 +82,7 @@ const FeaturedProjects = () => {
   return (
     <SectionWrapper
       id="projects"
-      wrapperClassName=" "
+      wrapperClassName="snap-start snap-always"
       className="max-w-none px-0 sm:px-0 lg:px-0 2xl:px-0"
     >
       {/* HEADER */}
