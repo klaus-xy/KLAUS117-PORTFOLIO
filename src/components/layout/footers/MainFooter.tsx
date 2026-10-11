@@ -69,7 +69,7 @@ const MainFooter = () => {
 
   return (
     <footer className="w-full flex flex-col justify-center items-center uppercase font-mono p-2">
-      <p className="text-[0.6rem]  sm:text-sm text-primary/80">
+      <p className="text-[0.6rem]  sm:text-[0.7rem] text-primary/80">
         Designed and Made with 💚
       </p>
       {/* <p>and</p> */}
@@ -84,7 +84,7 @@ const MainFooter = () => {
         by :: <span className="text-terminal-green">Klaus 117</span>
       </p> */}
 
-      <p className="text-[0.55rem] sm:text-sm text-muted-foreground/60">
+      <p className="text-[0.55rem] sm:text-[0.6rem] text-muted-foreground/60">
         by ::{" "}
         <span className="inline-block min-w-[9.5ch] text-terminal-green text-center font-semi-bold tracking-wider">
           <ScrambleText
