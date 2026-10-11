@@ -265,7 +265,7 @@ const FeaturedProjects = () => {
               </CarouselContent>
             </Carousel>
           </div>
-          <div className="w-full flex justify-end items-center mt-10 sm:py-20 sm:pr-4 ">
+          {/* <div className="w-full flex justify-end items-center mt-10 sm:py-20 sm:pr-4 ">
             <TransitionLink href={"/projects"}>
               <Button
                 className="text-primary sm:text-xl border  hover:border-primary font-eurostile tracking-wider px-3 py-0 sm:py-7 sm:px-5 bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent"
@@ -276,7 +276,7 @@ const FeaturedProjects = () => {
                 <LucideArrowUpRightFromSquare size={24} className="ml-2" />
               </Button>
             </TransitionLink>
-          </div>
+          </div> */}
         </div>
         {/* <div className="w-2/3 h-[50vh] bg-amber-300"></div> */}
         {/* <div className="w-full h-[50vh] bg-red-300"></div> */}
