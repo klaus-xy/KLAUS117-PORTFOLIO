@@ -40,9 +40,17 @@ interface ShowcaseVideoProps {
   src: string;
   description?: string;
   alt: string;
+  sectionIndex?: number;
+  sectionTitle?: string;
 }
 
-const ShowcaseVideo = ({ src, description, alt }: ShowcaseVideoProps) => {
+const ShowcaseVideo = ({
+  src,
+  description,
+  alt,
+  sectionIndex,
+  sectionTitle,
+}: ShowcaseVideoProps) => {
   const [muted, setMuted] = useState(true);
   const [dialogMuted, setDialogMuted] = useState(true);
   const [open, setOpen] = useState(false);
@@ -146,6 +154,11 @@ const ShowcaseVideo = ({ src, description, alt }: ShowcaseVideoProps) => {
               </Button>
             </motion.div>
             <DialogDescription className="font-helvetica-neue font-normal tracking-wider text-[0.7rem] text-muted-foreground sm:text-sm">
+              {sectionTitle && (
+                <span className="block font-eurostile font-bold text-sm text-foreground sm:text-base mb-2">
+                  {String(sectionIndex ?? 0).padStart(2, "0")} — {sectionTitle}
+                </span>
+              )}
               <motion.span variants={dialogWordsVariants} className="block">
                 {description?.split(" ").map((word, i) => (
                   <Fragment key={i}>

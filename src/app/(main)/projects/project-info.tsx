@@ -29,7 +29,7 @@ const ProjectInfo = ({ label = "Label", info = "Info", className }: Props) => {
           key={replayKey}
           text={info}
           scrambleSpeed={60}
-          revealSpeed={2.5}
+          revealSpeed={1.5}
           chars="PROJECTINFO117"
         />
       </motion.h2>

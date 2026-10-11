@@ -67,8 +67,8 @@ const ProjectPage = async ({ params }: Props) => {
                 );
               })
             ) : (
-              <span className="flex items-start gap-2 px-3 py-1 font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase">
-                {"::/"}Coming Soon
+              <span className="flex items-start gap-2  font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase">
+                {"::// "}Coming Soon
               </span>
             )}
           </div>
@@ -102,8 +102,8 @@ const ProjectPage = async ({ params }: Props) => {
                 );
               })
             ) : (
-              <span className="flex items-start gap-2 px-3 py-1 font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase">
-                {"::/"}Coming Soon
+              <span className="flex items-start font-departure-mono text-xs whitespace-nowrap text-muted-foreground uppercase">
+                {"::// "} Coming Soon
               </span>
             )}
           </div>
@@ -175,11 +175,13 @@ const ProjectPage = async ({ params }: Props) => {
                   src={item.video}
                   description={item.description}
                   alt={project.name}
+                  sectionIndex={item.sectionIndex}
+                  sectionTitle={item.sectionTitle}
                 />
               ) : item.image ? (
                 <GalleryImage
                   key={`${item.image}-${index}`}
-                  image={{ image: item.image, description: item.description }}
+                  image={{ ...item, image: item.image }}
                   alt={project.name}
                 />
               ) : null,

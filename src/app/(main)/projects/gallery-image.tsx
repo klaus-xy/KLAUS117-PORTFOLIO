@@ -111,6 +111,12 @@ const GalleryImage = ({ image, alt }: GalleryImageProps) => {
               />
             </motion.div>
             <DialogDescription className="font-helvetica-neue font-normal tracking-wider text-[0.7rem] text-muted-foreground sm:text-sm">
+              {image.sectionTitle && (
+                <span className="block font-eurostile font-bold text-sm text-foreground sm:text-base mb-2">
+                  {String(image.sectionIndex ?? 0).padStart(2, "0")} —{" "}
+                  {image.sectionTitle}
+                </span>
+              )}
               <motion.span variants={dialogWordsVariants} className="block">
                 {image.description?.split(" ").map((word, i) => (
                   <Fragment key={i}>
