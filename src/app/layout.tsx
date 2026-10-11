@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
+import { TransitionProvider } from "@/providers/transition-provider";
 import Presence from "@/components/eggs/presence";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -68,11 +73,21 @@ const helveticaNueue = localFont({
   variable: "--font-helvetica-neue",
 });
 
+const eurostile = localFont({
+  src: [
+    {
+      path: "./fonts/EurostileExtendedBlack.ttf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-eurostile",
+});
 export const metadata: Metadata = {
   title: "Klaus 117 | Portfolio",
-  description: "Ayobami Oyesiku (Klaus 117) Portfolio",
+  description: "Works of Ayobami Oyesiku (Klaus 117)",
   icons: {
-    icon: "/skull.ico",
+    icon: "https://api.dicebear.com/9.x/adventurer/svg?seed=WindRunner&backgroundColor=1f2937",
   },
 };
 
@@ -82,9 +97,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn("font-sans", geist.variable, eurostile.variable)}
+    >
       <body
-        className={`min-h-dvh flex flex-col ${helveticaNueue.variable} ${geistMono.variable} ${geistSans.variable} ${departureMono.variable} antialiased`}
+        className={`dark min-h-dvh flex flex-col ${helveticaNueue.variable} ${geistMono.variable} ${geistSans.variable} ${departureMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -92,7 +111,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <TransitionProvider>{children}</TransitionProvider>
         </ThemeProvider>
         <Presence />
       </body>

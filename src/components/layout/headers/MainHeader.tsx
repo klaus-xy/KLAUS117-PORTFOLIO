@@ -1,37 +1,98 @@
+"use client";
+
 import Core from "@/components/3d/core";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { MenuIcon } from "lucide-react";
-import React from "react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
+import { useRef, useState } from "react";
+import NavMenu from "../navigation/NavMenu";
+import ScrambleText from "@/components/ui/scramble-text";
+import TransitionLink from "@/components/transition-link";
+import { motion } from "motion/react";
+import MenuIcon from "./menu-icon";
 
 // This is the header that appears on all main pages. It contains the logo, interactive 3D persona and the menu icon..
 const MainHeader = () => {
+  const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="fixed top-0 w-full flex justify-center items-center px-4 py-10 z-50">
-      {/* <h1>.117</h1> */}
+    <div
+      ref={headerRef}
+      className={`fixed top-0 w-full flex justify-between items-center transition duration-400 ${open ? "bg-none" : "bg-background"} px-5 py-4 lg:px-10 sm:py-5 z-60`}
+    >
+      {/* LOGO */}
+      <TransitionLink
+        href="/117"
+        className={cn(
+          "flex justify-center items-end transition-opacity duration-500",
+          open && "opacity-0 pointer-events-none",
+        )}
+      >
+        <motion.div
+          className="flex justify-center items-end"
+          initial="rest"
+          whileHover="hover"
+        >
+          {/* <h1 className="font-eurostile text-4xl">KLAUS</h1> */}
+          <motion.div
+            variants={{ rest: { width: 16 }, hover: { width: 20 } }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            className="h-3 rounded-full bg-terminal-green relative bottom-1 scale-90 sm:scale-100"
+          ></motion.div>
+          <h1>
+            <ScrambleText
+              text="117"
+              scrambleSpeed={100}
+              chars="klaus"
+              delay={1500}
+              showInitialText={true}
+              className="font-eurostile text-3xl sm:text-4xl"
+            />
+          </h1>
+        </motion.div>
+      </TransitionLink>
+
       <div className="absolute -top-2 w-50 flex justify-center items-center rounded overflow-visible">
         {/* <Core /> */}
       </div>
 
-      {/* <div>
-        <Sheet>
-          <SheetTrigger>
-            <MenuIcon />
+      <div>
+        <Sheet open={open} onOpenChange={setOpen} modal={false}>
+          <SheetTrigger className="p-2">
+            <MenuIcon open={open} />
           </SheetTrigger>
-          <SheetContent>
-            <SheetHeader>
+          <SheetContent
+            showCloseButton={false}
+            className="flex flex-row bg-background data-[side=right]:w-screen data-[side=right]:sm:max-w-none"
+            onPointerDownOutside={(e) => {
+              if (headerRef.current?.contains(e.target as Node)) {
+                e.preventDefault();
+              }
+            }}
+          >
+            {/* <SheetHeader>
               <SheetTitle>Are you absolutely sure?</SheetTitle>
               <SheetDescription>This action cannot be undone.</SheetDescription>
-            </SheetHeader>
+            </SheetHeader> */}
+            {/* PREVIEW */}
+            <div className="w-1/2 gap-4 p-10 hidden lg:flex flex-col bg-lime-300">
+              {/* <p className=" w-1/3 absolute">
+                3D VISUAL PREVIEW <br /> Hovering over each menu item initiates
+                a different reaction/interaction
+              </p> */}
+              <Core
+                lookSpeed={0.035}
+                neutralY={0.5}
+                maxAngleX={Math.PI / 4.5}
+                maxAngleY={Math.PI / 6}
+              />
+            </div>
+            <div className="w-full lg:w-1/2">
+              <NavMenu onNavigate={() => setOpen(false)} />
+            </div>
           </SheetContent>
         </Sheet>
-      </div> */}
+      </div>
     </div>
   );
 };

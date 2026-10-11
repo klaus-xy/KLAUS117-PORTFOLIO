@@ -7,8 +7,8 @@ import TypingCursor from "@/components/ui/typing-cursor";
 import { createStringReplacer } from "@/lib/text-replacer";
 import useClock from "@/hooks/use-clock";
 import useTypewriter from "@/hooks/use-typewriter";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { usePageTransition } from "@/providers/transition-provider";
 
 //import TerminalHeader from "@/components/layout/headers/TerminalHeader";
 import TerminalFooter from "@/components/layout/footers/TerminalFooter";
@@ -32,7 +32,7 @@ const TYPING_INTERVAL = 20; // TYPING INTERVAL FOR EACH LINE
 const DELAY_BETWEEN_LINES = 50; // DELAY BEFORE TYPING NEXT LINE
 
 export default function StartupScreen() {
-  const router = useRouter();
+  const { navigate } = usePageTransition();
   const { formattedDate, formattedTime } = useClock();
 
   const stringReplacer = createStringReplacer({
@@ -100,11 +100,11 @@ export default function StartupScreen() {
   useEffect(() => {
     if (isLoadingComplete && progress >= 100) {
       const timer = setTimeout(() => {
-        router.push("/117");
+        navigate("/117");
       }, 1500);
       return () => clearTimeout(timer);
     }
-  }, [isLoadingComplete, progress, router]);
+  }, [isLoadingComplete, progress, navigate]);
 
   return (
     <div className="flex flex-col text-sm flex-1 justify-between items-start gap-4 p-4  text-terminal-orange font-departure-mono">

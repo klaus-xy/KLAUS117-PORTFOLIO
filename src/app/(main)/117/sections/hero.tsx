@@ -1,11 +1,74 @@
-import React from "react";
-import SectionWrapper from "./section-wrapper";
+"use client";
+
+import React, { useRef, useState } from "react";
+import SectionWrapper from "../../../../components/layout/section-wrapper";
 import Core from "@/components/3d/core";
+import LinkDos from "@/components/links/link-dos";
+import { motion, useScroll, useSpring } from "motion/react";
+import Scroll from "@/components/scroll-indicator";
+import AstroKlaus from "@/components/3d/astro-klaus";
+import TerminalBuddy from "@/components/terminal-buddy";
+import ScrambleText from "@/components/ui/scramble-text";
+import ScrollIndicator from "@/components/scroll-indicator";
 
 const Hero = () => {
+  const [replayKey, setReplayKey] = useState(0);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const smoothScrollProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 20,
+    mass: 1,
+  });
+
   return (
-    <SectionWrapper id="contact">
-      <h1>HI. I'M KLAUS.</h1>
+    <SectionWrapper id="home" className="max-w-none">
+      <div
+        ref={sectionRef}
+        className="min-h-[90vh] flex flex-col justify-start items-center overflow-hidden"
+      >
+        <div className="inset-x-0 -mx-4 sm:-mx-6 lg:-mx-8 h-full absolute right-0 -z-10">
+          <AstroKlaus scrollProgress={smoothScrollProgress} />
+          {/* <Core neutralY={0.5} /> */}
+        </div>
+        <div className="flex flex-col justify-center flex-1 relative -top-5 ">
+          {/* <span className="absolute top-80 text-xs font-departure-mono text-muted-foreground">
+            morphs into KLAUS117 ⬅
+          </span> */}
+          <motion.h1
+            className="text-[50px] sm:text-7xl font-eurostile"
+            viewport={{ once: false, amount: 0.8 }}
+            onViewportEnter={() => setReplayKey((k) => k + 1)}
+          >
+            <ScrambleText
+              key={replayKey}
+              text="KLAUS"
+              scrambleSpeed={80}
+              chars="KLAUS117"
+            />
+          </motion.h1>
+
+          <div className="flex justify-start items-center gap-2 tracking-widest text-sm font-eurostile">
+            {/* <h2 className="text-terminal-green">SOFTWARE ENGINEER::</h2> */}
+            {/* <ScrambleText
+              text="SOFTWARE ENGINEER"
+              chars="|:"
+              revealSpeed={2}
+              className="text-terminal-green ml-2"
+            /> */}
+
+            {/* <span>Gameplay Programmer</span>
+            <span>Frontend Engineer</span> */}
+            {/* <span className="absolute right-0 text-xs text-muted">
+              ⬅ morphs into different sub-disciplines
+            </span> */}
+          </div>
+        </div>
+      </div>
+
       {/* <p>Welcome to my world.</p>
       <h2>SOFTWARE ENGINEER</h2>
       <p> Leaning on a porshe 911. Get in. Lets go for a ride</p> */}
@@ -16,6 +79,27 @@ const Hero = () => {
       {/* <div className=" h-[500px] w-fullborder border-lime-500">
         <Core />
       </div> */}
+      {/* SOCIALS */}
+      {/* <div className="fixed bottom-10 right-0">
+        <TerminalBuddy className="absolute -top-9 left-1/2 -translate-x-1/2" />
+        <LinkDos
+          href={"files/117 Resume.zip"}
+          name={"Resume"}
+          openInNewTab={false}
+        />
+        <LinkDos href={"https://github.com/klaus-xy"} name={"Git Hub"} />
+        <LinkDos
+          href={"https://www.linkedin.com/in/ayobami-oyesiku"}
+          name={"Linked In"}
+        />
+      </div> */}
+
+      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-xs flex flex-col items-center gap-2 ">
+        <ScrollIndicator />
+        {/* <span className="text-muted-foreground font-medium animate-pulse">
+          Scroll down
+        </span> */}
+      </div>
     </SectionWrapper>
   );
 };

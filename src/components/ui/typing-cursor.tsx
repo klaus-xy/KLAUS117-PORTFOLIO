@@ -4,13 +4,16 @@ import React from "react";
 interface TypingCursorProps {
   cursorChar?: string;
   blinkSpeed?: number;
+  className?: string;
 }
 const TypingCursor = ({
   cursorChar = "█",
+  className,
 }: //blinkSpeed = 500,
 TypingCursorProps) => {
   return (
     <motion.span
+      className={className}
       animate={{
         opacity: [1, 0],
         // scaleY: [1, 0.2],

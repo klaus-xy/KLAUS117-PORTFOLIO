@@ -1,0 +1,45 @@
+"use client";
+import { PROJECT_CATEGORIES, ProjectCategory } from "@/data/all-projects";
+import { cn } from "@/lib/utils";
+
+export type CategoryOption = ProjectCategory | "All";
+
+const CATEGORY_PRIORITY = ["Game Dev", "Web Dev"] as const;
+
+interface Props {
+  selected: CategoryOption;
+  onSelect: (category: CategoryOption) => void;
+}
+
+const CategoryFilter = ({ selected, onSelect }: Props) => {
+  const options: CategoryOption[] = [
+    "All",
+    ...CATEGORY_PRIORITY,
+    ...PROJECT_CATEGORIES.filter(
+      (category) => !(CATEGORY_PRIORITY as readonly string[]).includes(category),
+    ),
+  ];
+
+  return (
+    <div className="flex flex-wrap gap-2 text-[0.55rem] font-eurostile font-bold tracking-widest uppercase">
+      {options.map((option) => (
+        <button
+          key={option}
+          type="button"
+          onClick={() => onSelect(option)}
+          aria-pressed={selected === option}
+          className={cn(
+            "rounded-full border-2 px-4 py-2 transition-colors",
+            selected === option
+              ? "border-primary bg-terminal-green text-background"
+              : "border-muted-foreground/30 text-muted-foreground hover:border-terminal-green hover:text-terminal-green",
+          )}
+        >
+          {option}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+export default CategoryFilter;
