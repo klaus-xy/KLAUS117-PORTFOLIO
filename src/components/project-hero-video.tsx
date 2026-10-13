@@ -38,7 +38,6 @@ const ProjectHeroVideo = ({ src }: ProjectHeroVideoProps) => {
         loop
         muted
         playsInline
-        preload="auto"
         onLoadedData={() => setReady(true)}
         onCanPlay={() => setReady(true)}
       />
