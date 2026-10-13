@@ -140,7 +140,7 @@ export const AllProjects: Project[] = [
     links: [
       {
         label: "Demo",
-        url: "https://klaus117.itch.io/chronomancers",
+        url: "https://play.unity.com/en/games/78eacaac-762f-4db7-9cf5-ae242e5ae250/chronomancers",
         icon: Gamepad2,
       },
       {
