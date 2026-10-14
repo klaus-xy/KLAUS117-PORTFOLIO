@@ -28,7 +28,7 @@ const lines = [
   "█ █ █ █ █ █ █ █ █ █ █ █ █ █ █ ",
 ];
 
-const TYPING_INTERVAL = 20; // TYPING INTERVAL FOR EACH LINE
+const TYPING_INTERVAL = 15; // TYPING INTERVAL FOR EACH LINE
 const DELAY_BETWEEN_LINES = 50; // DELAY BEFORE TYPING NEXT LINE
 
 export default function StartupScreen() {
@@ -54,22 +54,6 @@ export default function StartupScreen() {
   // const [location, setLocation] = useState("Access Denied.");
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
-
-  // console.log("isloading", isLoading);
-  // console.log("isLoadingComplete", isLoadingComplete);
-
-  // //  Updates current time.
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setCurrentTime(new Date());
-  //   }, 1000);
-
-  //   //
-  //   return () => clearInterval(timer);
-  // }, []);
-
-  // // Updates current location.
-  // useEffect(() => {}, []);
 
   //  Updates progress bar.
   useEffect(() => {

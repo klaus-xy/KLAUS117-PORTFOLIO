@@ -14,24 +14,38 @@ function CompanionCube({
 }) {
   const groupRef = useRef<Group>(null!);
   const { scene } = useGLTF("/models/portal-companion-cube.glb");
+  const introElapsed = useRef(0);
 
   useEffect(() => {
     onReady();
   }, [onReady]);
 
+  const INTRO_DURATION = 2.4;
+  const INTRO_START_Z = -1.2;
+
   useFrame((_, delta) => {
     const progress = scrollProgress?.get() ?? 0;
+
+    introElapsed.current = Math.min(
+      introElapsed.current + delta,
+      INTRO_DURATION,
+    );
+    const introT = introElapsed.current / INTRO_DURATION;
+    // Gentle ease-out quad — softer, less snappy than a cubic curve.
+    const introEased = 1 - Math.pow(1 - introT, 2);
+
     groupRef.current.rotation.x += delta * (0.025 + progress * 0.15);
     groupRef.current.rotation.y += delta * (0.025 + progress * 0.15);
     groupRef.current.rotation.z += delta * (0.08 + progress * 0.25);
     groupRef.current.position.y = 1 - progress * 5;
     groupRef.current.position.x = 2 - progress * 1.5;
+    groupRef.current.position.z = INTRO_START_Z * (1 - introEased);
     const scale = 0.05 + progress * 0.03;
     groupRef.current.scale.setScalar(scale);
   });
 
   return (
-    <group ref={groupRef} position={[2, 1, 0]} scale={0.05}>
+    <group ref={groupRef} position={[2, 1, -1.2]} scale={0.05}>
       <primitive object={scene} />
     </group>
   );
@@ -47,8 +61,8 @@ const AstroKlaus = ({ scrollProgress }: AstroKlausProps) => {
 
   return (
     <div
-      className={`h-full w-full transition-all duration-5000 ease-out ${
-        loaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
+      className={`h-full w-full transition-opacity duration-700 ease-out ${
+        loaded ? "opacity-100" : "opacity-0"
       }`}
     >
       <Canvas camera={{ position: [0, 0, 5] }} className="">

@@ -13,13 +13,13 @@ import AboutSummary from "./sections/about-summary";
 // Landing Page Component
 const page = () => {
   const bannerTexts = [
-    "GAMES INDUSTRY",
+    "VIDEO GAMES",
     "  ●  ",
     "WEB 2.0",
     "  ●  ",
     "WEB 3.0",
     "  ●  ",
-    "ARTIFICIAL INTELLIGENCE",
+    "AI",
     "  ●  ",
     "FINTECH",
     "  ●  ",
@@ -152,7 +152,7 @@ const page = () => {
             },
           }}
         >
-          DO WHAT YOU LOVE.
+          DO WHAT YOU LOVE
         </motion.h2>
         <motion.h2
           variants={{
@@ -164,7 +164,7 @@ const page = () => {
             },
           }}
         >
-          LOVE WHAT YOU DO.
+          LOVE WHAT YOU DO
         </motion.h2>
         <motion.span
           variants={{
