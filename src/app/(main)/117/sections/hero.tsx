@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SectionWrapper from "../../../../components/layout/section-wrapper";
 import Core from "@/components/3d/core";
 import LinkDos from "@/components/links/link-dos";
@@ -11,17 +11,27 @@ import TerminalBuddy from "@/components/terminal-buddy";
 import ScrambleText from "@/components/ui/scramble-text";
 import ScrollIndicator from "@/components/scroll-indicator";
 
+const HERO_NAMES = ["KLAUS", "Ayò"];
+
 const Hero = () => {
   const [replayKey, setReplayKey] = useState(0);
+  const [nameIndex, setNameIndex] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNameIndex((i) => (i + 1) % HERO_NAMES.length);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
   });
   const smoothScrollProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 20,
-    mass: 1,
+    stiffness: 300,
+    damping: 30,
+    mass: 0.5,
   });
 
   return (
@@ -45,7 +55,7 @@ const Hero = () => {
           >
             <ScrambleText
               key={replayKey}
-              text="KLAUS"
+              text={HERO_NAMES[nameIndex]}
               scrambleSpeed={80}
               chars="KLAUS117"
             />
