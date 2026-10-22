@@ -29,10 +29,10 @@ interface NavMenuProps {
 const NavMenu = ({ onNavigate }: NavMenuProps) => {
   return (
     <nav className="w-full font-eurostile">
-      <ul className="space-y-5 lg:space-y-5 text-4xl sm:text-5xl 2xl:text-7xl font-black py-24 px-8 lg:px-18 lg:py-32">
+      <ul className="space-y-5 lg:space-y-5 text-4xl sm:text-5xl 2xl:text-6xl font-black py-24 px-8 sm:px-14 lg:px-18">
         {NAVITEMS.map((item, index) => {
           const label = (
-            <span className="hover:tracking-tighter transition-all duration-400 ease-in-out">
+            <span className="sm:tracking-wider hover:tracking-tighter transition-all duration-400 ease-in-out">
               <ScrambleText
                 text={item.name}
                 scrambleSpeed={50}
@@ -65,7 +65,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
         })}
       </ul>
 
-      {/*      {/* NAV FOOTER */}
+      {/* NAV FOOTER */}
       <div className="w-full flex flex-col items-center justify-start gap-10 py-24  border-muted">
         {/* SOCIAL LINKS */}
         <motion.ul
@@ -97,7 +97,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
                 aria-label={name}
                 className="flex items-center"
               >
-                {Icon && <Icon className="size-8 sm:size-14" />}
+                {Icon && <Icon className="size-8 sm:size-12 2xl:size-14" />}
               </Link>
             </motion.li>
           ))}
@@ -130,7 +130,7 @@ const NavMenu = ({ onNavigate }: NavMenuProps) => {
                 ease: [0.22, 1, 0.36, 1],
                 delay: 1.55,
               }}
-              className="ml-2 text-sm sm:text-sm lg:text-base underline"
+              className="tracking-widest hover:tracking-tight transition-all duration-200 ml-2 text-sm sm:text-sm lg:text-base underline"
             >
               Resume
             </motion.span>

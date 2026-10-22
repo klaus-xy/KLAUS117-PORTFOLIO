@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MathUtils } from "three";
 import { OrbitControls } from "@react-three/drei";
 import { useGLTF } from "@react-three/drei";
@@ -18,8 +18,16 @@ function CoreMesh(props: any) {
   // const { pointer } = useThree(); // Get normalized pointer position
   const pointer = useRef({ x: 0, y: 0 });
   const { scene } = useGLTF("/models/destiny-ghost.glb");
+  const introElapsed = useRef(0);
 
   useGLTF.preload("/models/destiny-ghost.glb");
+
+  const INTRO_DURATION = 1;
+  const INTRO_START_Z = -1;
+
+  useEffect(() => {
+    props.onReady?.();
+  }, [props.onReady]);
 
   useEffect(() => {
     const ny = props.neutralY ?? 0.5;
@@ -33,8 +41,17 @@ function CoreMesh(props: any) {
   }, [props.neutralY]);
 
   // Called every frame
-  useFrame(() => {
+  useFrame((_, delta) => {
     if (!meshRef.current) return;
+
+    introElapsed.current = Math.min(
+      introElapsed.current + delta,
+      INTRO_DURATION,
+    );
+    const introT = introElapsed.current / INTRO_DURATION;
+    // Gentle ease-out quad — a soft, close-distance reveal rather than a snap.
+    const introEased = 1 - Math.pow(1 - introT, 2);
+    meshRef.current.position.z = INTRO_START_Z * (1 - introEased);
 
     // Calculate the rotation based on the pointer position on both axis
     // (Target Rot - Current Rot) * Speed ---> New Lerped Rot(Smooth ease out Rotation)
@@ -61,7 +78,12 @@ function CoreMesh(props: any) {
   });
 
   return (
-    <primitive ref={meshRef} object={scene} scale={4} />
+    <primitive
+      ref={meshRef}
+      object={scene}
+      scale={4}
+      position={[0, 0, INTRO_START_Z]}
+    />
     // <mesh ref={meshRef} {...props}>
     //   <boxGeometry args={[3, 3, 3]} />
     //   {/* <torusGeometry args={[1, 0.3, 16, 100]} /> */}
@@ -77,28 +99,37 @@ function Core({
   maxAngleX = Math.PI / 6,
   maxAngleY = Math.PI / 6,
 }: CoreProps) {
+  const [loaded, setLoaded] = useState(false);
+
   return (
-    <Canvas
-    // style={{
-    //   position: "fixed",
-    //   top: 0,
-    //   inset: 0,
-    //   width: "100vw",
-    //   height: "100vh",
-    //   zIndex: -1,
-    // }}
-    // camera={{ position: [0, 0, 0] }}
+    <div
+      className={`h-full w-full transition-opacity duration-700 ease-out ${
+        loaded ? "opacity-100" : "opacity-0"
+      }`}
     >
-      <CoreMesh
-        lookSpeed={lookSpeed}
-        maxAngleX={maxAngleX}
-        maxAngleY={maxAngleY}
-        neutralY={neutralY}
-      />
-      <ambientLight intensity={0.5} color="lime" />
-      <directionalLight intensity={5} position={[10, 10, 5]} color="white" />
-      {/* <OrbitControls /> */}
-    </Canvas>
+      <Canvas
+      // style={{
+      //   position: "fixed",
+      //   top: 0,
+      //   inset: 0,
+      //   width: "100vw",
+      //   height: "100vh",
+      //   zIndex: -1,
+      // }}
+      // camera={{ position: [0, 0, 0] }}
+      >
+        <CoreMesh
+          lookSpeed={lookSpeed}
+          maxAngleX={maxAngleX}
+          maxAngleY={maxAngleY}
+          neutralY={neutralY}
+          onReady={() => setLoaded(true)}
+        />
+        <ambientLight intensity={0.5} color="lime" />
+        <directionalLight intensity={5} position={[10, 10, 5]} color="white" />
+        {/* <OrbitControls /> */}
+      </Canvas>
+    </div>
   );
 }
 
