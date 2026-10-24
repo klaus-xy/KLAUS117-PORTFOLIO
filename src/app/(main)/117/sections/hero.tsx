@@ -35,12 +35,12 @@ const Hero = () => {
   });
 
   return (
-    <SectionWrapper id="home" className="max-w-none">
+    <SectionWrapper id="home" className="max-w-none px-0">
       <div
         ref={sectionRef}
-        className="min-h-[90vh] flex flex-col justify-start items-center overflow-hidden"
+        className="relative min-h-[90vh] flex flex-col justify-start items-center overflow-hidden"
       >
-        <div className="inset-x-0 -mx-4 sm:-mx-6 lg:-mx-8 h-full absolute right-0 -z-10">
+        <div className="inset-x-0 -mx-4 sm:-mx-6 lg:-mx-8 h-full absolute right-0">
           <AstroKlaus scrollProgress={smoothScrollProgress} />
           {/* <Core neutralY={0.5} /> */}
         </div>

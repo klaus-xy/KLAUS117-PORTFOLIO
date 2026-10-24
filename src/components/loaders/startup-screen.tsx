@@ -26,6 +26,7 @@ const lines = [
   " ",
   "Loading △OD-117.exe         >>>",
   "█ █ █ █ █ █ █ █ █ █ █ █ █ █ █ ",
+  // "⋮ ⋮ ⋮ ⋮⋮ ⋮⋮⋮⋮⋮⋮⋮ ⋮⋮⋮⋮⋮⋮⋮⋮⋮⋮⋮⋮ ⋮⋮⋮⋮⋮⋮⋮⋮⋮⋮⋮⋮⋮⋮⋮⋮⋮",
 ];
 
 const TYPING_INTERVAL = 15; // TYPING INTERVAL FOR EACH LINE
@@ -92,6 +93,7 @@ export default function StartupScreen() {
 
   return (
     <div className="flex flex-col text-sm flex-1 justify-between items-start gap-4 p-4  text-terminal-orange font-departure-mono">
+      {" "}
       <div>
         {/* HEADER */}
         {/* <TerminalHeader /> */}

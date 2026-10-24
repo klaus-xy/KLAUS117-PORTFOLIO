@@ -4,10 +4,11 @@ import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { TransitionProvider } from "@/providers/transition-provider";
 import Presence from "@/components/eggs/presence";
-import { Geist } from "next/font/google";
+import { Geist, Doto } from "next/font/google";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+const doto = Doto({ subsets: ["latin"], variable: "--font-doto" });
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -104,7 +105,7 @@ export default function RootLayout({
       className={cn("font-sans", geist.variable, eurostile.variable)}
     >
       <body
-        className={`dark min-h-dvh flex flex-col ${helveticaNueue.variable} ${geistMono.variable} ${geistSans.variable} ${departureMono.variable} antialiased`}
+        className={`dark min-h-dvh flex flex-col ${helveticaNueue.variable} ${geistMono.variable} ${geistSans.variable} ${departureMono.variable} ${doto.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"

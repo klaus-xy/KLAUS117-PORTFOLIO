@@ -23,7 +23,7 @@ const Contact = () => {
   ];
   return (
     <SectionWrapper id="contact" wrapperClassName="min-h-[90dvh] ">
-      <h1 className="relative text-6xl sm:text-6xl md:text-7xl lg:text-9xl ">
+      <h1 className="w-max relative text-6xl sm:text-6xl md:text-7xl lg:text-9xl ">
         Lets Create <br />
         Cool Sh*t
         <div className="absolute bottom-2 -right-4 mx-2 w-6 h-4 sm:w-8 sm:h-5 md:w-12 md:h-8 bg-terminal-green rounded-full"></div>
@@ -42,7 +42,7 @@ const Contact = () => {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex justify-between items-center gap-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold  hover:tracking-tighter transition-all duration-400 ease-in-out border-b-3 border-terminal-green py-4 hover:text-primary"
+            className="flex justify-between items-center gap-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold sm:tracking-wide hover:tracking-tighter transition-all duration-400 ease-in-out border-b-3 border-terminal-green py-4 hover:text-primary"
           >
             {social.name}
             <LucideExternalLink />
