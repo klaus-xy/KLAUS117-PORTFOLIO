@@ -12,6 +12,7 @@
   --font-sans: var(--font-sans);
   --font-departure-mono: var(--font-departure-mono), serif;
   --font-eurostile: var(--font-eurostile);
+  --font-doto: var(--font-doto), sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-sidebar-ring: var(--sidebar-ring);
