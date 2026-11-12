@@ -56,7 +56,7 @@ const page = () => {
   const contactTexts = [
     "LETS WORK TOGETHER",
     "  ●  ",
-    "LETS CREATE COOL SH*T",
+    "LETS MAKE IDEAS REALITY",
     "  ●  ",
     "CHECK OUT AREA 59 STUDIO™",
     "  ●  ",
