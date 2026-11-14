@@ -17,6 +17,8 @@ const LAYER_STAGGER = 0.1;
 
 interface TransitionContextValue {
   navigate: (href: string) => void;
+  /** True once the overlay has fully left the screen (and on first load). */
+  isTransitionDone: boolean;
 }
 
 const TransitionContext = createContext<TransitionContextValue | null>(null);
@@ -38,6 +40,7 @@ export const TransitionProvider = ({
   const pathname = usePathname();
   const [covering, setCovering] = useState(false);
   const [loaderVisible, setLoaderVisible] = useState(false);
+  const [isTransitionDone, setIsTransitionDone] = useState(true);
   const pendingHref = useRef<string | null>(null);
 
   const navigate = useCallback(
@@ -48,6 +51,7 @@ export const TransitionProvider = ({
         return;
       }
       pendingHref.current = href;
+      setIsTransitionDone(false);
       setCovering(true);
     },
     [pathname, router],
@@ -75,9 +79,9 @@ export const TransitionProvider = ({
   }, [pathname, covering]);
 
   return (
-    <TransitionContext.Provider value={{ navigate }}>
+    <TransitionContext.Provider value={{ navigate, isTransitionDone }}>
       {children}
-      <AnimatePresence>
+      <AnimatePresence onExitComplete={() => setIsTransitionDone(true)}>
         {covering && (
           <div className="pointer-events-none fixed inset-0 z-100">
             {/* Accent layer: leads on the way in, trails on the way out */}
