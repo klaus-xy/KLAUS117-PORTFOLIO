@@ -1,6 +1,8 @@
 import Link from "next/link";
 import TransitionLink from "@/components/transition-link";
 import ShowcaseVideo from "@/components/showcase-video";
+import ShowcasePlaceholder from "@/components/showcase-placeholder";
+import HeroNamePlaceholder from "@/components/hero-name-placeholder";
 import { notFound } from "next/navigation";
 import { AllProjects, getProjectBySlug } from "@/data/all-projects";
 import ProjectHeroVideo from "@/components/project-hero-video";
@@ -36,7 +38,13 @@ const ProjectPage = async ({ params }: Props) => {
     <div className="overflow-hidden">
       {/* HERO/SHOWCASE*/}
       <div className="relative w-full h-[80vh] sm:h-[80vh] overflow-hidden rounded-b-[2rem] border-5 sm:border-6 border-b-primary bg-background">
-        {project.trailerUrl && <ProjectHeroVideo src={project.trailerUrl} />}
+        {project.trailerUrl ? (
+          <ProjectHeroVideo src={project.trailerUrl} />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center px-6">
+            <HeroNamePlaceholder name={project.name} />
+          </div>
+        )}
 
         <div className="absolute bottom-0 left-0 flex w-full flex-col gap-2 p-6 sm:p-8 md:px-12">
           <div>
@@ -187,11 +195,10 @@ const ProjectPage = async ({ params }: Props) => {
               ) : null,
             )
           ) : (
-            <div className="col-span-full flex aspect-video items-center justify-center rounded-2xl bg-muted">
-              <span className="font-departure-mono text-sm text-muted-foreground">
-                🚧 Gallery :: Coming Soon
-              </span>
-            </div>
+            <ShowcasePlaceholder
+              messages={project.placeholderMessages}
+              accent={project.placeholderAccent}
+            />
           )}
         </div>
       </section>

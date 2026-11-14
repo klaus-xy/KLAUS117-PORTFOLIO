@@ -47,6 +47,7 @@ const bannerTech = [
   "Tailwind CSS",
   "Framer Motion",
   "shadcn/ui",
+  "Supabase",
 ];
 const listVariants = {
   hidden: {},

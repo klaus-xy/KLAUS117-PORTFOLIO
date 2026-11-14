@@ -42,6 +42,10 @@ export interface Project {
   techStack?: string[];
   links?: ProjectLink[];
   showcase?: ProjectShowcaseItem[];
+  /** Terminal lines shown in place of the gallery while there's no showcase yet. */
+  placeholderMessages?: string[];
+  /** Accent colour for the placeholder terminal (defaults to the site's green). */
+  placeholderAccent?: string;
 }
 
 export const AllProjects: Project[] = [
@@ -619,6 +623,31 @@ export const AllProjects: Project[] = [
         sectionIndex: 3,
         sectionTitle: "Playlist View",
       },
+    ],
+  },
+
+  // :::: L.U.C.I (teaser) :::: //
+  {
+    slug: "luci",
+    name: "L.U.C.I",
+    description: ["Something new is in the works. Details coming soon."],
+    category: "Side Quests",
+    role: "TBA",
+    date: "Coming Soon",
+    links: [],
+    placeholderAccent: "hotpink",
+    placeholderMessages: [
+      "INITIALIZING...",
+      "LOADING MEMORY...",
+      "LOADING PERSONA...",
+      "L.U.C.I is WAKING UP.",
+      "...",
+      "SOMETHING WENT WRONG.",
+      "STAND BY.",
+      "LISTENING...",
+      "97%",
+      "98%",
+      "99%",
     ],
   },
 

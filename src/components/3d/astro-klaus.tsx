@@ -23,8 +23,8 @@ function CompanionCube({
   // naturally instead of each one resetting the motion.
   const pokeZ = useMotionValue(0);
   const POKE_STIFFNESS = 25;
-  const POKE_DAMPING = 2;
-  const POKE_STRENGTH = 6;
+  const POKE_DAMPING = 2.5;
+  const POKE_STRENGTH = 5;
 
   useEffect(() => {
     onReady();
