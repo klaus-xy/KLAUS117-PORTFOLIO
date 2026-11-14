@@ -77,23 +77,26 @@ const DOT_SHAPES = {
   ),
   triangle: roundedShape(
     [
-      [24, 1],
+      // Same corner order as the rectangles (TL, TR, BR, BL) so morphs
+      // between them don't twist; the two top corners meet at the apex.
+      [22, 1],
+      [26, 1],
       [45, 30],
-      [24, 30],
       [3, 30],
     ],
     3,
   ),
 };
 const DOT_CYCLE = [
-  DOT_SHAPES.pill,
   DOT_SHAPES.circle,
+  DOT_SHAPES.pill,
   DOT_SHAPES.square,
-  DOT_SHAPES.diamond,
   DOT_SHAPES.triangle,
+  DOT_SHAPES.diamond,
 ];
 // Hold each shape for 60% of its slot, then morph into the next one.
-const DOT_KEYFRAMES = [...DOT_CYCLE.flatMap((s) => [s, s]), DOT_SHAPES.pill];
+// End on the first shape so the loop restarts seamlessly.
+const DOT_KEYFRAMES = [...DOT_CYCLE.flatMap((s) => [s, s]), DOT_CYCLE[0]];
 const DOT_TIMES = [
   ...DOT_CYCLE.flatMap((_, i) => [
     i / DOT_CYCLE.length,
@@ -187,10 +190,10 @@ const Contact = () => {
             className="h-full w-full overflow-visible fill-terminal-green"
           >
             <motion.path
-              d={DOT_SHAPES.pill}
+              d={DOT_CYCLE[0]}
               animate={reduceMotion ? undefined : { d: DOT_KEYFRAMES }}
               transition={{
-                duration: 10,
+                duration: 5,
                 times: DOT_TIMES,
                 ease: "easeInOut",
                 repeat: Infinity,
