@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
+import { usePageTransition } from "@/providers/transition-provider";
 
 interface HeroNamePlaceholderProps {
   name: string;
@@ -19,13 +20,15 @@ const letterVariants = {
 // Stands in for a hero video: the project name, revealed letter by letter.
 const HeroNamePlaceholder = ({ name }: HeroNamePlaceholderProps) => {
   const reduceMotion = useReducedMotion();
+  // Wait for the page-transition overlay to finish before revealing.
+  const { isTransitionDone } = usePageTransition();
   const words = name.split(/\s+/).filter(Boolean);
 
   return (
     <motion.span
       aria-label={name}
       initial={reduceMotion ? false : "hidden"}
-      animate="show"
+      animate={isTransitionDone ? "show" : "hidden"}
       variants={{
         hidden: {},
         show: { transition: { staggerChildren: 0.07, delayChildren: 0.2 } },
