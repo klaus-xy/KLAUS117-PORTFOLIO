@@ -715,7 +715,8 @@ export const AllProjects: Project[] = [
     name: "XO 1999",
     description: [
       "XO 1999 reimagines classic Tic Tac Toe with a neon, retro-arcade look, new game modes, and an AI opponent, blending casual pick-up-and-play with strategic depth.",
-      "On top of the classic rules, Elimination mode keeps only each player's three most recent moves on the board: place a fourth and your oldest mark disappears. That turns every match into a shifting puzzle. Each side can be a human or the AI, and the AI has Easy, Normal, and Hard difficulty levels.",
+      "On top of the classic rules, Elimination mode keeps only each player's three most recent moves on the board: place a fourth and your oldest mark disappears. That turns every match into a shifting puzzle. Each side can be a human or the AI, which has Easy, Normal, and Hard difficulty levels.",
+      "The AI opponent makes strategic decisions using a Minimax algorithm, simulating future moves to choose its best play.",
     ],
     techStack: ["Unity", "C#"],
     trailerUrl: "/videos/project-showcases/xo-1999/gameplay.mp4",
