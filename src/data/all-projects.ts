@@ -709,6 +709,85 @@ export const AllProjects: Project[] = [
     ],
   },
 
+  // :::: XO 1999 :::: //
+  {
+    slug: "xo-1999",
+    name: "XO 1999",
+    description: [
+      "XO 1999 reimagines classic Tic Tac Toe with a neon, retro-arcade look, new game modes, and an AI opponent, blending casual pick-up-and-play with strategic depth.",
+      "On top of the classic rules, Elimination mode keeps only each player's three most recent moves on the board: place a fourth and your oldest mark disappears. That turns every match into a shifting puzzle. Each side can be a human or the AI, and the AI has Easy, Normal, and Hard difficulty levels.",
+    ],
+    techStack: ["Unity", "C#"],
+    trailerUrl: "/videos/project-showcases/xo-1999/gameplay.mp4",
+    category: "Game Dev",
+    role: "Game Developer",
+    date: "2025",
+    links: [
+      {
+        label: "Contra",
+        url: "https://contra.com/p/LYPM6oec-xo-1999",
+        icon: Globe,
+      },
+    ],
+    showcase: [
+      {
+        video: "/videos/project-showcases/xo-1999/gameplay.mp4",
+        description:
+          "Gameplay across the menus, match setup, and both game modes.",
+        sectionIndex: 1,
+        sectionTitle: "Gameplay",
+      },
+      {
+        image: "/images/projects/xo-1999/screenshot-1.webp",
+        description:
+          "Main menu, setting the neon, retro-arcade style used throughout the game.",
+        sectionIndex: 2,
+        sectionTitle: "Main Menu",
+      },
+      {
+        image: "/images/projects/xo-1999/screenshot-3.webp",
+        description:
+          "Match settings: choose human or AI for each side, the game mode (Classic or Elimination), and the AI difficulty.",
+        sectionIndex: 3,
+        sectionTitle: "Match Setup",
+      },
+      {
+        image: "/images/projects/xo-1999/screenshot-4.webp",
+        description: "Classic mode on the 3×3 grid system.",
+        sectionIndex: 4,
+        sectionTitle: "Classic Mode",
+      },
+      {
+        image: "/images/projects/xo-1999/screenshot-5.webp",
+        description:
+          "Elimination mode: each player keeps only three marks on the board. The oldest mark is highlighted before it disappears on that player's next move.",
+        sectionIndex: 5,
+        sectionTitle: "Elimination Mode",
+      },
+      {
+        image: "/images/projects/xo-1999/screenshot-6.webp",
+        description: "Pause menu with resume, restart, and main menu options.",
+        sectionIndex: 6,
+        sectionTitle: "HUD & Menus",
+      },
+      {
+        image: "/images/projects/xo-1999/screenshot-7.webp",
+        description: "Game over screen announcing the winner, with replay.",
+      },
+      {
+        image: "/images/projects/xo-1999/screenshot-8.webp",
+        description: "Draw result.",
+      },
+      {
+        image: "/images/projects/xo-1999/screenshot-2.webp",
+        description:
+          "Game settings with a bloom toggle and separate SFX and music volume controls.",
+        sectionIndex: 7,
+        sectionTitle: "Settings",
+      },
+    ],
+  },
+
   // :::: PROJECT ::/ PHASE-SHIFT :::: //
   // Hidden for now — add real details before uncommenting and listing.
   // {
