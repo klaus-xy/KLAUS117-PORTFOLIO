@@ -725,9 +725,9 @@ export const AllProjects: Project[] = [
     date: "2025",
     links: [
       {
-        label: "Contra",
-        url: "https://contra.com/p/LYPM6oec-xo-1999",
-        icon: Globe,
+        label: "Play",
+        url: "https://klaus117.itch.io/xo-1999",
+        icon: Gamepad2,
       },
     ],
     showcase: [
